@@ -12,14 +12,10 @@ nav {
 
 main {
 	width: auto;
-	height: 400px;
+	height: 900px;
 }
 
 footer {	
-	position: absolute;
-	right: 0;
-	left: 0;
-	bottom: 0;
 	width: auto;
 	height: 200px;
 	background-color: #4A4F6B;
@@ -44,15 +40,16 @@ hr {
 }
 
 #mainDisplay {
+	position: relative;
 	width: auto;
-	height: 200px;
+	height: 70%;
 	background-color: pink;
 }
 
 #profile {
-	margin: 10px;
-	padding: 5px;
-	width: 100px;
-	height: 100px;
-	background-color: red;
+	position: absolute;
+	right: 0;
+	width: 25%;
+	height: 100%;
+	background-color: grey;
 }
