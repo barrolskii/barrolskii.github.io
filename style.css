@@ -1,0 +1,30 @@
+/* Set the nav, main, footer and body to be the same across all pages*/
+nav {
+	width: auto;
+	height: 100px;
+	background-color: #4A4F6B;
+}
+
+main {
+	width: auto;
+	height: 400px;
+	background-color: yellow;
+}
+
+footer {
+	width: auto;
+	height: 200px;
+	background-color: #4A4F6B;
+}
+
+body {
+	background-color: #D5D5E8;
+}
+
+h1 {
+	color: blue;
+}
+
+p {
+	color: orange;
+}
