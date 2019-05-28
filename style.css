@@ -16,9 +16,11 @@ main {
 }
 
 footer {	
+	position: relative;
 	width: auto;
 	height: 200px;
 	background-color: #4A4F6B;
+	padding-top: 100px;
 }
 
 body {
@@ -39,6 +41,11 @@ hr {
 	border: none;
 }
 
+
+/* 
+ * Home page styling
+ */
+
 #mainDisplay {
 	position: relative;
 	width: auto;
@@ -53,3 +60,26 @@ hr {
 	height: 100%;
 	background-color: grey;
 }
+
+#socialLinks {
+	width: auto;
+	height: auto;
+	background-color: red;
+}
+
+#footerSocialLinks {
+	width: auto;
+	height: auto;
+}
+
+#footerLeftImage {
+	padding-left: 25%;
+}
+
+#footerImageSpacing {
+	padding-left: 15%;
+}
+
+/* 
+ * End of home page styling
+ */
