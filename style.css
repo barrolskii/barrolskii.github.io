@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 * {
 	padding: 0;
 	margin: 0;
@@ -41,6 +43,27 @@ hr {
 	border: none;
 }
 
+.arialFont {
+	font-family: Arial, serif;
+	color: red;
+}
+
+.openSansFont {
+	font-family: 'Open Sans', sans-serif;
+	color: green;
+}
+
+.openSansFontLight {
+	font-family: 'Open Sans', sans-serif;
+	color: green;
+	font-weight: lighter;
+}
+
+.navFont {
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	font-style: italic;
+}
 
 /* 
  * Home page styling
@@ -78,7 +101,19 @@ hr {
 	height: auto;
 	width: auto;
 	padding-left: 20%;
-	background-color: cyan;
+	position: relative;
+}
+
+#aboutHeaderContainer {
+	width: auto;
+	height: auto;
+	padding-top: 5%;
+}
+
+#aboutParagraphContainer {
+	width: auto;
+	height: auto;
+	padding-top: 2%;
 }
 
 #footerSocialLinks {
