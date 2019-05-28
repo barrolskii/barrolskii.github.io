@@ -64,7 +64,21 @@ hr {
 #socialLinks {
 	width: auto;
 	height: auto;
-	background-color: red;
+}
+
+#socialLeftImage {
+	padding-left: 30%;
+}
+
+#socialImageSpacing {
+	padding-left: 5%;
+}
+
+#aboutContainer {
+	height: auto;
+	width: auto;
+	padding-left: 20%;
+	background-color: cyan;
 }
 
 #footerSocialLinks {
