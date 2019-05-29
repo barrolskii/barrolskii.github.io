@@ -2,7 +2,6 @@
 	position: relative;
 	width: auto;
 	height: 70%;
-	background-color: pink;
 }
 
 #profile {
@@ -99,4 +98,91 @@
 	font-size: 22px;
 }
 
-/* Automatic slide show classes */
+/* 
+ * Automatic slide show classes
+ * Taken and adapted from https://www.w3schools.com/howto/howto_js_slideshow.asp
+ */
+
+
+.mySlides {
+	display: none;
+}
+img {
+	vertical-align: middle;
+}
+
+.testCont {
+	width: 75%;
+	height: 630px;
+	background-color: yellow;
+	display: inline-block;
+}
+
+/* Slideshow container */
+.slideshow-container {
+	width: 75%;
+	height: 630px;
+	position: relative;
+	margin: auto;
+	display: inline-block;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  transition: background-color 0.6s ease;
+  display: inline-block;
+  bottom: 8px;
+  margin-top: 20px;
+}
+
+.dotContainer {
+	width: 200px;
+	height: 50px;
+	position: absolute;
+	bottom: 8px;
+	margin-left: 40%;
+	padding-left: 10%;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
