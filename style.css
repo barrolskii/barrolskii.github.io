@@ -33,10 +33,6 @@ h1 {
 	color: blue;
 }
 
-p {
-	color: orange;
-}
-
 hr {
 	height: 1px;
 	background-color: black;
@@ -45,18 +41,22 @@ hr {
 
 .arialFont {
 	font-family: Arial, serif;
-	color: red;
+	color: white;
+	font-size: 32px;
+	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-width: 1px;
 }
 
 .openSansFont {
 	font-family: 'Open Sans', sans-serif;
-	color: green;
+	color: white;
+	font-size: 16px;	
 }
 
 .openSansFontLight {
 	font-family: 'Open Sans', sans-serif;
-	color: green;
-	font-weight: lighter;
+	color: white;
+	font-weight: lighter;	
 }
 
 .navFont {
@@ -81,12 +81,44 @@ hr {
 	right: 0;
 	width: 25%;
 	height: 100%;
-	background-color: grey;
+	background-color: #4A4F6B;
+}
+
+#profilePicture {
+	width: auto;
+	height: auto;
+	margin-top: 15%;
+	margin-left: 35%;
+}
+
+#circlePicture {
+	border-radius: 50%;
+}
+
+#profileHeader {
+	width: auto;
+	height: auto;
+	margin-top: 5%;
+	margin-left: 28%;
+}
+
+#profileText {
+	width: auto;
+	height: auto;
+	margin-top: 5%;
+	margin-left: 32%;
+}
+
+#email {
+	width: auto;
+	height: auto;
+	margin-top: 10%;
 }
 
 #socialLinks {
 	width: auto;
 	height: auto;
+	margin-top: 10%;
 }
 
 #socialLeftImage {
