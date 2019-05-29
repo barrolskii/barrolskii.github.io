@@ -1,0 +1,120 @@
+/* 
+ * Home page styling
+ */
+
+#mainDisplay {
+	position: relative;
+	width: auto;
+	height: 70%;
+	background-color: pink;
+}
+
+#profile {
+	position: absolute;
+	right: 0;
+	width: 25%;
+	height: 100%;
+	background-color: #4A4F6B;
+}
+
+#profilePicture {
+	width: auto;
+	height: auto;
+	margin-top: 15%;
+	margin-left: 35%;
+}
+
+#circlePicture {
+	border-radius: 50%;
+}
+
+#profileHeaderContainer {
+	width: auto;
+	height: auto;
+	margin-top: 5%;
+	margin-left: 28%;
+}
+
+#profileHeader {
+	font-family: Arial, serif;
+	color: white;
+	font-size: 32px;
+	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-width: 1px;
+}
+
+#profileText {
+	width: auto;
+	height: auto;
+	margin-top: 5%;
+	margin-left: 32%;
+}
+
+#email {
+	width: auto;
+	height: auto;
+	margin-top: 10%;
+}
+
+#socialLinks {
+	width: auto;
+	height: auto;
+	margin-top: 10%;
+}
+
+#socialLeftImage {
+	padding-left: 30%;
+}
+
+#socialImageSpacing {
+	padding-left: 5%;
+}
+
+#aboutContainer {
+	height: auto;
+	width: auto;
+	padding-left: 20%;
+	position: relative;
+}
+
+#aboutHeaderContainer {
+	width: auto;
+	height: auto;
+	padding-top: 5%;
+}
+
+#aboutHeader {
+	color: #5569DC;
+	font-family: Arial, serif;
+	font-size: 32px;
+}
+
+#aboutParagraphContainer {
+	width: auto;
+	height: auto;
+	padding-top: 2%;
+}
+
+#aboutParagraph {
+	font-family: 'Open Sans', sans-serif;
+	color: #5569DC;
+	font-weight: lighter;	
+	font-size: 22px;
+}
+
+#footerSocialLinks {
+	width: auto;
+	height: auto;
+}
+
+#footerLeftImage {
+	padding-left: 25%;
+}
+
+#footerImageSpacing {
+	padding-left: 15%;
+}
+
+/* 
+ * End of home page styling
+ */
