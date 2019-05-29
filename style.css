@@ -20,8 +20,9 @@ main {
 footer {	
 	position: relative;
 	width: auto;
-	height: 200px;
+	height: 150px;
 	background-color: #4A4F6B;
+	margin-top: 5%;
 	padding-top: 100px;
 }
 
@@ -57,6 +58,7 @@ hr {
 	font-family: 'Open Sans', sans-serif;
 	color: white;
 	font-weight: lighter;	
+	font-size: 16px;
 }
 
 .navFont {
@@ -95,11 +97,19 @@ hr {
 	border-radius: 50%;
 }
 
-#profileHeader {
+#profileHeaderContainer {
 	width: auto;
 	height: auto;
 	margin-top: 5%;
 	margin-left: 28%;
+}
+
+#profileHeader {
+	font-family: Arial, serif;
+	color: white;
+	font-size: 32px;
+	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-width: 1px;
 }
 
 #profileText {
@@ -142,10 +152,23 @@ hr {
 	padding-top: 5%;
 }
 
+#aboutHeader {
+	color: #5569DC;
+	font-family: Arial, serif;
+	font-size: 32px;
+}
+
 #aboutParagraphContainer {
 	width: auto;
 	height: auto;
 	padding-top: 2%;
+}
+
+#aboutParagraph {
+	font-family: 'Open Sans', sans-serif;
+	color: #5569DC;
+	font-weight: lighter;	
+	font-size: 22px;
 }
 
 #footerSocialLinks {
