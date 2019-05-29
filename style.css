@@ -44,6 +44,18 @@
 	padding-top: 100px;
 }
 
+#footerSocialLinks {
+	width: auto;
+	height: auto;
+}
+
+#footerLeftImage {
+	padding-left: 25%;
+}
+
+#footerImageSpacing {
+	padding-left: 15%;
+}
 body {
 	background-color: #D5D5E8;
 }
