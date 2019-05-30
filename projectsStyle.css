@@ -13,3 +13,55 @@ hr {
 	margin-top: 0.25%;
 	margin-bottom: 0.25%;
 }
+
+.headerContainer {
+	width: 40%;
+	height: auto;
+	background-color: cyan;
+	margin-top: 1%;
+	margin-bottom: 10%;
+	margin-left: 30%;
+}
+
+
+/*
+ * Parent container for showing off projects
+ */
+
+.displayContainer {
+	width: auto;
+	height: auto;
+	background-color: green;
+}
+
+.displaySlideShow {
+	width: 50px;
+	height: 50px;
+	background-color: yellow;
+	display: inline-block;
+}
+
+
+/* 
+ * Parent container of the header and text description
+ * but also child container of the displayContainer
+ */
+
+.displayDescription {
+	width: 150px;
+	height: auto;
+	background-color: blue;
+	display: inline-block;
+}
+
+.displayHeader {
+	width: 50px;
+	height: 50px;
+	background-color: red;
+}
+
+.displayText {
+	width: 50px;
+	height: 50px;
+	background-color: purple;
+}
