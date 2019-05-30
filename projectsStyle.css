@@ -1,9 +1,43 @@
+/* 
+ * The projects file has different main and footer
+ * becuase this is the only page right now that I
+ * want to expand on dynamically
+ */
+
+.projectsMain {
+	width: auto;
+	height: 100%;
+}
+
+.projectsFooter {
+	position: absolute;
+	bottom: 0;
+	width: auto;
+	height: auto;
+	background-color: #4A4F6B;
+	margin-top: 5%;
+	padding-top: 100px;
+}
+
 h1 {
-	font-size: 38px;
+	font-size: 55px;
 	font-family: Arial, serif;
 	color: white;
 	-webkit-text-stroke-color: black;
 	-webkit-text-stroke-width: 1px;
+}
+
+h2 {
+	font-size: 22px;
+	font-family: Arial, serif;
+	color: black;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	color: black;
+	font-weight: lighter;	
+	font-size: 16px;	
 }
 
 hr {
@@ -19,15 +53,14 @@ hr.project {
 	height: 1px;
 	background-color: black;
 	border: none;
-	margin-top: 0.25%;
-	margin-bottom: 1%;
+	margin-top: 1%;
+	margin-bottom: 2%;
 	margin-left: 20%;
 }
 
 .headerContainer {
 	width: 60%;
 	height: auto;
-	background-color: cyan;
 	margin-top: 1%;
 	margin-bottom: 0;
 	margin-left: 20%;
@@ -36,37 +69,36 @@ hr.project {
 
 .projectContainer {
 	width: 60%;
-	height: 40%;
-	background-color: blue;
+	height: 320px;
 	margin-left: 20%;
 }
 
 .projectSlideShow {
 	width: 50%;
 	height: 100%;
-	background-color: green;
 	display: inline-block;
 }
 
 .projectDescription {
 	width: 50%;
 	height: 100%;
-	background-color: lime;
 	display: inline-block;
 	float: right;
 }
 
 .descriptionHeader {
 	width: 40%;
-	height: 30%;
-	background-color: red;
+	height: auto;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	margin-left: 2%;
 }
 
 
 .descriptionText {
-	width: 40%;
-	height: 30%;
-	background-color: crimson;
+	width: 90%;
+	height: auto;
+	margin-left: 2%;
 }
 
 /*
