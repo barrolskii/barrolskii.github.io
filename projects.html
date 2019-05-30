@@ -17,25 +17,111 @@
 	<main class="main">
 		<div class="headerContainer">
 			<h1>Current Projects</h1>
-			<hr>
-			<div class="displayContainer">
-				<p>Hello world</p>
-				<div class="displaySlideShow">Hello again</div>
-				
-				<div class="displayDescription">
-				<div class="displayHeader">Header</div>
-				<div class="displayText">Text</div>
-				</div>
-
-			</div>
+			<hr>	
 		</div>
+		<hr class="project">
 
+
+		<!-- Header for previous projects -->
 		<div class="headerContainer">
 			<h1>Previous Projects</h1>
 			<hr>
 		</div>
 
+		<!-- Individual project display -->
+		<div class="projectContainer">
+			<div class="projectSlideShow">
 
+				<div class="slideshow-container">
+				  <div class="mySlides1">
+					<img src="img/githubLogo.webp">
+				  </div>
+
+				  <div class="mySlides1">
+					<img src="img/linkedInLogo.webp">
+				  </div>
+
+				  <div class="mySlides1">
+					<img src="img/twitterLogo.webp">
+				  </div>
+
+				  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+				  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+				</div>
+			</div>
+
+
+			<div class="projectDescription">
+				<div class="descriptionHeader">
+				<p>Project title</p>
+				</div>
+
+				<div class="descriptionText">
+				<p>Project description</p>
+				</div>
+
+			</div>
+		</div>	
+
+		<hr class="project">
+
+
+		<div class="projectContainer">
+			<div class="projectSlideShow">
+				<div class="slideshow-container">
+				  <div class="mySlides2">
+					<img src="img/githubLogo.webp">
+				  </div>
+
+				  <div class="mySlides2">
+					<img src="img/linkedInLogo.webp">
+				  </div>
+
+				  <div class="mySlides2">
+					<img src="img/twitterLogo.webp">
+				  </div>
+
+				  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+				  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+				</div>
+			</div>
+
+
+			<div class="projectDescription">
+				<div class="descriptionHeader">
+				<p>Project title</p>
+				</div>
+
+				<div class="descriptionText">
+				<p>Project description</p>
+				</div>
+
+			</div>
+		</div>
+
+		<hr class="project">
+
+		<script>
+			var slideIndex = [1,1];
+			var slideId = ["mySlides1", "mySlides2"]
+			showSlides(1, 0);
+			showSlides(1, 1);
+
+			function plusSlides(n, no) {
+		  		showSlides(slideIndex[no] += n, no);
+			}
+
+			function showSlides(n, no) {
+				var i;
+				var x = document.getElementsByClassName(slideId[no]);
+				if (n > x.length) {slideIndex[no] = 1}    
+				if (n < 1) {slideIndex[no] = x.length}
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";  
+				}
+				x[slideIndex[no]-1].style.display = "block";  
+			}
+		</script>
 	</main>
 
 	<footer class="footer">
