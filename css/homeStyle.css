@@ -111,13 +111,6 @@ img {
 	vertical-align: middle;
 }
 
-.testCont {
-	width: 75%;
-	height: 630px;
-	background-color: yellow;
-	display: inline-block;
-}
-
 /* Slideshow container */
 .slideshow-container {
 	width: 75%;
