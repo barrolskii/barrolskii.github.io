@@ -19,6 +19,51 @@
 			<h1>Current Projects</h1>
 			<hr>	
 		</div>
+
+		<div class="projectContainer">
+			<div class="projectSlideShow">
+				<div class="slideshow-container">
+				  <div class="mySlides4">
+					<img src="img/githubLogo.webp">
+				  </div>
+
+				  <div class="mySlides4">
+					<img src="img/linkedInLogo.webp">
+				  </div>
+
+				  <div class="mySlides4">
+					<img src="img/twitterLogo.webp">
+				  </div>
+
+				  <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+				  <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+				</div>
+			</div>
+
+
+			<div class="projectDescription">
+				<div class="descriptionHeader">
+				<h2>Project Scorch</h2>
+				</div>
+
+				<div class="descriptionText">
+				<p>
+				Project Scorch is a game I am working on in my spare time. It's
+				a wave survival third person shooter currently in a pre-alpha 
+				stage. I've started this project to explore UE4 more in depth
+				so I can try and broaden my skills with the engine. <br><br>
+
+				The code for this project is available on my Github so feel
+				free to check it out if you're interested. I'll also put 
+				bullet point lists here for some of the features I want to add
+				to the game later on.
+				</p>
+				</div>
+
+			</div>
+		</div>
+
+
 		<hr class="project">
 
 
@@ -51,62 +96,21 @@
 
 			<div class="projectDescription">
 				<div class="descriptionHeader">
-				<h2>Hyperion Obsidian Texture Pack</h2>
+				<h2>Broken Chain</h2>
 				</div>
 
 				<div class="descriptionText">
 				<p>
-				The first weapon texture pack I made for Borderlands 2 which applies 
-				to the Hyperion unique weapons in the game. Each weapon skin has two 
-				variants, a factory default version and a battle worn version.<br><br>
-				This pack is available to download via my github.
+				Broken chain is a 3D platforming collectathon made in UE4. This project
+				consisted of myself and four other members as part of my technical games
+				production module during my second year. This was my first time working 
+				with a team and I'm very please that we got to present this game to
+				Ubisoft at their Leamington Spa studio.
 				</p>
 				</div>
 
 			</div>
 		</div>
-
-		<hr class="project">
-
-
-		<!-- Individual project display -->
-		<div class="projectContainer">
-			<div class="projectSlideShow">
-
-				<div class="slideshow-container">
-				  <div class="mySlides1">
-					<img src="img/githubLogo.webp">
-				  </div>
-
-				  <div class="mySlides1">
-					<img src="img/linkedInLogo.webp">
-				  </div>
-
-				  <div class="mySlides1">
-					<img src="img/twitterLogo.webp">
-				  </div>
-
-				  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-				  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-				</div>
-			</div>
-
-
-			<div class="projectDescription">
-				<div class="descriptionHeader">
-				<h2>Hyperion Asiimov Texture Pack</h2>
-				</div>
-
-				<div class="descriptionText">
-				<p>
-				The second skin pack I made for Borderlands 2 adding the Asiimov 
-				skin from CS:GO to the Hyperion legendary weapons in the game.<br><br>
-				This pack is available to download via my github.
-				</p>
-				</div>
-
-			</div>
-		</div>	
 
 		<hr class="project">
 
@@ -134,14 +138,13 @@
 
 			<div class="projectDescription">
 				<div class="descriptionHeader">
-				<h2>Hyperion Obsidian Texture Pack</h2>
+				<h2>Hyperion Asiimov Texture Pack</h2>
 				</div>
 
 				<div class="descriptionText">
 				<p>
-				The first weapon texture pack I made for Borderlands 2 which applies 
-				to the Hyperion unique weapons in the game. Each weapon skin has two 
-				variants, a factory default version and a battle worn version.<br><br>
+				The second skin pack I made for Borderlands 2 adding the Asiimov 
+				skin from CS:GO to the Hyperion legendary weapons in the game.<br><br>
 				This pack is available to download via my github.
 				</p>
 				</div>
@@ -151,12 +154,59 @@
 
 		<hr class="project">
 
+
+		<div class="projectContainer">
+			<div class="projectSlideShow">
+
+				<div class="slideshow-container">
+				  <div class="mySlides1">
+					<img src="img/githubLogo.webp">
+				  </div>
+
+				  <div class="mySlides1">
+					<img src="img/linkedInLogo.webp">
+				  </div>
+
+				  <div class="mySlides1">
+					<img src="img/twitterLogo.webp">
+				  </div>
+
+				  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+				  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+				</div>
+			</div>
+
+
+			<div class="projectDescription">
+				<div class="descriptionHeader">
+				<h2>Hyperion Obsidian Texture Pack</h2>
+				</div>
+
+				<div class="descriptionText">
+				<p>	
+				The first weapon texture pack I made for Borderlands 2 which applies 
+				to the Hyperion unique weapons in the game. Each weapon skin has two 
+				variants, a factory default version and a battle worn version.<br><br>
+				This pack is available to download via my github.
+
+				</p>
+				</div>
+
+			</div>
+		</div>	
+
+		<hr class="project">
+
+
 		<script>
-			var slideIndex = [1,1,1];
-			var slideId = ["mySlides1", "mySlides2", "mySlides3"]
+			var slideIndex = [1,1,1,1]; // Add another 1 to this when new slideshows are added
+			var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4"] // Don't forget this as well
+
+			// Add another function call for extra slideshows here as well
 			showSlides(1, 0);
 			showSlides(1, 1);
 			showSlides(1, 2);
+			showSlides(1, 3);
 
 			function plusSlides(n, no) {
 		  		showSlides(slideIndex[no] += n, no);
