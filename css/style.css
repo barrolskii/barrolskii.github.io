@@ -32,16 +32,17 @@
 
 .main {
 	width: auto;
-	height: 900px;
+	height: 100%;
 }
 
 .footer {	
-	position: relative;
-	width: auto;
-	height: 150px;
+	position: absolute;
+	width: 100%;
+	height: auto;
 	background-color: #4A4F6B;
 	margin-top: 5%;
 	padding-top: 100px;
+	padding-bottom: 50px;
 }
 
 #footerSocialLinks {
