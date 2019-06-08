@@ -109,12 +109,13 @@
 }
 img {
 	vertical-align: middle;
+	max-height: 730px;
 }
 
 /* Slideshow container */
 .slideshow-container {
 	width: 75%;
-	height: 630px;
+	height: 100%;
 	position: relative;
 	margin: auto;
 	display: inline-block;
