@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Projects</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/projectsStyle.css">
+</head>
+
+<body>
+	<nav class="nav">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="projectsSoftware.html">Projects</a></li>
+		<li><a href="resume.html">R&eacute;sum&eacute;</a></li>
+	</nav>
+
+	<div id="projectsNav">
+		<li><a href="projectsSoftware.html">Software Projects</a></li>
+		<li><a href="projectsGames.html">Games Projects</a></li>
+	</div>
+
+	<main class="main">
+		<div class="headerContainer">
+			<h1>Current Projects</h1>
+			<hr>	
+		</div>
+	
+
+		<div class="headerContainer">
+			<h1>Previous Projects</h1>
+			<hr>
+		</div>
+
+		<!-- Book Organiser -->
+		<div class="projectContainer">
+			<div class="projectSlideShow">
+
+				<div class="slideshow-container">
+				  <div class="mySlides1">
+					<img src="img/projGamesImages/slideOne/HOWPImgOne.jpg" width="100%" height="100%">
+				  </div>
+
+				  <div class="mySlides1">
+					<img src="img/projGamesImages/slideOne/HOWPImgTwo.jpg" width="100%" height="100%">
+				  </div>
+
+				  <div class="mySlides1">
+					<img src="img/projGamesImages/slideOne/HOWPImgThree.jpg" width="100%" height="100%">
+				  </div>
+				  
+				  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+				  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+				</div>
+			</div>
+
+
+			<div class="projectDescription">
+				<div class="descriptionHeader">
+				<h2>Book Organiser</h2>
+				</div>
+
+				<div class="descriptionText">
+				<p>	
+				A small project that I worked on that was made to organise my digital
+				library of books and keep track of which books I have read and what
+				books I am interested in reading. I wrote this program in C on the 
+				Linux mint operating system. The code for the project can be viewed on
+				my Github.
+				
+				</p>
+				</div>
+
+			</div>
+		</div>	
+
+		<hr class="project">
+
+
+
+		<script>
+			var slideIndex = [1,1,]; // Add another 1 to this when new slideshows are added
+			var slideId = ["mySlides1", "mySlides2",] // Don't forget this as well
+
+			// Add another function call for extra slideshows here as well
+			showSlides(1, 0);
+
+			function plusSlides(n, no) {
+		  		showSlides(slideIndex[no] += n, no);
+			}
+
+			function showSlides(n, no) {
+				var i;
+				var x = document.getElementsByClassName(slideId[no]);
+				if (n > x.length) {slideIndex[no] = 1}    
+				if (n < 1) {slideIndex[no] = x.length}
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";  
+				}
+				x[slideIndex[no]-1].style.display = "block";  
+			}
+		</script>
+	</main>
+
+	<footer class="footer">
+		<div id="footerSocialLinks">
+			<a href="https://github.com/barrolskii"><img src="img/githubLogo.webp" alt="Github white logo" id="footerLeftImage"></a>
+			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/"><img src="img/linkedInLogo.webp" alt="LinkedIn white logo" id="footerImageSpacing"></a>
+			<a href="https://twitter.com/BarrellAshley"><img src="img/twitterLogo.webp" alt="Twitter white logo" id="footerImageSpacing"></a>
+		</div>
+
+	</footer>
+
+</body>
+</html>

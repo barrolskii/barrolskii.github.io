@@ -37,6 +37,32 @@ hr.project {
 	margin-left: 20%;
 }
 
+#projectsNav {
+	width: auto;
+	height: 30px;
+	background-color: #4A4F6B;
+	padding-left: 30%;
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
+
+}
+
+#projectsNav li {
+	display: inline-block;
+	padding-top: 2px;
+	padding-right: 2%;
+
+}
+
+#projectsNav li a {
+	color: white;
+	text-decoration: none;
+}
+
+#projectsNav a:hover {
+	color: #CAD4E8;
+}
+
 .headerContainer {
 	width: 60%;
 	height: auto;
