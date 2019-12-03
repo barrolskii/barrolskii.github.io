@@ -1,16 +1,19 @@
+#sectionContainer {
+	width: 50%;
+	height 100px;
+	margin-left: 25%;
+}
+
 h1 {
-	font-size: 38px;
-	font-family: Arial, serif;
-	color: white;
-	-webkit-text-stroke-color: black;
-	-webkit-text-stroke-width: 1px;
+	margin-top: 2%;
 }
 
 p {
+	display: inline;
 	font-family: 'Open Sans', sans-serif;
 	color: #5569DC;
 	font-weight: lighter;	
-	font-size: 16px;
+	font-size: 18px;
 }
 
 ul {
@@ -22,7 +25,7 @@ li {
 	font-family: 'Open Sans', sans-serif;
 	color: #5569DC;
 	font-weight: lighter;	
-	font-size: 16px;
+	font-size: 18px;
 }
 
 hr {
@@ -31,15 +34,4 @@ hr {
 	border: none;
 	margin-top: 0.25%;
 	margin-bottom: 0.25%;
-}
-
-.sectionContainer {
-	width: 50%;
-	height: auto;
-	margin-bottom: 2%;
-	margin-left: 25%;
-}
-
-.indent {
-	padding-left: 10%;
 }

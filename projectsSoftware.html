@@ -1,14 +1,17 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 
 <html>
-<head>
-	<title>Projects</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/projectsStyle.css">
-</head>
 
-<body>
-	<nav class="nav">
+	<head>
+		<title>Projects</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/projectStyle.css">
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+
+	<nav id="nav">
 		<li><a href="index.html">Home</a></li>
 		<li><a href="projectsSoftware.html">Projects</a></li>
 		<li><a href="resume.html">R&eacute;sum&eacute;</a></li>
@@ -19,47 +22,47 @@
 		<li><a href="projectsGames.html">Games Projects</a></li>
 	</div>
 
-	<main class="main">
-		<div class="headerContainer">
-			<h1>Current Projects</h1>
-			<hr>	
-		</div>
-	
+	<main id="main">
 
-		<!-- Header for previous projects -->
-		<div class="headerContainer">
+		<div id="container">
+
+		<div id="headerContainer">
+			<h1>Current Projects</h1>
+			<hr>
+		</div>
+
+
+
+		<div id="headerContainer">
 			<h1>Previous Projects</h1>
 			<hr>
 		</div>
 
-		<!-- Store data app -->
-		<div class="projectContainer">
-			<div class="projectSlideShow">
-				<div class="slideshow-container">
-				  <div class="mySlides3">
-					<img src="img/projSoftwareImages/StoreApp/StoreApp1.png" width="100%" height="100%">
-				  </div>
 
-				  <div class="mySlides3">
-					<img src="img/projSoftwareImages/StoreApp/StoreApp2.png" width="100%" height="100%">
-				  </div>
+		<!-- Store Data App -->
+		<div id="projectContainer">
+			<div class="slideshow-container"> 
 
-				  <div class="mySlides3">
-					<img src="img/projSoftwareImages/StoreApp/StoreApp3.png" width="100%" height="100%">
-				  </div>
-
-				  <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-				  <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+				<div class="mySlides3">
+					<img src="img/projSoftwareImages/StoreApp/StoreApp1.png">
 				</div>
+				
+				<div class="mySlides3">
+					<img src="img/projSoftwareImages/StoreApp/StoreApp2.png">
+				</div>
+				
+				<div class="mySlides3">
+					<img src="img/projSoftwareImages/StoreApp/StoreApp3.png">
+				</div>
+				
+				<a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+
 			</div>
 
-
-			<div class="projectDescription">
-				<div class="descriptionHeader">
+			<div id="projectDescriptionContainer">
 				<h2>Store Data App</h2>
-				</div>
 
-				<div class="descriptionText">
 				<p>
 				This project is a rework from a previous university assessment
 				from my task based software engineering module. During this
@@ -73,48 +76,44 @@
 				<br><br>
 				The code for this project is available on my GitHub.
 				</p>
-				</div>
 
 			</div>
-		</div>
+
+
+		</div> <!-- Project container: Store Data App -->
 
 
 		<hr class="project">
+		
 
+		<!-- Topaz Launcher -->
+		<div id="projectContainer">
+			<div class="slideshow-container"> 
 
-
-		<!-- Custom Launcher -->
-		<div class="projectContainer">
-			<div class="projectSlideShow">
-				<div class="slideshow-container">
-				  <div class="mySlides2">
-					<img src="img/projSoftwareImages/TopazLauncher/Topaz1.png" width="570.9px" height="321.033px">
-				  </div>
-
-				  <div class="mySlides2">
-					<img src="img/projSoftwareImages/TopazLauncher/Topaz2.png" width="570.9px" height="321.033px">
-				  </div>
-
-				  <div class="mySlides2">
-					<img src="img/projSoftwareImages/TopazLauncher/Topaz3.png" width="570.9px" height="321.033px">
-				  </div>
-
-				  <div class="mySlides2">
-					<img src="img/projSoftwareImages/TopazLauncher/Topaz4.png" width="570.9px" height="321.033px">
-				  </div>
-
-				  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-				  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+				<div class="mySlides2">
+					<img src="img/projSoftwareImages/TopazLauncher/Topaz1.png">
 				</div>
+																		
+				<div class="mySlides2">
+					<img src="img/projSoftwareImages/TopazLauncher/Topaz2.png">
+				</div>
+																		
+				<div class="mySlides2">
+					<img src="img/projSoftwareImages/TopazLauncher/Topaz3.png">
+				</div>
+																		
+				<div class="mySlides2">
+					<img src="img/projSoftwareImages/TopazLauncher/Topaz4.png">
+				</div>
+																		
+				<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+				
 			</div>
 
-
-			<div class="projectDescription">
-				<div class="descriptionHeader">
+			<div id="projectDescriptionContainer">
 				<h2>Custom Launcher</h2>
-				</div>
 
-				<div class="descriptionText">
 				<p>
 				During this project I created my own program launcher similar to that of Steam and the
 				Blizzard launcher. This program which I named the "Topaz Launcher", allows me to add 
@@ -123,48 +122,45 @@
 				apps and games that I make and I will add more features and functionality to it the
 				more I use the launcher.<br><br>
 				The code for this project is available on my Github.
-				</p>
-				</div>
-
+				</p>			
 			</div>
-		</div>
+
+
+		</div> <!-- Project container: Topaz Launcher -->
+
 
 		<hr class="project">
 
-		
+
 		<!-- Book Organiser -->
-		<div class="projectContainer">
-			<div class="projectSlideShow">
+		<div id="projectContainer">
+			<div class="slideshow-container"> 
 
-				<div class="slideshow-container">
-				  <div class="mySlides1">
-					<img src="img/projSoftwareImages/BookOrganiser/printAll.png" width="100%" height="100%">
-				  </div>
 
-				  <div class="mySlides1">
-					<img src="img/projSoftwareImages/BookOrganiser/printCategory.png" width="100%" height="100%"> 
-				  </div>
-
-				  <div class="mySlides1">
-					<img src="img/projSoftwareImages/BookOrganiser/printInterested.png" width="100%" height="100%">
-				  </div>
-
-				  <div class="mySlides1">
-					<img src="img/projSoftwareImages/BookOrganiser/setInterested.png" width="100%" height="100%">
-				  </div>
-				  
-				  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-				  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+				<div class="mySlides1">
+					<img src="img/projSoftwareImages/BookOrganiser/printAll.png">
 				</div>
+				
+				<div class="mySlides1">
+					<img src="img/projSoftwareImages/BookOrganiser/printCategory.png"> 
+				</div>
+				
+				<div class="mySlides1">
+					<img src="img/projSoftwareImages/BookOrganiser/printInterested.png">
+				</div>
+				
+				<div class="mySlides1">
+					<img src="img/projSoftwareImages/BookOrganiser/setInterested.png">
+				</div>
+
+				<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+
 			</div>
 
-
-			<div class="projectDescription">
-				<div class="descriptionHeader">
+			<div id="projectDescriptionContainer">
 				<h2>Book Organiser</h2>
-				</div>
 
-				<div class="descriptionText">
 				<p>	
 				A small project that I worked on that was made to organise my digital
 				library of book and to keep track of what books I've read and which
@@ -172,10 +168,12 @@
 				The code for this project can be viewed on my Github.
 
 				</p>
-				</div>
 
 			</div>
-		</div>	
+
+
+		</div> <!-- Project container: Book Organiser -->
+
 
 		<hr class="project">
 
@@ -204,16 +202,29 @@
 				x[slideIndex[no]-1].style.display = "block";  
 			}
 		</script>
+
+		</div> <!-- Container div -->
 	</main>
 
-	<footer class="footer">
-		<div id="footerSocialLinks">
-			<a href="https://github.com/barrolskii"><img src="img/githubLogo.webp" alt="Github white logo" id="footerLeftImage"></a>
-			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/"><img src="img/linkedInLogo.webp" alt="LinkedIn white logo" id="footerImageSpacing"></a>
-			<a href="https://twitter.com/BarrellAshley"><img src="img/twitterLogo.webp" alt="Twitter white logo" id="footerImageSpacing"></a>
-		</div>
+
+
+	<footer id="footer">
+
+		<a href="https://github.com/barrolskii">
+			<img src="img/githubLogo.webp" alt="Github white logo" id="footerLeftImage">
+		</a>
+
+		<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+			<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" id="footerImageSpacing">
+		</a>
+
+		<a href="https://twitter.com/BarrellAshley">
+			<img src="img/twitterLogo.webp" alt="Twitter white logo" id="footerImageSpacing">
+		</a>
 
 	</footer>
 
-</body>
+	</body>
+
 </html>
+

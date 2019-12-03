@@ -1,109 +1,130 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 
 <html>
-<head>
-	<title>Home</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/homeStyle.css">
-	<meta charset="UTF-8"
-</head>
 
-<body>
-	<nav class="nav">
+	<head>
+		<title>Home</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/indexStyle.css">
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+	
+	<nav id="nav">
 		<li><a href="index.html">Home</a></li>
 		<li><a href="projectsSoftware.html">Projects</a></li>
 		<li><a href="resume.html">R&eacute;sum&eacute;</a></li>
 	</nav>
 
-	<main class="main">
-	
-		<div id="mainDisplay">
-				
+	<main id="main">
+
+		<div id="container">
+
 			<div class="slideshow-container">
+				<div class="mySlides fade">
+					<img src="img/homeImages/BrokenChainAlpha.gif"/>
+				</div>
 
-			<div class="mySlides fade">
-			  <img src="img/projGamesImages/slideThree/Tutorial.gif" width="100%" height="100%">
-			</div>
+				<div class="mySlides fade">
+					<img src="img/homeImages/HAWPImg3.jpg">
+				</div>
 
-			<div class="mySlides fade">
-				<img src="img/homeImages/BLCMMScreenshot.png" width="100%" height="100%">
-			</div>
+				<div class="mySlides fade">
+					<img src="img/homeImages/BLCMMScreenshot.png">
+				</div>
 
-			<div class="mySlides fade">
-				<img src="img/homeImages/HAWPImg3.jpg" width="100%" height="100%">
-				<!--<div class="text">Caption Three</div> Commented out for possible use-->
-			</div>
 
-			<div class="dotContainer">
-				<span class="dot"></span> 
-				<span class="dot"></span> 
-				<span class="dot"></span>
-			</div>
+				<div class="dotContainer">
+					<span class="dot"></span> 
+					<span class="dot"></span> 
+					<span class="dot"></span>
+				</div> <!-- Dot container div -->
+
+				<script>
+				var slideIndex = 0;
+				showSlides();
+
+				function showSlides() {
+				  var i;
+				  var slides = document.getElementsByClassName("mySlides");
+				  var dots = document.getElementsByClassName("dot");
+				  for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";  
+				  }
+				  slideIndex++;
+				  if (slideIndex > slides.length) {slideIndex = 1}    
+				  for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";  
+				  dots[slideIndex-1].className += " active";
+				  setTimeout(showSlides, 4000); // Change image every 6 seconds
+				}
+				</script>
+
+			</div> <!-- Slideshow container div -->
+
+			<div id="profileContainer">
+
+				<img src="img/displayPicture.webp" alt="Profile Pic" id="profilePicture">	
+
+				<h2 id="profileHeader">Ashley Barrell</h2>
+
+				<p class="openSansFont" id="profileText">BSc Computer Games <br>&emsp; Programming</p>
+				<p class="openSansFont" id="profileText">Staffordshire University</p>
+
+				<p class="openSansFontLight" id="profileEmailText">ash.j.barrell@gmail.com</p>
+
+				<a href="https://github.com/barrolskii">
+					<img src="img/githubLogo.webp" alt="Github light logo" id="profileSocialImage">
+				</a>
+
+				<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+					<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" id="profileSocialImage">
+				</a>
+
+				<a href="https://twitter.com/BarrellAshley">
+					<img src="img/twitterLogo.webp" alt="Twitter white logo" id="profileSocialImage">
+				</a>
+
+			</div> <!-- Profile container div -->
+
+			<div id="aboutContainer">
+
+				<h1 id="aboutHeader">About Me</h1>
 	
-			</div>
+				<p id="aboutText">
+				I'm a third year student studying computer games programming <br> 
+				at Staffordshire University. I'm currently on placement as a junior <br> 
+				DevOps engineer. 
+				</p>
+	
+			</div> <!-- About container -->
 
+			<div class="spaceContainer"></div>
 
-			<script>
-			var slideIndex = 0;
-			showSlides();
+		</div> <!-- Container div -->
 
-			function showSlides() {
-			  var i;
-			  var slides = document.getElementsByClassName("mySlides");
-			  var dots = document.getElementsByClassName("dot");
-			  for (i = 0; i < slides.length; i++) {
-				slides[i].style.display = "none";  
-			  }
-			  slideIndex++;
-			  if (slideIndex > slides.length) {slideIndex = 1}    
-			  for (i = 0; i < dots.length; i++) {
-				dots[i].className = dots[i].className.replace(" active", "");
-			  }
-			  slides[slideIndex-1].style.display = "block";  
-			  dots[slideIndex-1].className += " active";
-			  setTimeout(showSlides, 4000); // Change image every 6 seconds
-			}
-			</script>
-			
-			<div id="profile">
-				<div id="profilePicture"><img src="img/displayPicture.webp" alt="Profile Pic" id="circlePicture"></div>
-				
-				<div id="profileHeaderContainer"><h2 id="profileHeader">Ashley Barrell</h2></div>
-
-				<div id="profileText">
-				<p class="openSansFont">BSc Computer Games <br>&emsp; Programming</p>
-				<p class="openSansFont">Staffordshire University</p>
-				<div id="email"><p class="openSansFontLight">ash.j.barrell@gmail.com</p></div>
-				</div>
-
-				<div id="socialLinks">
-					<a href="https://github.com/barrolskii"><img src="img/githubLogo.webp" alt="Github white logo" style="width:50px;height:50px;" id="socialLeftImage"></a>
-					<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/"><img src="img/linkedInLogo.webp" alt="LinkedIn white logo" style="width:50px;height:50px;" id="socialImageSpacing"></a>
-					<a href="https://twitter.com/BarrellAshley"><img src="img/twitterLogo.webp" alt="Twitter white logo" style="width:50px;height:50px;" id="socialImageSpacing"></a>
-				</div>
-
-			</div>
-		</div>
-
-		<div id="aboutContainer">	
-			<div id="aboutHeaderContainer"><h1 id="aboutHeader"> About Me </h1></div>
-			<div id="aboutParagraphContainer">
-			<p id="aboutParagraph">
-			I'm a second year student studying computer games programming <br> 
-			at Staffordshire University. I'm a hard working, enthusiastic <br> 
-			student with a passion for games eager to work in the games industry.
-			</p><div>	
-		</div>
 	</main>
 
-	<footer class="footer">
-		<div id="footerSocialLinks">
-			<a href="https://github.com/barrolskii"><img src="img/githubLogo.webp" alt="Github white logo" id="footerLeftImage"></a>
-			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/"><img src="img/linkedInLogo.webp" alt="LinkedIn white logo" id="footerImageSpacing"></a>
-			<a href="https://twitter.com/BarrellAshley"><img src="img/twitterLogo.webp" alt="Twitter white logo" id="footerImageSpacing"></a>
-		</div>
+	<footer id="footer">
+
+		<a href="https://github.com/barrolskii">
+			<img src="img/githubLogo.webp" alt="Github white logo" id="footerLeftImage">
+		</a>
+
+		<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+			<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" id="footerImageSpacing">
+		</a>
+
+		<a href="https://twitter.com/BarrellAshley">
+			<img src="img/twitterLogo.webp" alt="Twitter white logo" id="footerImageSpacing">
+		</a>
 
 	</footer>
 
-</body>
+	</body>
+
 </html>
+

@@ -1,40 +1,6 @@
-h1 {
-	font-size: 55px;
-	font-family: Arial, serif;
-	color: white;
-	-webkit-text-stroke-color: black;
-	-webkit-text-stroke-width: 1px;
-}
-
-h2 {
-	font-size: 22px;
-	font-family: Arial, serif;
-	color: black;
-}
-
-p {
-	font-family: 'Open Sans', sans-serif;
-	color: black;
-	font-weight: lighter;	
-	font-size: 16px;	
-}
-
-hr {
-	height: 1px;
-	background-color: black;
-	border: none;
-	margin-top: 0.25%;
-	margin-bottom: 0.25%;
-}
-
-hr.project {
-	width: 60%;
-	height: 1px;
-	background-color: black;
-	border: none;
-	margin-top: 1%;
-	margin-bottom: 2%;
-	margin-left: 20%;
+img {
+	width: 960px;
+	height: 540px;
 }
 
 #projectsNav {
@@ -61,48 +27,73 @@ hr.project {
 
 #projectsNav a:hover {
 	color: #CAD4E8;
+} 
+
+#projectContainer {
+    height: 540px; 
+	width: 80%;
+	margin-left: 10%;
+	/* background-color: pink; */
+	float: left;
+	overflow: hidden;
 }
 
-.headerContainer {
-	width: 60%;
-	height: auto;
-	margin-top: 1%;
-	margin-bottom: 0;
-	margin-left: 20%;
-	padding-bottom: 1%;
-}
-
-.projectContainer {
-	width: 60%;
-	height: 320px;
-	margin-left: 20%;
-}
-
-.projectSlideShow {
-	width: 50%;
-	height: 100%;
-	display: inline-block;
-}
-
-.projectDescription {
-	width: 50%;
-	height: 100%;
-	display: inline-block;
+#projectDescriptionContainer {
+	width: 530px;
+	height: 540px;
+	/* background-color: red; */
 	float: right;
 }
 
-.descriptionHeader {
-	width: 40%;
+
+#headerContainer {
+	width: 80%;
 	height: auto;
-	margin-bottom: 5%;
-	margin-top: 5%;
-	margin-left: 2%;
+	margin-left: 10%;
+	margin-top: 1%;
 }
 
 
-.descriptionText {
-	width: 90%;
-	height: auto;
+h1 {
+	font-size: 55px;
+	font-family: Arial, serif;
+	color: white;
+	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-width: 1px;
+}
+
+hr {
+	height: 1px;
+	background-color: black;
+	border: none;
+	margin-top: 0.25%;
+	margin-bottom: 2%;
+}
+
+hr.project {
+	width: 80%;
+	height: 1px;
+	background-color: black;
+	border: none;
+	margin-top: 1%;
+	margin-bottom: 2%;
+	margin-left: 10%;
+	float: left;
+}
+
+h2 {
+	font-size: 22px;
+	font-family: Arial, serif;
+	color: black;
+	margin-bottom: 2%;
+	margin-left: 2%;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	color: black;
+	font-weight: lighter;
+	font-size: 16px;
 	margin-left: 2%;
 }
 
@@ -119,11 +110,11 @@ img {
 
 /* Slideshow container */
 .slideshow-container {
-  width: 100%;
-  height: 100%;
+  width: 960px;
+  height: 540px;
   position: relative;
-  margin-top: 0;
-  display: inline-block;
+  /* background-color: green; */
+  float: left;
 }
 
 /* Next & previous buttons */
@@ -144,8 +135,8 @@ img {
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
   border-radius: 3px 0 0 3px;
+  right: 0;
 }
 
 /* On hover, add a grey background color */
