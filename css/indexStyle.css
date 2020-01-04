@@ -467,16 +467,68 @@
   margin-top: 20px;
 }
 
-.dotContainer {
-	width: 200px;
-	height: 50px;
-	position: absolute;
-	bottom: 8px;
-	margin-left: 30%;
-	padding-left: 10%;
-	top: 760px;
-	z-index: 1;
+/*
+ * Dot container
+ */
+
+@media (max-width: 1920px) {
+	.dotContainer {
+		width: 200px;
+		height: 50px;
+		position: absolute;
+		bottom: 8px;
+		margin-left: 30%;
+		padding-left: 10%;
+		top: 760px;
+		z-index: 1;
+	}
 }
+
+@media (max-width: 1366px) {
+	.dotContainer {
+		width: 200px;
+		height: 50px;
+		position: absolute;
+		bottom: 8px;
+		margin-left: 30%;
+		padding-left: 10%;
+		top: 540px;
+		z-index: 1;
+	}
+
+}
+
+@media (max-width: 1280px) {
+	.dotContainer {
+		width: 200px;
+		height: 50px;
+		position: absolute;
+		bottom: 8px;
+		margin-left: 30%;
+		padding-left: 10%;
+		top: 480px;
+		z-index: 1;
+	}
+
+}
+
+@media (max-width: 1024px) {
+	.dotContainer {
+		width: 200px;
+		height: 50px;
+		position: absolute;
+		bottom: 8px;
+		margin-left: 30%;
+		padding-left: 10%;
+		top: 360px;
+		z-index: 1;
+	}
+
+}
+
+/*
+ * End dot container
+ */
 
 .active {
   background-color: #717171;
