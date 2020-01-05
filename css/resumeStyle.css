@@ -8,12 +8,24 @@ h1 {
 	margin-top: 2%;
 }
 
-p {
-	display: inline;
-	font-family: 'Open Sans', sans-serif;
-	color: #5569DC;
-	font-weight: lighter;	
-	font-size: 18px;
+@media (max-width: 1920px) {
+	p {
+		display: inline;
+		font-family: 'Open Sans', sans-serif;
+		color: #5569DC;
+		font-weight: lighter;	
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 1366px) {
+	p {
+		display: inline;
+		font-family: 'Open Sans', sans-serif;
+		color: #5569DC;
+		font-weight: lighter;	
+		font-size: 15px;
+	}
 }
 
 ul {
@@ -21,11 +33,22 @@ ul {
 	margin-left: 1%;
 }
 
-li {
-	font-family: 'Open Sans', sans-serif;
-	color: #5569DC;
-	font-weight: lighter;	
-	font-size: 18px;
+@media (max-width: 1920px) {
+	li {
+		font-family: 'Open Sans', sans-serif;
+		color: #5569DC;
+		font-weight: lighter;	
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 1366px) {
+	li {
+		font-family: 'Open Sans', sans-serif;
+		color: #5569DC;
+		font-weight: lighter;	
+		font-size: 15px;
+	}
 }
 
 hr {
@@ -35,3 +58,44 @@ hr {
 	margin-top: 0.25%;
 	margin-bottom: 0.25%;
 }
+
+@media (max-width: 1920px) {
+	#uniCourseSpacing { margin-left: 136px; }
+	#uniDateSpacing { margin-left: 60px; }
+
+	#collegeCourseSpacing { margin-left: 80px; }
+	#collegeDateSpacing { margin-left: 101px; }
+
+	#towerSpacing { margin-left: 180px; }
+	#towerDateSpacing { margin-left: 110px; }
+
+	#burtonsSpacing { margin-left: 95px; }
+	#burtonsDateSpacing { margin-left: 280px; }
+
+	#bnmSpacing { margin-left: 116px; }
+	#bnmDateSpacing { margin-left: 160px; }
+	
+	#blueIncSpacing { margin-left: 169px; }
+	#blueIncDateSpacing { margin-left: 215px; }
+}
+
+@media (max-width: 1366px) {
+	#uniCourseSpacing { margin-left: 2em; }
+	#uniDateSpacing { margin-left: 3em; }
+
+	#collegeCourseSpacing { margin-left: 2em; }
+	#collegeDateSpacing { margin-left: 5em; }
+
+	#towerSpacing { margin-left: 9em; }
+	#towerDateSpacing { margin-left: 5.5em; }
+
+	#burtonsSpacing { margin-left: 4.25em; }
+	#burtonsDateSpacing { margin-left: 15em; }
+
+	#bnmSpacing { margin-left: 5.5em; }
+	#bnmDateSpacing { margin-left: 8.25em; }
+	
+	#blueIncSpacing { margin-left: 8.25em; }
+	#blueIncDateSpacing { margin-left: 11.5em; }
+}
+
