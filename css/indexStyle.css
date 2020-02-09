@@ -1,559 +1,133 @@
-/*
-
-@media (max-width: 1920px) {
-
+article { 
+	display: grid;
+	grid-template-columns: 0.5fr 0.5in [start] 2.5in 3in 2.5in [end] 0.5in 1fr;
 }
 
-@media (max-width: 1366px) {
+article * { grid-column: start / end; }
 
+@media (max-width: 8.5in) {
+	article { grid-template-columns: 1fr 5% [start] 15% 60% 15% [end] 5% 1fr; }
 }
 
-@media (max-width: 1280px) {
+.size-1 { grid-column: 4 / 5;}
+.size-2 { grid-column: 3 / 6;}
+.size-3 { grid-column: 2 / 7;}
+.size-4 { grid-column: 1 / 8;}
+                                                                                                                              
+.size-1 img, .size-2 img, .size-3 img, .size-4 img { width: 100%; max-height: 970px; }
 
-}
 
-@media (max-width: 1024px) {
+h1 	 { font: 400 2.0rem/1.2 "Roboto"; color: hsl(000, 0%, 33%) }
 
-}
-
-@media (max-width: 960px) {
-
-}
-
-@media (max-width: 854px) {
-
-}
-
-@media (max-width: 640px) {
-
-}
-
-640 x 360 (nHD)
-854 x 480 (FWVGA)
-960 x 540 (qHD)
-1024 x 576 (WSVGA)
-1280 x 720 (HD/WXGA)
-1366 x 768 (FWXGA)
-1600 x 900 (HD+)
-1920 x 1080 )))))))
-
-*/
-
-/*
- * img
- */
-
-@media (max-width: 1920px) {
-	img {
-		width: 1366px;
-		height: 768px;
-	}
-}
-
-@media (max-width: 1366px) {
-	img {
-		width: 960px;
-		height: 540px;
-	}
-}
-
-@media (max-width: 1280px) {
-	img {
-		width: 854px;
-		height: 480px;
-	}
-}
-
-@media (max-width: 1140px) {
-	img {
-		width: 754px;
-		height: 480px;
-	}
-}
-
-@media (max-width: 1024px) {
-	img {
-		width: 640px;
-		height: 360px;
-	}
-}
-
-/*
- * End img
- */
-
-/*
- * Profile container screen sizes
- */
-
-@media (max-width: 1920px) {
-	#profileContainer {
-		min-width: 25%;
-		min-height: 768px;
-		width: 25%;
-		height: 768px;
-	
-		float: right;
-		display: inline-block;
-		background-color: #4A4F6B;
-	}
-}
-
-@media (max-width: 1366px) {
-	#profileContainer {
-		min-width: 25%;
-		min-height: 540px;
-		width: 25%;
-		height: 540px;
-	
-		float: right;
-		display: inline-block;
-		background-color: #4A4F6B;
-	}
-}
-
-@media (max-width: 1280px) {
-	#profileContainer {
-		min-width: 25%;
-		min-height: 480px;
-		width: 25%;
-		height: 480px;
-	
-		float: right;
-		display: inline-block;
-		background-color: #4A4F6B;
-	}
-}
-
-@media (max-width: 1024px) {
-	#profileContainer {
-		min-width: 25%;
-		min-height: 360px;
-		width: 25%;
-		height: 360px;
-	
-		float: right;
-		display: inline-block;
-		background-color: #4A4F6B;
-	}
-}
-
-/*
- * End profile container
- */
-
-/*
- * Profile picture container
- */
-
-@media (max-width: 1920px) {
-	#profilePicture {
-		margin-top: 15%;
-		margin-left: 20%;
-		margin-bottom: 10%;
-	
-		border-radius: 50%;
-		min-width: 60px;
-		min-height: 60px;
-		max-width: 200px;
-		max-height: 200px;
-	}
-}
-
-@media (max-width: 1366px) {
-	#profilePicture {
-		margin-top: 15%;
-		margin-left: 25%;
-		margin-bottom: 10%;
-	
-		border-radius: 50%;
-		min-width: 60px;
-		min-height: 60px;
-		max-width: 150px;
-		max-height: 150px;
-	}
-}
-
-@media (max-width: 1280px) {
-	#profilePicture {
-		margin-top: 15%;
-		margin-left: 25%;
-		margin-bottom: 10%;
-	
-		border-radius: 50%;
-		min-width: 60px;
-		min-height: 60px;
-		max-width: 125px;
-		max-height: 125px;
-	}
-}
-
-@media (max-width: 1024px) {
-	#profilePicture {
-		margin-top: 10%;
-		margin-left: 25%;
-		margin-bottom: 5%;
-	
-		border-radius: 50%;
-		min-width: 60px;
-		min-height: 60px;
-		max-width: 100px;
-		max-height: 100px;
-	}
-}
-
-/*
- * End profile picture container
- */
-
-/*
- * Profile header
- */
-
-@media (max-width: 1920px) {
-	#profileHeader {
-		margin-left: 20%;
-	
-		font-family: Arial, serif;
-		color: white;
-		font-size: 32px;
-		-webkit-text-stroke-color: black;
-		-webkit-text-stroke-width: 1px;
-	}
-}
-
-@media (max-width: 1366px) {
-	#profileHeader {
-		margin-left: 15%;
-	
-		font-family: Arial, serif;
-		color: white;
-		font-size: 32px;
-		-webkit-text-stroke-color: black;
-		-webkit-text-stroke-width: 1px;
-	}
-}
-
-@media (max-width: 1024px) {
-	#profileHeader {
-		margin-left: 15%;
-	
-		font-family: Arial, serif;
-		color: white;
-		font-size: 26px;
-		-webkit-text-stroke-color: black;
-		-webkit-text-stroke-width: 1px;
-	}
-}
-
-/*
- * End profile header
- */
-
-/*
- * Profile text
- */
-
-@media (max-width: 1920px) {
-	#profileText {
-		margin-top: 5%;
-		margin-left: 20%;
-	}
-}
-
-@media (max-width: 1366px) {
-	#profileText {
-		margin-top: 5%;
-		margin-left: 15%;
-	}
-}
-
-@media (max-width: 1024px) {
-	#profileText {
-		margin-top: 5%;
-		margin-left: 15%;
-		font-size: 16px;
-	}
-}
-
-/*
- * End profile text
- */
-
-/*
- * Profile email text
- */
-
-@media (max-width: 1920px) {
-	#profileEmailText {
-		margin-top: 10%;
-		margin-left: 20%;
-	}
-}
-
-@media (max-width: 1366px) {
-	#profileEmailText {
-		margin-top: 10%;
-		margin-left: 15%;
-	}
-}
-
-@media (max-width: 1024px) {
-	#profileEmailText {
-		margin-top: 10%;
-		margin-left: 15%;
-		font-size: 16px;
-	}
-}
-
-/*
- * End profile email text
- */
-
-/*
- * Profile social image
- */
-
-@media (max-width: 1920px) {
-	#profileSocialImage {
-		margin-top: 10%;
-		margin-left: 10%;
-		width: 75px;
-		height: 75px;
-	}
-}
-
-@media (max-width: 1366px) {
-	#profileSocialImage {
-		margin-top: 10%;
-		margin-left: 15%;
-		width: 50px;
-		height: 50px;
-	}
-}
-
-@media (max-width: 1280px) {
-	#profileSocialImage {
-		margin-top: 5%;
-		margin-left: 15%;
-		width: 40px;
-		height: 40px;
-	}
-}
-
-@media (max-width: 1024px) {
-	#profileSocialImage {
-		margin-top: 5%;
-		margin-left: 15%;
-		width: 30px;
-		height: 30px;
-	}
-}
-
-/*
- * End profile social image
- */
-
-#aboutContainer {
-	height: auto;
-	width: auto;
-	padding-left: 20%;
-	position: relative;
-	background-color: #D5D5E8;
-}
-
-#aboutHeader {
-	padding-top: 3%;
-	color: #5569DC;
-	font-family: Arial, serif;
-	font-size: 32px;
-}
-
-#aboutText {
-	padding-top: 3%;
+p { 
+	margin-bottom: 2.4rem;
+	grid-column: 4 / end;
+	font: 400 1.0rem/1.5 "Roboto"; 
 	font-family: 'Open Sans', sans-serif;
 	color: #5569DC;
 	font-weight: lighter;	
 	font-size: 22px;
 }
-
-/* 
- * Automatic slide show classes
- * Taken and adapted from https://www.w3schools.com/howto/howto_js_slideshow.asp
- */
-
-
-.mySlides {
-	display: none;
-}
-
-/*
- * Slideshow container
- */
-
-@media (max-width: 1920px) {
-	.slideshow-container {
-		max-width: 75%;
-		max-height: 768px;	
-		width: 75%;
-		height: 768px;
 	
-		display: inline-block;
-		background-color: #4A4F6B;
+
+@media (max-width: 8.5in) { :root { font-size: 18px} }
+@media (max-width: 5.5in) { :root { font-size: 16px} }
+
+#slider {
+	overflow: hidden;
+}
+
+#slider figure {
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+	animation: 20s slider infinite;
+}
+
+#slider figure img {
+	width: 20%;
+	float: left;
+}
+
+@keyframes slider {
+	0% {
+		left: 0;
+	}
+	20% {
+		left: 0;
+	}
+	25% {
+		left: -100%;
+	}
+	45% {
+		left: -100%;
+	}
+	50% {
+		left: -200%;
+	}
+	70% {
+		left: -200%;
+	}
+	75% {
+		left: -300%;
+	}
+	95% {
+		left: -300%;
+	}
+	100% {
+		left: -400%;
 	}
 }
 
-@media (max-width: 1366px) {
-	.slideshow-container {
-		max-width: 75%;
-		max-height: 540px;	
-		width: 75%;
-		height: 540px;
-	
-		display: inline-block;
-		background-color: #4A4F6B;
+#title-name {
+	position: absolute;
+	width: auto;
+	margin-top: 20%;
+	margin-left: 35%;
+}
+
+#title-name h1 {
+	color: white;
+	margin-left: -5%;
+	margin-bottom: 5%;
+	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-width: 3px;	
+	font: 400 2.0rem/1.2 "Roboto";
+	font-family: Arial, serif;
+	font-size: 80px;
+}
+
+@media (max-width: 8.5in) {
+#title-name h1 {
+		font-size: 40px;
+		-webkit-text-stroke-width: 1px;
 	}
 }
 
-@media (max-width: 1280px) {
-	.slideshow-container {
-		max-width: 75%;
-		max-height: 480px;	
-		width: 75%;
-		height: 480px;
-	
-		display: inline-block;
-		background-color: #4A4F6B;
+@media (max-width: 5.5in) {
+#title-name h1 {
+		font-size: 20px;
+		-webkit-text-stroke-width: 0.5px;
 	}
 }
 
-@media (max-width: 1024px) {
-	.slideshow-container {
-		max-width: 75%;
-		max-height: 360px;	
-		width: 75%;
-		height: 360px;
-	
-		display: inline-block;
-		background-color: #4A4F6B;
-	}
+#title-name h2 {
+	color: white;
+	margin-left: -5%;
+	margin-bottom: 5%;
+	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-width: 1px;	
+	font: 500 2.0rem/1.2 "Roboto";
+	font-family: Arial, serif;
+	font-size: 32px;
 }
 
-/*
- * End slideshow container
- */
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+h1:last-of-type {
+	grid-column: 4 / end;
+	margin-top: 10%;
+	color: #5569DC;
+	font: 700 2.0rem/1.2 "Roboto";
+	font-family: Arial, serif;
+	font-size: 32px;
 }
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  transition: background-color 0.6s ease;
-  display: inline-block;
-  bottom: 8px;
-  margin-top: 20px;
-}
-
-/*
- * Dot container
- */
-
-@media (max-width: 1920px) {
-	.dotContainer {
-		width: 200px;
-		height: 50px;
-		position: absolute;
-		bottom: 8px;
-		margin-left: 30%;
-		padding-left: 10%;
-		top: 760px;
-		z-index: 1;
-	}
-}
-
-@media (max-width: 1366px) {
-	.dotContainer {
-		width: 200px;
-		height: 50px;
-		position: absolute;
-		bottom: 8px;
-		margin-left: 30%;
-		padding-left: 10%;
-		top: 540px;
-		z-index: 1;
-	}
-
-}
-
-@media (max-width: 1280px) {
-	.dotContainer {
-		width: 200px;
-		height: 50px;
-		position: absolute;
-		bottom: 8px;
-		margin-left: 30%;
-		padding-left: 10%;
-		top: 480px;
-		z-index: 1;
-	}
-
-}
-
-@media (max-width: 1024px) {
-	.dotContainer {
-		width: 200px;
-		height: 50px;
-		position: absolute;
-		bottom: 8px;
-		margin-left: 30%;
-		padding-left: 10%;
-		top: 360px;
-		z-index: 1;
-	}
-
-}
-
-/*
- * End dot container
- */
-
-.active {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-

@@ -3,132 +3,117 @@
 <html>
 
 	<head>
-		<title>Projects</title>
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/projectStyle.css">
+		<title>Projects</title>	
+
 		<meta charset="UTF-8">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/-debug.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Icon library for hamburger bars -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/projectsStyle.css">
+
+	<script>
+	
+		function myFunction() {
+		  var x = document.getElementById("myTopnav");
+		  if (x.className === "topnav") {
+		    x.className += " responsive";
+		  } else {
+		    x.className = "topnav";
+		  }
+		}
+		
+	</script>
 	</head>
 
 	<body>
 
-	<nav id="nav">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="projectsSoftware.html">Projects</a></li>
-		<li><a href="resume.html">R&eacute;sum&eacute;</a></li>
-	</nav>
+		<nav>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="projectsSoftware.html">Projects</a></li>
+			<li><a href="resume.html">R&eacute;sum&eacute;</a></li>
+			<li><a href="blog-index.html">Blog</a></li>
+		</nav>
 
-	<div id="projectsNav">
-		<li><a href="projectsSoftware.html">Software Projects</a></li>
-		<li><a href="projectsGames.html">Games Projects</a></li>
-	</div>
-
-	<main id="main">
-
-		<div id="container">
-
-		<div id="headerContainer">
-			<h1>Current Projects</h1>
-			<hr>
+		<div id="projectsNav">
+			<li><a href="projectsSoftware.html">Software Projects</a></li>
+			<li><a href="projectsGames.html">Games Projects</a></li>	
 		</div>
 
-		
-		<!-- Project Scorch -->
-		<div id="projectContainer">
+		<main>
+		<article>
+
+
+			<h1>Current Projects</h1>
+
+			<!-- Project Scorch -->
+			<figure class="size-2">
 			<div class="slideshow-container"> 
+
 				<div class="mySlides4">
 					<img src="img/projGamesImages/slideFour/ScorchEarlyPrototype.gif">
 				</div>
 
-				
+
 				<a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
 				<a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
 
 			</div>
+			</figure>
 
-			<div id="projectDescriptionContainer">
-				<h2>Project Scorch</h2>
+			<p><b>Project Scorch</b><br>Project Scorch is a game I am working on in my
+			spare time. It's a wave survival third person shooter currently in a WIP stage. 
+			I've started this project to explore UE4 more in depth so I can try and broaden 
+			my skills with the engine.</p>
 
-				<p>
-				Project Scorch is a game I am working on in my spare time. It's
-				a wave survival third person shooter currently in a pre-alpha 
-				stage. I've started this project to explore UE4 more in depth
-				so I can try and broaden my skills with the engine. <br><br>
-
-				The code for this project is available on my Github so feel
-				free to check it out if you're interested. I'll also put 
-				bullet point lists here for some of the features I want to add
-				to the game later on.
-				</p>
-
-			</div>
-
-		</div> <!-- Project container: Project Scorch -->
-
-
-		<hr class="project">	
-
-
-		<div id="headerContainer">
 			<h1>Previous Projects</h1>
-			<hr>
-		</div>
 
-
-		<!-- Broken Chain -->
-		<div id="projectContainer">
+			<!-- Broken Chain -->
+			<figure class="size-2">
 			<div class="slideshow-container"> 
 
 				<div class="mySlides3">
-				  <img src="img/projGamesImages/slideThree/Tutorial.gif" >
+				  <img src="img/projGamesImages/slideThree/Tutorial.gif">
 				</div>
 
 				<div class="mySlides3">
-				  <img src="img/projGamesImages/slideThree/BCSC1.png" >
+				  <img src="img/projGamesImages/slideThree/BCSC1.png">
 				</div>
 
 				<div class="mySlides3">
-				  <img src="img/projGamesImages/slideThree/BeachLevel.gif" >
+				  <img src="img/projGamesImages/slideThree/BeachLevel.gif">
 				</div>
 
 				<div class="mySlides3">
-				  <img src="img/projGamesImages/slideThree/BCSC2.png" >
+				  <img src="img/projGamesImages/slideThree/BCSC2.png">
 				</div>
 
 				<div class="mySlides3">
-				  <img src="img/projGamesImages/slideThree/CastleLevel.gif" >
+				  <img src="img/projGamesImages/slideThree/CastleLevel.gif">
 				</div>
 
 				<div class="mySlides3">
-				  <img src="img/projGamesImages/slideThree/BCSC3.png" >
+				  <img src="img/projGamesImages/slideThree/BCSC3.png">
 				</div>
-				
+
+
 				<a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
 				<a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
 
 			</div>
+			</figure>
 
-			<div id="projectDescriptionContainer">
-				<h2>Broken Chain</h2>
+			<p><b>Broken Chain</b><br>Broken chain is a 3D platforming collectathon 
+			made in UE4. This project consisted of myself and four other members as 
+			part of my technical games production module during my second year. 
+			This was my first time working with a team and I'm very please that we 
+			got to present this game to Ubisoft at their Leamington Spa studio.</p>
 
-				<p>
-				Broken chain is a 3D platforming collectathon made in UE4. This project
-				consisted of myself and four other members as part of my technical games
-				production module during my second year. This was my first time working 
-				with a team and I'm very please that we got to present this game to
-				Ubisoft at their Leamington Spa studio.
-				</p>
-
-			</div>
-
-
-		</div> <!-- Project container: Broken Chain-->
-
-
-		<hr class="project">
-		
-
-		<!-- Hyperion Asiimov -->
-		<div id="projectContainer">
+			<!-- Hyperion Asiimov -->
+			<figure class="size-2">
 			<div class="slideshow-container"> 
 
 				<div class="mySlides2">
@@ -142,34 +127,27 @@
 				<div class="mySlides2">
 					<img src="img/projGamesImages/slideTwo/HAWPImgThree.jpg" >
 				</div>
-				
+
+
 				<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
 				<a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
 
 			</div>
+			</figure>
 
-			<div id="projectDescriptionContainer">
-				<h2>Hyperion Asiimov Texture Pack</h2>
-
-				<p>
-				The second skin pack I made for Borderlands 2 adding the Asiimov 
-				skin from CS:GO to the Hyperion legendary weapons in the game.<br><br>
-				This pack is available to download via my github.
-				</p>
-
-			</div>
+			
+			<p><b>Hyperion Asiimov Texture Pack</b><br>The second skin pack I 
+			made for Borderlands 2 adding the Asiimov skin from CS:GO to the 
+			Hyperion legendary weapons in the game. This pack is available via my 
+			<a href="https://github.com/barrolskii/TextureMods/tree/master/HyperionAsiimov">
+			github.</a></p>
 
 
-		</div> <!-- Project container: Hyperion Asiimov -->
+			<!-- Hyperion Obsidian -->
+			<figure class="size-2">
 
-
-		<hr class="project">
-
-
-		<!-- Hyperion Obsidian -->
-		<div id="projectContainer">
 			<div class="slideshow-container"> 
-
+				
 				<div class="mySlides1">
 					<img src="img/projGamesImages/slideOne/HOWPImgOne.jpg" >
 				</div>
@@ -193,33 +171,26 @@
 				<div class="mySlides1">
 					<img src="img/projGamesImages/slideOne/HOWPImgSix.jpg" >
 				</div>
-				
+
 				<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
 				<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
 
 			</div>
 
-			<div id="projectDescriptionContainer">
-				<h2>Hyperion Obsidian Texture Pack</h2>
+			</figure>
 
-				<p>
-				The first weapon texture pack I made for Borderlands 2 which applies 
-				to the Hyperion unique weapons in the game. Each weapon skin has two 
-				variants, a factory default version and a battle worn version.<br><br>
-				This pack is available to download via my github.
-				</p>
+			<p><b>Hyperion Obsidian Texture Pack</b><br>The first weapon texture pack
+			I made for Borderlands 2 which applies to the Hyperion unique weapons in 
+			the game. Each weapon skin has two variants, a factory default version and 
+			a battle worn version. This pack is available via my 
+			<a href="https://github.com/barrolskii/TextureMods/tree/master/HyperionObsidian">
+			github.</a></p>
 
-			</div>
+		</article>
 
+			<script>
 
-		</div> <!-- Project container: Hyperion Obsidian -->
-
-
-		<hr class="project">
-
-
-		<script>
-			var slideIndex = [1,1,1,1]; // Add another 1 to this when new slideshows are added
+			var slideIndex = [1, 1, 1, 1]; // Add another 1 to this when new slideshows are added
 			var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4"] // Don't forget this as well
 
 			// Add another function call for extra slideshows here as well
@@ -242,27 +213,25 @@
 				}
 				x[slideIndex[no]-1].style.display = "block";  
 			}
-		</script>
 
-		</div> <!-- Container div -->
-	</main>
+			</script>
 
+		</main>
 
-	<footer id="footer">
+		<footer>
+			<a href="https://github.com/barrolskii">
+				<img src="img/githubLogo.webp" alt="Github white logo" class="img-link" id="github-img">
+			</a>
+	
+			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+				<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link" id="footer-img">
+			</a>
+	
+			<a href="https://twitter.com/BarrellAshley">
+				<img src="img/twitterLogo.webp" alt="Twitter white logo" class="img-link" id="footer-img">
+			</a>
 
-		<a href="https://github.com/barrolskii">
-			<img src="img/githubLogo.webp" alt="Github white logo" id="footerLeftImage">
-		</a>
-
-		<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
-			<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" id="footerImageSpacing">
-		</a>
-
-		<a href="https://twitter.com/BarrellAshley">
-			<img src="img/twitterLogo.webp" alt="Twitter white logo" id="footerImageSpacing">
-		</a>
-
-	</footer>
+		</footer>
 
 	</body>
 

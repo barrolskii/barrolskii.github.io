@@ -1,103 +1,72 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+body { background-color: #D5D5E8; }
 
-* {
-	padding: 0;
-	margin: 0;
-}
-
-html, body {
-	height: 100%;
-	background-color: #D5D5E8;
-}
-
-#nav {
+nav {
 	width: auto;
-	height: 70px;
 	background-color: #4A4F6B;
 	padding-left: 30%;
 	font-family: 'Open Sans', sans-serif;
 	font-style: italic;
+
 }
 
-#nav li {
+nav li {
 	display: inline-block;
 	padding-top: 25px;
 	padding-right: 2%;
+	padding-bottom: 20px;
 	font-size: 18px;
 }
 
-#nav li a {
-	color: white;
-	text-decoration: none;
+@media(max-width: 5.5in) {
+	nav li {
+		display: block;
+		height: 100%;
+		padding-bottom: 4px;
+	}
 }
 
-#nav a:hover {
+nav li a {
+	color: white;
+	text-decoration: none;
+	box-shadow: none;
+}
+
+nav a:hover {
 	color: #CAD4E8;
 }
 
-#main{
-	min-height: 100%;
-
-}
-
-#container {
-	overflow: auto;
-	padding-bottom: 100px;
-	background-color: #D5D5E8;
-	min-height: 770px;
-}
-
-#footer {
+footer {
 	background-color: #4A4F6B;
 	position: relative;
-	height: 200px;
-	margin-top: -100px;
-	clear: both;
-	padding-top: 100px;
-}
+	left: 0;
+	bottom: 0;
+	width: 100%;
 
-#footerLeftImage {
-	margin-left: 25%;
-	width: 100px;
-	height: 100px;
-}
-
-#footerImageSpacing {
-	margin-left: 15%;
-	width: 100px;
-	height: 100px;
 }
 
 
-.arialFont {
-	font-family: Arial, serif;
-	color: white;
-	font-size: 32px;
-	-webkit-text-stroke-color: black;
-	-webkit-text-stroke-width: 1px;
+.img-link {
+	margin-top: 2.5%;
+	margin-bottom: 1.25%;
 }
 
-.openSansFont {
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	font-size: 20px;	
+@media(max-width: 8.5in) {
+	.img-link {
+		width: 50px;
+		height: 50px;
+	}
 }
 
-
-.openSansFontLight {
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	font-weight: lighter;	
-	font-size: 20px;
+#github-img {
+	margin-left: 30%;
 }
 
-.navFont {
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	font-style: italic;
+@media(max-width: 5.5in) {
+	#github-img {
+		margin-left: 10%;
+	}
 }
 
-.spaceContainer {
-	width: auto;
-	height: 100px;
+#footer-img {
+	margin-left: 10%;
 }

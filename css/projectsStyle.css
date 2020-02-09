@@ -1,0 +1,123 @@
+article { 
+	display: grid;
+	grid-template-columns: 0.25fr 0.5in [start] 1.25in 5.0in 5.0in [end] 1fr;
+
+	padding: 0.5in 0;
+}
+
+article * { grid-column: start / end; }
+
+@media (max-width: 11.5in) {
+		article { grid-template-columns: 0.25fr 5% [start] 10% 42% 42% [end] 1fr; }
+}
+
+
+.size-1 { grid-column: 4 / 5; }
+.size-2 { grid-column: 2 / 5; }
+.size-3 { grid-column: 2 / 7; }
+.size-4 { grid-column: 1 / 8; }
+                                                                                                                              
+.size-1 img, .size-2 img, .size-3 img, .size-4 img { width: 100% }
+
+@media (max-width: 8.5in) { :root { font-size: 18px} }
+@media (max-width: 5.5in) { :root { font-size: 16px} }
+
+
+h1 { 
+	font-size: 55px; 
+	font-family: Arial, serif;
+	color: white;
+	margin-left: -5%;
+	margin-bottom: 5%;
+	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-width: 1px;
+}
+
+figure { 
+	grid-column: start / end;
+	margin-bottom: 15%;
+}
+
+p { 
+	margin-bottom: 2.4rem;
+	grid-column: 5;
+	font: 400 1.0rem/1.5 "Roboto"; 
+	color: hsl(000, 0%, 30%);
+	margin-left: 5%;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+}
+	
+b {
+	font-size: 28px;
+}
+
+#projectsNav {
+	width: auto;
+	background-color: #4A4F6B;
+	padding-left: 30%;
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
+}
+
+#projectsNav li {
+	display: inline-block;
+	padding-top: 2px;
+	padding-right: 2%;
+	padding-bottom: 2px;
+	font: 400i 1.0rem/1.5 "Roboto";
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+}
+
+@media(max-width: 5.5in) {
+	#projectsNav li {
+		display: block;
+		font-size: 18px;
+		padding-top: 25px;
+		padding-bottom: 4px;
+	}
+}
+
+#projectsNav li a {
+	color: white;
+	text-decoration: none;
+}
+
+#projectsNav a:hover {
+	color: #CAD4E8;
+}
+
+.slideshow-container {
+	width: auto;
+	position: relative;
+	float: left;
+}
+
+.mySlides1, .mySlides2, .mySlides3, .mySlides4 {display: none}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+	border-radius: 3px 0 0 3px;
+	right: 0;
+}
+
+.prev:hover, .next:hover {
+	background-color: #f1f1f1;
+	color: black;
+}

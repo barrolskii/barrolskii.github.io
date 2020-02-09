@@ -1,31 +1,9 @@
-#sectionContainer {
-	width: 50%;
-	height 100px;
-	margin-left: 25%;
-}
-
-h1 {
-	margin-top: 2%;
-}
-
-@media (max-width: 1920px) {
-	p {
-		display: inline;
-		font-family: 'Open Sans', sans-serif;
-		color: #5569DC;
-		font-weight: lighter;	
-		font-size: 18px;
-	}
-}
-
-@media (max-width: 1366px) {
-	p {
-		display: inline;
-		font-family: 'Open Sans', sans-serif;
-		color: #5569DC;
-		font-weight: lighter;	
-		font-size: 15px;
-	}
+p {
+	display: inline;
+	font-family: 'Open Sans', sans-serif;
+	color: #5569DC;
+	font-weight: lighter;	
+	font-size: 18px;
 }
 
 ul {
@@ -33,69 +11,34 @@ ul {
 	margin-left: 1%;
 }
 
-@media (max-width: 1920px) {
-	li {
-		font-family: 'Open Sans', sans-serif;
-		color: #5569DC;
-		font-weight: lighter;	
-		font-size: 18px;
-	}
+li {
+	font-family: 'Open Sans', sans-serif;
+	color: #5569DC;
+	font-weight: lighter;	
+	font-size: 18px;
 }
 
-@media (max-width: 1366px) {
-	li {
-		font-family: 'Open Sans', sans-serif;
-		color: #5569DC;
-		font-weight: lighter;	
-		font-size: 15px;
-	}
+h1 {
+	font: 700 2.0rem/1.2 "Roboto";
+	font-family: Arial, serif;
+	color: white;
+	font-size: 32px;
+	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-width: 1px;
 }
 
-hr {
-	height: 1px;
-	background-color: black;
-	border: none;
-	margin-top: 0.25%;
-	margin-bottom: 0.25%;
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	color: #5569DC;
+	font-weight: lighter;	
+	font-size: 22px;
+	margin-top: 5px;
+	margin-bottom: 0px;
 }
 
-@media (max-width: 1920px) {
-	#uniCourseSpacing { margin-left: 136px; }
-	#uniDateSpacing { margin-left: 60px; }
+hr { margin-bottom: 10px; }
 
-	#collegeCourseSpacing { margin-left: 80px; }
-	#collegeDateSpacing { margin-left: 101px; }
-
-	#towerSpacing { margin-left: 180px; }
-	#towerDateSpacing { margin-left: 110px; }
-
-	#burtonsSpacing { margin-left: 95px; }
-	#burtonsDateSpacing { margin-left: 280px; }
-
-	#bnmSpacing { margin-left: 116px; }
-	#bnmDateSpacing { margin-left: 160px; }
-	
-	#blueIncSpacing { margin-left: 169px; }
-	#blueIncDateSpacing { margin-left: 215px; }
+.text-container {
+	width: auto;
+	padding-bottom: 10px;
 }
-
-@media (max-width: 1366px) {
-	#uniCourseSpacing { margin-left: 2em; }
-	#uniDateSpacing { margin-left: 3em; }
-
-	#collegeCourseSpacing { margin-left: 2em; }
-	#collegeDateSpacing { margin-left: 5em; }
-
-	#towerSpacing { margin-left: 9em; }
-	#towerDateSpacing { margin-left: 5.5em; }
-
-	#burtonsSpacing { margin-left: 4.25em; }
-	#burtonsDateSpacing { margin-left: 15em; }
-
-	#bnmSpacing { margin-left: 5.5em; }
-	#bnmDateSpacing { margin-left: 8.25em; }
-	
-	#blueIncSpacing { margin-left: 8.25em; }
-	#blueIncDateSpacing { margin-left: 11.5em; }
-}
-

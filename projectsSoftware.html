@@ -3,164 +3,77 @@
 <html>
 
 	<head>
-		<title>Projects</title>
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/projectStyle.css">
+		<title>Projects</title>	
+
 		<meta charset="UTF-8">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/-debug.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Icon library for hamburger bars -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/projectsStyle.css">
+
+	<script>
+	
+		function myFunction() {
+		  var x = document.getElementById("myTopnav");
+		  if (x.className === "topnav") {
+		    x.className += " responsive";
+		  } else {
+		    x.className = "topnav";
+		  }
+		}
+		
+	</script>
 	</head>
 
 	<body>
 
-	<nav id="nav">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="projectsSoftware.html">Projects</a></li>
-		<li><a href="resume.html">R&eacute;sum&eacute;</a></li>
-	</nav>
+		<nav>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="projectsSoftware.html">Projects</a></li>
+			<li><a href="resume.html">R&eacute;sum&eacute;</a></li>
+			<li><a href="blog-index.html">Blog</a></li>
+		</nav>
 
-	<div id="projectsNav">
-		<li><a href="projectsSoftware.html">Software Projects</a></li>
-		<li><a href="projectsGames.html">Games Projects</a></li>
-	</div>
+		<div id="projectsNav">
+			<li><a href="projectsSoftware.html">Software Projects</a></li>
+			<li><a href="projectsGames.html">Games Projects</a></li>	
+		</div>
 
-	<main id="main">
+		<main>
+		<article>
 
-		<div id="container">
 
-		<div id="headerContainer">
 			<h1>Current Projects</h1>
-			<hr>
-		</div>
 
-		<!-- Phantom -->
-		<div id="projectContainer">
-			<div class="slideshow-container"> 
-
-								
-				<a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-
-			</div>
-
-			<div id="projectDescriptionContainer">
-				<h2>Phantom</h2>
-
-				<p>
-				Phantom is a scripting langauge that I'm going to be making
-				in C++ for my final year project.
-
-				<br><br>
-				There are no images to show the language yet as I am currently
-				doing research for it alongside my placement year.
-				</p>
-
-			</div>
-
-
-		</div> <!-- Project container: Phantom -->
-
-		<div id="headerContainer">
-			<h1>Previous Projects</h1>
-			<hr>
-		</div>
-
-
-		<!-- Store Data App -->
-		<div id="projectContainer">
-			<div class="slideshow-container"> 
-
-				<div class="mySlides3">
-					<img src="img/projSoftwareImages/StoreApp/StoreApp1.png">
-				</div>
-				
-				<div class="mySlides3">
-					<img src="img/projSoftwareImages/StoreApp/StoreApp2.png">
-				</div>
-				
-				<div class="mySlides3">
-					<img src="img/projSoftwareImages/StoreApp/StoreApp3.png">
-				</div>
-				
-				<a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-
-			</div>
-
-			<div id="projectDescriptionContainer">
-				<h2>Store Data App</h2>
-
-				<p>
-				This project is a rework from a previous university assessment
-				from my task based software engineering module. During this
-				assessment I had to use the TPL (task parallel library), LINQ and
-				PLINQ to split, analyse and query over 5 million sets of data from
-				over 10,000 individual files. In this rework instead of utilising the
-				TPL I set out to make an improved version of the app, building a new 
-				version from the ground up, managing the threading myself and writing
-				my own algorithms for querying data instead of relying on LINQ and PLINQ.
-
-				<br><br>
-				The code for this project is available on my GitHub.
-				</p>
-
-			</div>
-
-
-		</div> <!-- Project container: Store Data App -->
-
-
-		<hr class="project">
-		
-
-		<!-- Topaz Launcher -->
-		<div id="projectContainer">
+			<!-- Phantom -->
+			<figure class="size-2">
 			<div class="slideshow-container"> 
 
 				<div class="mySlides2">
-					<img src="img/projSoftwareImages/TopazLauncher/Topaz1.png">
+					<img src="img/ComingSoon.png">
 				</div>
-																		
-				<div class="mySlides2">
-					<img src="img/projSoftwareImages/TopazLauncher/Topaz2.png">
-				</div>
-																		
-				<div class="mySlides2">
-					<img src="img/projSoftwareImages/TopazLauncher/Topaz3.png">
-				</div>
-																		
-				<div class="mySlides2">
-					<img src="img/projSoftwareImages/TopazLauncher/Topaz4.png">
-				</div>
-																		
+
+
 				<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
 				<a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-				
+
 			</div>
+			</figure>
 
-			<div id="projectDescriptionContainer">
-				<h2>Custom Launcher</h2>
-
-				<p>
-				During this project I created my own program launcher similar to that of Steam and the
-				Blizzard launcher. This program which I named the "Topaz Launcher", allows me to add 
-				programs at will, launching them from this program and adding a background image for
-				each program that I add. My plan for this launcher is to use it as a hub for future
-				apps and games that I make and I will add more features and functionality to it the
-				more I use the launcher.<br><br>
-				The code for this project is available on my Github.
-				</p>			
-			</div>
+			
+			<p><b>Phantom</b><br> Phantom is a scripting langauge that I'm going to be 
+			making for my final year project in university. There are no screenshots of
+			this project currenlty as it is in the concept stage.</p>
 
 
-		</div> <!-- Project container: Topaz Launcher -->
+			<!-- Book Oganiser Rework -->
+			<figure class="size-2">
 
-
-		<hr class="project">
-
-
-		<!-- Book Organiser -->
-		<div id="projectContainer">
 			<div class="slideshow-container"> 
-
 
 				<div class="mySlides1">
 					<img src="img/projSoftwareImages/BookOrganiser/printAll.png">
@@ -178,39 +91,28 @@
 					<img src="img/projSoftwareImages/BookOrganiser/setInterested.png">
 				</div>
 
+				
 				<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
 				<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
 
 			</div>
 
-			<div id="projectDescriptionContainer">
-				<h2>Book Organiser</h2>
+			</figure>
 
-				<p>	
-				A small project that I worked on that was made to organise my digital
-				library of book and to keep track of what books I've read and which
-				books I'm interested in reading. I wrote this program in C on for Linux machines.<br><br>
-				The code for this project can be viewed on my Github.
+			<p><b>Book Organiser</b><br>A small project to organise my digital library 
+			of books. This project is currently undergoing a rework to include my friends
+			tagging system called Koios.</p>
 
-				</p>
+		</article>
 
-			</div>
+			<script>
 
-
-		</div> <!-- Project container: Book Organiser -->
-
-
-		<hr class="project">
-
-
-		<script>
-			var slideIndex = [1,1,1]; // Add another 1 to this when new slideshows are added
-			var slideId = ["mySlides1", "mySlides2", "mySlides3"] // Don't forget this as well
+			var slideIndex = [1, 1]; // Add another 1 to this when new slideshows are added
+			var slideId = ["mySlides1", "mySlides2"] // Don't forget this as well
 
 			// Add another function call for extra slideshows here as well
 			showSlides(1, 0);
 			showSlides(1, 1);
-			showSlides(1, 2);
 
 			function plusSlides(n, no) {
 		  		showSlides(slideIndex[no] += n, no);
@@ -226,28 +128,25 @@
 				}
 				x[slideIndex[no]-1].style.display = "block";  
 			}
-		</script>
 
-		</div> <!-- Container div -->
-	</main>
+			</script>
 
+		</main>
 
+		<footer>
+			<a href="https://github.com/barrolskii">
+				<img src="img/githubLogo.webp" alt="Github white logo" class="img-link" id="github-img">
+			</a>
+	
+			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+				<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link" id="footer-img">
+			</a>
+	
+			<a href="https://twitter.com/BarrellAshley">
+				<img src="img/twitterLogo.webp" alt="Twitter white logo" class="img-link" id="footer-img">
+			</a>
 
-	<footer id="footer">
-
-		<a href="https://github.com/barrolskii">
-			<img src="img/githubLogo.webp" alt="Github white logo" id="footerLeftImage">
-		</a>
-
-		<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
-			<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" id="footerImageSpacing">
-		</a>
-
-		<a href="https://twitter.com/BarrellAshley">
-			<img src="img/twitterLogo.webp" alt="Twitter white logo" id="footerImageSpacing">
-		</a>
-
-	</footer>
+		</footer>
 
 	</body>
 
