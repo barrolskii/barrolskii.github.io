@@ -69,7 +69,7 @@ ul {
 	margin-left: 1%;
 }
 
-li {
+ul li {
 	font: 400 1.0rem/1.5 "Roboto"; color: hsl(000, 0%, 30%);
 	font-family: 'Open Sans', sans-serif;
 	font-weight: lighter;	

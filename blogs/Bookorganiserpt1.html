@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<title>Book Organiser pt 1</title>	
+
+		<meta charset="UTF-8">
+
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/-debug.css">
+		<link rel="stylesheet" href="../css/blogPageStyle.css">
+		<link rel="stylesheet" href="../css/style.css">
+	</head>
+
+	<body>
+		<nav>
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../projectsSoftware.html">Projects</a></li>
+			<li><a href="../resume.html">R&eacute;sum&eacute;</a></li>
+			<li><a href="../blog-index.html">Blog</a></li>
+		</nav>
+
+		<main>
+		<article>
+			<h1>Book Organiser</h1>
+			<h2>Re-worked and remastered</h2>
+
+			<time datetime="15-02-2020">FEB. 15, 2020</time>
+			<p>As of today I "finished" a rework of a previous project of mine, my book organiser.
+			Quite simply this project is a small program written in C that I use to categorise my
+			digital library of books. Very simple premise but after the first version of it I wasn't
+			very happy with how the categorisation system worked in it. I set up a system that 
+			organised books into separate directories and because of how varied my digital book
+			library is, there were some cases where there would be directories only containing a single
+			book and trawling through them manually to find a book was not fun (I did put a search 
+			feature into it but it was kinda hacky with a lot of string concatenation and there were
+			definitely better ways for searching for a specific book). So in this new re-worked
+			version I have used a nicer way of tagging and sorting the books. I've used a tagging
+			system that a friend of mine has made called <a href="https://gitlab.com/finnoleary/koios">
+			koios.</a></p>
+
+			<h3>So what's new?</h3>
+			<p>I won't go into detail about how koios works itself, (there is a brief description about how
+			the system works on the <a href="https://gitlab.com/finnoleary/koios">GitLab</a> page) but I'll
+			explain what I've done differently as to the old version. This time around there is no moving
+			lots and lots of files around into different directories, instead all books within a given 
+			directory will be moved to a subfolder called books. Now this does seem kind of pointless to
+			have a program to move my books into a different directory, I mean you can do that manually
+			a lot quicker than writing the program, but the tagging magic is done before they are moved
+			into this new directory. Moving them into a sub-directory is just an easy way to search for
+			specific books at a later date.</p>
+
+			<h3>Tagging</h3>
+			<p>So just before the books are moved into the books directory by the program, the user (right
+			now the user is me) is prompted twice to simply add two tags to a book. These tags are a single
+			class and a single division from the <a href="https://en.wikipedia.org/wiki/Dewey_Decimal_Classification">
+			Dewey Decimal System.</a> This first set of tags keeps it simple to have generic classifications
+			for all of my books that I have now and for books I will buy in the future.</p> 
+
+			<h3>Why move the files at all?</h3>
+			<p>The reason I move my book files into a new directory is really simple, the parent directory
+			that is used to store the books sub-directory is scanned for new files everytime the program is
+			run. So whenever I buy new books all I have to do is move them into the parent directory and 
+			then just run the program and it'll detect that there are new files within the directory, then
+			prompting me to categorise them and then moving them with the other books to keep the parent
+			directory clean.</p>
+
+			<h3>So is that it?</h3>
+			<p>For a basic overview of how the program works, yeah. It's not complicated but it was never
+			meant to be. It's just a simple tool I'm going to use to make keeping track and orgainising my
+			books that bit easier (I have a stupid amount of books already. I'll totally read them all I
+			swear!). Now I'll be honest, this new version does have a few things at the end that have been
+			thrown together, that being a little bit hacky and there are a few things programmed inelegantly.
+			Not to mention there are loads of features missing that I want to add but having this bare bones
+			version be what I'm calling the official 1.0.0 version is intentional. I want to keep adding 
+			features and making things better for this project over small iterations. One might call it an
+			<b>agile</b> process. Having a simple project like this to add to could really help me break bad
+			habits that I'm falling into with personal projects. I follow an agile development method in work
+			and I don't get why I don't bring the good methodologies of of this work style back home to my projects.
+			I don't exactly follow a heavyweight methodology when I'm working on my projects but using things like
+			a scrum board or a kanban board really do help with prioritising work and keeping projects on track.</p>
+
+			<h3>So, what's the plan?</h3>
+			<p>The plan I have currently is for version 1.1.0 and I'm going to have a sprint for this version.
+			In this next version I want to add a few new features for adding tags easily and cleaning up some
+			of the code in source files. I know for a fact with the menu option functions they share a hell of
+			a lot of the same code and instead of duplicating them I should just create a function delegate to
+			minimise duplicate code. I think the function that takes a delegate should pass a struct with 
+			into the functions it's calling and from there they'll deal with the unique logic but I'll figure 
+			that out as I go. Also I want to clean up some of the menu displays, they could do with a bit of
+			polish as not much of the output is cleaned up from previous queries. But first I think I should
+			think of a better name for the program. Book organiser is just so bland...</p>
+
+		</article>
+		</main>
+
+		<footer>
+			<a href="https://github.com/barrolskii">
+				<img src="../img/githubLogo.webp" alt="Github white logo" class="img-link" id="github-img">
+			</a>
+	
+			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+				<img src="../img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link" id="footer-img">
+			</a>
+	
+			<a href="https://twitter.com/BarrellAshley">
+				<img src="../img/twitterLogo.webp" alt="Twitter white logo" class="img-link" id="footer-img">
+			</a>
+
+		</footer>
+	</body>
+
+</html>

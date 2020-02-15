@@ -1,9 +1,23 @@
+article { 
+	display: grid;
+	grid-template-columns: 1fr 0.5in [start] 1.25in 5in 1.25in [end] 0.5in 1fr;
+
+	padding: 0.5in 0;
+}
+
+article * { grid-column: start / end; }
+
+@media (max-width: 8.5in) {
+	article { grid-template-columns: 1fr 5% [start] 15% 60% 15% [end] 5% 1fr; }
+}
+
 p {
 	display: inline;
 	font-family: 'Open Sans', sans-serif;
 	color: #5569DC;
 	font-weight: lighter;	
 	font-size: 18px;
+	margin-bottom: 30px;
 }
 
 ul {
@@ -17,6 +31,8 @@ li {
 	font-weight: lighter;	
 	font-size: 18px;
 }
+
+h1:not(:first-child) { margin-top: 30px; }
 
 h1 {
 	font: 700 2.0rem/1.2 "Roboto";
