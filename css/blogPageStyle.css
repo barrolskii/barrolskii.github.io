@@ -51,3 +51,16 @@ h1 {
 
 p { font-family: 'Open Sans', sans-serif; font-weight: lighter;	}
 h2, h3, time { font-family: 'Open Sans', sans-serif; }
+
+ul {
+	list-style-position: inside;
+	margin-left: 1%;
+	margin-bottom: 10%;
+}
+
+ul li {
+	font: 400 1.0rem/1.5 "Roboto"; color: hsl(000, 0%, 30%);
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;	
+	font-size: 18px;
+}
