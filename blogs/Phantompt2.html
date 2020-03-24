@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<title>Phantom pt. 2</title>	
+
+		<meta charset="UTF-8">
+
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/-debug.css">
+		<link rel="stylesheet" href="../css/blogPageStyle.css">
+		<link rel="stylesheet" href="../css/style.css">
+	</head>
+
+	<body>
+		<nav>
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../projectsSoftware.html">Projects</a></li>
+			<li><a href="../resume.html">R&eacute;sum&eacute;</a></li>
+			<li><a href="../blog-index.html">Blog</a></li>
+		</nav>
+
+		<main>
+		<article>
+			<h1>Phantom</h1>
+			<h2>So it begins</h2>
+
+			<time datetime="24-03-2020">Mar. 24, 2020</time>
+			<p>About two weeks ago I booked a week off work so I could concentrate
+			on starting research for my final year project. I'm going to make a 
+			scripting language called Phantom which I have no experience of doing
+			but that's the point of a final year project, to research something
+			that's interesting to you and something that you can feasibly make. 
+			Anyway the cool thing is, is that Phantom is in a working state!</p>	
+
+			<h3>The learning process</h3>
+			<p>I can't take any credit with this first working version of Phantom.
+			During my week off I followed the book <a href="https://interpreterbook.com/">
+			Writing An Interpreter In Go</a> by Thorsten Ball. This book was a really good
+			read, it presents the concepts to make an interpreter in a clear and readable
+			manner. Granted learning it this way is basically holding your hand through the
+			learning process and you copy a lot of code but with how busy I am with work, side
+			projects and my other hobbies, I thought there's nothing wrong with learning this
+			way and at my own pace. It's okay to take things slow sometimes and the last thing
+			I want to do is burn out from doing too much.</p>
+
+			<h3>The Current state</h3>
+			<p>As the title of the book says, Phantom is currently written in Golang, a language
+			I'm not familiar with but it has a C like syntax so it wasn't hard for me to pick up
+			as most of my uni programming experience is in C++ and C#. The language as it stands 
+			right now has a working interpreter (as you would expect as the book says that's what
+			you'll learn to make) but most of the languages features and syntax are the same as
+			what you learn in the book. I say most of because today I changed the let keyword for
+			declaring variables to var, which changed absolutely 0 functionality of the interpreter,
+			just the references of 'let' to 'var'. Not exactly rocket science. The language does 
+			have support for a few data types, operators, if statements, functions, arrays, maps
+			(or hashtables, whatever you prefer to call them) and builtin functions. Which is 
+			a good amount to be taught but it does mean the language is missing a lot of other
+			feature. I mean the current state of Phantom doesn't have a for keyword, classes 
+			or the char or float data types.</p>
+
+
+			<h3>Don't worry, it's on the list...</h3>
+			<p>Given that lots of features are missing that gives me the opportunity to implement
+			them myself. No hand holding which is exactly what I want. It's a nice way to learn, to
+			be guided through a topic but you can't rely on that forever. Even with the style of 
+			the book, I found myself skipping ahead, implementing functions, features and tests for
+			the interpreter before I finished the current section of the book I was on. Which
+			honestly showed to me how good the author was at explaining these concepts. They
+			were put so clearly I had the confidence to go forward and carry on myself. Phantom
+			still has a lot of work to be put into it and the current plan of action right now
+			is to implement basic language features like the iteration support, classes and other
+			primative data types.</p>
+
+			<h3>What's after that?</h3>
+			<p>I'm not going to be using the Golang version of Phantom for my final year project 
+			because that would be cheating after all. It could also be plagiarism if I do that.
+			No, instead I'm going to make the language in C. Or C++, still haven't decided yet
+			but it will probably be C. I've got a todo list in the works for the stages I want to
+			tackle first and some other things I'll need in preparation. If I pick either C or C++
+			I'm going to need to implement a garbage collector for the language. Which just as luck
+			has it, I had a project a little while ago which was making a memory leak detector in C
+			so I'll have to dig up that project and make some changes to it. See if I can make it have
+			a generic interface to interact with so I can use it for other future projects and not just
+			for the scripting language. Another thing I'll need to do is create a hashtable library if
+			I'm going to implement it in C. C++ has its own hastable library as part of the standard 
+			library but C is one of the few languages that does not. I know I could use a library that
+			is already out there but where's the fun in that?</p>
+
+			<p>Either way my focus right now is going to be basic language features and then adding my own
+			personal touches to the language. I had a great time with this inital bit of learning but now 
+			it's time to really get my hands dirty. My next post about Phantom is going to be showing off
+			what I've added to it. Let's hope I show more than just basic language features...</p>
+
+		</article>
+		</main>
+
+		<footer>
+			<a href="https://github.com/barrolskii">
+				<img src="../img/githubLogo.webp" alt="Github white logo" class="img-link" id="github-img">
+			</a>
+	
+			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+				<img src="../img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link" id="footer-img">
+			</a>
+	
+			<a href="https://twitter.com/BarrellAshley">
+				<img src="../img/twitterLogo.webp" alt="Twitter white logo" class="img-link" id="footer-img">
+			</a>
+
+		</footer>
+	</body>
+
+</html>
