@@ -62,6 +62,22 @@ let g:ycm_semantic_triggers = {
 		I've already declared. It'll also show function arguments instead of
 		just showing the function name.</p>
 
+		<p> If you want this to work with C and C++ you just have to add
+		C++ like this:</p>
+
+		<pre>
+		<code>
+
+let g:ycm_semantic_triggers = {
+	\ 'c,cpp': ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+	\	'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+	\ 	'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+	\	'y', 'z'],
+\}
+
+		</code>
+		</pre>
+
 		<p>There is one thing that you need to make sure you have. For ycm to
 		work for a project, it requires you to have a .ycm_extra_conf.py file
 		for each project. I don't do this, I have a config file for each
