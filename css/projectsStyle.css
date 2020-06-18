@@ -1,4 +1,4 @@
-article { 
+article {
 	display: grid;
 	grid-template-columns: 0.25fr 0.5in [start] 1.25in 5.0in 5.0in [end] 1fr;
 
@@ -16,15 +16,15 @@ article * { grid-column: start / end; }
 .size-2 { grid-column: 2 / 5; }
 .size-3 { grid-column: 2 / 7; }
 .size-4 { grid-column: 1 / 8; }
-                                                                                                                              
+
 .size-1 img, .size-2 img, .size-3 img, .size-4 img { width: 100% }
 
 @media (max-width: 8.5in) { :root { font-size: 18px} }
 @media (max-width: 5.5in) { :root { font-size: 16px} }
 
 
-h1 { 
-	font-size: 55px; 
+h1 {
+	font-size: 55px;
 	font-family: Arial, serif;
 	color: white;
 	margin-left: -5%;
@@ -33,28 +33,29 @@ h1 {
 	-webkit-text-stroke-width: 1px;
 }
 
-figure { 
+figure {
 	grid-column: start / end;
 	margin-bottom: 15%;
 }
 
-p { 
+p {
 	margin-bottom: 2.4rem;
 	grid-column: 5;
-	font: 400 1.0rem/1.5 "Roboto"; 
+	font: 400 1.0rem/1.5 "Roboto";
 	color: hsl(000, 0%, 30%);
 	margin-left: 5%;
 	font-family: 'Open Sans', sans-serif;
-	font-weight: lighter;
+	font-weight: normal;
 }
-	
+
 b {
 	font-size: 28px;
+	color: #2C3E50;
 }
 
 #projectsNav {
 	width: auto;
-	background-color: #4A4F6B;
+	background-color: #202020;
 	padding-left: 30%;
 	font-family: 'Open Sans', sans-serif;
 	font-style: italic;

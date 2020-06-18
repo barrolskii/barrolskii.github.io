@@ -1,8 +1,9 @@
-body { background-color: #D5D5E8; }
+/* body { background-color: #BDC3C7; } */
+body { background-color: #f4f8f9; }
 
 nav {
 	width: auto;
-	background-color: #4A4F6B;
+	background-color: #202020;
 	padding-left: 30%;
 	font-family: 'Open Sans', sans-serif;
 	font-style: italic;
@@ -36,7 +37,7 @@ nav a:hover {
 }
 
 footer {
-	background-color: #4A4F6B;
+	background-color: #202020;
 	position: relative;
 	left: 0;
 	bottom: 0;

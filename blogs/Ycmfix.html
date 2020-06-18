@@ -32,7 +32,7 @@
 		plugin for Vim and/or Neovim, you might've run into a problem with C
 		and/or C++ auto-completion suggestions. The big issue you may have run
 		into just like me and a bunch of other people is that you're not getting
-		standard library suggestions and langauge syntax suggestions.
+		standard library suggestions and language syntax suggestions.
 		I've found a way to fix it.</p>
 
 		<h3>The fix</h3>
@@ -40,16 +40,14 @@
 		.vimrc or your init.vim file if you use Neovim:</p>
 
 		<pre>
-		<code>
 
 let g:ycm_semantic_triggers = {
-	\ 'c': ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+	\ 'c': [
+	\	'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 	\	'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
 	\ 	'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
 	\	'y', 'z'],
 \}
-
-		</code>
 		</pre>
 
 		<p>This might be a bit of a hacky way to do it. So what this does is
@@ -66,16 +64,14 @@ let g:ycm_semantic_triggers = {
 		C++ like this:</p>
 
 		<pre>
-		<code>
 
 let g:ycm_semantic_triggers = {
-	\ 'c,cpp': ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+	\ 'c,cpp': [
+	\	'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 	\	'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
 	\ 	'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
 	\	'y', 'z'],
 \}
-
-		</code>
 		</pre>
 
 		<p>There is one thing that you need to make sure you have. For ycm to
@@ -85,7 +81,6 @@ let g:ycm_semantic_triggers = {
 		based on its extension, like so:</p>
 
 		<pre>
-		<code>
 
 augroup filetype_c
 	autocmd!
@@ -94,7 +89,6 @@ augroup filetype_c
 
 	...
 augroup END
-		</code>
 		</pre>
 
 		<p>I won't go over the setup of a ycm conf file here but there's an
@@ -109,7 +103,6 @@ augroup END
 
 
 		<pre>
-		<code>
 
 BASE_FLAGS = [
         '-Wall',
@@ -126,14 +119,11 @@ BASE_FLAGS = [
         '-I/usr/include/'
         ]
 
-
-		</code>
 		</pre>
 
 		<p>Here's what I currently have for C++:</p>
 
 		<pre>
-		<code>
 
 BASE_FLAGS = [
 	'-Wall',
@@ -149,9 +139,6 @@ BASE_FLAGS = [
 	'-DUSE_CLANG_COMPLETER',
 	'-I/usr/include/'
 	]
-
-
-		</code>
 		</pre>
 
 
