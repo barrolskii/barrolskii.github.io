@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Dwm and some other things</title>
+
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/-debug.css">
+	<link rel="stylesheet" href="../css/blogPageStyle.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+	<nav>
+		<li><a href="../index.html">Home</a></li>
+		<li><a href="../projectsSoftware.html">Projects</a></li>
+		<li><a href="../resume.html">R&eacute;sum&eacute;</a></li>
+		<li><a href="../blog-index.html">Blog</a></li>
+	</nav>
+
+	<main>
+	<article>
+		<h1>DWM, Impulse, And Portfolio Improvements</h1>
+		<h2>A weekend of progress</h2>
+
+		<time datetime="14-07-2020">JUL. 14, 2020</time>
+		<p>Last week was the first 4 day work week of this month and it was
+		really, really good. I managed to be apart of my very first release into
+		a live server in work and with the Friday off I managed to get through
+		some of my projects to do list. Not only that I was productive
+		throughout the weekend and still managed to get a nice balance between
+		being productive and doing the things I like to do to relax. This is the
+		most refreshed I've felt from a weekend in a long time. If I'm feeling
+		like this now I hope this is a sign of good things to come.</p>
+
+		<h3>Friendship ended with i3, DWM is my best friend now</h3>
+		<p>I've been meaning to try out a new window manager for my ThinkPad for
+		about over a month now but after work I didn't really make the time to
+		sit down and install a new one. Well on the weekend I finally got around
+		to trying DWM and honestly it's my new favourite thing. I've been using
+		i3 for a while now, I think I installed it back in January of this year?
+		i3 is a nice window manager to use for getting into them and I had some
+		good use out of it but I think around March I started feeling like I
+		wanted something a bit more but I couldn't put my finger on what
+		exactly. Turns out what I was missing was the ability to customise the
+		window manager to whatever I want.</p>
+
+		<p>So I finally got round to cloning DWM and adding a few extra bits
+		and pieces to it already and it's been great fun. I was really surprised
+		by how easy it is to apply suckless patches to suckless software. I need
+		to have a browse through the available patches to see if anything
+		tickles my fancy for my build of DWM. I haven't got a lot put into my
+		build at the moment. For DWM itself I've applied the autostart patch
+		so I don't have to manually restart my compositor and nitrogen to
+		display my background. I've also grabbed dwmblocks and written a few
+		scripts for it so I can have a display bar that contains the info I
+		actually care about. It's not the prettiest looking thing at the moment
+		so I'm going to have sort that out soon.</p>
+
+		<p>So far though the transition from i3 to DWM has been really easy,
+		far easier than I thought it was going to be. Customising it is so
+		easy as well. You have to modify the source code if you want to add any
+		other features which does put some people off but the code base is so
+		small and well organised it's a breeze to do. It's even better that I'm
+		comfortable with C which is what DWM is written in! So looking through
+		the source code won't be an intimidating experience.</p>
+
+		<h3>Project: Impulse</h3>
+		<p>In my last <a href="https://barrolskii.github.io/blogs/Whatsup2.html">
+		blog post</a> I briefly mentioned that I'm working on a new project
+		in Unreal. Well on Friday I managed to finish the to do list for the
+		prototype and got a working build of the project. I don't have any
+		screenshots of the project as of now and that's mainly because the
+		playable version is a rough prototype and it doesn't look nice at all
+		but progress is being made on it. A new to do list has been made and I
+		think it's safe to say the game in now moving into the pre-alpha stage.
+		</p>
+
+		<p>It's nice to see the project slowly coming along but I still need to
+		spend way more time within the Unreal Engine. I'm getting more
+		comfortable with the engine but I still wouldn't say I'm confident with
+		it right now. I know this'll come with time and I follow a few channels
+		on YouTube that do tutorials in Unreal so that should help speed up the
+		process. I've limited myself in this project to try and use blueprint
+		only (Unreal's visual scripting) as much as I can. This is just so I
+		don't waste time trying things within C++ and jump down rabbit holes
+		of trying to implement things that aren't needed or trying to extend the
+		editor when I don't need to. As good as the blueprint system is I do
+		wish there was support for adding components like that via a scripting
+		language like Lua. I'm not sure if the engine does support something like
+		that and I just haven't looked into it but if I had the choice I'd
+		rather write a script than create something with visual scripting.
+		Might be worth looking into in the future but blueprint works perfectly
+		fine for now.</p>
+
+		<h3>Project improvements</h3>
+		<p>I had a look at the projects that I've listed on my portfolio and I
+		noticed that they don't look eye catching. The software projects page is
+		also lacking quite a bit. I've only got 2 projects on there at the
+		moment. Plus they don't look too impressive only because they're command
+		line based programs with no user interface. Which let's be honest is not
+		eye catching for most people. After seeing this I decided I'm going to
+		make existing projects look a bit nicer and integrate UI options for
+		programs that I've made to work on the command line. The other day I
+		found a C GUI library called nuklear which is a single header file
+		library consisting of roughly 18k lines of code. I'm going to have a
+		play about with the library and if I like it I'm going to add it to my
+		book organiser so I have the option to either use it from the command
+		line or have a nice user interface to sort out my books.</p>
+
+		<p>Another set of improvements that I want to make are on the games
+		projects page. I've got an old project on there called project scorch
+		which I started a long time ago to learn Unreal C++ and it really helped
+		with my University group project at the time, but I haven't picked the
+		project back up for a while. I don't think I want to completely abandon
+		the project and I will probably pick it back up one day but because I
+		haven't touched it in such a long time I think it's best if I take it
+		down for now. Actually I could replace it with Impulse when I have some
+		decent looking screenshots to show off. I would like some more Unreal
+		based projects to be on my games projects page, not just games but some
+		engine plugins that extend the editor and add useful tools. Problem is
+		I can only make those when I know what I need and at the moment I have
+		no clue what tools I want to make.</p>
+
+		<p>I have got a good place to start with getting into Unreal more. A
+		little while ago I bought a bundle from Humble Bundle for game dev
+		courses that give you some interesting projects to try in Unreal. One
+		of the courses I have says it a maths based course which is fantastic
+		for me because I've been wanting to improve my maths skills for quite a
+		while now. The biggest drawback for me when implementing things in Unreal
+		is when I have to get into maths. Don't get me wrong I do enjoy maths
+		but I'm so out of practice with it, it'll go good to get into a course
+		that'll refresh my memory with it and also show some cool practical
+		applications of it within the engine. It'll really help with getting into
+		the engine a bit more and hopefully I'll be able to see if there are any
+		engine plugins that I can try and make to make things a bit easier for
+		me.</p>
+
+		<p>I'm thinking of starting the Unreal course either Thursday or Friday
+		depending on how work is this week. I'll try nuklear out in the week
+		and get round to updating the book organiser as well before I add a UI
+		component to it. That will be a good opportunity to make the project a
+		bit more modular. Maybe I could make a utility library for koios. One
+		thing at a time first. I really must stop making more projects for
+		myself so often.</p>
+
+	</article>
+	</main>
+
+	<footer>
+		<a href="https://github.com/barrolskii">
+			<img src="../img/githubLogo.webp" alt="Github white logo" class="img-link" id="github-img">
+		</a>
+
+		<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+			<img src="../img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link" id="footer-img">
+		</a>
+
+		<a href="https://twitter.com/BarrellAshley">
+			<img src="../img/twitterLogo.webp" alt="Twitter white logo" class="img-link" id="footer-img">
+		</a>
+
+	</footer>
+</body>
+
+</html>
+
