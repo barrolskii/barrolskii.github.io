@@ -1,0 +1,604 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>C Format Specifiers</title>
+
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/-debug.css">
+	<link rel="stylesheet" href="../css/blogPageStyle.css">
+	<link rel="stylesheet" href="../css/style.css">
+
+	<style>
+		pre {
+			margin-top: 2.5%;
+		}
+	</style>
+</head>
+
+<body>
+	<nav>
+		<li><a href="../index.html">Home</a></li>
+		<li><a href="../projectsSoftware.html">Projects</a></li>
+		<li><a href="../resume.html">R&eacute;sum&eacute;</a></li>
+		<li><a href="../blog-index.html">Blog</a></li>
+	</nav>
+
+	<main>
+	<article>
+		<h1>C Format Specifiers</h1>
+		<h2>Format specifiers and a few tricks</h2>
+
+		<time datetime="19-08-2020">AUG. 19, 2020</time>
+		<p>The C programming language has some nice options when it comes to
+		formatting output on the terminal and I've noticed that most tutorials
+		covering format specifiers don't show some of the nicer things you can
+		do with them. This tutorial will show a list of format specifiers and
+		will show examples for each one with what it outputs to the terminal.</p>
+
+		<h3>List of format specifiers</h3>
+		<table>
+			<tr>
+				<th>Specifier</th>
+				<th>Type</th>
+			</tr>
+
+			<tr>
+				<td>%c</td>
+				<td>Character</td>
+			</tr>
+
+			<tr>
+				<td>%d</td>
+				<td>Signed integer</td>
+			</tr>
+
+			<tr>
+				<td>%e</td>
+				<td>Scientific notation for float</td>
+			</tr>
+
+			<tr>
+				<td>%E</td>
+				<td>Scientific notation for float</td>
+			</tr>
+
+			<tr>
+				<td>%f</td>
+				<td>Float</td>
+			</tr>
+
+			<tr>
+				<td>%g</td>
+				<td>Float to third decimal place</td>
+			</tr>
+
+			<tr>
+				<td>%G</td>
+				<td>Float to third decimal place</td>
+			</tr>
+
+			<tr>
+				<td>%hi</td>
+				<td>Signed short</td>
+			</tr>
+
+			<tr>
+				<td>%hu</td>
+				<td>Unsigned short</td>
+			</tr>
+
+			<tr>
+				<td>%i</td>
+				<td>Unsigned integer</td>
+			</tr>
+
+			<tr>
+				<td>%l</td>
+				<td>Long</td>
+			</tr>
+
+			<tr>
+				<td>%ld</td>
+				<td>Long</td>
+			</tr>
+
+			<tr>
+				<td>%li</td>
+				<td>Long</td>
+			</tr>
+
+			<tr>
+				<td>%lf</td>
+				<td>Long double</td>
+			</tr>
+
+			<tr>
+				<td>%Lf</td>
+				<td>Long double</td>
+			</tr>
+
+			<tr>
+				<td>%lli</td>
+				<td>Long long</td>
+			</tr>
+
+			<tr>
+				<td>%lld</td>
+				<td>Long long</td>
+			</tr>
+
+			<tr>
+				<td>%llu</td>
+				<td>Unsigned long long</td>
+			</tr>
+
+			<tr>
+				<td>%o</td>
+				<td>Octal representation</td>
+			</tr>
+
+			<tr>
+				<td>%p</td>
+				<td>Pointer</td>
+			</tr>
+
+			<tr>
+				<td>%s</td>
+				<td>String</td>
+			</tr>
+
+			<tr>
+				<td>%u</td>
+				<td>Unsigned int</td>
+			</tr>
+
+			<tr>
+				<td>%x</td>
+				<td>Hexadecimal representation</td>
+			</tr>
+
+			<tr>
+				<td>%X</td>
+				<td>Hexadecimal representation</td>
+			</tr>
+
+			<tr>
+				<td>%n</td>
+				<td>Prints nothing</td>
+			</tr>
+
+			<tr>
+				<td>%%</td>
+				<td>Prints percent character</td>
+			</tr>
+
+		</table>
+
+		<p>From here I'll show some example code and the output from that code at
+		just underneath it. We'll start with character and signed integer:</p>
+
+
+		<h3>Character and signed integer</h3>
+
+
+		<pre>
+
+char c = 'c';
+int i = -3;
+
+printf("%c\n", c);
+printf("%d\n", i);
+		</pre>
+
+
+		<pre>
+
+c
+-3
+		</pre>
+
+
+		<h3>Float</h3>
+
+		<pre>
+
+float f = 123.4567890f;
+
+printf("%e\n", f);
+printf("%E\n", f);
+printf("%f\n", f);
+printf("%g\n", f);
+printf("%G\n", f);
+		</pre>
+
+
+		<pre>
+
+1.234568e+02
+1.234568E+02
+123.456787
+123.457
+123.457
+		</pre>
+
+		<h3>Signed and unsigned short</h3>
+
+		<pre>
+
+short s = -6;
+unsigned short us = 6;
+
+printf("%hi\n", s);
+printf("%hu\n", us);
+		</pre>
+
+		<pre>
+
+-6
+6
+		</pre>
+
+		<h3>Unsigned integer</h3>
+
+		<pre>
+
+unsigned int i = 3;
+
+printf("%i\n", i);
+		</pre>
+
+		<pre>
+
+3
+		</pre>
+
+		<h3>Long</h3>
+
+		<pre>
+
+long l = 1234567;
+
+printf("%l\n",  l);
+printf("%ld\n", l);
+printf("%li\n", l);
+		</pre>
+
+		<pre>
+
+1234567
+1234567
+1234567
+		</pre>
+
+		<p>Just a note, I tried %l on my system and the version of gcc I was
+		using didn't recognise it. I'm not sure if this is supported by older
+		versions of the compiler or by different compilers but if you run into
+		that issue you can use %ld or %li instead.</p>
+
+		<h3>Double</h3>
+
+		<pre>
+
+double d = 987.654321;
+
+printf("%lf\n", d);
+		</pre>
+
+		<pre>
+
+987.654321
+		</pre>
+
+		<h3>Long double</h3>
+
+		<pre>
+long double ld = 987.654321;
+
+printf("%Lf\n", ld);
+		</pre>
+
+		<pre>
+
+987.654321
+		</pre>
+
+		<h3>Long long and unsigned long long</h3>
+
+		<pre>
+
+long long ll = -123456789;
+unsigned long long ull= 123456789;
+
+printf("%lli\n", ll);
+printf("%lld\n", ll);
+
+printf("%llu\n", ull);
+		</pre>
+
+		<pre>
+
+-123456789
+-123456789
+123456789
+		</pre>
+
+		<h3>Octal representation</h3>
+
+		<pre>
+
+printf("%o\n", 69);
+		</pre>
+
+		<pre>
+
+105
+		</pre>
+
+		<h3>Pointer</h3>
+
+		<pre>
+
+int i = 3;
+int *ptr = &i;
+
+
+printf("%p\n", ptr);
+		</pre>
+
+		<pre>
+
+0x7ffe799a55b4
+		</pre>
+
+		<p>If you haven't covered pointers yet just as a heads up, your value will
+		be different to mine. I won't be explaining pointers in this tutorial.</p>
+
+		<h3>String</h3>
+
+		<pre>
+
+char *s = "Hello, world!";
+
+printf("%s\n", s);
+		</pre>
+
+		<pre>
+
+Hello, world!
+		</pre>
+
+		<h3>Unsigned integer</h3>
+
+		<pre>
+
+unsigned int ui = 3;
+
+printf("%u\n", ui);
+		</pre>
+
+		<pre>
+
+3
+		</pre>
+
+		<h3>Hexadecimal representation</h3>
+
+		<pre>
+
+int i = -3;
+
+printf("%x\n", i);
+printf("%X\n", i);
+		</pre>
+
+		<pre>
+
+fffffffd
+FFFFFFFD
+		</pre>
+
+		<h3>Other</h3>
+
+		<pre>
+
+int i = 3;
+int *ptr = &i;
+
+printf("%n\n", ptr);
+printf("%%\n");
+		</pre>
+
+		<pre>
+
+
+%
+		</pre>
+
+		<h3>Formatting tricks</h3>
+
+		<p>There are a few other flags you can add to a format specifier to
+		format output to specific needs. These are '*', '.', and '-'. You can
+		also supply a number just after the % character to add spacing to the
+		formatted output.</p>
+
+		<h3>Left alignment</h3>
+
+		<p>By supplying a numerical value after the % character you will align
+		values from the left. All this does is add spacing in front of the
+		formatted values so the line up. This only works if the supplied
+		values are equal to or less than the supplied numerical value. Below
+		is an example with three different strings all set to be left aligned
+		by 20 characters.</p>
+
+		<pre>
+
+char *str_one       = "Hello, World!";
+char *str_two       = "Hello there, World!";
+char *str_three     = "Why hello again, World!";
+
+printf("%20s ==\n", str_one);
+printf("%20s ==\n", str_two);
+printf("%20s ==\n", str_three);
+		</pre>
+
+		<pre>
+
+       Hello, World! ==
+ Hello there, World! ==
+Why hello again, World! ==
+		</pre>
+
+		<p>As you can see, the first two strings are aligned properly. The two
+		equals signs have been added to the output to show how the alignment.
+		The third string however is not correctly aligned because the length
+		of the string is greater than 20 characters.</p>
+
+		<h3>Right alignment</h3>
+
+		<p>When you supply the minus (-) sign just after the % character this
+		will align values to the right. It works exactly like the left alignment
+		where it will put spaces after the formatted values.</p>
+
+		<pre>
+
+char *str_one       = "Hello, World!";
+char *str_two       = "Hello there, World!";
+char *str_three     = "Why hello again, World!";
+
+
+printf("%-20s ==\n", str_one);
+printf("%-20s ==\n", str_two);
+printf("%-20s ==\n", str_three);
+		</pre>
+
+		<pre>
+
+Hello, World!        ==
+Hello there, World!  ==
+Why hello again, World! ==
+		</pre>
+
+		<p>Similarly to the left alignment, the first and second strings have
+		been aligned correctly but the third string has not. Again this is due
+		to the length of the third string being greater than the supplied length
+		for the format specifier.</p>
+
+
+		<h3>Variable length formatting</h3>
+
+		<p>Instead of supplying a number after the % character, you can
+		actually use values of variables. You can do this by supplying an
+		asterisk (*) after the % character.</p>
+
+		<pre>
+
+char *str = "Hello, World!";
+
+int len_one = 20;
+int len_two = 15;
+
+printf("%*s ==\n", len_one, str);
+printf("%*s ==\n", len_two, str);
+		</pre>
+
+		<pre>
+
+       Hello, World! ==
+  Hello, World! ==
+		</pre>
+
+		<p>When using the asterisk, the first argument you'll have to pass after
+		the format string will have to be the variable length. As you can see
+		from the output the left alignment for each printf call as been aligned
+		differently. You can also combine the asterisk with the right alignment
+		minus as well. It would look more like this:</p>
+
+		<pre>
+
+char *str = "Hello, World!";
+
+printf("%-*s ==\n", 20, str);
+printf("%-*s ==\n", 15, str);
+		</pre>
+
+		<pre>
+
+Hello, World!        ==
+Hello, World!   ==
+		</pre>
+
+		<h3>Truncate length</h3>
+
+		<p>You also have the option to truncate or shorten the formatted value.
+		By using the period (.) after the % character and then supplying a number
+		the formatting will remove any trailing characters. This also works with
+		the asterisk variable formatting.</p>
+
+		<pre>
+
+char *str_one       = "Hello, World!";
+char *str_two       = "Hello there, World!";
+char *str_three     = "Why hello again, World!";
+
+printf("%.10s ==\n", str_one);
+printf("%.10s ==\n", str_two);
+printf("%.10s ==\n", str_three);
+		</pre>
+
+		<pre>
+
+Hello, Wor ==
+Hello ther ==
+Why hello  ==
+		</pre>
+
+		<p>In this example output as all of the supplied strings are longer than
+		the length of the truncation length so none of them are printed in full.
+		Here's an example of the variable length with the truncation:</p>
+
+		<pre>
+
+char *str_one       = "Hello, World!";
+char *str_two       = "Hello there, World!";
+char *str_three     = "Why hello again, World!";
+
+int len = 12;
+
+printf("%.*s ==\n", len, str_one);
+printf("%.*s ==\n", len, str_two);
+printf("%.*s ==\n", len, str_three);
+		</pre>
+
+		<pre>
+
+Hello, World ==
+Hello there, ==
+Why hello ag ==
+		</pre>
+
+	</article>
+	</main>
+
+
+	<footer>
+		<a href="https://github.com/barrolskii">
+			<img src="../img/githubLogo.webp" alt="Github white logo" class="img-link" id="github-img">
+		</a>
+
+		<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+			<img src="../img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link" id="footer-img">
+		</a>
+
+		<a href="https://twitter.com/BarrellAshley">
+			<img src="../img/twitterLogo.webp" alt="Twitter white logo" class="img-link" id="footer-img">
+		</a>
+
+	</footer>
+</body>
+
+</html>
+

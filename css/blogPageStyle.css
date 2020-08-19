@@ -28,11 +28,11 @@ figcaption {
 
 h2, p { margin-bottom: 2.4rem; }
 
-h1 	 { font: 400 2.0rem/1.2 "Roboto"; color: hsl(000, 0%, 33%) }
-h2 	 { font: 400 1.5rem/1.2 "Roboto"; color: hsl(000, 0%, 30%) }
-time { font: 700 1.0rem/1.2 "Roboto"; color: #5569DC; }
-h3 	 { font: 700 1.0rem/1.2 "Roboto"; color: #292929; }
-p 	 { font: 700 1.0rem/1.5 "Roboto"; color: #3F3F3F; }
+h1 	 		{ font: 400 2.0rem/1.2 "Roboto"; color: hsl(000, 0%, 33%) }
+h2 	 		{ font: 400 1.5rem/1.2 "Roboto"; color: hsl(000, 0%, 30%) }
+time 		{ font: 700 1.0rem/1.2 "Roboto"; color: #5569DC; }
+h3, th, td	{ font: 700 1.0rem/1.2 "Roboto"; color: #292929; }
+p 	 		{ font: 700 1.0rem/1.5 "Roboto"; color: #3F3F3F; }
 
 a { box-shadow: inset 0 -0.15em black; }
 
@@ -73,5 +73,17 @@ pre {
 	margin-bottom: 5%;
 	overflow-x: auto;
 	padding-left: 10px;
+}
+
+table {
+	margin-top: 2.5%;
+	margin-bottom: 5%;
+	border-collapse: collapse;
+}
+
+th, td {
+	text-align: left;
+	border: solid 1px black;
+	padding: 8px;
 }
 
