@@ -85,5 +85,7 @@ th, td {
 	text-align: left;
 	border: solid 1px black;
 	padding: 8px;
+
+	font-family: 'Open Sans', sans-serif; font-weight: normal; 
 }
 
