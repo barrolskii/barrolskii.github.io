@@ -1,0 +1,171 @@
+footer {
+    float: left;
+}
+
+h1 { margin-left: 10%; }
+
+p {
+    margin-top: 2%;
+	margin-bottom: 2.4rem;
+	grid-column: 5;
+	font: 400 1.0rem/1.5 "Roboto";
+	color: hsl(000, 0%, 30%);
+	margin-left: 5%;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+    font-size: 22px;
+}
+
+b {
+    color: #2C3E50;
+    font-size: 24px;
+}
+
+.project-container {
+    float: left;
+    display: block;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.slideshow-container {
+    width: 50%;
+    position: relative;
+    margin-left: 10%;
+    float: left;
+}
+
+.project-description {
+    width: 40%;
+    float: right;
+}
+
+.slideshow-container img {
+    width: 100%;
+}
+
+.mySlides1, .mySlides2, .mySlides3, .mySlides4 {display: none}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+	border-radius: 3px 0 0 3px;
+	right: 0;
+}
+
+.prev:hover, .next:hover {
+	background-color: #f1f1f1;
+	color: black;
+}
+
+#projects-nav-inner {
+    display: none;
+}
+
+#projects-nav-under {
+	width: auto;
+	background-color: #202020;
+	padding-left: 30%;
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
+    display: block;
+}
+
+#projects-nav-under li {
+	display: inline-block;
+	padding-top: 2px;
+	padding-right: 2%;
+	padding-bottom: 2px;
+	font: 400i 1.0rem/1.5 "Roboto";
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+}
+
+#projects-nav-under li a {
+	color: white;
+	text-decoration: none;
+}
+
+#projects-nav-under a:hover {
+	color: #CAD4E8;
+}
+
+/* Smaller monitor settings */
+
+@media (max-width: 1280px) {
+
+    h1 { margin-left: 10%; }
+    p { font-size:22px; }
+    b { font-size: 24px; }
+}
+
+/* Tablet settings */
+
+@media (max-width: 800px) {
+
+    h1 { margin-left: 10%; }
+    p { font-size: 18px; }
+    b { font-size: 20px; }
+
+    .slideshow-container {
+        width: 100%;
+        position: relative;
+        margin-left: 0;
+    }
+
+    .project-description {
+        width: 100%;
+        float: left;
+    }
+
+    #projects-nav-inner {
+        display: none;
+    }
+
+    #projects-nav-outer {
+        display: block;
+    }
+}
+
+/* Mobile settings */
+
+@media (max-width: 414px) {
+
+    h1 { margin-left: 10%; }
+    p { font-size: 16px; }
+    b { font-size: 18px; }
+
+    .slideshow-container {
+        width: 100%;
+        position: relative;
+        margin-left: 0;
+    }
+
+    .project-description {
+        width: 100%;
+        float: left;
+    }
+
+    #projects-nav-inner {
+        display: block;
+    }
+
+    #projects-nav-under{
+        display: none;
+    }
+
+}
