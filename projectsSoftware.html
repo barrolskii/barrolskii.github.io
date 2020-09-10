@@ -3,18 +3,12 @@
 <html>
 
 	<head>
-		<title>Projects</title>	
-
+		<title>Projects</title>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/-debug.css">
 		<link rel="stylesheet" href="css/style.css">
-
-		<!-- Icon library for hamburger bars -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/projectsStyle.css">
-
+		<link rel="stylesheet" href="css/projectStyle.css">
 	</head>
 
 	<body>
@@ -22,79 +16,79 @@
 		<nav>
 			<li><a href="index.html">Home</a></li>
 			<li><a href="projectsSoftware.html">Projects</a></li>
+            <li id="projects-nav-inner"><a href="projectsSoftware.html">Software Projects</a></li>
+            <li id="projects-nav-inner"><a href="projectsGames.html">Games Projects</a></li>
 			<li><a href="resume.html">R&eacute;sum&eacute;</a></li>
 			<li><a href="blog-index.html">Blog</a></li>
 		</nav>
 
-		<div id="projectsNav">
-			<li><a href="projectsSoftware.html">Software Projects</a></li>
-			<li><a href="projectsGames.html">Games Projects</a></li>	
-		</div>
+        <div id="projects-nav-under">
+            <li><a href="projectsSoftware.html">Software Projects</a></li>
+            <li><a href="projectsGames.html">GamesProjects</a></li>
+        </div>
 
 		<main>
-		<article>
-
+			<article>
 
 			<h1>Current Projects</h1>
 
 			<!-- Phantom -->
-			<figure class="size-2">
-			<div class="slideshow-container"> 
+            <div class="project-container">
+              <div class="slideshow-container">
 
-				<div class="mySlides2">
-					<img src="img/ComingSoon.png">
-				</div>
+                <div class="mySlides2">
+                  <img src="img/ComingSoon.png">
+                </div>
 
+                <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
 
-				<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+              </div>
 
-			</div>
-			</figure>
+              <div class="project-description">
+                <p><b>Phantom</b><br> Phantom is a scripting langauge that I'm going to be
+                making for my final year project in university. There are no screenshots of
+                this project currenlty as it is in the concept stage.</p>
+              </div>
 
-			
-			<p><b>Phantom</b><br> Phantom is a scripting langauge that I'm going to be 
-			making for my final year project in university. There are no screenshots of
-			this project currenlty as it is in the concept stage.</p>
+              </div>
 
+			<!-- Book Oganiser -->
+            <div class="project-container">
+              <div class="slideshow-container">
 
-			<!-- Book Oganiser Rework -->
-			<figure class="size-2">
+                <div class="mySlides1">
+                  <img src="img/projSoftwareImages/BookOrganiser/printAll.png">
+                </div>
 
-			<div class="slideshow-container"> 
+                <div class="mySlides1">
+                  <img src="img/projSoftwareImages/BookOrganiser/printCategory.png">
+                </div>
 
-				<div class="mySlides1">
-					<img src="img/projSoftwareImages/BookOrganiser/printAll.png">
-				</div>
-				
-				<div class="mySlides1">
-					<img src="img/projSoftwareImages/BookOrganiser/printCategory.png"> 
-				</div>
-				
-				<div class="mySlides1">
-					<img src="img/projSoftwareImages/BookOrganiser/printInterested.png">
-				</div>
-				
-				<div class="mySlides1">
-					<img src="img/projSoftwareImages/BookOrganiser/setInterested.png">
-				</div>
+                <div class="mySlides1">
+                  <img src="img/projSoftwareImages/BookOrganiser/printInterested.png">
+                </div>
 
-				
-				<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                <div class="mySlides1">
+                  <img src="img/projSoftwareImages/BookOrganiser/setInterested.png">
+                </div>
 
-			</div>
+                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
 
-			</figure>
+              </div>
 
-			<p><b>Book Organiser</b><br>A small project to organise my digital library 
-			of books. This project is currently undergoing a rework to include my friends
-			tagging system called Koios.</p>
+              <div class="project-description">
+                <p><b>Book Organiser</b><br>A small project to organise my digital library
+                of books. This project is currently undergoing a rework to include my friends
+                tagging system called Koios.</p>
+              </div>
 
-		</article>
+            </div>
 
-			<script>
+			</article>
 
+            <script>
 			var slideIndex = [1, 1]; // Add another 1 to this when new slideshows are added
 			var slideId = ["mySlides1", "mySlides2"] // Don't forget this as well
 
@@ -118,25 +112,22 @@
 			}
 
 			</script>
-
 		</main>
 
 		<footer>
 			<a href="https://github.com/barrolskii">
-				<img src="img/githubLogo.webp" alt="Github white logo" class="img-link" id="github-img">
-			</a>
-	
-			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
-				<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link" id="footer-img">
-			</a>
-	
-			<a href="https://twitter.com/BarrellAshley">
-				<img src="img/twitterLogo.webp" alt="Twitter white logo" class="img-link" id="footer-img">
+				<img src="img/githubLogo.webp" alt="Github white logo" class="img-link">
 			</a>
 
+			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+				<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link">
+			</a>
+
+			<a href="https://twitter.com/BarrellAshley">
+				<img src="img/twitterLogo.webp" alt="Twitter white logo" class="img-link">
+			</a>
 		</footer>
 
 	</body>
 
 </html>
-

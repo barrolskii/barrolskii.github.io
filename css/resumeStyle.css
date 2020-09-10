@@ -1,58 +1,98 @@
-article {
-	display: grid;
-	grid-template-columns: 1fr 0.5in [start] 1.25in 5in 1.25in [end] 0.5in 1fr;
-
-	padding: 0.5in 0;
+hr {
+    width: 40%;
+    margin-left: 30%;
+    margin-bottom: .5%;
 }
 
-article * { grid-column: start / end; }
-
-@media (max-width: 8.5in) {
-	article { grid-template-columns: 1fr 5% [start] 15% 60% 15% [end] 5% 1fr; }
-}
-
-p {
-	display: inline;
-	font-family: 'Open Sans', sans-serif;
-	color: #5E5E5E;
-	font-weight: normal;
-	font-size: 18px;
-	margin-bottom: 30px;
-}
-
-ul {
+ul{
 	list-style-position: inside;
-	margin-left: 1%;
+	margin-left: 30%;
 }
 
-li {
+ul li {
 	font-family: 'Open Sans', sans-serif;
 	color: #5E5E5E;
 	font-weight: normal;
 	font-size: 18px;
+    margin-left: 1%;
 }
-
-h1:not(:first-child) { margin-top: 30px; }
 
 h1 {
-	font: 700 2.0rem/1.2 "Roboto";
-	font-family: Arial, serif;
-	color: #2C3E50;
-	font-size: 32px;
+    font-size: 28px;
+    margin-bottom: 1%;
 }
 
 h2 {
 	font-family: 'Open Sans', sans-serif;
 	color: #2C3E50;
 	font-weight: normal;
-	font-size: 22px;
+	font-size: 20px;
 	margin-top: 5px;
 	margin-bottom: 0px;
+    margin-left: 30%;
 }
 
-hr { margin-bottom: 10px; }
+p {
+    margin-bottom: .5%;
+    font-size: 16px;
+
+	font-family: 'Open Sans', sans-serif;
+	color: #5E5E5E;
+	font-weight: normal;
+}
+
+b { font-size: 18px; }
 
 .text-container {
 	width: auto;
-	padding-bottom: 10px;
+	padding-bottom: 1%;
+}
+
+
+/* Smaller monitor settings */
+
+@media (max-width: 1280px) {
+
+    h1 { margin-left: 30%; }
+    p { margin-left: 30%; }
+}
+
+/* Tablet settings */
+
+@media (max-width: 800px) {
+
+    hr {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 2%;
+    }
+
+    h1 { margin-left: 10%; }
+    h2 { margin-left: 10%; } 
+    p { margin-left: 10%; }
+    ul { margin-left: 10%; }
+
+    ul li {
+	    margin-left: 1%;
+    }
+}
+
+/* Mobile settings */
+
+@media(max-width: 414px) {
+    p { margin-bottom: 0; }
+
+    hr {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 2%;
+    }
+
+    h2 { margin-left: 10%; } 
+
+    ul { margin-left: 10%; }
+
+    ul li {
+	    margin-left: 10%;
+    }
 }

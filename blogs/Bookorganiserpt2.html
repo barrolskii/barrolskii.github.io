@@ -3,17 +3,17 @@
 <html>
 
 	<head>
-		<title>Book Organiser pt 2</title>	
-
+		<title>Book Organiser pt 2</title>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href="../css/reset.css">
-		<link rel="stylesheet" href="../css/-debug.css">
-		<link rel="stylesheet" href="../css/blogPageStyle.css">
 		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/blog-indexStyle.css">
+		<link rel="stylesheet" href="../css/blogPageStyle.css">
 	</head>
 
 	<body>
+
 		<nav>
 			<li><a href="../index.html">Home</a></li>
 			<li><a href="../projectsSoftware.html">Projects</a></li>
@@ -22,21 +22,22 @@
 		</nav>
 
 		<main>
-		<article>
+			<article>
+
 			<h1>Book Organiser</h1>
 			<h2>So some things were broken...</h2>
 
 			<time datetime="08-03-2020">MAR. 08, 2020</time>
 			<p>A few weeks ago I made a blog post talking about my book
-			organiser program and how it was "finished". It is not 
+			organiser program and how it was "finished". It is not
 			finished at all but it was in what I thought to be a working
 			state. In my defence it was working but not it broke very easily
 			which is not good. Not good at all.</p>
 
 			<h3>What actually broke?</h3>
 			<p>The menu functions broke. That's it. Nothing else, which to be
-			quite honest surprised me. The reason I was happy with the state of 
-			the project was because when testing the functions they worked as 
+			quite honest surprised me. The reason I was happy with the state of
+			the project was because when testing the functions they worked as
 			intended and didn't show any signs of breaking. I only found out that
 			they were broken when I actually tried to use the program. The issue was
 			they can't be called more than once. Which is beyond useless seeing as
@@ -44,10 +45,10 @@
 			program is run.</p>
 
 			<h3>Why did it break?</h3>
-			<p>One very simple reason and it was to do with how I was dealing with 
-			a struct from the <a href="https://gitlab.com/finnoleary/koios">koios</a> 
+			<p>One very simple reason and it was to do with how I was dealing with
+			a struct from the <a href="https://gitlab.com/finnoleary/koios">koios</a>
 			library (This is the program I'm interfacing with to manage file tagging).
-			With each of these menu function calls I was initalising a new mask, 
+			With each of these menu function calls I was initalising a new mask,
 			loading a files mask, carrying out the functions specific purpose (outputting
 			a files name to the standard out or applying a new tag to the file) and then
 			finally deleting the mask. This is not the right way to handle masks with
@@ -57,14 +58,14 @@
 			<h3>How did you fix it?</h3>
 			<p>So instead of creating a new mask, loading a files mask and then deleting it,
 			you're only supposed to load a mask once. Or more accurately, you have a mask for
-			each koios config file you are loading in (This won't really make much sense to 
-			anyone who hasn't used koios but don't worry about that right now, I'll be 
+			each koios config file you are loading in (This won't really make much sense to
+			anyone who hasn't used koios but don't worry about that right now, I'll be
 			working with the creator soon to make some beginner tutorials on how to use koios
 			and explain some of the inner workings). So only creating the mask once and freeing
 			the memory when I'm done with it fixed the problem I was having!</p>
 
 			<h3>The todo list</h3>
-			<p>Fixing this issue gave me a chance to have a look at the current state of the 
+			<p>Fixing this issue gave me a chance to have a look at the current state of the
 			program and see what features I want to add and where I can clean things up. I've
 			made myself a nice little to do list for what I want to do next. Here are the main
 			things I want to add to the program:</p>
@@ -76,33 +77,33 @@
 				<li>Better error handling with the menu functions</li>
 			</ul>
 
-			<p>As you can see the list is quite small for now but it makes this project very 
+			<p>As you can see the list is quite small for now but it makes this project very
 			manageable alongside my work, other projects I have on the go and other hobbies
 			I'm trying to balance as well. I'm not sure when the next post about this project
-			will be as I'm starting research for <a href="blogs/Phantompt1.html">Phantom</a> 
-			tomorrow but the list of things I want to add to this program isn't massive so 
-			really I could get it done in one sprint. I might take a day off work to finish 
-			it some point this month. I totally won't take the day off and play video games 
+			will be as I'm starting research for <a href="blogs/Phantompt1.html">Phantom</a>
+			tomorrow but the list of things I want to add to this program isn't massive so
+			really I could get it done in one sprint. I might take a day off work to finish
+			it some point this month. I totally won't take the day off and play video games
 			all day. Not at all! I didn't just buy the Bioshock remastered collection to aid
 			my procrastination...</p>
 
-		</article>
+			</article>
 		</main>
 
 		<footer>
 			<a href="https://github.com/barrolskii">
-				<img src="../img/githubLogo.webp" alt="Github white logo" class="img-link" id="github-img">
-			</a>
-	
-			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
-				<img src="../img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link" id="footer-img">
-			</a>
-	
-			<a href="https://twitter.com/BarrellAshley">
-				<img src="../img/twitterLogo.webp" alt="Twitter white logo" class="img-link" id="footer-img">
+				<img src="../img/githubLogo.webp" alt="Github white logo" class="img-link">
 			</a>
 
+			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+				<img src="../img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link">
+			</a>
+
+			<a href="https://twitter.com/BarrellAshley">
+				<img src="../img/twitterLogo.webp" alt="Twitter white logo" class="img-link">
+			</a>
 		</footer>
+
 	</body>
 
 </html>

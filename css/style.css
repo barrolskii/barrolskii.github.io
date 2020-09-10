@@ -1,4 +1,8 @@
-/* body { background-color: #BDC3C7; } */
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body { background-color: #f4f8f9; }
 
 nav {
@@ -18,14 +22,6 @@ nav li {
 	font-size: 18px;
 }
 
-@media(max-width: 5.5in) {
-	nav li {
-		display: block;
-		height: 100%;
-		padding-bottom: 4px;
-	}
-}
-
 nav li a {
 	color: white;
 	text-decoration: none;
@@ -42,32 +38,151 @@ footer {
 	left: 0;
 	bottom: 0;
 	width: 100%;
+}
+
+h1 {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    margin-left: 30%;
+    color: #2C3E50;
+    font: 700 2.0rem/1.2 "Roboto";
+    font-family: Arial, serif;
+    font-size: 40px;
+}
+
+p {
+    margin-bottom: 2.4rem;
+    margin-left: 30%;
+    margin-right: 30%;
+    grid-column: 4 / end;
+    font: 400 1.0rem/1.5 "Roboto";
+    font-family: 'Open Sans', sans-serif;
+    color: #5E5E5E;
+    font-weight: normal;
+    font-size: 22px;
+}
+
+footer img {
+    width: 100px;
+    height: 100px;
+    margin-top: 2.5%;
+    margin-bottom: 1.25%;
+    margin-left: 20%;
+}
+
+/* Smaller monitor settings */
+
+@media (max-width: 1280px) {
+
+    h1 {
+	    margin-top: 2.5%;
+        margin-bottom: 2.5%;
+        margin-left: 10%;
+	    color: #2C3E50;
+	    font: 700 2.0rem/1.2 "Roboto";
+	    font-family: Arial, serif;
+	    font-size: 40px;
+    }
+
+    p {
+	    margin-bottom: 2.4rem;
+        margin-left: 10%;
+        margin-right: 30%;
+	    grid-column: 4 / end;
+	    font: 400 1.0rem/1.5 "Roboto";
+	    font-family: 'Open Sans', sans-serif;
+	    color: #5E5E5E;
+	    font-weight: normal;
+	    font-size: 22px;
+    }
+
+    footer img {
+        width: 100px;
+	    height: 100px;
+        margin-top: 2.5%;
+        margin-bottom: 1.25%;
+        margin-left: 18%;
+    }
 
 }
 
+/* Tablet settings */
 
-.img-link {
-	margin-top: 2.5%;
-	margin-bottom: 1.25%;
+@media (max-width: 800px) {
+
+    h1 {
+	    margin-top: 5%;
+        margin-bottom: 2.5%;
+        margin-left: 10%;
+	    color: #2C3E50;
+	    font: 700 2.0rem/1.2 "Roboto";
+	    font-family: Arial, serif;
+	    font-size: 32px;
+    }
+
+    p {
+	    margin-bottom: 2.4rem;
+        margin-left: 10%;
+        margin-right: 10%;
+	    grid-column: 4 / end;
+	    font: 400 1.0rem/1.5 "Roboto";
+	    font-family: 'Open Sans', sans-serif;
+	    color: #5E5E5E;
+	    font-weight: normal;
+	    font-size: 18px;
+    }
+
+    footer img {
+        width: 75px;
+	    height: 75px;
+        margin-top: 2.5%;
+        margin-bottom: 1.25%;
+        margin-left: 17%;
+    }
 }
 
-@media(max-width: 8.5in) {
-	.img-link {
-		width: 50px;
-		height: 50px;
+
+/* Mobile settings */
+
+@media(max-width: 414px) {
+
+    nav { padding-left: 40%; }
+
+	nav li {
+		display: block;
+		height: 100%;
+        padding-top: 12.5px;
+		padding-bottom: 12.5px;
 	}
-}
 
-#github-img {
-	margin-left: 30%;
-}
+    footer img {
+        width: 50px;
+	    height: 50px;
+        margin-top: 2.5%;
+        margin-bottom: 1.25%;
+        margin-left: 15%;
+    }
 
-@media(max-width: 5.5in) {
-	#github-img {
-		margin-left: 10%;
-	}
-}
 
-#footer-img {
-	margin-left: 10%;
+    h1 {
+	    margin-top: 10%;
+        margin-bottom: 5%;
+        margin-left: 10%;
+	    color: #2C3E50;
+	    font: 700 2.0rem/1.2 "Roboto";
+	    font-family: Arial, serif;
+	    font-size: 22px;
+    }
+
+    p {
+	    margin-bottom: 2.4rem;
+        margin-left: 10%;
+        margin-right: 10%;
+	    grid-column: 4 / end;
+	    font: 400 1.0rem/1.5 "Roboto";
+	    font-family: 'Open Sans', sans-serif;
+	    color: #5E5E5E;
+	    font-weight: normal;
+	    font-size: 16px;
+    }
 }

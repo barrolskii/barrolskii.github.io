@@ -3,18 +3,12 @@
 <html>
 
 	<head>
-		<title>Projects</title>	
-
+		<title>Projects</title>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/-debug.css">
 		<link rel="stylesheet" href="css/style.css">
-
-		<!-- Icon library for hamburger bars -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/projectsStyle.css">
-
+		<link rel="stylesheet" href="css/projectStyle.css">
 	</head>
 
 	<body>
@@ -22,46 +16,49 @@
 		<nav>
 			<li><a href="index.html">Home</a></li>
 			<li><a href="projectsSoftware.html">Projects</a></li>
+            <li id="projects-nav-inner"><a href="projectsSoftware.html">Software Projects</a></li>
+            <li id="projects-nav-inner"><a href="projectsGames.html">Games Projects</a></li>
 			<li><a href="resume.html">R&eacute;sum&eacute;</a></li>
 			<li><a href="blog-index.html">Blog</a></li>
 		</nav>
 
-		<div id="projectsNav">
-			<li><a href="projectsSoftware.html">Software Projects</a></li>
-			<li><a href="projectsGames.html">Games Projects</a></li>	
-		</div>
+        <div id="projects-nav-under">
+            <li><a href="projectsSoftware.html">Software Projects</a></li>
+            <li><a href="projectsGames.html">GamesProjects</a></li>
+        </div>
 
 		<main>
-		<article>
-
+			<article>
 
 			<h1>Current Projects</h1>
 
 			<!-- Project Scorch -->
-			<figure class="size-2">
-			<div class="slideshow-container"> 
+            <div class="project-container">
+              <div class="slideshow-container">
 
 				<div class="mySlides4">
 					<img src="img/projGamesImages/slideFour/ScorchEarlyPrototype.gif">
 				</div>
 
+                <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
 
-				<a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+              </div>
 
-			</div>
-			</figure>
+              <div class="project-description">
+			    <p><b>Project Scorch</b><br>Project Scorch is a game I am working on in my
+			      spare time. It's a wave survival third person shooter currently in a WIP stage.
+			      I've started this project to explore UE4 more in depth so I can try and broaden
+			      my skills with the engine.</p>
+              </div>
 
-			<p><b>Project Scorch</b><br>Project Scorch is a game I am working on in my
-			spare time. It's a wave survival third person shooter currently in a WIP stage. 
-			I've started this project to explore UE4 more in depth so I can try and broaden 
-			my skills with the engine.</p>
+            </div>
 
 			<h1>Previous Projects</h1>
 
 			<!-- Broken Chain -->
-			<figure class="size-2">
-			<div class="slideshow-container"> 
+            <div class="project-container">
+              <div class="slideshow-container">
 
 				<div class="mySlides3">
 				  <img src="img/projGamesImages/slideThree/Tutorial.gif">
@@ -88,21 +85,25 @@
 				</div>
 
 
-				<a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+                <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
 
-			</div>
-			</figure>
+              </div>
 
-			<p><b>Broken Chain</b><br>Broken chain is a 3D platforming collectathon 
-			made in UE4. This project consisted of myself and four other members as 
-			part of my technical games production module during my second year. 
-			This was my first time working with a team and I'm very please that we 
-			got to present this game to Ubisoft at their Leamington Spa studio.</p>
+              <div class="project-description">
+			    <p><b>Broken Chain</b><br>Broken chain is a 3D platforming collectathon
+			    made in UE4. This project consisted of myself and four other members as
+			    part of my technical games production module during my second year.
+			    This was my first time working with a team and I'm very please that we
+			    got to present this game to Ubisoft at their Leamington Spa studio.</p>
+              </div>
+
+            </div>
+
 
 			<!-- Hyperion Asiimov -->
-			<figure class="size-2">
-			<div class="slideshow-container"> 
+            <div class="project-container">
+              <div class="slideshow-container">
 
 				<div class="mySlides2">
 					<img src="img/projGamesImages/slideTwo/HAWPImgOne.jpg" >
@@ -117,25 +118,26 @@
 				</div>
 
 
-				<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+                <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
 
-			</div>
-			</figure>
+              </div>
 
-			
-			<p><b>Hyperion Asiimov Texture Pack</b><br>The second skin pack I 
-			made for Borderlands 2 adding the Asiimov skin from CS:GO to the 
-			Hyperion legendary weapons in the game. This pack is available via my 
-			<a href="https://github.com/barrolskii/TextureMods/tree/master/HyperionAsiimov">
-			github.</a></p>
+              <div class="project-description">
+			    <p><b>Hyperion Asiimov Texture Pack</b><br>The second skin pack I
+			    made for Borderlands 2 adding the Asiimov skin from CS:GO to the
+			    Hyperion legendary weapons in the game. This pack is available via my
+			    <a href="https://github.com/barrolskii/TextureMods/tree/master/HyperionAsiimov">
+			    github.</a></p>
+              </div>
+
+            </div>
 
 
 			<!-- Hyperion Obsidian -->
-			<figure class="size-2">
+            <div class="project-container">
+              <div class="slideshow-container">
 
-			<div class="slideshow-container"> 
-				
 				<div class="mySlides1">
 					<img src="img/projGamesImages/slideOne/HOWPImgOne.jpg" >
 				</div>
@@ -151,30 +153,32 @@
 				<div class="mySlides1">
 					<img src="img/projGamesImages/slideOne/HOWPImgFour.jpg" >
 				</div>
-				
+
 				<div class="mySlides1">
 					<img src="img/projGamesImages/slideOne/HOWPImgFive.jpg" >
 				</div>
-				
+
 				<div class="mySlides1">
 					<img src="img/projGamesImages/slideOne/HOWPImgSix.jpg" >
 				</div>
 
-				<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
 
-			</div>
+              </div>
 
-			</figure>
+              <div class="project-description">
+			    <p><b>Hyperion Obsidian Texture Pack</b><br>The first weapon texture pack
+			    I made for Borderlands 2 which applies to the Hyperion unique weapons in
+			    the game. Each weapon skin has two variants, a factory default version and
+			    a battle worn version. This pack is available via my
+			    <a href="https://github.com/barrolskii/TextureMods/tree/master/HyperionObsidian">
+			    github.</a></p>
+              </div>
 
-			<p><b>Hyperion Obsidian Texture Pack</b><br>The first weapon texture pack
-			I made for Borderlands 2 which applies to the Hyperion unique weapons in 
-			the game. Each weapon skin has two variants, a factory default version and 
-			a battle worn version. This pack is available via my 
-			<a href="https://github.com/barrolskii/TextureMods/tree/master/HyperionObsidian">
-			github.</a></p>
+            </div>
 
-		</article>
+			</article>
 
 			<script>
 
@@ -204,24 +208,23 @@
 
 			</script>
 
+
 		</main>
 
 		<footer>
 			<a href="https://github.com/barrolskii">
-				<img src="img/githubLogo.webp" alt="Github white logo" class="img-link" id="github-img">
-			</a>
-	
-			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
-				<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link" id="footer-img">
-			</a>
-	
-			<a href="https://twitter.com/BarrellAshley">
-				<img src="img/twitterLogo.webp" alt="Twitter white logo" class="img-link" id="footer-img">
+				<img src="img/githubLogo.webp" alt="Github white logo" class="img-link">
 			</a>
 
+			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+				<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link">
+			</a>
+
+			<a href="https://twitter.com/BarrellAshley">
+				<img src="img/twitterLogo.webp" alt="Twitter white logo" class="img-link">
+			</a>
 		</footer>
 
 	</body>
 
 </html>
-
