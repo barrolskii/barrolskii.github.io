@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<title>Doom Emacs Icons Fix</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/blog-indexStyle.css">
+		<link rel="stylesheet" href="../css/blogPageStyle.css">
+	</head>
+
+	<body>
+
+		<nav>
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../projectsSoftware.html">Projects</a></li>
+			<li><a href="../resume.html">R&eacute;sum&eacute;</a></li>
+			<li><a href="../blog-index.html">Blog</a></li>
+		</nav>
+
+		<main>
+			<article>
+				<h1>Doom Emacs</h1>
+				<h2>Fixing missing icons in Windows</h2>
+
+				<time datetime="17-09-2020">SEP. 17, 2020</time>
+				<p>After a fresh install of doom emacs on Windows you'll notice when you boot emacs up
+					that there are icons missing on the side of the doom dashboard and at the bottom where
+					the official GitHub repository is linked. I'm going to go over how to fix that in this
+					tutorial.
+				</p>
+
+				<h3>The Fix</h3>
+				<p>The issue is simply due to missing font packages in Windows. To download the fonts
+					you have to press meta-x (the meta key by default is the alt key) and then type:
+				</p>
+
+				<pre>
+
+all-the-icons-install-fonts
+				</pre>
+
+				<p>
+					On Windows this will ask you to provide a directory for the font files to be downloaded to.
+					Once you've provieded a directory you'll then need to open PowerShell and then cd into the
+					directory where the font files have been downloaded. Once you've navigated there you'll then
+					have to run this snippet of code.
+				</p>
+
+				<pre>
+
+$dest = (New-Object -ComObject Shell.Application).Namespace(0x14)
+ls *.ttf | % { $dest.CopyHere($_.FullName, 0x10) }
+				</pre>
+
+				<p>
+					Once you've run that a few pop up windows should appear showing the installation of each
+					font. When the fonts have been installed all you have to do then is restart doom emacs
+					(which can be done by pressing space q r) and then the icons will show up without any issue
+				</p>
+
+				<h3>Sources</h3>
+				<p>
+					GitHub issue going over the fix for Windows - <a href="https://github.com/hlissner/doom-emacs/issues/2575"></a>
+					Special folders in Windows 0x14 - <a href="https://richardspowershellblog.wordpress.com/2008/03/20/special-folders/"></a>
+					Special folders in Windows 0x10 - <a href="https://docs.microsoft.com/en-us/previous-versions/tn-archive/ee176633(v=technet.10)"></a>
+				</p>
+
+
+			</article>
+		</main>
+
+		<footer>
+			<a href="https://github.com/barrolskii">
+				<img src="../img/githubLogo.webp" alt="Github white logo" class="img-link">
+			</a>
+
+			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
+				<img src="../img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link">
+			</a>
+
+			<a href="https://twitter.com/BarrellAshley">
+				<img src="../img/twitterLogo.webp" alt="Twitter white logo" class="img-link">
+			</a>
+		</footer>
+
+	</body>
+
+</html>
+
+
+<!-- --
+
+
+  ---->
