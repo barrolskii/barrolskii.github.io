@@ -25,7 +25,7 @@ b {
     float: left;
     display: block;
     width: 100%;
-    margin-bottom: 2%;
+    margin-bottom: 10%;
 }
 
 .slideshow-container {
@@ -43,8 +43,6 @@ b {
 .slideshow-container img {
     width: 100%;
 }
-
-.mySlides1, .mySlides2, .mySlides3, .mySlides4 {display: none}
 
 .prev, .next {
 	cursor: pointer;
@@ -111,6 +109,10 @@ b {
     h1 { margin-left: 10%; }
     p { font-size:22px; }
     b { font-size: 24px; }
+
+    .project-container {
+        margin-bottom: 2%;
+    }
 }
 
 /* Tablet settings */
@@ -139,6 +141,10 @@ b {
     #projects-nav-outer {
         display: block;
     }
+
+    .project-container {
+        margin-bottom: 2%;
+    }
 }
 
 /* Mobile settings */
@@ -166,6 +172,10 @@ b {
 
     #projects-nav-under{
         display: none;
+    }
+
+    .project-container {
+        margin-bottom: 2%;
     }
 
 }

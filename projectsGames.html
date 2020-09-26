@@ -62,24 +62,11 @@
             <div class="project-container">
               <div class="slideshow-container">
 
-				<div class="mySlides3">
-				  <img src="img/projGamesImages/slideThree/OfficeDash1.png">
-				</div>
+                <img name="slide3" src="img/projGamesImages/slideThree/OfficeDash1.png"/>
+                <!---->
 
-				<div class="mySlides3">
-				  <img src="img/projGamesImages/slideThree/OfficeDash2.png">
-				</div>
-
-				<div class="mySlides3">
-				  <img src="img/projGamesImages/slideThree/OfficeDash3.png">
-				</div>
-
-				<div class="mySlides3">
-				  <img src="img/projGamesImages/slideThree/OfficeDash4.png">
-				</div>
-
-                <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+                <a class="prev" onclick="DecrementSlides(slide3, 2)">&#10094;</a>
+                <a class="next" onclick="IncrementSlides(slide3, 2)">&#10095;</a>
 
               </div>
 
@@ -100,21 +87,11 @@
             <div class="project-container">
               <div class="slideshow-container">
 
-				<div class="mySlides2">
-					<img src="img/projGamesImages/slideTwo/HAWPImgOne.jpg" >
-				</div>
+                <img name="slide2" src="img/projGamesImages/slideTwo/HAWPImgOne.jpg" >
+                <!---->
 
-				<div class="mySlides2">
-					<img src="img/projGamesImages/slideTwo/HAWPImgTwo.jpg" >
-				</div>
-
-				<div class="mySlides2">
-					<img src="img/projGamesImages/slideTwo/HAWPImgThree.jpg" >
-				</div>
-
-
-                <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+                <a class="prev" onclick="DecrementSlides(slide2, 1)">&#10094;</a>
+                <a class="next" onclick="IncrementSlides(slide2, 1)">&#10095;</a>
 
               </div>
 
@@ -133,32 +110,11 @@
             <div class="project-container">
               <div class="slideshow-container">
 
-				<div class="mySlides1">
-					<img src="img/projGamesImages/slideOne/HOWPImgOne.jpg" >
-				</div>
+                <img name="slide1" src="img/projGamesImages/slideOne/HOWPImgOne.jpg">
+                <!---->
 
-				<div class="mySlides1">
-					<img src="img/projGamesImages/slideOne/HOWPImgTwo.jpg" >
-				</div>
-
-				<div class="mySlides1">
-					<img src="img/projGamesImages/slideOne/HOWPImgThree.jpg" >
-				</div>
-
-				<div class="mySlides1">
-					<img src="img/projGamesImages/slideOne/HOWPImgFour.jpg" >
-				</div>
-
-				<div class="mySlides1">
-					<img src="img/projGamesImages/slideOne/HOWPImgFive.jpg" >
-				</div>
-
-				<div class="mySlides1">
-					<img src="img/projGamesImages/slideOne/HOWPImgSix.jpg" >
-				</div>
-
-                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                <a class="prev" onclick="DecrementSlides(slide1, 0)">&#10094;</a>
+                <a class="next" onclick="IncrementSlides(slide1, 0)">&#10095;</a>
 
               </div>
 
@@ -177,29 +133,46 @@
 
 			<script>
 
-			var slideIndex = [1, 1, 1, 1]; // Add another 1 to this when new slideshows are added
-			var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4"] // Don't forget this as well
+            var slideIndex = [0, 0, 0, 0]; // Add another index here when
+                                           // adding another slideshow to the page
 
-			// Add another function call for extra slideshows here as well
-			showSlides(1, 0);
-			showSlides(1, 1);
-			showSlides(1, 2);
-			showSlides(1, 3);
+            var slideshowImages = [
+                    [
+                        "img/projGamesImages/slideOne/HOWPImgOne.jpg",
+                        "img/projGamesImages/slideOne/HOWPImgTwo.jpg",
+                        "img/projGamesImages/slideOne/HOWPImgThree.jpg",
+                        "img/projGamesImages/slideOne/HOWPImgFour.jpg",
+                        "img/projGamesImages/slideOne/HOWPImgFive.jpg",
+                        "img/projGamesImages/slideOne/HOWPImgSix.jpg",
+                    ],
+                    [
+                        "img/projGamesImages/slideTwo/HAWPImgOne.jpg",
+                        "img/projGamesImages/slideTwo/HAWPImgTwo.jpg",
+                        "img/projGamesImages/slideTwo/HAWPImgThree.jpg",
+                    ],
+                    [
+                        "img/projGamesImages/slideThree/OfficeDash1.png",
+                        "img/projGamesImages/slideThree/OfficeDash2.png",
+                        "img/projGamesImages/slideThree/OfficeDash3.png",
+                        "img/projGamesImages/slideThree/OfficeDash4.png"
+                    ]
+                ];
 
-			function plusSlides(n, no) {
-		  		showSlides(slideIndex[no] += n, no);
-			}
+            function IncrementSlides(name, slideNo) {
+                slideIndex[slideNo]++;
 
-			function showSlides(n, no) {
-				var i;
-				var x = document.getElementsByClassName(slideId[no]);
-				if (n > x.length) {slideIndex[no] = 1}    
-				if (n < 1) {slideIndex[no] = x.length}
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";  
-				}
-				x[slideIndex[no]-1].style.display = "block";  
-			}
+                if (slideIndex[slideNo] >= slideshowImages[slideNo].length) { slideIndex[slideNo] = 0; }
+
+                name.src = slideshowImages[slideNo][slideIndex[slideNo]];
+            }
+
+            function DecrementSlides(name, slideNo) {
+                slideIndex[slideNo]--;         
+
+                if (slideIndex[slideNo] < 0) { slideIndex[slideNo] = slideshowImages[slideNo].length - 1; }
+
+                name.src = slideshowImages[slideNo][slideIndex[slideNo]];
+            }
 
 			</script>
 

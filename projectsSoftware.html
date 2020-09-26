@@ -36,12 +36,11 @@
             <div class="project-container">
               <div class="slideshow-container">
 
-                <div class="mySlides2">
-                  <img src="img/ComingSoon.png">
-                </div>
+                <img name="slide2" src="img/ComingSoon.png">
+                <!---->
 
-                <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+                <a class="prev" onclick="DecrementSlides(slide2, 2)">&#10094;</a>
+                <a class="next" onclick="IncrementSlides(slide2, 1)">&#10095;</a>
 
               </div>
 
@@ -57,24 +56,11 @@
             <div class="project-container">
               <div class="slideshow-container">
 
-                <div class="mySlides1">
-                  <img src="img/projSoftwareImages/BookOrganiser/printAll.png">
-                </div>
+                <img name="slide1" src="img/projSoftwareImages/BookOrganiser/printAll.png">
+                <!---->
 
-                <div class="mySlides1">
-                  <img src="img/projSoftwareImages/BookOrganiser/printCategory.png">
-                </div>
-
-                <div class="mySlides1">
-                  <img src="img/projSoftwareImages/BookOrganiser/printInterested.png">
-                </div>
-
-                <div class="mySlides1">
-                  <img src="img/projSoftwareImages/BookOrganiser/setInterested.png">
-                </div>
-
-                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                <a class="prev" onclick="DecrementSlides(slide1, 0)">&#10094;</a>
+                <a class="next" onclick="IncrementSlides(slide1, 0)">&#10095;</a>
 
               </div>
 
@@ -89,27 +75,37 @@
 			</article>
 
             <script>
-			var slideIndex = [1, 1]; // Add another 1 to this when new slideshows are added
-			var slideId = ["mySlides1", "mySlides2"] // Don't forget this as well
 
-			// Add another function call for extra slideshows here as well
-			showSlides(1, 0);
-			showSlides(1, 1);
+            var slideIndex = [0, 0]; // Add another index here when
+                                     // adding another slideshow to the page
 
-			function plusSlides(n, no) {
-		  		showSlides(slideIndex[no] += n, no);
-			}
+            var slideshowImages = [
+                    [
+                        "img/projSoftwareImages/BookOrganiser/printAll.png",
+                        "img/projSoftwareImages/BookOrganiser/printCategory.png",
+                        "img/projSoftwareImages/BookOrganiser/setInterested.png",
+                    ],
+                    [
+                        "img/ComingSoon.png"
+                    ], 
+                ];
 
-			function showSlides(n, no) {
-				var i;
-				var x = document.getElementsByClassName(slideId[no]);
-				if (n > x.length) {slideIndex[no] = 1}    
-				if (n < 1) {slideIndex[no] = x.length}
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";  
-				}
-				x[slideIndex[no]-1].style.display = "block";  
-			}
+            function IncrementSlides(name, slideNo) {
+                slideIndex[slideNo]++;
+
+                if (slideIndex[slideNo] >= slideshowImages[slideNo].length) { slideIndex[slideNo] = 0; }
+
+                name.src = slideshowImages[slideNo][slideIndex[slideNo]];
+            }
+
+            function DecrementSlides(name, slideNo) {
+                slideIndex[slideNo]--;         
+
+                if (slideIndex[slideNo] < 0) { slideIndex[slideNo] = slideshowImages[slideNo].length - 1; }
+
+                name.src = slideshowImages[slideNo][slideIndex[slideNo]];
+            }
+
 
 			</script>
 		</main>
