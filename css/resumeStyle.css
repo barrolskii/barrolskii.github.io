@@ -1,25 +1,17 @@
 hr {
-    width: 40%;
-    margin-left: 30%;
-    margin-bottom: .5%;
+    margin-bottom: 1%;
 }
 
 ul{
 	list-style-position: inside;
-	margin-left: 30%;
 }
 
 ul li {
-	font-family: 'Open Sans', sans-serif;
-	color: #5E5E5E;
+	font-family: 'open sans', sans-serif;
+	color: #5e5e5e;
 	font-weight: normal;
 	font-size: 18px;
     margin-left: 1%;
-}
-
-h1 {
-    font-size: 28px;
-    margin-bottom: 1%;
 }
 
 h2 {
@@ -27,72 +19,5 @@ h2 {
 	color: #2C3E50;
 	font-weight: normal;
 	font-size: 20px;
-	margin-top: 5px;
-	margin-bottom: 0px;
-    margin-left: 30%;
-}
-
-p {
-    margin-bottom: .5%;
-    font-size: 16px;
-
-	font-family: 'Open Sans', sans-serif;
-	color: #5E5E5E;
-	font-weight: normal;
-}
-
-b { font-size: 18px; }
-
-.text-container {
-	width: auto;
-	padding-bottom: 1%;
-}
-
-
-/* Smaller monitor settings */
-
-@media (max-width: 1280px) {
-
-    h1 { margin-left: 30%; }
-    p { margin-left: 30%; }
-}
-
-/* Tablet settings */
-
-@media (max-width: 800px) {
-
-    hr {
-        width: 80%;
-        margin-left: 10%;
-        margin-bottom: 2%;
-    }
-
-    h1 { margin-left: 10%; }
-    h2 { margin-left: 10%; } 
-    p { margin-left: 10%; }
-    ul { margin-left: 10%; }
-
-    ul li {
-	    margin-left: 1%;
-    }
-}
-
-/* Mobile settings */
-
-@media(max-width: 414px) {
-    p { margin-bottom: 0; }
-
-    hr {
-        width: 80%;
-        margin-left: 10%;
-        margin-bottom: 2%;
-    }
-
-    h2 { margin-left: 10%; } 
-
-    ul { margin-left: 10%; }
-
-    ul li {
-	    margin-left: 10%;
-    }
+    margin-bottom: 1%;
 }

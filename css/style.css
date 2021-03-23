@@ -3,23 +3,24 @@
     padding: 0;
 }
 
-body { background-color: #f4f8f9; }
+body {
+    background: #f4f8f9;
+}
 
 nav {
 	width: auto;
 	background-color: #202020;
 	padding-left: 30%;
 	font-family: 'Open Sans', sans-serif;
-	font-style: italic;
-
+	font-style: bold;
 }
 
 nav li {
 	display: inline-block;
-	padding-top: 25px;
+	padding-top: 1rem;
 	padding-right: 2%;
-	padding-bottom: 20px;
-	font-size: 18px;
+	padding-bottom: 1rem;
+    font-size: 20px;
 }
 
 nav li a {
@@ -34,27 +35,33 @@ nav a:hover {
 
 footer {
 	background-color: #202020;
-	position: relative;
-	left: 0;
-	bottom: 0;
 	width: 100%;
 }
 
+footer img {
+    max-width: 100px;
+    width: 8vw;
+    margin-left: 20vw;
+}
+
+article {
+    max-width: 800px;
+    margin: auto;
+    padding: 0 16px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 h1 {
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
-    margin-left: 30%;
     color: #2C3E50;
     font: 700 2.0rem/1.2 "Roboto";
     font-family: Arial, serif;
     font-size: 40px;
+    margin-bottom: 2.5%;
 }
 
 p {
-    margin-bottom: 2.4rem;
-    margin-left: 30%;
-    margin-right: 30%;
-    grid-column: 4 / end;
+    margin-bottom: 2rem;
     font: 400 1.0rem/1.5 "Roboto";
     font-family: 'Open Sans', sans-serif;
     color: #5E5E5E;
@@ -62,91 +69,56 @@ p {
     font-size: 22px;
 }
 
-footer img {
-    width: 100px;
-    height: 100px;
-    margin-top: 2.5%;
-    margin-bottom: 1.25%;
-    margin-left: 20%;
+#slider {
+	overflow: hidden;
+    text-align: center;
 }
 
-/* Smaller monitor settings */
+#slider figure {
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+	animation: 20s slider infinite;
+}
 
-@media (max-width: 1280px) {
+#slider figure img {
+	width: 20%;
+	float: left;
+}
 
+#slider h1 {
+    position: absolute;
+	width: auto;
+    margin-top: 3em;
+    margin-left: 4em;
+
+	color: white;
+	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-width: .15vw;
+	font: 400 2.0rem/1.2 "Roboto";
+	font-family: Arial, serif;
+	font-size: 7vw;
+}
+
+@media (max-width: 1200px) {
     h1 {
-	    margin-top: 2.5%;
-        margin-bottom: 2.5%;
-        margin-left: 10%;
-	    color: #2C3E50;
-	    font: 700 2.0rem/1.2 "Roboto";
-	    font-family: Arial, serif;
-	    font-size: 40px;
+        font-size: 32px;
     }
 
     p {
-	    margin-bottom: 2.4rem;
-        margin-left: 10%;
-        margin-right: 30%;
-	    grid-column: 4 / end;
-	    font: 400 1.0rem/1.5 "Roboto";
-	    font-family: 'Open Sans', sans-serif;
-	    color: #5E5E5E;
-	    font-weight: normal;
-	    font-size: 22px;
-    }
-
-    footer img {
-        width: 100px;
-	    height: 100px;
-        margin-top: 2.5%;
-        margin-bottom: 1.25%;
-        margin-left: 18%;
-    }
-
-}
-
-/* Tablet settings */
-
-@media (max-width: 800px) {
-
-    h1 {
-	    margin-top: 5%;
-        margin-bottom: 2.5%;
-        margin-left: 10%;
-	    color: #2C3E50;
-	    font: 700 2.0rem/1.2 "Roboto";
-	    font-family: Arial, serif;
-	    font-size: 32px;
-    }
-
-    p {
-	    margin-bottom: 2.4rem;
-        margin-left: 10%;
-        margin-right: 10%;
-	    grid-column: 4 / end;
-	    font: 400 1.0rem/1.5 "Roboto";
-	    font-family: 'Open Sans', sans-serif;
-	    color: #5E5E5E;
-	    font-weight: normal;
-	    font-size: 18px;
-    }
-
-    footer img {
-        width: 75px;
-	    height: 75px;
-        margin-top: 2.5%;
-        margin-bottom: 1.25%;
-        margin-left: 17%;
+        font-size: 18px;
     }
 }
-
-
-/* Mobile settings */
 
 @media(max-width: 414px) {
+    h1 {
+        font-size: 22px;
+    }
 
-    nav { padding-left: 40%; }
+    p {
+        font-size: 16px;
+    }
 
 	nav li {
 		display: block;
@@ -154,35 +126,33 @@ footer img {
         padding-top: 12.5px;
 		padding-bottom: 12.5px;
 	}
-
-    footer img {
-        width: 50px;
-	    height: 50px;
-        margin-top: 2.5%;
-        margin-bottom: 1.25%;
-        margin-left: 15%;
-    }
-
-
-    h1 {
-	    margin-top: 10%;
-        margin-bottom: 5%;
-        margin-left: 10%;
-	    color: #2C3E50;
-	    font: 700 2.0rem/1.2 "Roboto";
-	    font-family: Arial, serif;
-	    font-size: 22px;
-    }
-
-    p {
-	    margin-bottom: 2.4rem;
-        margin-left: 10%;
-        margin-right: 10%;
-	    grid-column: 4 / end;
-	    font: 400 1.0rem/1.5 "Roboto";
-	    font-family: 'Open Sans', sans-serif;
-	    color: #5E5E5E;
-	    font-weight: normal;
-	    font-size: 16px;
-    }
 }
+
+@keyframes slider {
+	0% {
+		left: 0;
+	}
+	20% {
+		left: 0;
+	}
+	25% {
+		left: -100%;
+	}
+	45% {
+		left: -100%;
+	}
+	50% {
+		left: -200%;
+	}
+	70% {
+		left: -200%;
+	}
+	75% {
+		left: -300%;
+	}
+	95% {
+		left: -300%;
+	}
+	100% {
+		left: -400%;
+	}
