@@ -61,6 +61,12 @@ th, td {
 	font-family: 'Open Sans', sans-serif; font-weight: normal;
 }
 
+.red	{ color: #DC143C; }
+.green  { color: #008000; }
+.blue	{ color: #4682B4; }
+.purple	{ color: #9400D3; }
+.yellow	{ color: #D2691E; }
+
 @media (max-width: 1200px) {
 
    ul li, pre, th, td {

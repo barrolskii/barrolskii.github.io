@@ -182,8 +182,8 @@
 
 		<pre>
 
-char c = 'c';
-int i = -3;
+<span class="green">char</span> c = 'c';
+<span class="green">int</span> i = -<span class="red">3</span>;
 
 printf("%c\n", c);
 printf("%d\n", i);
@@ -193,7 +193,7 @@ printf("%d\n", i);
 		<pre>
 
 c
--3
+-<span class="red">3</span>
 		</pre>
 
 
@@ -201,7 +201,7 @@ c
 
 		<pre>
 
-float f = 123.4567890f;
+<span class="green">float</span> f = <span class="red">123</span>.4567890f;
 
 printf("%e\n", f);
 printf("%E\n", f);
@@ -213,19 +213,19 @@ printf("%G\n", f);
 
 		<pre>
 
-1.234568e+02
-1.234568E+02
-123.456787
-123.457
-123.457
+<span class="red">1</span>.234568e+<span class="red">02</span>
+<span class="red">1</span>.234568E+<span class="red">02</span>
+<span class="red">123</span>.<span class="red">456787</span>
+<span class="red">123</span>.<span class="red">457</span>
+<span class="red">123</span>.<span class="red">457</span>
 		</pre>
 
 		<h3>Signed and unsigned short</h3>
 
 		<pre>
 
-short s = -6;
-unsigned short us = 6;
+<span class="green">short</span> s = -<span class="red">6</span>;
+<span class="green">unsigned</span> <span class="green">short</span> us = <span class="red">6</span>;
 
 printf("%hi\n", s);
 printf("%hu\n", us);
@@ -233,29 +233,29 @@ printf("%hu\n", us);
 
 		<pre>
 
--6
-6
+-<span class="red">6</span>
+<span class="red">6</span>
 		</pre>
 
 		<h3>Unsigned integer</h3>
 
 		<pre>
 
-unsigned int i = 3;
+<span class="green">unsigned</span> <span class="green">int</span> i = <span class="red">3</span>;
 
 printf("%i\n", i);
 		</pre>
 
 		<pre>
 
-3
+<span class="red">3</span>
 		</pre>
 
 		<h3>Long</h3>
 
 		<pre>
 
-long l = 1234567;
+<span class="green">long</span> l = <span class="red">1234567</span>;
 
 printf("%l\n",  l);
 printf("%ld\n", l);
@@ -264,9 +264,9 @@ printf("%li\n", l);
 
 		<pre>
 
-1234567
-1234567
-1234567
+<span class="red">1234567</span>
+<span class="red">1234567</span>
+<span class="red">1234567</span>
 		</pre>
 
 		<p>Just a note, I tried %l on my system and the version of gcc I was
@@ -278,36 +278,36 @@ printf("%li\n", l);
 
 		<pre>
 
-double d = 987.654321;
+<span class="green">double</span> d = <span class="red">987</span>.<span class="red">654321</span>;
 
 printf("%lf\n", d);
 		</pre>
 
 		<pre>
 
-987.654321
+<span class="red">987</span>.<span class="red">654321</span>
 		</pre>
 
 		<h3>Long double</h3>
 
 		<pre>
 
-long double ld = 987.654321;
+<span class="green">long</span> <span class="green">double</span> ld = <span class="red">987</span>.<span class="red">654321</span>;
 
 printf("%Lf\n", ld);
 		</pre>
 
 		<pre>
 
-987.654321
+<span class="red">987</span>.<span class="red">654321</span>
 		</pre>
 
 		<h3>Long long and unsigned long long</h3>
 
 		<pre>
 
-long long ll = -123456789;
-unsigned long long ull= 123456789;
+<span class="green">long</span> <span class="green">long</span> ll = -<span class="red">123456789</span>;
+<span class="green">unsigned</span> <span class="green">long</span> <span class="green">long</span> ull= <span class="red">123456789</span>;
 
 printf("%lli\n", ll);
 printf("%lld\n", ll);
@@ -317,29 +317,29 @@ printf("%llu\n", ull);
 
 		<pre>
 
--123456789
--123456789
-123456789
+-<span class="red">123456789</span>
+-<span class="red">123456789</span>
+<span class="red">123456789</span>
 		</pre>
 
 		<h3>Octal representation</h3>
 
 		<pre>
 
-printf("%o\n", 69);
+printf("%o\n", <span class="red">69</span>);
 		</pre>
 
 		<pre>
 
-105
+<span class="red">105</span>
 		</pre>
 
 		<h3>Pointer</h3>
 
 		<pre>
 
-int i = 3;
-int *ptr = &i;
+<span class="green">int</span> i = <span class="red">3</span>;
+<span class="green">int</span> *ptr = &i;
 
 
 printf("%p\n", ptr);
@@ -357,7 +357,7 @@ printf("%p\n", ptr);
 
 		<pre>
 
-char *s = "Hello, world!";
+<span class="green">char</span> *s = "Hello, world!";
 
 printf("%s\n", s);
 		</pre>
@@ -371,21 +371,21 @@ Hello, world!
 
 		<pre>
 
-unsigned int ui = 3;
+<span class="green">unsigned</span> <span class="green">int</span> ui = <span class="red">3</span>;
 
 printf("%u\n", ui);
 		</pre>
 
 		<pre>
 
-3
+<span class="red">3</span>
 		</pre>
 
 		<h3>Hexadecimal representation</h3>
 
 		<pre>
 
-int i = -3;
+<span class="green">int</span> i = -<span class="red">3</span>;
 
 printf("%x\n", i);
 printf("%X\n", i);
@@ -401,8 +401,8 @@ FFFFFFFD
 
 		<pre>
 
-int i = 3;
-int *ptr = &i;
+<span class="green">int</span> i = <span class="red">3</span>;
+<span class="green">int</span> *ptr = &i;
 
 printf("%n\n", ptr);
 printf("%%\n");
@@ -432,9 +432,9 @@ printf("%%\n");
 
 		<pre>
 
-char *str_one       = "Hello, World!";
-char *str_two       = "Hello there, World!";
-char *str_three     = "Why hello again, World!";
+<span class="green">char</span> *str_one       = "Hello, World!";
+<span class="green">char</span> *str_two       = "Hello there, World!";
+<span class="green">char</span> *str_three     = "Why hello again, World!";
 
 printf("%20s ==\n", str_one);
 printf("%20s ==\n", str_two);
@@ -461,9 +461,9 @@ Why hello again, World! ==
 
 		<pre>
 
-char *str_one       = "Hello, World!";
-char *str_two       = "Hello there, World!";
-char *str_three     = "Why hello again, World!";
+<span class="green">char</span> *str_one       = "Hello, World!";
+<span class="green">char</span> *str_two       = "Hello there, World!";
+<span class="green">char</span> *str_three     = "Why hello again, World!";
 
 
 printf("%-20s ==\n", str_one);
@@ -492,10 +492,10 @@ Why hello again, World! ==
 
 		<pre>
 
-char *str = "Hello, World!";
+<span class="green">char</span> *str = "Hello, World!";
 
-int len_one = 20;
-int len_two = 15;
+<span class="green">int</span> len_one = <span class="red">20</span>;
+<span class="green">int</span> len_two = <span class="red">15</span>;
 
 printf("%*s ==\n", len_one, str);
 printf("%*s ==\n", len_two, str);
@@ -515,10 +515,10 @@ printf("%*s ==\n", len_two, str);
 
 		<pre>
 
-char *str = "Hello, World!";
+<span class="green">char</span> *str = "Hello, World!";
 
-printf("%-*s ==\n", 20, str);
-printf("%-*s ==\n", 15, str);
+printf("%-*s ==\n", <span class="red">20</span>, str);
+printf("%-*s ==\n", <span class="red">15</span>, str);
 		</pre>
 
 		<pre>
@@ -536,9 +536,9 @@ Hello, World!   ==
 
 		<pre>
 
-char *str_one       = "Hello, World!";
-char *str_two       = "Hello there, World!";
-char *str_three     = "Why hello again, World!";
+<span class="green">char</span> *str_one       = "Hello, World!";
+<span class="green">char</span> *str_two       = "Hello there, World!";
+<span class="green">char</span> *str_three     = "Why hello again, World!";
 
 printf("%.10s ==\n", str_one);
 printf("%.10s ==\n", str_two);
@@ -558,11 +558,11 @@ Why hello  ==
 
 		<pre>
 
-char *str_one       = "Hello, World!";
-char *str_two       = "Hello there, World!";
-char *str_three     = "Why hello again, World!";
+<span class="green">char</span> *str_one       = "Hello, World!";
+<span class="green">char</span> *str_two       = "Hello there, World!";
+<span class="green">char</span> *str_three     = "Why hello again, World!";
 
-int len = 12;
+<span class="green">int</span> len = <span class="red">12</span>;
 
 printf("%.*s ==\n", len, str_one);
 printf("%.*s ==\n", len, str_two);
