@@ -26,18 +26,28 @@
             <div class="project">
 
                 <div class="slides">
-                    <img name="slide5" src="img/ComingSoon.webp">
+					<img name="slide5" src="img/Phantom/Phantom2.webp">
 
-                    <a class="prev">&#10094;</a>
-                    <a class="next">&#10095;</a>
+                    <a class="prev" onclick="DecrementSlides(slide5, 4)">&#10094;</a>
+                    <a class="next" onclick="IncrementSlides(slide5, 4)">&#10095;</a>
             	</div>
 
             	<div class="desc">
-                    <p><b>Phantom</b><br> Phantom is a scripting langauge that I'm
-						working on for my final year project. The main goal of this
-						project is to implement a just in time byte code compiler for the
-						language. This project is written in C. The source code for the project
-					    will be available when I've finished the module for this project.</p>
+                    <p><b>Phantom</b><br>Phantom is a scripting language that I
+					made for my final year project in University. This language
+					includes its own just in time compiler, a stack based virtual
+					machine, a recursive descent lexer, and a top down operator
+					precedence parser, aka a Pratt parser. Phantom is a very
+					minimal scripting language in its current state as the focus
+					of this project was to create a just in time compiler rather
+					than a feature complete language. That being said if you want
+					to try the language out it is available on my GitHub and
+					it includes test scripts written in Phantom so you can see
+					the languages simple syntax. Further development is planned
+					for the project to make it a more robust and feature complete
+					embeddable scripting language. Here is a link to the project:
+					<a href="https://github.com/barrolskii/Project-Eidolon">
+					Phantom</a></p>
             	</div>
 
             </div>
@@ -135,7 +145,7 @@
 
             <script>
 
-			var slideIndex = [0, 0, 0, 0]; // Add another index here when
+			var slideIndex = [0, 0, 0, 0, 0]; // Add another index here when
                                            // adding another slideshow to the page
 
             var slideshowImages = [
@@ -164,8 +174,11 @@
                         "img/projGamesImages/slideThree/OfficeDash4.webp"
                     ],
                     [
-                        "img/ComingSoon.webp"
-                    ], 
+                        "img/Phantom/Phantom2.webp",
+                        "img/Phantom/Phantom.webp",
+                        "img/Phantom/Phantom3.webp",
+                        "img/Phantom/Phantom4.webp",
+                    ],
                 ];
 
             function IncrementSlides(name, slideNo) {
@@ -177,7 +190,7 @@
             }
 
             function DecrementSlides(name, slideNo) {
-                slideIndex[slideNo]--;         
+                slideIndex[slideNo]--;
 
                 if (slideIndex[slideNo] < 0) { slideIndex[slideNo] = slideshowImages[slideNo].length - 1; }
 
