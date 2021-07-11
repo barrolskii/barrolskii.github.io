@@ -181,92 +181,100 @@
 
 
 		<pre>
-
-<span class="green">char</span> c = 'c';
+		<code>
+<span class="green">char</span> c = <span class=red>'c'</span>;
 <span class="green">int</span> i = -<span class="red">3</span>;
 
-printf("%c\n", c);
-printf("%d\n", i);
+printf(<span class=red>"%c\n"</span>, c);
+printf(<span class=red>"%d\n"</span>, i);
+		</code>
 		</pre>
 
 
 		<pre>
 
 c
--<span class="red">3</span>
+-<samp>3</samp>
 		</pre>
 
 
 		<h3>Float</h3>
 
 		<pre>
+		<code>
+<span class="green">float</span> f = <span class="red">123.4567890f</span>;
 
-<span class="green">float</span> f = <span class="red">123</span>.4567890f;
-
-printf("%e\n", f);
-printf("%E\n", f);
-printf("%f\n", f);
-printf("%g\n", f);
-printf("%G\n", f);
+printf(<span class=red>"%e\n"</span>, f);
+printf(<span class=red>"%E\n"</span>, f);
+printf(<span class=red>"%f\n"</span>, f);
+printf(<span class=red>"%g\n"</span>, f);
+printf(<span class=red>"%G\n"</span>, f);
+		</code>
 		</pre>
 
 
 		<pre>
-
-<span class="red">1</span>.234568e+<span class="red">02</span>
-<span class="red">1</span>.234568E+<span class="red">02</span>
-<span class="red">123</span>.<span class="red">456787</span>
-<span class="red">123</span>.<span class="red">457</span>
-<span class="red">123</span>.<span class="red">457</span>
+		<samp>
+1.234568e+02
+1.234568E+02
+123.456787
+123.457
+123.457
+	    </samp>
 		</pre>
 
 		<h3>Signed and unsigned short</h3>
 
 		<pre>
-
+		<code>
 <span class="green">short</span> s = -<span class="red">6</span>;
 <span class="green">unsigned</span> <span class="green">short</span> us = <span class="red">6</span>;
 
-printf("%hi\n", s);
-printf("%hu\n", us);
+printf(<span class=red>"%hi\n"</span>, s);
+printf(<span class=red>"%hu\n"</span>, us);
+		</code>
 		</pre>
 
 		<pre>
-
--<span class="red">6</span>
-<span class="red">6</span>
+		<samp>
+-6
+6
+		</samp>
 		</pre>
 
 		<h3>Unsigned integer</h3>
 
 		<pre>
-
+		<code>
 <span class="green">unsigned</span> <span class="green">int</span> i = <span class="red">3</span>;
 
-printf("%i\n", i);
+printf(<span class=red>"%i\n"</span>, i);
+		</code>
 		</pre>
 
 		<pre>
 
-<span class="red">3</span>
+<samp>3</samp>
 		</pre>
 
 		<h3>Long</h3>
 
 		<pre>
-
+		<code>
 <span class="green">long</span> l = <span class="red">1234567</span>;
 
-printf("%l\n",  l);
-printf("%ld\n", l);
-printf("%li\n", l);
+printf(<span class=red>"%l\n"</span>,  l);
+printf(<span class=red>"%ld\n"</span>, l);
+printf(<span class=red>"%li\n"</span>, l);
+		</code>
 		</pre>
 
 		<pre>
-
-<span class="red">1234567</span>
-<span class="red">1234567</span>
-<span class="red">1234567</span>
+		<samp>
+1234567
+1234567
+1234567
+		</samp>
 		</pre>
 
 		<p>Just a note, I tried %l on my system and the version of gcc I was
@@ -277,77 +285,83 @@ printf("%li\n", l);
 		<h3>Double</h3>
 
 		<pre>
+		<code>
+<span class="green">double</span> d = <span class="red">987.654321</span>;
 
-<span class="green">double</span> d = <span class="red">987</span>.<span class="red">654321</span>;
-
-printf("%lf\n", d);
+printf(<span class=red>"%lf\n"</span>, d);
+		</code>
 		</pre>
 
 		<pre>
 
-<span class="red">987</span>.<span class="red">654321</span>
+<samp>987.654321</samp>
 		</pre>
 
 		<h3>Long double</h3>
 
 		<pre>
+		<code>
+<span class="green">long</span> <span class="green">double</span> ld = <span class="red">987.654321</span>;
 
-<span class="green">long</span> <span class="green">double</span> ld = <span class="red">987</span>.<span class="red">654321</span>;
-
-printf("%Lf\n", ld);
+printf(<span class=red>"%Lf\n"</span>, ld);
+		</code>
 		</pre>
 
 		<pre>
 
-<span class="red">987</span>.<span class="red">654321</span>
+<samp>987.654321</samp>
 		</pre>
 
 		<h3>Long long and unsigned long long</h3>
 
 		<pre>
-
+		<code>
 <span class="green">long</span> <span class="green">long</span> ll = -<span class="red">123456789</span>;
 <span class="green">unsigned</span> <span class="green">long</span> <span class="green">long</span> ull= <span class="red">123456789</span>;
 
-printf("%lli\n", ll);
-printf("%lld\n", ll);
+printf(<span class=red>"%lli\n"</span>, ll);
+printf(<span class=red>"%lld\n"</span>, ll);
 
-printf("%llu\n", ull);
+printf(<span class=red>"%llu\n"</span>, ull);
+		</code>
 		</pre>
 
 		<pre>
-
--<span class="red">123456789</span>
--<span class="red">123456789</span>
-<span class="red">123456789</span>
+		<samp>
+-123456789
+-123456789
+123456789
+		</samp>
 		</pre>
 
 		<h3>Octal representation</h3>
 
 		<pre>
-
-printf("%o\n", <span class="red">69</span>);
+		<code>
+printf(<span class=red>"%o\n"</span>, <span class="red">69</span>);
+		</code>
 		</pre>
 
 		<pre>
 
-<span class="red">105</span>
+<samp>105</samp>
 		</pre>
 
 		<h3>Pointer</h3>
 
 		<pre>
-
+		<code>
 <span class="green">int</span> i = <span class="red">3</span>;
 <span class="green">int</span> *ptr = &i;
 
 
-printf("%p\n", ptr);
+printf(<span class=red>"%p\n"</span>, ptr);
+		</code>
 		</pre>
 
 		<pre>
 
-0x7ffe799a55b4
+<samp>0x7ffe799a55b4</samp>
 		</pre>
 
 		<p>If you haven't covered pointers yet just as a heads up, your value will
@@ -356,62 +370,67 @@ printf("%p\n", ptr);
 		<h3>String</h3>
 
 		<pre>
+		<code>
+<span class="green">char</span> *s = <span class=red>"Hello, world!"</span>;
 
-<span class="green">char</span> *s = "Hello, world!";
-
-printf("%s\n", s);
+printf(<span class=red>"%s\n"</span>, s);
+		</code>
 		</pre>
 
 		<pre>
 
-Hello, world!
+<samp>Hello, world!</samp>
 		</pre>
 
 		<h3>Unsigned integer</h3>
 
 		<pre>
-
+		<code>
 <span class="green">unsigned</span> <span class="green">int</span> ui = <span class="red">3</span>;
 
-printf("%u\n", ui);
+printf(<span class=red>"%u\n"</span>, ui);
+		</code>
 		</pre>
 
 		<pre>
 
-<span class="red">3</span>
+<samp>3</samp>
 		</pre>
 
 		<h3>Hexadecimal representation</h3>
 
 		<pre>
-
+		<code>
 <span class="green">int</span> i = -<span class="red">3</span>;
 
-printf("%x\n", i);
-printf("%X\n", i);
+printf(<span class=red>"%x\n"</span>, i);
+printf(<span class=red>"%X\n"</span>, i);
+		</code>
 		</pre>
 
 		<pre>
-
+		<samp>
 fffffffd
 FFFFFFFD
+		</samp>
 		</pre>
 
 		<h3>Other</h3>
 
 		<pre>
-
+		<code>
 <span class="green">int</span> i = <span class="red">3</span>;
 <span class="green">int</span> *ptr = &i;
 
-printf("%n\n", ptr);
-printf("%%\n");
+printf(<span class=red>"%n\n"</span>, ptr);
+printf(<span class=red>"%%\n"</span>);
+		</code>
 		</pre>
 
 		<pre>
 
 
-%
+<samp>%</samp>
 		</pre>
 
 		<h3>Formatting tricks</h3>
@@ -431,21 +450,23 @@ printf("%%\n");
 		by 20 characters.</p>
 
 		<pre>
+		<code>
+<span class="green">char</span> *str_one       = <span class=red>"Hello, World!"</span>;
+<span class="green">char</span> *str_two       = <span class=red>"Hello there, World!"</span>;
+<span class="green">char</span> *str_three     = <span class=red>"Why hello again, World!"</span>;
 
-<span class="green">char</span> *str_one       = "Hello, World!";
-<span class="green">char</span> *str_two       = "Hello there, World!";
-<span class="green">char</span> *str_three     = "Why hello again, World!";
-
-printf("%20s ==\n", str_one);
-printf("%20s ==\n", str_two);
-printf("%20s ==\n", str_three);
+printf(<span class=red>"%20s ==\n"</span>, str_one);
+printf(<span class=red>"%20s ==\n"</span>, str_two);
+printf(<span class=red>"%20s ==\n"</span>, str_three);
+		</code>
 		</pre>
 
 		<pre>
-
+		<samp>
        Hello, World! ==
  Hello there, World! ==
 Why hello again, World! ==
+		</samp>
 		</pre>
 
 		<p>As you can see, the first two strings are aligned properly. The two
@@ -460,22 +481,24 @@ Why hello again, World! ==
 		where it will put spaces after the formatted values.</p>
 
 		<pre>
+		<code>
+<span class="green">char</span> *str_one       = <span class=red>"Hello, World!"</span>;
+<span class="green">char</span> *str_two       = <span class=red>"Hello there, World!"</span>;
+<span class="green">char</span> *str_three     = <span class=red>"Why hello again, World!"</span>;
 
-<span class="green">char</span> *str_one       = "Hello, World!";
-<span class="green">char</span> *str_two       = "Hello there, World!";
-<span class="green">char</span> *str_three     = "Why hello again, World!";
 
-
-printf("%-20s ==\n", str_one);
-printf("%-20s ==\n", str_two);
-printf("%-20s ==\n", str_three);
+printf(<span class=red>"%-20s ==\n"</span>, str_one);
+printf(<span class=red>"%-20s ==\n"</span>, str_two);
+printf(<span class=red>"%-20s ==\n"</span>, str_three);
+		</code>
 		</pre>
 
 		<pre>
-
+		<samp>
 Hello, World!        ==
 Hello there, World!  ==
 Why hello again, World! ==
+		</samp>
 		</pre>
 
 		<p>Similarly to the left alignment, the first and second strings have
@@ -491,20 +514,22 @@ Why hello again, World! ==
 		asterisk (*) after the % character.</p>
 
 		<pre>
-
-<span class="green">char</span> *str = "Hello, World!";
+		<code>
+<span class="green">char</span> *str = <span class=red>"Hello, World!"</span>;
 
 <span class="green">int</span> len_one = <span class="red">20</span>;
 <span class="green">int</span> len_two = <span class="red">15</span>;
 
-printf("%*s ==\n", len_one, str);
-printf("%*s ==\n", len_two, str);
+printf(<span class=red>"%*s ==\n"</span>, len_one, str);
+printf(<span class=red>"%*s ==\n"</span>, len_two, str);
+		</code>
 		</pre>
 
 		<pre>
-
+		<samp>
        Hello, World! ==
   Hello, World! ==
+  		</samp>
 		</pre>
 
 		<p>When using the asterisk, the first argument you'll have to pass after
@@ -514,17 +539,19 @@ printf("%*s ==\n", len_two, str);
 		minus as well. It would look more like this:</p>
 
 		<pre>
+		<code>
+<span class="green">char</span> *str = <span class=red>"Hello, World!"</span>;
 
-<span class="green">char</span> *str = "Hello, World!";
-
-printf("%-*s ==\n", <span class="red">20</span>, str);
-printf("%-*s ==\n", <span class="red">15</span>, str);
+printf(<span class=red>"%-*s ==\n"</span>, <span class="red">20</span>, str);
+printf(<span class=red>"%-*s ==\n"</span>, <span class="red">15</span>, str);
+		</code>
 		</pre>
 
 		<pre>
-
+		<samp>
 Hello, World!        ==
 Hello, World!   ==
+		</samp>
 		</pre>
 
 		<h3>Truncate length</h3>
@@ -535,21 +562,23 @@ Hello, World!   ==
 		the asterisk variable formatting.</p>
 
 		<pre>
+		<code>
+<span class="green">char</span> *str_one       = <span class=red>"Hello, World!"</span>;
+<span class="green">char</span> *str_two       = <span class=red>"Hello there, World!"</span>;
+<span class="green">char</span> *str_three     = <span class=red>"Why hello again, World!"</span>;
 
-<span class="green">char</span> *str_one       = "Hello, World!";
-<span class="green">char</span> *str_two       = "Hello there, World!";
-<span class="green">char</span> *str_three     = "Why hello again, World!";
-
-printf("%.10s ==\n", str_one);
-printf("%.10s ==\n", str_two);
-printf("%.10s ==\n", str_three);
+printf(<span class=red>"%.10s ==\n"</span>, str_one);
+printf(<span class=red>"%.10s ==\n"</span>, str_two);
+printf(<span class=red>"%.10s ==\n"</span>, str_three);
+		</code>
 		</pre>
 
 		<pre>
-
+		<samp>
 Hello, Wor ==
 Hello ther ==
 Why hello  ==
+		</samp>
 		</pre>
 
 		<p>In this example output as all of the supplied strings are longer than
@@ -557,23 +586,25 @@ Why hello  ==
 		Here's an example of the variable length with the truncation:</p>
 
 		<pre>
-
-<span class="green">char</span> *str_one       = "Hello, World!";
-<span class="green">char</span> *str_two       = "Hello there, World!";
-<span class="green">char</span> *str_three     = "Why hello again, World!";
+		<code>
+<span class="green">char</span> *str_one       = <span class=red>"Hello, World!"</span>;
+<span class="green">char</span> *str_two       = <span class=red>"Hello there, World!"</span>;
+<span class="green">char</span> *str_three     = <span class=red>"Why hello again, World!"</span>;
 
 <span class="green">int</span> len = <span class="red">12</span>;
 
-printf("%.*s ==\n", len, str_one);
-printf("%.*s ==\n", len, str_two);
-printf("%.*s ==\n", len, str_three);
+printf(<span class=red>"%.*s ==\n"</span>, len, str_one);
+printf(<span class=red>"%.*s ==\n"</span>, len, str_two);
+printf(<span class=red>"%.*s ==\n"</span>, len, str_three);
+		</code>
 		</pre>
 
 		<pre>
-
+		<samp>
 Hello, World ==
 Hello there, ==
 Why hello ag ==
+		</samp>
 		</pre>
 
 
