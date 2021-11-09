@@ -1,0 +1,23 @@
+#+TITLE: Online Portfolio
+#+AUTHOR: Ashley Barrell
+#+DESCRIPTION: Personal projects
+#+EXPORT_FILE_NAME: ../projects.html
+#+OPTIONS: num:nil toc:nil title:nil
+#+HTML_HEAD: <link rel="stylesheet" href="css/hydehyde.css">
+
+* Projects
+
+** Phantom
+Description coming soon
+
+** Office Dash
+Description coming soon
+
+** Book Organiser
+Description coming soon
+
+** Hyperion Asiimov Texture Pack
+Description coming soon
+
+** Hyperion Obsidian Texture Pack
+Description coming soon

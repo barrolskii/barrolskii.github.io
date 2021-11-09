@@ -1,219 +1,298 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-11-09 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Online Portfolio</title>
+<meta name="author" content="Ashley Barrell" />
+<meta name="description" content="Personal projects" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
-<html>
-	<head>
-		<title>Projects</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/projectsStyle.css">
-	</head>
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" href="css/hydehyde.css">
+</head>
+<body>
+<div id="" class="nil">
+<div class="sidebar">
+<div class="sidebar-about">
+  <span class="site__title">
+        <a href="https://barrolskii.github.io/">Ashley Barrell</a>
+  </span>
+  <div class="author-image">
+        <!--<img src="https://htr3n.github.io//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">-->
+  </div>
+        <p class="site__description"></p>
+</div>
 
-	<body>
-		<nav>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="projects.html">Projects</a></li>
-			<li><a href="resume.html">R&eacute;sum&eacute;</a></li>
-			<li><a href="blog.html">Blog</a></li>
-		</nav>
+    <div class="collapsible-menu">
 
-        <main>
-            <article>
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle">Ashley Barrell</label>
+        <div class="menu-content">
 
-            <h1>Current Projects</h1>
+            <ul class="sidebar-nav">
+            <li>
+                <a href="blogindex.html">
+                <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="projects.html">
+                <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                <span>About</span>
+                </a>
+            </li>
+            </ul>
 
-			<!-- Phantom -->
-            <div class="project">
+        </div>
+    </div>
 
-                <div class="slides">
-					<img name="slide5" src="img/Phantom/Phantom2.webp">
+</div>
+</div>
+<div id="nil" class="content container">
 
-                    <a class="prev" onclick="DecrementSlides(slide5, 4)">&#10094;</a>
-                    <a class="next" onclick="IncrementSlides(slide5, 4)">&#10095;</a>
-            	</div>
+<div id="outline-container-org09b5ff0" class="outline-2">
+<h2 id="org09b5ff0">Projects</h2>
+<div class="outline-text-2" id="text-org09b5ff0">
+</div>
+<div id="outline-container-orgb67267e" class="outline-3">
+<h3 id="orgb67267e">Phantom</h3>
+<div class="outline-text-3" id="text-orgb67267e">
+<p>
+Description coming soon
+</p>
+</div>
+</div>
 
-            	<div class="desc">
-                    <p><b>Phantom</b><br>Phantom is a scripting language that I
-					made for my final year project in University. This language
-					includes its own just in time compiler, a stack based virtual
-					machine, a recursive descent lexer, and a top down operator
-					precedence parser, aka a Pratt parser. Phantom is a very
-					minimal scripting language in its current state as the focus
-					of this project was to create a just in time compiler rather
-					than a feature complete language. That being said if you want
-					to try the language out it is available on my GitHub and
-					it includes test scripts written in Phantom so you can see
-					the languages simple syntax. Further development is planned
-					for the project to make it a more robust and feature complete
-					embeddable scripting language. Here is a link to the project:
-					<a href="https://github.com/barrolskii/Project-Eidolon">
-					Phantom</a></p>
-            	</div>
+<div id="outline-container-org66a04b7" class="outline-3">
+<h3 id="org66a04b7">Office Dash</h3>
+<div class="outline-text-3" id="text-org66a04b7">
+<p>
+Description coming soon
+</p>
+</div>
+</div>
 
-            </div>
+<div id="outline-container-org0443214" class="outline-3">
+<h3 id="org0443214">Book Organiser</h3>
+<div class="outline-text-3" id="text-org0443214">
+<p>
+Description coming soon
+</p>
+</div>
+</div>
 
-			<h1>Previous Projects</h1>
+<div id="outline-container-org47bcedf" class="outline-3">
+<h3 id="org47bcedf">Hyperion Asiimov Texture Pack</h3>
+<div class="outline-text-3" id="text-org47bcedf">
+<p>
+Description coming soon
+</p>
+</div>
+</div>
 
-			<!-- Office Dash -->
-            <div class="project">
-
-                <div class="slides">
-                    <img name="slide4" src="img/projGamesImages/slideThree/OfficeDash1.webp">
-
-                    <a class="prev" onclick="DecrementSlides(slide4, 3)">&#10094;</a>
-                    <a class="next" onclick="IncrementSlides(slide4, 3)">&#10095;</a>
-            	</div>
-
-            	<div class="desc">
-			        <p><b>Office Dash</b><br>Office Dash is an infinite runner
-                    built using UE4. In this game you play as a disgruntled office
-                    worker who is tired of his 9-5 job. You decide to quit your job
-                    dramatically by leaping out of the closest window to run across
-                    the rooftops. Along the way you collect employee of the month
-					trophies to increase your high score during your run. At the
-					moment there is no download link or link to the project on Github
-				    but I do plan to release the game on itch.io in the near future.
-					This project was made using Unreal blueprint.
-            	</div>
-
-            </div>
-
-			<!-- Book Organiser -->
-            <div class="project">
-
-                <div class="slides">
-                    <img name="slide3" src="img/projSoftwareImages/BookOrganiser/printAll.webp">
-
-                    <a class="prev" onclick="DecrementSlides(slide3, 2)">&#10094;</a>
-                    <a class="next" onclick="IncrementSlides(slide3, 2)">&#10095;</a>
-            	</div>
-
-            	<div class="desc">
-                    <p><b>Book Organiser</b><br> This is a small project I made to organise
-					my digital library of books (I have well over 2GB worth of books and
-					which keeps going up with each Humble Book Bundle released). This project
-					is written in C and utilises a library called koios which a friend of mine
-					wrote to tag files. Please note that this project is only for Linux. The
-					projects source code can be found on my <a href="https://github.com/barrolskii/BookOrganiser">
-					Github</a></p>
-            	</div>
-
-            </div>
-
-			<!-- Hyperion Asiimov -->
-            <div class="project">
-
-                <div class="slides">
-                    <img name="slide2" src="img/projGamesImages/slideTwo/HAWPImgOne.webp">
-
-                    <a class="prev" onclick="DecrementSlides(slide2, 1)">&#10094;</a>
-                    <a class="next" onclick="IncrementSlides(slide2, 1)">&#10095;</a>
-            	</div>
-
-            	<div class="desc">
-			        <p><b>Hyperion Asiimov Texture Pack</b><br>The second skin pack I
-			        made for Borderlands 2 adding the Asiimov skin from CS:GO to the
-			        Hyperion legendary weapons in the game. This pack is available via my
-			        <a href="https://github.com/barrolskii/TextureMods/tree/master/HyperionAsiimov">
-			        github.</a></p>
-            	</div>
-
-            </div>
-
-			<!-- Hyperion Obsidian -->
-            <div class="project">
-
-                <div class="slides">
-                    <img name="slide1" src="img/projGamesImages/slideOne/HOWPImgOne.webp">
-
-                    <a class="prev" onclick="DecrementSlides(slide1, 0)">&#10094;</a>
-                    <a class="next" onclick="IncrementSlides(slide1, 0)">&#10095;</a>
-            	</div>
-
-            	<div class="desc">
-			        <p><b>Hyperion Obsidian Texture Pack</b><br>The first weapon texture pack
-			        I made for Borderlands 2 which applies to the Hyperion unique weapons in
-			        the game. Each weapon skin has two variants, a factory default version and
-			        a battle worn version. This pack is available via my
-			        <a href="https://github.com/barrolskii/TextureMods/tree/master/HyperionObsidian">
-			        github.</a></p>
-            	</div>
-
-            </div>
-
-			</article>
-
-            <script>
-
-			var slideIndex = [0, 0, 0, 0, 0]; // Add another index here when
-                                           // adding another slideshow to the page
-
-            var slideshowImages = [
-                    [
-                        "img/projGamesImages/slideOne/HOWPImgOne.webp",
-                        "img/projGamesImages/slideOne/HOWPImgTwo.webp",
-                        "img/projGamesImages/slideOne/HOWPImgThree.webp",
-                        "img/projGamesImages/slideOne/HOWPImgFour.webp",
-                        "img/projGamesImages/slideOne/HOWPImgFive.webp",
-                        "img/projGamesImages/slideOne/HOWPImgSix.webp",
-                    ],
-                    [
-                        "img/projGamesImages/slideTwo/HAWPImgOne.webp",
-                        "img/projGamesImages/slideTwo/HAWPImgTwo.webp",
-                        "img/projGamesImages/slideTwo/HAWPImgThree.webp",
-                    ],
-                    [
-                        "img/projSoftwareImages/BookOrganiser/printAll.webp",
-                        "img/projSoftwareImages/BookOrganiser/printCategory.webp",
-                        "img/projSoftwareImages/BookOrganiser/setInterested.webp",
-                    ],
-                    [
-                        "img/projGamesImages/slideThree/OfficeDash1.webp",
-                        "img/projGamesImages/slideThree/OfficeDash2.webp",
-                        "img/projGamesImages/slideThree/OfficeDash3.webp",
-                        "img/projGamesImages/slideThree/OfficeDash4.webp"
-                    ],
-                    [
-                        "img/Phantom/Phantom2.webp",
-                        "img/Phantom/Phantom.webp",
-                        "img/Phantom/Phantom3.webp",
-                        "img/Phantom/Phantom4.webp",
-                    ],
-                ];
-
-            function IncrementSlides(name, slideNo) {
-                slideIndex[slideNo]++;
-
-                if (slideIndex[slideNo] >= slideshowImages[slideNo].length) { slideIndex[slideNo] = 0; }
-
-                name.src = slideshowImages[slideNo][slideIndex[slideNo]];
-            }
-
-            function DecrementSlides(name, slideNo) {
-                slideIndex[slideNo]--;
-
-                if (slideIndex[slideNo] < 0) { slideIndex[slideNo] = slideshowImages[slideNo].length - 1; }
-
-                name.src = slideshowImages[slideNo][slideIndex[slideNo]];
-            }
-
-
-			</script>
-		</main>
-
-		<footer>
-			<a href="https://github.com/barrolskii">
-				<img src="img/githubLogo.webp" alt="Github white logo" class="img-link">
-			</a>
-
-			<a href="https://www.linkedin.com/in/ashley-barrell-0a8804176/">
-				<img src="img/linkedInLogo.webp" alt="LinkedIn white logo" class="img-link">
-			</a>
-
-			<a href="https://twitter.com/BarrellAshley">
-				<img src="img/twitterLogo.webp" alt="Twitter white logo" class="img-link">
-			</a>
-		</footer>
-	</body>
+<div id="outline-container-orgc73e54c" class="outline-3">
+<h3 id="orgc73e54c">Hyperion Obsidian Texture Pack</h3>
+<div class="outline-text-3" id="text-orgc73e54c">
+<p>
+Description coming soon
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="nil">
+<p class="author">Author: Ashley Barrell</p>
+<p class="date">Created: 2021-11-09</p>
+</div>
+</body>
 </html>
-

@@ -1,0 +1,13 @@
+#+TITLE: Online Portfolio
+#+AUTHOR: Ashley Barrell
+#+DESCRIPTION: Personal online portfolio and blog
+#+EXPORT_FILE_NAME: ../index.html
+#+OPTIONS: num:nil toc:nil title:nil
+#+HTML_HEAD: <link rel="stylesheet" href="css/hydehyde.css">
+
+* Recent Posts
+
+I'm Ashley and this is my website which contains my portfolio and blog posts.
+This site is currently under a redesign so some pages might be empty or lacking
+information. This won't be for long as I'm currently converting my previous site
+into org documents. This page will contain a list of my most recent blog posts.
