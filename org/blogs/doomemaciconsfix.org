@@ -1,0 +1,45 @@
+#+TITLE: Doom Emacs Icons Fix
+#+AUTHOR: Ashley Barrell
+#+DESCRIPTION: Personal online portfolio and blog
+#+EXPORT_FILE_NAME: ../../blogs/doomemacsiconsfix.html
+#+OPTIONS: num:nil toc:nil title:nil
+#+HTML_HEAD: <link rel="stylesheet" href="../css/hydehyde.css">
+
+* Doom Emacs Icons Fix
+
+#+BEGIN_div :class post__meta
+NOV 11, 2021
+#+END_div
+
+After a fresh install of Doom Emacs on Windows you'll notice when you boot Emacs up that there are icons
+missing on the side of the doom dashboard and at the bottom where the official GitHub repository is linked.
+I'm going to go over how to fix that in this tutorial.
+
+** The Fix
+
+The issue is simply due to missing font packages in Windows. To download the fonts you have to press meta-x
+(the meta key by default is the alt key) and then type:
+
+#+BEGIN_SRC emacs-lisp
+all-the-icons-install-fonts
+#+END_SRC
+
+On Windows this will ask you to provide a directory for the font files to be downloaded to.
+Once you've provided a directory you'll then need to open PowerShell and then cd into the directory where
+the font files have been downloaded. Once you've navigated there you'll then have to run this snippet of
+code.
+
+#+BEGIN_SRC shell
+$dest = (New-Object -ComObject Shell.Application).Namespace(0x14)
+ls *.ttf | % { $dest.CopyHere($_.FullName, 0x10) }
+#+END_SRC
+
+Once you've run that a few pop up windows should appear showing the installation of each font. When the
+fonts have been installed all you have to do then is restart Doom Emacs (which can be done by pressing
+space q r) and then the icons will show up without any issue
+
+** Sources
+
+- [[https://github.com/hlissner/doom-emacs/issues/2575][GitHub issue going over the fix for Windows]]
+- [[https://richardspowershellblog.wordpress.com/2008/03/20/special-folders][Special folders in Windows 0x14]]
+- [[https://docs.microsoft.com/en-us/previous-versions/tn-archive/ee176633(v=technet.10)][Special folders in Windows 0x10]]
