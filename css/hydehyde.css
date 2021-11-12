@@ -779,3 +779,34 @@ a.badge-tag {
 
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536; }
+
+
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+}
+
+.svg-inline--fa.fa-w-14 {
+    width: .875em;
+}
+
+.svg-inline--fa.fa-w-16 {
+    width: 1em;
+}
+
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+
+.svg-inline--fa.fa-lg {
+    vertical-align: -.225em;
+}
+
+.fa-lg {
+    font-size: 1.3333333333em;
+    line-height: .75em;
+    vertical-align: -.0667em;
+}
