@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-11-12 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>C Format Specifiers</title>
+<meta name="author" content="Ashley Barrell" />
+<meta name="description" content="Tutorial for how to use format specifiers in C" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" href="../css/hydehyde.css">
+</head>
+<body>
+<div id="" class="nil">
+<div class="sidebar">
+<div class="sidebar-about">
+  <span class="site__title">
+        <a href="https://barrolskii.github.io/">Ashley Barrell</a>
+  </span>
+  <div class="author-image">
+        <!--<img src="https://htr3n.github.io//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">-->
+  </div>
+        <p class="site__description"></p>
+</div>
+
+    <div class="collapsible-menu">
+
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle">Ashley Barrell</label>
+        <div class="menu-content">
+
+            <ul class="sidebar-nav">
+            <li>
+                <a href="https://barrolskii.github.io/blogindex.html">
+                <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://barrolskii.github.io/projects.html">
+                <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://barrolskii.github.io/about.html">
+                <span>About</span>
+                </a>
+            </li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+</div>
+<div id="nil" class="content container">
+
+<div id="outline-container-orgb22c4fa" class="outline-2">
+<h2 id="orgb22c4fa">C Format Specifiers</h2>
+<div class="outline-text-2" id="text-orgb22c4fa">
+<div class="div" id="orgb880118">
+<p>
+NOV 11, 2021
+</p>
+
+</div>
+
+<p>
+The C programming language has some nice options when it comes to
+formatting output on the terminal and I&rsquo;ve noticed that most tutorials
+covering format specifiers don&rsquo;t show some of the nicer things you can
+do with them. This tutorial will show a list of format specifiers and
+will show examples for each one with what it outputs to the terminal.
+</p>
+</div>
+
+<div id="outline-container-orgafac6ef" class="outline-3">
+<h3 id="orgafac6ef">List of format specifiers</h3>
+<div class="outline-text-3" id="text-orgafac6ef">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Specifier</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">%c</td>
+<td class="org-left">Prints character</td>
+</tr>
+
+<tr>
+<td class="org-left">%d</td>
+<td class="org-left">Prints signed integer</td>
+</tr>
+
+<tr>
+<td class="org-left">%e</td>
+<td class="org-left">Scientific notation for float</td>
+</tr>
+
+<tr>
+<td class="org-left">%E</td>
+<td class="org-left">Scientific notation for float</td>
+</tr>
+
+<tr>
+<td class="org-left">%f</td>
+<td class="org-left">Float</td>
+</tr>
+
+<tr>
+<td class="org-left">%g</td>
+<td class="org-left">Float to third decimal place</td>
+</tr>
+
+<tr>
+<td class="org-left">%G</td>
+<td class="org-left">Float to third decimal place</td>
+</tr>
+
+<tr>
+<td class="org-left">%hi</td>
+<td class="org-left">Signed short</td>
+</tr>
+
+<tr>
+<td class="org-left">%hu</td>
+<td class="org-left">Unsigned short</td>
+</tr>
+
+<tr>
+<td class="org-left">%i</td>
+<td class="org-left">Unsigned integer</td>
+</tr>
+
+<tr>
+<td class="org-left">%l</td>
+<td class="org-left">Long</td>
+</tr>
+
+<tr>
+<td class="org-left">%ld</td>
+<td class="org-left">Long</td>
+</tr>
+
+<tr>
+<td class="org-left">%li</td>
+<td class="org-left">Long</td>
+</tr>
+
+<tr>
+<td class="org-left">%lf</td>
+<td class="org-left">Long double</td>
+</tr>
+
+<tr>
+<td class="org-left">%Lf</td>
+<td class="org-left">Long double</td>
+</tr>
+
+<tr>
+<td class="org-left">%lli</td>
+<td class="org-left">Long long</td>
+</tr>
+
+<tr>
+<td class="org-left">%lld</td>
+<td class="org-left">Long long</td>
+</tr>
+
+<tr>
+<td class="org-left">%llu</td>
+<td class="org-left">Unsigned long long</td>
+</tr>
+
+<tr>
+<td class="org-left">%o</td>
+<td class="org-left">Octal representation</td>
+</tr>
+
+<tr>
+<td class="org-left">%p</td>
+<td class="org-left">Pointer</td>
+</tr>
+
+<tr>
+<td class="org-left">%s</td>
+<td class="org-left">String</td>
+</tr>
+
+<tr>
+<td class="org-left">%u</td>
+<td class="org-left">Unsigned int</td>
+</tr>
+
+<tr>
+<td class="org-left">%x</td>
+<td class="org-left">Hexadecimal representation</td>
+</tr>
+
+<tr>
+<td class="org-left">%X</td>
+<td class="org-left">Hexadecimal representation</td>
+</tr>
+
+<tr>
+<td class="org-left">%n</td>
+<td class="org-left">Prints nothing</td>
+</tr>
+
+<tr>
+<td class="org-left">%%</td>
+<td class="org-left">Prints percent character</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+From here I&rsquo;ll show some example code and the output from that code at
+just underneath it. We&rsquo;ll start with character and signed integer:
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb3db564" class="outline-3">
+<h3 id="orgb3db564">Character and signed integer</h3>
+<div class="outline-text-3" id="text-orgb3db564">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">char</span> <span style="color: #dcaeea;">c</span> = <span style="color: #98be65;">'c'</span>;
+<span style="color: #ECBE7B;">int</span>  <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">3</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%c\n"</span>, c<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%d\n"</span>, i<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+c
+3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6f2efb8" class="outline-3">
+<h3 id="org6f2efb8">Float</h3>
+<div class="outline-text-3" id="text-org6f2efb8">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">float</span> <span style="color: #dcaeea;">f</span> = <span style="color: #da8548; font-weight: bold;">123.4567890f</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%e\n"</span>, f<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%E\n"</span>, f<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%f\n"</span>, f<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%g\n"</span>, f<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%G\n"</span>, f<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+1.234568e+02
+1.234568E+02
+123.456787
+123.457
+123.457
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org92dd154" class="outline-3">
+<h3 id="org92dd154">Signed and unsigned short</h3>
+<div class="outline-text-3" id="text-org92dd154">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">short</span> <span style="color: #dcaeea;">s</span> = -<span style="color: #da8548; font-weight: bold;">6</span>;
+<span style="color: #ECBE7B;">unsigned</span> <span style="color: #ECBE7B;">short</span> <span style="color: #dcaeea;">us</span> = <span style="color: #da8548; font-weight: bold;">6</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%hi\n"</span>, s<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%hu\n"</span>, us<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+-6
+6
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0cbc660" class="outline-3">
+<h3 id="org0cbc660">Unsigned integer</h3>
+<div class="outline-text-3" id="text-org0cbc660">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">unsigned</span> <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">3</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%i\n"</span>, i<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgd9a9eed" class="outline-3">
+<h3 id="orgd9a9eed">Long</h3>
+<div class="outline-text-3" id="text-orgd9a9eed">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">long</span> <span style="color: #dcaeea;">l</span> = <span style="color: #da8548; font-weight: bold;">1234567</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%l\n"</span>,  l<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%ld\n"</span>, l<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%li\n"</span>, l<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+%
+1234567
+1234567
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2714da6" class="outline-3">
+<h3 id="org2714da6">Double</h3>
+<div class="outline-text-3" id="text-org2714da6">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">double</span> <span style="color: #dcaeea;">d</span> = <span style="color: #da8548; font-weight: bold;">987.654321</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%lf\n"</span>, d<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+987.654321
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org9dd7087" class="outline-3">
+<h3 id="org9dd7087">Long double</h3>
+<div class="outline-text-3" id="text-org9dd7087">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">long</span> <span style="color: #ECBE7B;">double</span> <span style="color: #dcaeea;">ld</span> = <span style="color: #da8548; font-weight: bold;">987.654321</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%Lf\n"</span>, ld<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+987.654321
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga5b7c1a" class="outline-3">
+<h3 id="orga5b7c1a">Long long and unsigned long long</h3>
+<div class="outline-text-3" id="text-orga5b7c1a">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">long</span> <span style="color: #ECBE7B;">long</span> <span style="color: #dcaeea;">ll</span> = -<span style="color: #da8548; font-weight: bold;">123456789</span>;
+<span style="color: #ECBE7B;">unsigned</span> <span style="color: #ECBE7B;">long</span> <span style="color: #ECBE7B;">long</span> <span style="color: #dcaeea;">ull</span>= <span style="color: #da8548; font-weight: bold;">123456789</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%lli\n"</span>, ll<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%lld\n"</span>, ll<span style="color: #51afef;">)</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%llu\n"</span>, ull<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+-123456789
+-123456789
+123456789
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga34e3d8" class="outline-3">
+<h3 id="orga34e3d8">Octal representation</h3>
+<div class="outline-text-3" id="text-orga34e3d8">
+<div class="org-src-container">
+<pre class="src src-C">printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%o\n"</span>, <span style="color: #da8548; font-weight: bold;">69</span><span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+105
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3289566" class="outline-3">
+<h3 id="org3289566">Pointer</h3>
+<div class="outline-text-3" id="text-org3289566">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">3</span>;
+<span style="color: #ECBE7B;">int</span> *<span style="color: #dcaeea;">ptr</span> = &amp;i;
+
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%p\n"</span>, ptr<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+0x7ffcfddb63fc
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0b5a321" class="outline-3">
+<h3 id="org0b5a321">String</h3>
+<div class="outline-text-3" id="text-org0b5a321">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">s</span> = <span style="color: #98be65;">"Hello, world!"</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%s\n"</span>, s<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+Hello, world!
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org39687b6" class="outline-3">
+<h3 id="org39687b6">Unsigned integer</h3>
+<div class="outline-text-3" id="text-org39687b6">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">unsigned</span> <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">ui</span> = <span style="color: #da8548; font-weight: bold;">3</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%u\n"</span>, ui<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0b76ccc" class="outline-3">
+<h3 id="org0b76ccc">Hexadecimal representation</h3>
+<div class="outline-text-3" id="text-org0b76ccc">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> = -<span style="color: #da8548; font-weight: bold;">3</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%x\n"</span>, i<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%X\n"</span>, i<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+fffffffd
+FFFFFFFD
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org4b1e728" class="outline-3">
+<h3 id="org4b1e728">Other</h3>
+<div class="outline-text-3" id="text-org4b1e728">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">3</span>;
+<span style="color: #ECBE7B;">int</span> *<span style="color: #dcaeea;">ptr</span> = &amp;i;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%n\n"</span>, ptr<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%%\n"</span><span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+
+%
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3f1ad9e" class="outline-3">
+<h3 id="org3f1ad9e">Formatting tricks</h3>
+<div class="outline-text-3" id="text-org3f1ad9e">
+<p>
+There are a few other flags you can add to a format specifier to format
+output to specific needs. These are &rsquo;*&rsquo;, &rsquo;.&rsquo;, and &rsquo;-&rsquo;. You can also
+supply a number just after the % character to add spacing to the
+formatted output.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdf1c18e" class="outline-3">
+<h3 id="orgdf1c18e">Left alignment</h3>
+<div class="outline-text-3" id="text-orgdf1c18e">
+<p>
+By supplying a numerical value after the % character you will align
+values from the left. All this does is add spacing in front of the
+formatted values so the line up. This only works if the supplied
+values are equal to or less than the supplied numerical value. Below
+is an example with three different strings all set to be left aligned.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_one</span>       = <span style="color: #98be65;">"Hello, World!"</span>;
+<span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_two</span>       = <span style="color: #98be65;">"Hello there, World!"</span>;
+<span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_three</span>     = <span style="color: #98be65;">"Why hello again, World!"</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%20s ==\n"</span>, str_one<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%20s ==\n"</span>, str_two<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%20s ==\n"</span>, str_three<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+       Hello, World! ==
+ Hello there, World! ==
+Why hello again, World! ==
+</pre>
+
+
+<p>
+As you can see, the first two strings are aligned properly. The two
+equals signs have been added to the output to show how the alignment.
+The third string however is not correctly aligned because the length
+of the string is greater than 20 characters.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6cf778b" class="outline-3">
+<h3 id="org6cf778b">Right alignment</h3>
+<div class="outline-text-3" id="text-org6cf778b">
+<p>
+When you supply the minus (-) sign just after the % character this
+will align values to the right. It works exactly like the left alignment
+where it will put spaces after the formatted values.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_one</span>       = <span style="color: #98be65;">"Hello, World!"</span>;
+<span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_two</span>       = <span style="color: #98be65;">"Hello there, World!"</span>;
+<span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_three</span>     = <span style="color: #98be65;">"Why hello again, World!"</span>;
+
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%-20s ==\n"</span>, str_one<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%-20s ==\n"</span>, str_two<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%-20s ==\n"</span>, str_three<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+Hello, World!        ==
+Hello there, World!  ==
+Why hello again, World! ==
+</pre>
+
+
+<p>
+Similarly to the left alignment, the first and second strings have
+been aligned correctly but the third string has not. Again this is due
+to the length of the third string being greater than the supplied length
+for the format specifier.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org12d089a" class="outline-3">
+<h3 id="org12d089a">Variable length formatting</h3>
+<div class="outline-text-3" id="text-org12d089a">
+<p>
+Instead of supplying a number after the % character, you can
+actually use values of variables. You can do this by supplying an
+asterisk (*) after the % character.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str</span> = <span style="color: #98be65;">"Hello, World!"</span>;
+
+<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">len_one</span> = <span style="color: #da8548; font-weight: bold;">20</span>;
+<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">len_two</span> = <span style="color: #da8548; font-weight: bold;">15</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%*s ==\n"</span>, len_one, str<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%*s ==\n"</span>, len_two, str<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+     Hello, World! ==
+Hello, World! ==
+</pre>
+
+
+<p>
+When using the asterisk, the first argument you&rsquo;ll have to pass after
+the format string will have to be the variable length. As you can see
+from the output the left alignment for each printf call as been aligned
+differently. You can also combine the asterisk with the right alignment
+minus as well. It would look more like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str</span> = <span style="color: #98be65;">"Hello, World!"</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%-*s ==\n"</span>, <span style="color: #da8548; font-weight: bold;">20</span>, str<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%-*s ==\n"</span>, <span style="color: #da8548; font-weight: bold;">15</span>, str<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+Hello, World!        ==
+Hello, World!   ==
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org115045c" class="outline-3">
+<h3 id="org115045c">Truncate length</h3>
+<div class="outline-text-3" id="text-org115045c">
+<p>
+You also have the option to truncate or shorten the formatted value.
+By using the period (.) after the % character and then supplying a number the formatting will remove any trailing characters. This also works with the asterisk variable formatting.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_one</span>       = <span style="color: #98be65;">"Hello, World!"</span>;
+<span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_two</span>       = <span style="color: #98be65;">"Hello there, World!"</span>;
+<span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_three</span>     = <span style="color: #98be65;">"Why hello again, World!"</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%.10s ==\n"</span>, str_one<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%.10s ==\n"</span>, str_two<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%.10s ==\n"</span>, str_three<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+Hello, Wor ==
+Hello ther ==
+Why hello  ==
+</pre>
+
+
+<p>
+In this example output as all of the supplied strings are longer than
+the length of the truncation length so none of them are printed in full.
+Here&rsquo;s an example of the variable length with the truncation:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_one</span>       = <span style="color: #98be65;">"Hello, World!"</span>;
+<span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_two</span>       = <span style="color: #98be65;">"Hello there, World!"</span>;
+<span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">str_three</span>     = <span style="color: #98be65;">"Why hello again, World!"</span>;
+
+<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">len</span> = <span style="color: #da8548; font-weight: bold;">12</span>;
+
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%.*s ==\n"</span>, len, str_one<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%.*s ==\n"</span>, len, str_two<span style="color: #51afef;">)</span>;
+printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%.*s ==\n"</span>, len, str_three<span style="color: #51afef;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+Hello, World ==
+Hello there, ==
+Why hello ag ==
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="nil">
+<p class="author">Author: Ashley Barrell</p>
+<p class="date">Created: 2021-11-12</p>
+</div>
+</body>
+</html>
