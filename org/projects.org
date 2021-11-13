@@ -8,16 +8,19 @@
 * Projects
 
 ** Phantom
-Description coming soon
+
+#+HTML: <hr class="divider">
 
 ** Office Dash
-Description coming soon
+
+#+HTML: <hr class="divider">
 
 ** Book Organiser
-Description coming soon
+
+#+HTML: <hr class="divider">
 
 ** Hyperion Asiimov Texture Pack
-Description coming soon
+
+#+HTML: <hr class="divider">
 
 ** Hyperion Obsidian Texture Pack
-Description coming soon

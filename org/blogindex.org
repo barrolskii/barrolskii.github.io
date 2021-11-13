@@ -9,5 +9,3 @@
 
 ** November 2021
 
-- [[./blogs/doomemacsiconsfix.html][Doom Emacs Icons Fix]]
-- [[./blogs/cformatspecifiers.html][C Format Specifiers]]
