@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-13 -->
+<!-- 2021-11-29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Online Portfolio</title>
+<title>YCM Neovim</title>
 <meta name="author" content="Ashley Barrell" />
-<meta name="description" content="Blog index" />
+<meta name="description" content="Fixing auto-completion suggestions" />
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -194,7 +194,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
 </style>
-<link rel="stylesheet" href="css/hydehyde.css">
+<link rel="stylesheet" href="../css/hydehyde.css">
 </head>
 <body>
 <div id="" class="nil">
@@ -259,34 +259,141 @@
 </div>
 <div id="nil" class="content container">
 
-<div id="outline-container-org8bc600d" class="outline-2">
-<h2 id="org8bc600d">Blog Index</h2>
-<div class="outline-text-2" id="text-org8bc600d">
+<div id="outline-container-orgf39da74" class="outline-2">
+<h2 id="orgf39da74">YCM Autocomplete Fix</h2>
+<div class="outline-text-2" id="text-orgf39da74">
+<div class="post__meta">
+<svg class="svg-inline--fa fa-calendar-alt fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="calendar-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg>
+NOV 29, 2021
 </div>
-<div id="outline-container-org7d4e6f3" class="outline-3">
-<h3 id="org7d4e6f3">November 2021</h3>
 
-<ul class="posts">
-  <li>
-    <span class="list__title--small">
-        <a href="./blogs/ycmfix.html">YCM Autocomplete Fix</a>
-        <time class="pull-right hidden-tablet">NOV 29, 2021</time>
-    </span>
-  </li>
-  <li>
-    <span class="list__title--small">
-        <a href="./blogs/doomemacsiconsfix.html">Doom Emacs Icons Fix For Windows</a>
-        <time class="pull-right hidden-tablet">NOV 11, 2021</time>
-    </span>
-  </li>
-  <li>
-    <span class="list__title--small">
-        <a href="./blogs/cformatspecifiers.html">C Format Specifiers Tutorial</a>
-        <time class="pull-right hidden-tablet">NOV 11, 2021</time>
-    </span>
-  </li>
-</ul>
+<p>
+I&rsquo;ll get straight to the point here, if you&rsquo;ve installed the <a href="https://github.com/ycm-core/YouCompleteMe">YouCompleteMe</a> plugin for Vim and/or Neovim,
+you might&rsquo;ve run into a problem with C and/or C++ auto-completion suggestions. The big issue you may
+have run into just like me and a bunch of other people is that you&rsquo;re not getting standard library
+suggestions and language syntax suggestions. I&rsquo;ve found a way to fix it.
+</p>
+</div>
 
+<div id="outline-container-org8ed9c40" class="outline-3">
+<h3 id="org8ed9c40">The Fix</h3>
+<div class="outline-text-3" id="text-org8ed9c40">
+<p>
+The fix itself is really simple. Put this snippet of code into your .vimrc or your init.vim file
+if you use Neovim:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-vimscript">let g:ycm_semantic_triggers = {
+	\ 'c': [
+	\	'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+	\	'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+	\	'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+	\	'y', 'z'],
+\}
+</pre>
+</div>
+
+<p>
+This might be a bit of a hacky way to do it. So what this does is sets all the
+lexicographic characters to trigger ycm. By default for C and C++ has the
+dot (.) and arrow (-&gt;) operators as the semantic triggers. As these are the
+default for the languages, you don&rsquo;t need to add them to our list. Now I&rsquo;m
+not sure if this is the best way to get the auto-completion to work but I found
+this way it actually suggests standard library functions and primative types and
+functions I&rsquo;ve already declared. It&rsquo;ll also show function arguments instead of
+just showing the function name.
+</p>
+
+<p>
+If you want this to work with C and C++ you just have to add C++ like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-vimscript">let g:ycm_semantic_triggers = {
+	\ 'c,cpp': [
+	\	'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+	\	'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+	\	'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+	\	'y', 'z'],
+\}
+</pre>
+</div>
+
+<p>
+There is one thing that you need to make sure you have. For ycm to work for
+a project, it requires you to have a .ycm<sub>extra</sub><sub>conf.py</sub> file for each project.
+I don&rsquo;t do this, I have a config file for each langauge in a config directory
+and source that when I edit a file based on its extension, like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-vimscript">augroup filetype_c
+	autocmd!
+
+	let g:ycm_global_ycm_extra_conf = '~/.config/nvim/config/.ycm_c_conf.py'
+
+	...
+augroup END
+</pre>
+</div>
+
+<p>
+I won&rsquo;t go over the setup of a ycm conf file here but there&rsquo;s an exmaple on the
+ycm <a href="https://github.com/rasendubi/dotfiles/blob/master/.vim/.ycm_extra_conf.py#L51">GitHub</a>. I&rsquo;ve also based my config off <a href="https://github.com/rasendubi/dotfiles/blob/master/.vim/.ycm_extra_conf.py">this</a> config on GitHub. You do have to
+change some things in the flags list and that&rsquo;s the &rsquo;-std&rsquo; and &rsquo;x&rsquo; flags. These
+change depending on which version of C and C++ you&rsquo;re using. Here&rsquo;s what I have
+for C:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">BASE_FLAGS</span> = [
+        <span style="color: #98be65;">'-Wall'</span>,
+        <span style="color: #98be65;">'-Wextra'</span>,
+        <span style="color: #98be65;">'-Werror'</span>,
+        <span style="color: #98be65;">'-Wno-long-long'</span>,
+        <span style="color: #98be65;">'-Wno-variadic-macros'</span>,
+        <span style="color: #98be65;">'-fexceptions'</span>,
+        <span style="color: #98be65;">'-ferror-limit=10000'</span>,
+        <span style="color: #98be65;">'-DNDEBUG'</span>,
+        <span style="color: #98be65;">'-std=c99'</span>,
+        <span style="color: #98be65;">'-xc'</span>,
+        <span style="color: #98be65;">'-DUSE_CLANG_COMPLETER'</span>,
+        <span style="color: #98be65;">'-I/usr/include/'</span>
+        ]
+</pre>
+</div>
+
+<p>
+Here&rsquo;s what I currently have for C++:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">BASE_FLAGS</span> = [
+        <span style="color: #98be65;">'-Wall'</span>,
+        <span style="color: #98be65;">'-Wextra'</span>,
+        <span style="color: #98be65;">'-Werror'</span>,
+        <span style="color: #98be65;">'-Wno-long-long'</span>,
+        <span style="color: #98be65;">'-Wno-variadic-macros'</span>,
+        <span style="color: #98be65;">'-fexceptions'</span>,
+        <span style="color: #98be65;">'-ferror-limit=10000'</span>,
+        <span style="color: #98be65;">'-DNDEBUG'</span>,
+        <span style="color: #98be65;">'-std=c++11'</span>,
+        <span style="color: #98be65;">'-xc++'</span>,
+        <span style="color: #98be65;">'-DUSE_CLANG_COMPLETER'</span>,
+        <span style="color: #98be65;">'-I/usr/include/'</span>
+        ]
+</pre>
+</div>
+
+<p>
+Hopefully that has fixed the problem for you as it did for me. I&rsquo;ve seen a
+few posts online and a few videos on YouTube of people saying they haven&rsquo;t
+been able to get ycm to work for C and C++. Again I don&rsquo;t know if this is
+the best way to get this to work but it can stay as a workaround for now
+until someone finds a better way to do so.
+</p>
+</div>
 </div>
 </div>
 </div>
