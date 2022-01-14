@@ -377,50 +377,6 @@ code {
   border: 1px solid #ddd;
   border-radius: 4px; }
 
-/*
-body .gist {
-	.gist-file {
-		margin-bottom: 0;
-		border-radius: 0;
-	}
-	.gist-data {
-		border-bottom: none;
-		border-radius: 0;
-		background-color: $gray-3;
-	}
-	.blob-wrapper {
-		border-radius: 0;
-	}
-	.highlight {
-		background-color: transparent;
-		font-family: Droid Sans Mono, monospace;
-		font-size: 14px;
-		td {
-			border: none;
-			padding: 5px 15px !important;
-			line-height: 1;
-			font-family: inherit;
-			font-size: inherit;
-		}
-	}
-	tr {
-		&:first-child td {
-			padding-top: 15px !important;
-		}
-		&:last-child td {
-			padding-bottom: 15px !important;
-		}
-	}
-	.blob-num {
-		color: #ced4da;
-		background-color: #495057;
-		pointer-events: none;
-	}
-	.gist-meta {
-		//display: none;
-	}
-}
-*/
 body .gist .gist-data {
   background-color: #fafafa; }
 
