@@ -74,7 +74,9 @@ img {
   display: block;
   max-width: 100%;
   margin: 0 0 1rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  cursor: zoom-in;
+}
 
 table {
   margin-bottom: 1rem;
@@ -400,6 +402,16 @@ a {
   font-size: 1.5rem;
   font-style: italic;
   padding: 0 0 1rem 0; }
+
+.magnify {
+    position: fixed;
+    width: 80%;
+    height: auto;
+    z-index: 999;
+    left: 10%;
+    top: 10%;
+    cursor: zoom-out;
+}
 
 #references li {
   font-size: 0.9rem; }
