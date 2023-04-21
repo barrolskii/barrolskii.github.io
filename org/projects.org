@@ -4,23 +4,56 @@
 #+EXPORT_FILE_NAME: ../projects.html
 #+OPTIONS: num:nil toc:nil title:nil
 #+HTML_HEAD: <link rel="stylesheet" href="css/hydehyde.css">
+#+HTML_HEAD: <script type="text/JavaScript" src="js/mode.js"></script>
 
 * Projects
 
 ** Phantom
+#+HTML: <div class="project__featured-image">
+#+HTML: <img src="img/Phantom2.webp">
+#+HTML: </div>
+#+HTML: <div class="project__summary">
+Phantom is a scripting language that I made for my final year project in University. This language includes its own just in time compiler, a stack based virtual machine, a recursive descent lexer, and a top down operator precedence parser, aka a Pratt parser. Phantom is a very minimal scripting language in its current state as the focus of this project was to create a just in time compiler rather than a feature complete language. That being said if you want to try the language out it is available on my GitHub and it includes test scripts written in Phantom so you can see the languages simple syntax. Further development is planned for the project to make it a more robust and feature complete embeddable scripting language.
+#+HTML: </div>
 
-#+HTML: <hr class="divider">
+#+HTML: <hr class="divider"/>
 
 ** Office Dash
+#+HTML: <div class="project__featured-image">
+#+HTML: <img src="img/OfficeDash1.webp">
+#+HTML: </div>
+#+HTML: <div class="project__summary">
+Office Dash is an infinite runner built using UE4. In this game you play as a disgruntled office worker who is tired of his 9-5 job. You decide to quit your job dramatically by leaping out of the closest window to run across the rooftops. Along the way you collect employee of the month trophies to increase your high score during your run. At the moment there is no download link or link to the project on Github but I do plan to release the game on itch.io in the near future. This project was made using Unreal blueprint.
+#+HTML: </div>
 
-#+HTML: <hr class="divider">
+#+HTML: <hr class="divider"/>
 
 ** Book Organiser
+#+HTML: <div class="project__featured-image">
+#+HTML: <img src="img/printCategory.webp">
+#+HTML: </div>
+#+HTML: <div class="project__summary">
+This is a small project I made to organise my digital library of books (I have well over 2GB worth of books and which keeps going up with each Humble Book Bundle released). This project is written in C and utilises a library called koios which a friend of mine wrote to tag files. Please note that this project is only for Linux. The projects source code can be found on my Github. I have plans for further development for this project which include adding a GUI front end to the program.
+#+HTML: </div>
 
-#+HTML: <hr class="divider">
+#+HTML: <hr class="divider"/>
 
 ** Hyperion Asiimov Texture Pack
+#+HTML: <div class="project__featured-image">
+#+HTML: <img src="img/HAWPImgThree.webp">
+#+HTML: </div>
+#+HTML: <div class="project__summary">
+The Hyperion Asiimov texture pack is the second skin pack I made for Borderlands 2 adding the Asiimov skin from CS:GO to the Hyperion legendary weapons in the game.
+#+HTML: </div>
 
-#+HTML: <hr class="divider">
+#+HTML: <hr class="divider"/>
 
 ** Hyperion Obsidian Texture Pack
+#+HTML: <div class="project__featured-image">
+#+HTML: <img src="img/HOWPImgOne.webp">
+#+HTML: </div>
+#+HTML: <div class="project__summary">
+The Hyperion Obsidian texture pack is first weapon texture pack I made for Borderlands 2 which applies to the Hyperion unique weapons in the game. Each weapon skin has two variants, a factory default version and a battle worn version.
+#+HTML: </div>
+
+#+HTML: <hr class="divider"/>

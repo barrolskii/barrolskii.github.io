@@ -4,6 +4,8 @@
 #+EXPORT_FILE_NAME: ../../blogs/cformatspecifiers.html
 #+OPTIONS: num:nil toc:nil title:nil
 #+HTML_HEAD: <link rel="stylesheet" href="../css/hydehyde.css">
+#+HTML_HEAD: <link rel="stylesheet" href="../css/codestyle.css">
+#+HTML_HEAD: <script type="text/JavaScript" src="../js/mode.js"></script>
 
 * C Format Specifiers
 

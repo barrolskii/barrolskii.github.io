@@ -5,6 +5,7 @@
 #+OPTIONS: num:nil toc:nil title:nil
 #+HTML_HEAD: <link rel="stylesheet" href="../css/hydehyde.css">
 #+HTML_HEAD: <link rel="stylesheet" href="../css/codestyle.css">
+#+HTML_HEAD: <script type="text/JavaScript" src="../js/mode.js"></script>
 
 * Doom Emacs Irony Server Fix
 

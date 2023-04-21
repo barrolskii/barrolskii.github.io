@@ -4,8 +4,38 @@
 #+EXPORT_FILE_NAME: ../blogindex.html
 #+OPTIONS: num:nil toc:nil title:nil
 #+HTML_HEAD: <link rel="stylesheet" href="css/hydehyde.css">
+#+HTML_HEAD: <script type="text/JavaScript" src="js/mode.js"></script>
 
 * Blog Index
 
-** November 2021
+#+HTML: <ul class="posts">
 
+#+HTML: <li>
+#+HTML: <span class="list__title--small">
+#+HTML: <a href="./blogs/doomemacsironyfix.html">Doom Emacs Irony Compilation Fix For Windows</a>
+#+HTML: <time class="pull-right hidden-tablet">MAR 26, 2022</time>
+#+HTML: </span>
+#+HTML: </li>
+
+#+HTML: <li>
+#+HTML: <span class="list__title--small">
+#+HTML: <a href="./blogs/ycmfix.html">YCM Autocomplete Fix</a>
+#+HTML: <time class="pull-right hidden-tablet">NOV 29, 2021</time>
+#+HTML: </span>
+#+HTML: </li>
+
+#+HTML: <li>
+#+HTML: <span class="list__title--small">
+#+HTML: <a href="./blogs/doomemacsiconsfix.html">Doom Emacs Icons Fix For Windows</a>
+#+HTML: <time class="pull-right hidden-tablet">NOV 11, 2021</time>
+#+HTML: </span>
+#+HTML: </li>
+
+#+HTML: <li>
+#+HTML: <span class="list__title--small">
+#+HTML: <a href="./blogs/cformatspecifiers.html">C Format Specifiers Tutorial</a>
+#+HTML: <time class="pull-right hidden-tablet">NOV 11, 2021</time>
+#+HTML: </span>
+#+HTML: </li>
+
+#+HTML: </ul>
