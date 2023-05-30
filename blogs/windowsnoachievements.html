@@ -6,12 +6,14 @@
 <!-- 2023-05-30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Online Portfolio</title>
+<title>Windows Games Not Unlocking Achievements</title>
 <meta name="author" content="Ashley Barrell" />
-<meta name="description" content="Personal online portfolio and blog" />
+<meta name="description" content="Fixing achievements not popping up in games on Windows after a minimalist install" />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" href="css/hydehyde.css">
-<script type="text/JavaScript" src="js/mode.js"></script>
+<link rel="stylesheet" href="../css/hydehyde.css">
+<link rel="stylesheet" href="../css/codestyle.css">
+<script type="text/JavaScript" src="../js/mode.js"></script>
+<script type="text/JavaScript" src="../js/magnify.js"></script>
 </head>
 <body>
 <div id="" class="nil">
@@ -75,64 +77,48 @@
 </div>
 </div>
 <div id="nil" class="content container">
-<div class="post-list__item">
-  <span class="item__title--big">
-    <a href="blogs/windowsnoachievements.html">  Windows Games Not Unlocking Achievements Fix </a>
-  </span>
 
-  <span class="item__date">MAY 30, 2023</span>
-  <span>
-If you've recently installed Windows onto your machine with a minimal installer you might notice that some games can no longer unlock achievements. This is simply due to a required service being disabled...
-  </span>
-  <a href="blogs/windowsnoachievements.html" class="read-more-symbol">➦</a>
+<div id="outline-container-org0ab0d7b" class="outline-2">
+<h2 id="org0ab0d7b">Windows Games Not Unlocking Achievements Fix</h2>
+<div class="outline-text-2" id="text-org0ab0d7b">
+<div class="post__meta">
+<svg class="svg-inline--fa fa-calendar-alt fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="calendar-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg>
+MAY 30, 2023
 </div>
 
-<div class="post-list__item">
-  <span class="item__title--big">
-    <a href="blogs/doomemacsironyfix.html"> Doom Emacs Irony Server Fix </a>
-  </span>
-
-  <span class="item__date">MAR 26, 2022</span>
-  <span>
-  If you want code completion for C/C++ when using Doom Emacs you are going to need a language server. The default for this is irony and if you run the setup function in Doom Emacs it'll compile the server and set it up for you. In Windows you might not be able to compile the server from inside Emacs if you don't have the required dependencies installed. This tutorial...
-  </span>
-  <a href="blogs/doomemacsironyfix.html" class="read-more-symbol">➦</a>
+<p>
+If you&rsquo;ve recently installed Windows onto your machine with a minimal installer
+you might notice that some games can no longer unlock achievements. This is simply
+due to a required service being disabled.
+</p>
 </div>
 
-<div class="post-list__item">
-  <span class="item__title--big">
-    <a href="blogs/ycmfix.html"> YCM Autocomplete Fix </a>
-  </span>
+<div id="outline-container-orgf3aeb63" class="outline-3">
+<h3 id="orgf3aeb63">The Fix</h3>
+<div class="outline-text-3" id="text-orgf3aeb63">
+<p>
+To get achievements to pop again you will need to enable the &ldquo;Connected User Experiences and Telemetry&rdquo; service.
+Here is how to do so:
+</p>
 
-  <span class="item__date">NOV 29, 2021</span>
-  <span>
-  I&rsquo;ll get straight to the point here, if you&rsquo;ve installed the <a href="https://github.com/ycm-core/YouCompleteMe">YouCompleteMe</a> plugin for Vim and/or Neovim, you might&rsquo;ve run into a problem with C and/or C++ auto-completion suggestions. The big issue you may have run into just like me and a bunch of other people is that you&rsquo;re not getting standar...
-  </span>
-  <a href="blogs/ycmfix.html" class="read-more-symbol">➦</a>
+<ol class="org-ol">
+<li>Press Windows key + R</li>
+<li><p>
+Type services.msc and hit enter
+</p>
+<img src="../img/WinAchievements/Step1.png" onclick="MagnifyImage(this)"/></li>
+<li><p>
+Look for the &ldquo;Connected User Experiences and Telemetry&rdquo; service
+</p>
+<img src="../img/WinAchievements/Step2.png" onclick="MagnifyImage(this)"/></li>
+<li>Activate the service</li>
+</ol>
+
+<p>
+Your achievements should now unlock in games now!
+</p>
 </div>
-
-<div class="post-list__item">
-  <span class="item__title--big">
-    <a href="blogs/cformatspecifiers.html"> C Format Specifiers </a>
-  </span>
-
-  <span class="item__date">NOV 11, 2021</span>
-  <span>
-  The C programming language has some nice options when it comes to formatting output on the terminal and I&rsquo;ve noticed that most tutorials covering format specifiers don&rsquo;t show some of the nicer things you can do with them. This tutorial will show a list of format specifiers and will show examples for each one with what it outputs to the terminal....
-  </span>
-  <a href="blogs/cformatspecifiers.html" class="read-more-symbol">➦</a>
 </div>
-
-<div class="post-list__item">
-  <span class="item__title--big">
-    <a href="blogs/doomemacsiconsfix.html"> Doom Emacs Icons Fix</a>
-  </span>
-
-  <span class="item__date">NOV 11, 2021</span>
-  <span>
-  After a fresh install of Doom Emacs on Windows you&rsquo;ll notice when you boot Emacs up that there are icons missing on the side of the doom dashboard and at the bottom where the official GitHub repository is linked. I&rsquo;m going to go over how to fix that in this tutorial....
-  </span>
-  <a href="blogs/doomemacsiconsfix.html" class="read-more-symbol">➦</a>
 </div>
 </div>
 </body>

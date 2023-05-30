@@ -8,34 +8,42 @@
 
 * Blog Index
 
-#+HTML: <ul class="posts">
+#+begin_export html
+<ul class="posts">
+  <li>
+    <span class="list__title--small">
+      <a href="./blogs/windowsnoachievements.html">Xbox Achievements Not Unlocking For Windows</a>
+      <time class="pull-right hidden-tablet">MAY 30, 2023</time>
+    </span>
+  </li>
 
-#+HTML: <li>
-#+HTML: <span class="list__title--small">
-#+HTML: <a href="./blogs/doomemacsironyfix.html">Doom Emacs Irony Compilation Fix For Windows</a>
-#+HTML: <time class="pull-right hidden-tablet">MAR 26, 2022</time>
-#+HTML: </span>
-#+HTML: </li>
+  <li>
+    <span class="list__title--small">
+      <a href="./blogs/doomemacsironyfix.html">Doom Emacs Irony Compilation Fix For Windows</a>
+      <time class="pull-right hidden-tablet">MAR 26, 2022</time>
+    </span>
+  </li>
 
-#+HTML: <li>
-#+HTML: <span class="list__title--small">
-#+HTML: <a href="./blogs/ycmfix.html">YCM Autocomplete Fix</a>
-#+HTML: <time class="pull-right hidden-tablet">NOV 29, 2021</time>
-#+HTML: </span>
-#+HTML: </li>
+  <li>
+    <span class="list__title--small">
+      <a href="./blogs/ycmfix.html">YCM Autocomplete Fix</a>
+      <time class="pull-right hidden-tablet">NOV 29, 2021</time>
+    </span>
+  </li>
 
-#+HTML: <li>
-#+HTML: <span class="list__title--small">
-#+HTML: <a href="./blogs/doomemacsiconsfix.html">Doom Emacs Icons Fix For Windows</a>
-#+HTML: <time class="pull-right hidden-tablet">NOV 11, 2021</time>
-#+HTML: </span>
-#+HTML: </li>
+  <li>
+    <span class="list__title--small">
+      <a href="./blogs/doomemacsiconsfix.html">Doom Emacs Icons Fix For Windows</a>
+      <time class="pull-right hidden-tablet">NOV 11, 2021</time>
+    </span>
+  </li>
 
-#+HTML: <li>
-#+HTML: <span class="list__title--small">
-#+HTML: <a href="./blogs/cformatspecifiers.html">C Format Specifiers Tutorial</a>
-#+HTML: <time class="pull-right hidden-tablet">NOV 11, 2021</time>
-#+HTML: </span>
-#+HTML: </li>
+  <li>
+    <span class="list__title--small">
+      <a href="./blogs/cformatspecifiers.html">C Format Specifiers Tutorial</a>
+      <time class="pull-right hidden-tablet">NOV 11, 2021</time>
+    </span>
+  </li>
+</ul>
 
-#+HTML: </ul>
+#+end_export
