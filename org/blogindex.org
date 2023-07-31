@@ -12,6 +12,13 @@
 <ul class="posts">
   <li>
     <span class="list__title--small">
+      <a href="./blogs/ncursesandreadline.html">Ncurses And GNU Readline</a>
+      <time class="pull-right hidden-tablet">JUL 31, 2023</time>
+    </span>
+  </li>
+
+  <li>
+    <span class="list__title--small">
       <a href="./blogs/windowsnoachievements.html">Xbox Achievements Not Unlocking For Windows</a>
       <time class="pull-right hidden-tablet">MAY 30, 2023</time>
     </span>
