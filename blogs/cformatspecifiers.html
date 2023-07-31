@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-21 -->
+<!-- 2023-07-31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>C Format Specifiers</title>
@@ -32,17 +32,17 @@
         <div class="menu-content">
             <ul class="sidebar-nav">
             <li>
-                <a href="https://barrolskii.github.io/blogindex.html">
+                <a href="/blogindex.html">
                 <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://barrolskii.github.io/projects.html">
+                <a href="/projects.html">
                 <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="https://barrolskii.github.io/about.html">
+                <a href="/about.html">
                 <span>About</span>
                 </a>
             </li>
@@ -77,9 +77,9 @@
 </div>
 <div id="nil" class="content container">
 
-<div id="outline-container-orgfef11df" class="outline-2">
-<h2 id="orgfef11df">C Format Specifiers</h2>
-<div class="outline-text-2" id="text-orgfef11df">
+<div id="outline-container-org15d43f2" class="outline-2">
+<h2 id="org15d43f2">C Format Specifiers</h2>
+<div class="outline-text-2" id="text-org15d43f2">
 <div class="post__meta">
 <svg class="svg-inline--fa fa-calendar-alt fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="calendar-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg>
 NOV 11, 2021
@@ -95,9 +95,9 @@ will show examples for each one with what it outputs to the terminal.
 </p>
 </div>
 
-<div id="outline-container-org0ea3e74" class="outline-3">
-<h3 id="org0ea3e74">List of format specifiers</h3>
-<div class="outline-text-3" id="text-org0ea3e74">
+<div id="outline-container-org12b612b" class="outline-3">
+<h3 id="org12b612b">List of format specifiers</h3>
+<div class="outline-text-3" id="text-org12b612b">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -252,9 +252,9 @@ just underneath it. We&rsquo;ll start with character and signed integer:
 </div>
 </div>
 
-<div id="outline-container-orgcdfce57" class="outline-3">
-<h3 id="orgcdfce57">Character and signed integer</h3>
-<div class="outline-text-3" id="text-orgcdfce57">
+<div id="outline-container-org55d7209" class="outline-3">
+<h3 id="org55d7209">Character and signed integer</h3>
+<div class="outline-text-3" id="text-org55d7209">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">char</span> <span style="color: #dcaeea;">c</span> = <span style="color: #98be65;">'c'</span>;
 <span style="color: #ECBE7B;">int</span>  <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">3</span>;
@@ -271,9 +271,9 @@ c
 </div>
 </div>
 
-<div id="outline-container-orgc0fb5fb" class="outline-3">
-<h3 id="orgc0fb5fb">Float</h3>
-<div class="outline-text-3" id="text-orgc0fb5fb">
+<div id="outline-container-org93936d7" class="outline-3">
+<h3 id="org93936d7">Float</h3>
+<div class="outline-text-3" id="text-org93936d7">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">float</span> <span style="color: #dcaeea;">f</span> = <span style="color: #da8548; font-weight: bold;">123.4567890f</span>;
 
@@ -295,9 +295,9 @@ printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%G\n"
 </div>
 </div>
 
-<div id="outline-container-org1187c19" class="outline-3">
-<h3 id="org1187c19">Signed and unsigned short</h3>
-<div class="outline-text-3" id="text-org1187c19">
+<div id="outline-container-org40861f4" class="outline-3">
+<h3 id="org40861f4">Signed and unsigned short</h3>
+<div class="outline-text-3" id="text-org40861f4">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">short</span> <span style="color: #dcaeea;">s</span> = -<span style="color: #da8548; font-weight: bold;">6</span>;
 <span style="color: #ECBE7B;">unsigned</span> <span style="color: #ECBE7B;">short</span> <span style="color: #dcaeea;">us</span> = <span style="color: #da8548; font-weight: bold;">6</span>;
@@ -314,9 +314,9 @@ printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%hu\n
 </div>
 </div>
 
-<div id="outline-container-org280c46f" class="outline-3">
-<h3 id="org280c46f">Unsigned integer</h3>
-<div class="outline-text-3" id="text-org280c46f">
+<div id="outline-container-org2b22d7e" class="outline-3">
+<h3 id="org2b22d7e">Unsigned integer</h3>
+<div class="outline-text-3" id="text-org2b22d7e">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">unsigned</span> <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">3</span>;
 
@@ -330,9 +330,9 @@ printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%i\n"
 </div>
 </div>
 
-<div id="outline-container-org1d3b288" class="outline-3">
-<h3 id="org1d3b288">Long</h3>
-<div class="outline-text-3" id="text-org1d3b288">
+<div id="outline-container-orgf8585d4" class="outline-3">
+<h3 id="orgf8585d4">Long</h3>
+<div class="outline-text-3" id="text-orgf8585d4">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">long</span> <span style="color: #dcaeea;">l</span> = <span style="color: #da8548; font-weight: bold;">1234567</span>;
 
@@ -350,9 +350,9 @@ printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%li\n
 </div>
 </div>
 
-<div id="outline-container-org78e0d7f" class="outline-3">
-<h3 id="org78e0d7f">Double</h3>
-<div class="outline-text-3" id="text-org78e0d7f">
+<div id="outline-container-orgad13e65" class="outline-3">
+<h3 id="orgad13e65">Double</h3>
+<div class="outline-text-3" id="text-orgad13e65">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">double</span> <span style="color: #dcaeea;">d</span> = <span style="color: #da8548; font-weight: bold;">987.654321</span>;
 
@@ -366,9 +366,9 @@ printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%lf\n
 </div>
 </div>
 
-<div id="outline-container-org2af3cb8" class="outline-3">
-<h3 id="org2af3cb8">Long double</h3>
-<div class="outline-text-3" id="text-org2af3cb8">
+<div id="outline-container-org136ecec" class="outline-3">
+<h3 id="org136ecec">Long double</h3>
+<div class="outline-text-3" id="text-org136ecec">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">long</span> <span style="color: #ECBE7B;">double</span> <span style="color: #dcaeea;">ld</span> = <span style="color: #da8548; font-weight: bold;">987.654321</span>;
 
@@ -382,9 +382,9 @@ printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%Lf\n
 </div>
 </div>
 
-<div id="outline-container-orgf569df2" class="outline-3">
-<h3 id="orgf569df2">Long long and unsigned long long</h3>
-<div class="outline-text-3" id="text-orgf569df2">
+<div id="outline-container-orge935566" class="outline-3">
+<h3 id="orge935566">Long long and unsigned long long</h3>
+<div class="outline-text-3" id="text-orge935566">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">long</span> <span style="color: #ECBE7B;">long</span> <span style="color: #dcaeea;">ll</span> = -<span style="color: #da8548; font-weight: bold;">123456789</span>;
 <span style="color: #ECBE7B;">unsigned</span> <span style="color: #ECBE7B;">long</span> <span style="color: #ECBE7B;">long</span> <span style="color: #dcaeea;">ull</span>= <span style="color: #da8548; font-weight: bold;">123456789</span>;
@@ -404,9 +404,9 @@ printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%llu\
 </div>
 </div>
 
-<div id="outline-container-org66e90d2" class="outline-3">
-<h3 id="org66e90d2">Octal representation</h3>
-<div class="outline-text-3" id="text-org66e90d2">
+<div id="outline-container-org0b066a5" class="outline-3">
+<h3 id="org0b066a5">Octal representation</h3>
+<div class="outline-text-3" id="text-org0b066a5">
 <div class="org-src-container">
 <pre class="src src-C">printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%o\n"</span>, <span style="color: #da8548; font-weight: bold;">69</span><span style="color: #51afef;">)</span>;
 </pre>
@@ -418,9 +418,9 @@ printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%llu\
 </div>
 </div>
 
-<div id="outline-container-orgd6ab99e" class="outline-3">
-<h3 id="orgd6ab99e">Pointer</h3>
-<div class="outline-text-3" id="text-orgd6ab99e">
+<div id="outline-container-org149e978" class="outline-3">
+<h3 id="org149e978">Pointer</h3>
+<div class="outline-text-3" id="text-org149e978">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">3</span>;
 <span style="color: #ECBE7B;">int</span> *<span style="color: #dcaeea;">ptr</span> = &amp;i;
@@ -431,14 +431,14 @@ printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%p\n"
 </div>
 
 <pre class="example">
-0x7fffbaa8c47c
+0x7ffc4481c60c
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org5f49271" class="outline-3">
-<h3 id="org5f49271">String</h3>
-<div class="outline-text-3" id="text-org5f49271">
+<div id="outline-container-org65a6f85" class="outline-3">
+<h3 id="org65a6f85">String</h3>
+<div class="outline-text-3" id="text-org65a6f85">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">s</span> = <span style="color: #98be65;">"Hello, world!"</span>;
 
@@ -452,9 +452,9 @@ Hello, world!
 </div>
 </div>
 
-<div id="outline-container-org1e0e7d8" class="outline-3">
-<h3 id="org1e0e7d8">Unsigned integer</h3>
-<div class="outline-text-3" id="text-org1e0e7d8">
+<div id="outline-container-org9b82942" class="outline-3">
+<h3 id="org9b82942">Unsigned integer</h3>
+<div class="outline-text-3" id="text-org9b82942">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">unsigned</span> <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">ui</span> = <span style="color: #da8548; font-weight: bold;">3</span>;
 
@@ -468,9 +468,9 @@ printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%u\n"
 </div>
 </div>
 
-<div id="outline-container-org1cf0134" class="outline-3">
-<h3 id="org1cf0134">Hexadecimal representation</h3>
-<div class="outline-text-3" id="text-org1cf0134">
+<div id="outline-container-org922db03" class="outline-3">
+<h3 id="org922db03">Hexadecimal representation</h3>
+<div class="outline-text-3" id="text-org922db03">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> = -<span style="color: #da8548; font-weight: bold;">3</span>;
 
@@ -486,9 +486,9 @@ FFFFFFFD
 </div>
 </div>
 
-<div id="outline-container-org86e07b0" class="outline-3">
-<h3 id="org86e07b0">Other</h3>
-<div class="outline-text-3" id="text-org86e07b0">
+<div id="outline-container-org1637a9b" class="outline-3">
+<h3 id="org1637a9b">Other</h3>
+<div class="outline-text-3" id="text-org1637a9b">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">3</span>;
 <span style="color: #ECBE7B;">int</span> *<span style="color: #dcaeea;">ptr</span> = &amp;i;
@@ -505,9 +505,9 @@ printf<span style="color: #51afef;">(</span><span style="color: #98be65;">"%%\n"
 </div>
 </div>
 
-<div id="outline-container-orga64da69" class="outline-3">
-<h3 id="orga64da69">Formatting tricks</h3>
-<div class="outline-text-3" id="text-orga64da69">
+<div id="outline-container-org02a6bdd" class="outline-3">
+<h3 id="org02a6bdd">Formatting tricks</h3>
+<div class="outline-text-3" id="text-org02a6bdd">
 <p>
 There are a few other flags you can add to a format specifier to format
 output to specific needs. These are &rsquo;*&rsquo;, &rsquo;.&rsquo;, and &rsquo;-&rsquo;. You can also
@@ -517,9 +517,9 @@ formatted output.
 </div>
 </div>
 
-<div id="outline-container-org586a7e2" class="outline-3">
-<h3 id="org586a7e2">Left alignment</h3>
-<div class="outline-text-3" id="text-org586a7e2">
+<div id="outline-container-org903bc26" class="outline-3">
+<h3 id="org903bc26">Left alignment</h3>
+<div class="outline-text-3" id="text-org903bc26">
 <p>
 By supplying a numerical value after the % character you will align
 values from the left. All this does is add spacing in front of the
@@ -556,9 +556,9 @@ of the string is greater than 20 characters.
 </div>
 </div>
 
-<div id="outline-container-org1496a1b" class="outline-3">
-<h3 id="org1496a1b">Right alignment</h3>
-<div class="outline-text-3" id="text-org1496a1b">
+<div id="outline-container-org39238ec" class="outline-3">
+<h3 id="org39238ec">Right alignment</h3>
+<div class="outline-text-3" id="text-org39238ec">
 <p>
 When you supply the minus (-) sign just after the % character this
 will align values to the right. It works exactly like the left alignment
@@ -593,9 +593,9 @@ for the format specifier.
 </div>
 </div>
 
-<div id="outline-container-org16a4344" class="outline-3">
-<h3 id="org16a4344">Variable length formatting</h3>
-<div class="outline-text-3" id="text-org16a4344">
+<div id="outline-container-org83c703b" class="outline-3">
+<h3 id="org83c703b">Variable length formatting</h3>
+<div class="outline-text-3" id="text-org83c703b">
 <p>
 Instead of supplying a number after the % character, you can
 actually use values of variables. You can do this by supplying an
@@ -642,9 +642,9 @@ Hello, World!   ==
 </div>
 </div>
 
-<div id="outline-container-org9a86619" class="outline-3">
-<h3 id="org9a86619">Truncate length</h3>
-<div class="outline-text-3" id="text-org9a86619">
+<div id="outline-container-org2ba7b27" class="outline-3">
+<h3 id="org2ba7b27">Truncate length</h3>
+<div class="outline-text-3" id="text-org2ba7b27">
 <p>
 You also have the option to truncate or shorten the formatted value.
 By using the period (.) after the % character and then supplying a number the formatting will remove any trailing characters. This also works with the asterisk variable formatting.
