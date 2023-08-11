@@ -8,11 +8,12 @@
 
 * About Me
 
-I'm Ashley, a build engineer currently working in the games industry. Previously I
-graduated from Staffordshire Univeristy with a first class degree in Computer Games
-Programming. My current professional responsibilites involve CI/CD pipeline automation
-in TeamCity, script automation in PowerShell, and pipeline infrastructure design.
-
+I'm Ashley, a build engineer currently working in the games industry. I primarily
+work with TeamCity, Perforce, and PowerShell. I also work on CI/CD pipelines to push
+updates to a live service game while also working with engineering and content teams
+to create and maintain pipeline solutions to help automate workflows. I previously
+studied at Staffordshire Univeristy and received a first class degree with honours
+in Computer Games Programming.
 
 ** Technical Experience
 
@@ -22,6 +23,7 @@ in TeamCity, script automation in PowerShell, and pipeline infrastructure design
 - C#
 - PowerShell
 - Shell Script
+- Python
 
 *** Software
 
