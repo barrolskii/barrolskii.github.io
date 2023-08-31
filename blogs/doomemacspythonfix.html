@@ -6,12 +6,14 @@
 <!-- 2023-08-31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Online Portfolio</title>
+<title>Doom Emacs Python Not Found Fix</title>
 <meta name="author" content="Ashley Barrell" />
-<meta name="description" content="Blog index" />
+<meta name="description" content="How to set up irony server back end code completion for Doom Emacs on Windows" />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" href="css/hydehyde.css">
-<script type="text/JavaScript" src="js/mode.js"></script>
+<link rel="stylesheet" href="../css/hydehyde.css">
+<link rel="stylesheet" href="../css/codestyle.css">
+<script type="text/JavaScript" src="../js/mode.js"></script>
+<script type="text/JavaScript" src="../js/magnify.js"></script>
 </head>
 <body>
 <div id="" class="nil">
@@ -76,59 +78,48 @@
 </div>
 <div id="nil" class="content container">
 
-<div id="outline-container-org59891cc" class="outline-2">
-<h2 id="org59891cc">Blog Index</h2>
-<div class="outline-text-2" id="text-org59891cc">
-<ul class="posts">
-  <li>
-    <span class="list__title--small">
-      <a href="./blogs/doomemacspythonfix.html">Doom Emacs Python Not Found Fix For Windows</a>
-      <time class="pull-right hidden-tablet">AUG 31, 2023</time>
-    </span>
-  </li>
+<div id="outline-container-orge50c889" class="outline-2">
+<h2 id="orge50c889">Doom Emacs Python Not Found Fix For Windows</h2>
+<div class="outline-text-2" id="text-orge50c889">
+<div class="post__meta">
+<svg class="svg-inline--fa fa-calendar-alt fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="calendar-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg>
+AUG 31, 2023
+</div>
 
-  <li>
-    <span class="list__title--small">
-      <a href="./blogs/ncursesandreadline.html">Ncurses And GNU Readline</a>
-      <time class="pull-right hidden-tablet">JUL 31, 2023</time>
-    </span>
-  </li>
+<p>
+When writing Python in Emacs you may run into an issue on Windows that says:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings
+</pre>
+</div>
 
-  <li>
-    <span class="list__title--small">
-      <a href="./blogs/windowsnoachievements.html">Xbox Achievements Not Unlocking For Windows</a>
-      <time class="pull-right hidden-tablet">MAY 30, 2023</time>
-    </span>
-  </li>
+<p>
+This issue is simply due to the Python installer using an app execution alias by default.
+</p>
+</div>
 
-  <li>
-    <span class="list__title--small">
-      <a href="./blogs/doomemacsironyfix.html">Doom Emacs Irony Compilation Fix For Windows</a>
-      <time class="pull-right hidden-tablet">MAR 26, 2022</time>
-    </span>
-  </li>
+<div id="outline-container-org06a73d8" class="outline-3">
+<h3 id="org06a73d8">The Fix</h3>
+<div class="outline-text-3" id="text-org06a73d8">
+<p>
+To fix this error you will need to do the following:
+</p>
 
-  <li>
-    <span class="list__title--small">
-      <a href="./blogs/ycmfix.html">YCM Autocomplete Fix</a>
-      <time class="pull-right hidden-tablet">NOV 29, 2021</time>
-    </span>
-  </li>
-
-  <li>
-    <span class="list__title--small">
-      <a href="./blogs/doomemacsiconsfix.html">Doom Emacs Icons Fix For Windows</a>
-      <time class="pull-right hidden-tablet">NOV 11, 2021</time>
-    </span>
-  </li>
-
-  <li>
-    <span class="list__title--small">
-      <a href="./blogs/cformatspecifiers.html">C Format Specifiers Tutorial</a>
-      <time class="pull-right hidden-tablet">NOV 11, 2021</time>
-    </span>
-  </li>
-</ul>
+<ol class="org-ol">
+<li>Open the Windows start menu</li>
+<li>Type &rsquo;Manage app execution aliases&rsquo;</li>
+</ol>
+<img src="../img/PythonFix/Step1.png" onclick="MagnifyImage(this)"/>
+<ol class="org-ol">
+<li value="3">Open the program</li>
+<li>Disable the Python app installer (in my case I had to switch off both Python and Python 3)</li>
+</ol>
+<img src="../img/PythonFix/Step2.png" onclick="MagnifyImage(this)"/>
+<ol class="org-ol">
+<li value="5">Restart Emacs and the error should stop appearing!</li>
+</ol>
+</div>
 </div>
 </div>
 </div>

@@ -9,6 +9,18 @@
 #+begin_export html
 <div class="post-list__item">
   <span class="item__title--big">
+    <a href="blogs/doomemacspythonfix.html">Doom Emacs Python Not Found Fix For Windows</a>
+  </span>
+
+  <span class="item__date">AUG 31, 2023</span>
+  <span>
+When writing Python in Emacs you may run into an issue on Windows that says: Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings...
+  </span>
+  <a href="blogs/doomemacspythonfix.html" class="read-more-symbol">➦</a>
+</div>
+
+<div class="post-list__item">
+  <span class="item__title--big">
     <a href="blogs/ncursesandreadline.html">Ncurses And GNU Readline</a>
   </span>
 

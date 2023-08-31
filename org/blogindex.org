@@ -12,6 +12,13 @@
 <ul class="posts">
   <li>
     <span class="list__title--small">
+      <a href="./blogs/doomemacspythonfix.html">Doom Emacs Python Not Found Fix For Windows</a>
+      <time class="pull-right hidden-tablet">AUG 31, 2023</time>
+    </span>
+  </li>
+
+  <li>
+    <span class="list__title--small">
       <a href="./blogs/ncursesandreadline.html">Ncurses And GNU Readline</a>
       <time class="pull-right hidden-tablet">JUL 31, 2023</time>
     </span>
