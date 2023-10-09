@@ -50,7 +50,7 @@
 
   <li>
     <span class="list__title--small">
-      <a href="./blogs/cformatspecifiers.html">C Format Specifiers Tutorial</a>
+      <a href="./blogs/cformatspecifierstutorial.html">C Format Specifiers Tutorial</a>
       <time class="pull-right hidden-tablet">NOV 11, 2021</time>
     </span>
   </li>
