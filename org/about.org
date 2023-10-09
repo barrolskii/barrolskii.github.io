@@ -1,0 +1,40 @@
+#+TITLE: Online Portfolio
+#+AUTHOR: Ashley Barrell
+#+DESCRIPTION: About me
+
+* About Me
+
+I'm Ashley, a build engineer currently working in the games industry. I primarily
+work with TeamCity, Perforce, and PowerShell. I also work on CI/CD pipelines to push
+updates to a live service game while also working with engineering and content teams
+to create and maintain pipeline solutions to help automate workflows. I previously
+studied at Staffordshire Univeristy and received a first class degree with honours
+in Computer Games Programming.
+
+** Technical Experience
+
+*** Languages
+
+- C/C++
+- C#
+- PowerShell
+- Shell Script
+- Python
+
+*** Software
+
+- Perforce
+- Git
+- TeamCity
+- Emacs
+- Vim
+- Visual Studio
+
+** Achievements
+
+- TIGA graduate of the year
+- First class degree in Computer Games Programming
+
+** Previous Employment
+
+- Intellectual Property Office: Junior DevOps Engineer

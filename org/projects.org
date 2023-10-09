@@ -1,0 +1,44 @@
+#+TITLE: Online Portfolio
+#+AUTHOR: Ashley Barrell
+#+DESCRIPTION: Personal projects
+
+* Projects
+** Single Header Libs
+#+HTML: <div class="project__featured-image">
+#+HTML: <img src="img/SingleHeaderLibs.png" onclick=MagnifyImage(this)>
+#+HTML: </div>
+#+HTML: <div class="project__summary">
+Single header libs is a repository containing a variety of projects that follow the STB single header file library style. I made this project so I could tinker with a variety of different topics while also ensuring I would be creating a library at the same time so I could use what I made in future endeavours. This all started when I wanted a dynamic array in C similar to the Vector class in C++ (I don't usually use C++ just because I prefer plain ol' C). As of writing there are only 2 libraries that have been pushed to the public repository but many more are planned to join them in the future.
+#+HTML: </div>
+
+#+HTML: <hr class="divider"/>
+
+** Book Organiser
+#+HTML: <div class="project__featured-image">
+#+HTML: <img src="img/BookOrganiser.png" onclick=MagnifyImage(this)>
+#+HTML: </div>
+#+HTML: <div class="project__summary">
+This is a small project I made to help me organise and track my digital library of books (I have well over 2GB worth of books and which keeps going up with each Humble Book Bundle released). This program utilises Ncurses for the TUI (no GUI as I wanted to be able to use this via the command line) and GNU Readline for autocompletion. I could've used a database instead of writing this program but I really wanted an excuse to learn Ncurses and GNU Readline.
+#+HTML: </div>
+
+#+HTML: <hr class="divider"/>
+
+** Hyperion Asiimov Texture Pack
+#+HTML: <div class="project__featured-image">
+#+HTML: <img src="img/HAWPImgThree.webp" onclick=MagnifyImage(this)>
+#+HTML: </div>
+#+HTML: <div class="project__summary">
+The Hyperion Asiimov texture pack is the second skin pack I made for Borderlands 2 adding the Asiimov skin from CS:GO to the Hyperion legendary weapons in the game.
+#+HTML: </div>
+
+#+HTML: <hr class="divider"/>
+
+** Hyperion Obsidian Texture Pack
+#+HTML: <div class="project__featured-image">
+#+HTML: <img src="img/HOWPImgOne.webp" onclick=MagnifyImage(this)>
+#+HTML: </div>
+#+HTML: <div class="project__summary">
+The Hyperion Obsidian texture pack is first weapon texture pack I made for Borderlands 2 which applies to the Hyperion unique weapons in the game. Each weapon skin has two variants, a factory default version and a battle worn version.
+#+HTML: </div>
+
+#+HTML: <hr class="divider"/>
