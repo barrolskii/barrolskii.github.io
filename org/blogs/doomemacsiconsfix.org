@@ -23,6 +23,11 @@ The issue is simply due to missing font packages in Windows. To download the fon
 all-the-icons-install-fonts
 #+END_SRC
 
+You will also need:
+#+BEGIN_SRC emacs-lisp
+nerd-icons-install-fonts
+#+END_SRC
+
 On Windows this will ask you to provide a directory for the font files to be downloaded to.
 Once you've provided a directory you'll then need to open PowerShell and then cd into the directory where
 the font files have been downloaded. Once you've navigated there you'll then have to run this snippet of
