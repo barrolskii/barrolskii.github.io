@@ -1,0 +1,78 @@
+#+TITLE: Online Portfolio
+#+AUTHOR: Ashley Barrell
+#+DESCRIPTION: Personal online portfolio and blog
+
+#+begin_export html
+<div class="post-list__item">
+  <span class="item__title--big">
+    <a href="blogs/doomemacspythonfix.html">Doom Emacs Python Not Found Fix For Windows</a>
+  </span>
+
+  <span class="item__date">AUG 31, 2023</span>
+  <span>
+When writing Python in Emacs you may run into an issue on Windows that says: Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings...
+  </span>
+  <a href="blogs/doomemacspythonfix.html" class="read-more-symbol">➦</a>
+</div>
+
+<div class="post-list__item">
+  <span class="item__title--big">
+    <a href="blogs/ncursesandreadline.html">Ncurses And GNU Readline</a>
+  </span>
+
+  <span class="item__date">JUL 31, 2023</span>
+  <span>
+Getting Ncurses and GNU Readline to work together might seem like a bit of a pain when trying to make a Ncurses application that uses Readline for autocompletion. This tutorial will walk you through...
+  </span>
+  <a href="blogs/ncursesandreadline.html" class="read-more-symbol">➦</a>
+</div>
+
+<div class="post-list__item">
+  <span class="item__title--big">
+    <a href="blogs/windowsnoachievements.html">  Windows Games Not Unlocking Achievements Fix </a>
+  </span>
+
+  <span class="item__date">MAY 30, 2023</span>
+  <span>
+If you've recently installed Windows onto your machine with a minimal installer you might notice that some games can no longer unlock achievements. This is simply due to a required service being disabled...
+  </span>
+  <a href="blogs/windowsnoachievements.html" class="read-more-symbol">➦</a>
+</div>
+
+<div class="post-list__item">
+  <span class="item__title--big">
+    <a href="blogs/doomemacsironyfix.html"> Doom Emacs Irony Server Fix </a>
+  </span>
+
+  <span class="item__date">MAR 26, 2022</span>
+  <span>
+  If you want code completion for C/C++ when using Doom Emacs you are going to need a language server. The default for this is irony and if you run the setup function in Doom Emacs it'll compile the server and set it up for you. In Windows you might not be able to compile the server from inside Emacs if you don't have the required dependencies installed. This tutorial...
+  </span>
+  <a href="blogs/doomemacsironyfix.html" class="read-more-symbol">➦</a>
+</div>
+
+<div class="post-list__item">
+  <span class="item__title--big">
+    <a href="blogs/ycmfix.html"> YCM Autocomplete Fix </a>
+  </span>
+
+  <span class="item__date">NOV 29, 2021</span>
+  <span>
+  I&rsquo;ll get straight to the point here, if you&rsquo;ve installed the <a href="https://github.com/ycm-core/YouCompleteMe">YouCompleteMe</a> plugin for Vim and/or Neovim, you might&rsquo;ve run into a problem with C and/or C++ auto-completion suggestions. The big issue you may have run into just like me and a bunch of other people is that you&rsquo;re not getting standar...
+  </span>
+  <a href="blogs/ycmfix.html" class="read-more-symbol">➦</a>
+</div>
+
+<div class="post-list__item">
+  <span class="item__title--big">
+    <a href="blogs/cformatspecifierstutorial.html"> C Format Specifiers </a>
+  </span>
+
+  <span class="item__date">NOV 11, 2021</span>
+  <span>
+  The C programming language has some nice options when it comes to formatting output on the terminal and I&rsquo;ve noticed that most tutorials covering format specifiers don&rsquo;t show some of the nicer things you can do with them. This tutorial will show a list of format specifiers and will show examples for each one with what it outputs to the terminal....
+  </span>
+  <a href="blogs/cformatspecifierstutorial.html" class="read-more-symbol">➦</a>
+</div>
+
+#+end_export
