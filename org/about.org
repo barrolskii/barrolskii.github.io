@@ -1,10 +1,6 @@
 #+TITLE: Online Portfolio
 #+AUTHOR: Ashley Barrell
 #+DESCRIPTION: About me
-#+EXPORT_FILE_NAME: ../about.html
-#+OPTIONS: num:nil toc:nil title:nil
-#+HTML_HEAD: <link rel="stylesheet" href="css/hydehyde.css">
-#+HTML_HEAD: <script type="text/JavaScript" src="js/mode.js"></script>
 
 * About Me
 

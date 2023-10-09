@@ -1,12 +1,6 @@
 #+TITLE: Doom Emacs Python Not Found Fix
 #+AUTHOR: Ashley Barrell
 #+DESCRIPTION: How to set up irony server back end code completion for Doom Emacs on Windows
-#+EXPORT_FILE_NAME: ../../blogs/doomemacspythonfix.html
-#+OPTIONS: num:nil toc:nil title:nil
-#+HTML_HEAD: <link rel="stylesheet" href="../css/hydehyde.css">
-#+HTML_HEAD: <link rel="stylesheet" href="../css/codestyle.css">
-#+HTML_HEAD: <script type="text/JavaScript" src="../js/mode.js"></script>
-#+HTML_HEAD: <script type="text/JavaScript" src="../js/magnify.js"></script>
 
 * Doom Emacs Python Not Found Fix For Windows
 

@@ -1,10 +1,6 @@
 #+TITLE: Online Portfolio
 #+AUTHOR: Ashley Barrell
 #+DESCRIPTION: Personal online portfolio and blog
-#+EXPORT_FILE_NAME: ../index.html
-#+OPTIONS: num:nil toc:nil title:nil
-#+HTML_HEAD: <link rel="stylesheet" href="css/hydehyde.css">
-#+HTML_HEAD: <script type="text/JavaScript" src="js/mode.js"></script>
 
 #+begin_export html
 <div class="post-list__item">
@@ -69,14 +65,14 @@ If you've recently installed Windows onto your machine with a minimal installer 
 
 <div class="post-list__item">
   <span class="item__title--big">
-    <a href="blogs/cformatspecifiers.html"> C Format Specifiers </a>
+    <a href="blogs/cformatspecifierstutorial.html"> C Format Specifiers </a>
   </span>
 
   <span class="item__date">NOV 11, 2021</span>
   <span>
   The C programming language has some nice options when it comes to formatting output on the terminal and I&rsquo;ve noticed that most tutorials covering format specifiers don&rsquo;t show some of the nicer things you can do with them. This tutorial will show a list of format specifiers and will show examples for each one with what it outputs to the terminal....
   </span>
-  <a href="blogs/cformatspecifiers.html" class="read-more-symbol">➦</a>
+  <a href="blogs/cformatspecifierstutorial.html" class="read-more-symbol">➦</a>
 </div>
 
 #+end_export

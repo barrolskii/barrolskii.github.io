@@ -1,11 +1,6 @@
 #+TITLE: Online Portfolio
 #+AUTHOR: Ashley Barrell
 #+DESCRIPTION: Personal projects
-#+EXPORT_FILE_NAME: ../projects.html
-#+OPTIONS: num:nil toc:nil title:nil
-#+HTML_HEAD: <link rel="stylesheet" href="css/hydehyde.css">
-#+HTML_HEAD: <script type="text/JavaScript" src="js/mode.js"></script>
-#+HTML_HEAD: <script type="text/JavaScript" src="js/magnify.js"></script>
 
 * Projects
 ** Single Header Libs

@@ -1,11 +1,6 @@
 #+TITLE: Doom Emacs Icons Fix
 #+AUTHOR: Ashley Barrell
 #+DESCRIPTION: Personal online portfolio and blog
-#+EXPORT_FILE_NAME: ../../blogs/doomemacsiconsfix.html
-#+OPTIONS: num:nil toc:nil title:nil
-#+HTML_HEAD: <link rel="stylesheet" href="../css/hydehyde.css">
-#+HTML_HEAD: <link rel="stylesheet" href="../css/codestyle.css">
-#+HTML_HEAD: <script type="text/JavaScript" src="../js/mode.js"></script>
 
 * Doom Emacs Icons Fix
 
