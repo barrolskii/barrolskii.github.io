@@ -1,4 +1,0 @@
-* Portfolio Site
-
-This is my personal website and portfolio.
-I've used the hyde-hyde theme from https://github.com/htr3n/hyde-hyde to style this website.
