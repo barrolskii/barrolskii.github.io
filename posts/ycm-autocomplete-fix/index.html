@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+	<title>YCM Autocomplete Fix</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+	<link rel="stylesheet" href="/assets/css/fontstyle.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/fontawesome/css/all.min.css">
+
+	
+	<link rel="stylesheet" href="/assets/css/magnificPopup/magnificPopup.css">
+	
+
+	
+	<link rel="stylesheet" href="/assets/css/tocbot/tocbot.min.css">
+	
+	<link rel="stylesheet" href="/assets/css/jekyll/jekyll-theme-chirpy.css">
+
+
+	<script src="/assets/js/bootstrap/bootstrap.bundle.js"></script>
+
+	
+	<script src="/assets/js/jquery/jquery371.js"></script>
+	<script src="/assets/js/magnificPopup/magnificPopupMin.js"></script>
+	<script src="/assets/js/clipboard/clipboard.min.js"></script>
+	
+
+	
+	<script src="/assets/js/tocbot/tocbot.min.js"></script>
+	
+	<script type="text/javascript" defer src="/assets/js/common.js"></script>
+
+	
+	<script type="text/javascript" defer src="/assets/js/imgInit.js"></script>
+	<script type="text/javascript" defer src="/assets/js/clipboardInit.js"></script>
+	
+
+	
+	<script type="text/javascript" defer src="/assets/js/tocInit.js"></script>
+	
+</head>
+
+
+	<body>
+		<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+			<header class="profile-wrapper">
+				<a href="/" id="avatar" class="rounded-circle">
+					<img src="/assets/img/ghostie.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+				</a>
+				<h1 class="site-title">
+					<a href="/">Ashley Barrell</a>
+				</h1>
+				<p class="site-subtitle fst-italic mb-0">Build Engineer</p>
+			</header>
+			<nav class="flex-column flex-grow-1 w-100 ps-0">
+				<ul class="nav">
+					<li class="nav-item ">
+						<a href="/" class="nav-link">
+							<i class="fa-fw fas fa-home"></i>
+							<span>HOME</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/blog/" class="nav-link">
+							<i class="fa-fw fas fa-stream"></i>
+							<span>BLOG</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/sandbox/" class="nav-link">
+							<i class="fa-fw fas fa-tags"></i>
+							<span>SANDBOX</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/projects/" class="nav-link">
+							<i class="fa-fw fas fa-archive"></i>
+							<span>PROJECTS</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/about/" class="nav-link">
+							<i class="fa-fw fas fa-info-circle"></i>
+							<span>ABOUT</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+				<button type="button" class="mode-toggle btn" aria-label="Switch Mode" onclick="toggleTheme()">
+					<i class="fas fa-adjust">
+
+					</i>
+				</button>
+				<span class="icon-border">
+
+				</span>
+                <a href="https://github.com/barrolskii" aria-label="github" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/ashley-barrell-0a8804176" aria-label="linkedin" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+			</div>
+		</aside>
+
+
+		<div id="main-wrapper" class="d-flex justify-content-center">
+			<div class="container d-flex flex-column px-xxl-5">
+				<header id="topbar-wrapper" aria-label="Top Bar">
+	<div id="topbar" class="d-flex align-items-center justify-content-between px-lg-3 h-100">
+		<nav id="breadcrumb" aria-label="Breadcrumb">
+		  
+
+		  
+			
+			  
+				<span>
+				  <a href="/">
+					Home
+				  </a>
+				</span>
+
+			  
+			
+			  
+			
+			  
+				
+				  <span>YCM Autocomplete Fix</span>
+				
+
+			  
+			
+		  
+		</nav>
+
+		<button type="button" id="sidebar-trigger" class="btn btn-link" onclick="myOnClick()">
+			<i class="fas fa-bars fa-fw"></i>
+		</button>
+		<div id="topbar-title">Ashley Barrell</div>
+	</div>
+</header>
+
+
+				<div class="row flex-grow-1">
+				  <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+					
+						<!-- Refactor the HTML structure -->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+<!-- Return -->
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>YCM Autocomplete Fix</h1>
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+		  Posted
+		  <time
+  data-ts="1638187200"
+  data-df=""
+  data-bs-toggle="tooltip" data-bs-placement="bottom"
+>
+  Nov 29, 2021
+</time>
+
+
+      </span>
+
+      <!-- lastmod date -->
+		
+
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+			By
+          <em>
+			  <a href="/">Ashley Barrell</a>
+          </em>
+        </span>
+
+		<!-- read time -->
+		<!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="588 words"
+>
+  <em>3 
+	min
+  </em>
+	read
+</span>
+
+      </div>
+      <!-- .d-flex -->
+    </div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+    <p>I’ll get straight to the point here, if you’ve installed the
+<a href="https://github.com/ycm-core/YouCompleteMe">YouCompleteMe</a> plugin for
+Vim and/or Neovim, you might’ve run into a problem with C and/or C++ auto-completion
+suggestions. The big issue you may have run into just like me and a bunch of other people
+is that you’re not getting standard library suggestions and language syntax suggestions.
+I’ve found a way to fix it.</p>
+
+<h2 id="the-fix"><span class="me-2">The Fix</span><a href="#the-fix" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>The fix itself is really simple. Put this snippet of code into your .vimrc or your
+init.vim file if you use Neovim:</p>
+
+<div class="language-vimscript highlighter-rouge"><div class="code-header">
+        <span data-label-text="Vimscript"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">g:ycm_semantic_triggers</span> <span class="p">=</span> <span class="p">{</span>
+<span class="se">	\</span> <span class="s1">'c'</span><span class="p">:</span> <span class="p">[</span>
+<span class="se">	\</span>	<span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">,</span> <span class="s1">'f'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'h'</span><span class="p">,</span>
+<span class="se">	\</span>	<span class="s1">'i'</span><span class="p">,</span> <span class="s1">'j'</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">,</span> <span class="s1">'l'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'n'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'p'</span><span class="p">,</span>
+<span class="se">	\</span>	<span class="s1">'q'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'s'</span><span class="p">,</span> <span class="s1">'t'</span><span class="p">,</span> <span class="s1">'u'</span><span class="p">,</span> <span class="s1">'v'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="s1">'x'</span><span class="p">,</span>
+<span class="se">	\</span>	<span class="s1">'y'</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">],</span>
+<span class="se">\</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>This might be a bit of a hacky way to do it. So what this does is sets all the
+lexicographic characters to trigger ycm. By default for C and C++ has the dot (.)
+and arrow (-&gt;) operators as the semantic triggers. As these are the default for the
+languages, you don’t need to add them to our list. Now I’m not sure if this is the
+best way to get the auto-completion to work but I found this way it actually suggests
+standard library functions and primative types and functions I’ve already declared.
+It’ll also show function arguments instead of just showing the function name.</p>
+
+<p>If you want this to work with C and C++ you just have to add C++ like this:</p>
+
+<div class="language-vimscript highlighter-rouge"><div class="code-header">
+        <span data-label-text="Vimscript"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">g:ycm_semantic_triggers</span> <span class="p">=</span> <span class="p">{</span>
+<span class="se">	\</span> <span class="s1">'c,cpp'</span><span class="p">:</span> <span class="p">[</span>
+<span class="se">	\</span>	<span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">,</span> <span class="s1">'f'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'h'</span><span class="p">,</span>
+<span class="se">	\</span>	<span class="s1">'i'</span><span class="p">,</span> <span class="s1">'j'</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">,</span> <span class="s1">'l'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'n'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'p'</span><span class="p">,</span>
+<span class="se">	\</span>	<span class="s1">'q'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'s'</span><span class="p">,</span> <span class="s1">'t'</span><span class="p">,</span> <span class="s1">'u'</span><span class="p">,</span> <span class="s1">'v'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="s1">'x'</span><span class="p">,</span>
+<span class="se">	\</span>	<span class="s1">'y'</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">],</span>
+<span class="se">\</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>There is one thing that you need to make sure you have. For ycm to work for a project,
+it requires you to have a .ycm_extra_conf.py file for each project. I don’t do this,
+I have a config file for each langauge in a config directory and source that when I
+edit a file based on its extension, like so:</p>
+
+<div class="language-vimscript highlighter-rouge"><div class="code-header">
+        <span data-label-text="Vimscript"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>augroup filetype_c
+	autocmd<span class="p">!</span>
+
+	<span class="k">let</span> <span class="nv">g:ycm_global_ycm_extra_conf</span> <span class="p">=</span> <span class="s1">'~/.config/nvim/config/.ycm_c_conf.py'</span>
+
+	<span class="p">...</span>
+augroup END
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>I won’t go over the setup of a ycm conf file here but there’s an exmaple on the ycm
+<a href="https://github.com/rasendubi/dotfiles/blob/master/.vim/.ycm_extra_conf.py#L51">GitHub</a>.
+I’ve also based my config off
+<a href="https://github.com/rasendubi/dotfiles/blob/master/.vim/.ycm_extra_conf.py">this</a>
+config on GitHub. You do have to change
+some things in the flags list and that’s the ’-std’ and ’x’ flags. These change
+depending on which version of C and C++ you’re using. Here’s what I have for C:</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="n">BASE_FLAGS</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="sh">'</span><span class="s">-Wall</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">-Wextra</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">-Werror</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">-Wno-long-long</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">-Wno-variadic-macros</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">-fexceptions</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">-ferror-limit=10000</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">-DNDEBUG</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">-std=c99</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">-xc</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">-DUSE_CLANG_COMPLETER</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">-I/usr/include/</span><span class="sh">'</span>
+        <span class="p">]</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Here’s what I currently have for C++:</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="n">BASE_FLAGS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sh">'</span><span class="s">-Wall</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">-Wextra</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">-Werror</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">-Wno-long-long</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">-Wno-variadic-macros</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">-fexceptions</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">-ferror-limit=10000</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">-DNDEBUG</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">-std=c++11</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">-xc++</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">-DUSE_CLANG_COMPLETER</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">-I/usr/include/</span><span class="sh">'</span>
+    <span class="p">]</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Hopefully that has fixed the problem for you as it did for me. I’ve seen a few posts
+online and a few videos on YouTube of people saying they haven’t been able to get ycm
+to work for C and C++. Again I don’t know if this is the best way to get this to work
+but it can stay as a workaround for now until someone finds a better way to do so.</p>
+
+  </div>
+</article>
+
+
+					
+				  </main>
+
+				  <!-- panel -->
+				  <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+					<div class="access">
+              			<!-- Get the last 5 posts from lastmod list. -->
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="access-lastmod">
+  <h2 class="panel-heading">Recently Added</h2>
+  <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/doom-emacs-python-not-found/">Doom Emacs Python Not Found Fix For Windows</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/ncurses-and-gnu-readline/">Ncurses And GNU Readline</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/windows-games-not-unlocking-achievements/">Windows Games Not Unlocking Achievements Fix</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/doom-emacs-irony-server-fix/">Doom Emacs Irony Server Fix</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/ycm-autocomplete-fix/">YCM Autocomplete Fix</a>
+      </li>
+    
+  </ul>
+</section>
+<!-- #access-lastmod -->
+
+					</div>
+					
+						
+
+
+
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+					
+				  </aside>
+				</div>
+
+				<div class="row">
+	<div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+		
+			<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/doom-emacs-icons-fix/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Doom Emacs Icons Fix</p>
+    </a>
+  
+
+  
+    <a
+      href="/posts/doom-emacs-irony-server-fix/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Doom Emacs Irony Server Fix</p>
+    </a>
+  
+</nav>
+
+		
+		<footer aria-label="Site Info" class=" d-flex flex-column justify-content-center text-muted flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3 ">
+			<p>
+			Using a <a href="https://github.com/barrolskii/barrolskii.github.io" target="_blank" rel="noopener">
+			Modified</a>
+			version of the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">
+			Chirpy</a>
+			theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">
+			Jekyll</a>
+			.</p>
+		</footer>
+	</div>
+</div>
+
+			</div>
+			<aside aria-label="Scroll to Top">
+				<button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow" style="display: none;">
+					<i class="fas fa-angle-up"></i>
+				</button>
+			</aside>
+		</div>
+	</body>
+</html>

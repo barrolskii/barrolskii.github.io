@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+	<title>C Format Specifiers Tutorial</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+	<link rel="stylesheet" href="/assets/css/fontstyle.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/fontawesome/css/all.min.css">
+
+	
+	<link rel="stylesheet" href="/assets/css/magnificPopup/magnificPopup.css">
+	
+
+	
+	<link rel="stylesheet" href="/assets/css/tocbot/tocbot.min.css">
+	
+	<link rel="stylesheet" href="/assets/css/jekyll/jekyll-theme-chirpy.css">
+
+
+	<script src="/assets/js/bootstrap/bootstrap.bundle.js"></script>
+
+	
+	<script src="/assets/js/jquery/jquery371.js"></script>
+	<script src="/assets/js/magnificPopup/magnificPopupMin.js"></script>
+	<script src="/assets/js/clipboard/clipboard.min.js"></script>
+	
+
+	
+	<script src="/assets/js/tocbot/tocbot.min.js"></script>
+	
+	<script type="text/javascript" defer src="/assets/js/common.js"></script>
+
+	
+	<script type="text/javascript" defer src="/assets/js/imgInit.js"></script>
+	<script type="text/javascript" defer src="/assets/js/clipboardInit.js"></script>
+	
+
+	
+	<script type="text/javascript" defer src="/assets/js/tocInit.js"></script>
+	
+</head>
+
+
+	<body>
+		<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+			<header class="profile-wrapper">
+				<a href="/" id="avatar" class="rounded-circle">
+					<img src="/assets/img/ghostie.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+				</a>
+				<h1 class="site-title">
+					<a href="/">Ashley Barrell</a>
+				</h1>
+				<p class="site-subtitle fst-italic mb-0">Build Engineer</p>
+			</header>
+			<nav class="flex-column flex-grow-1 w-100 ps-0">
+				<ul class="nav">
+					<li class="nav-item ">
+						<a href="/" class="nav-link">
+							<i class="fa-fw fas fa-home"></i>
+							<span>HOME</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/blog/" class="nav-link">
+							<i class="fa-fw fas fa-stream"></i>
+							<span>BLOG</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/sandbox/" class="nav-link">
+							<i class="fa-fw fas fa-tags"></i>
+							<span>SANDBOX</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/projects/" class="nav-link">
+							<i class="fa-fw fas fa-archive"></i>
+							<span>PROJECTS</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/about/" class="nav-link">
+							<i class="fa-fw fas fa-info-circle"></i>
+							<span>ABOUT</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+				<button type="button" class="mode-toggle btn" aria-label="Switch Mode" onclick="toggleTheme()">
+					<i class="fas fa-adjust">
+
+					</i>
+				</button>
+				<span class="icon-border">
+
+				</span>
+                <a href="https://github.com/barrolskii" aria-label="github" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/ashley-barrell-0a8804176" aria-label="linkedin" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+			</div>
+		</aside>
+
+
+		<div id="main-wrapper" class="d-flex justify-content-center">
+			<div class="container d-flex flex-column px-xxl-5">
+				<header id="topbar-wrapper" aria-label="Top Bar">
+	<div id="topbar" class="d-flex align-items-center justify-content-between px-lg-3 h-100">
+		<nav id="breadcrumb" aria-label="Breadcrumb">
+		  
+
+		  
+			
+			  
+				<span>
+				  <a href="/">
+					Home
+				  </a>
+				</span>
+
+			  
+			
+			  
+			
+			  
+				
+				  <span>C Format Specifiers Tutorial</span>
+				
+
+			  
+			
+		  
+		</nav>
+
+		<button type="button" id="sidebar-trigger" class="btn btn-link" onclick="myOnClick()">
+			<i class="fas fa-bars fa-fw"></i>
+		</button>
+		<div id="topbar-title">Ashley Barrell</div>
+	</div>
+</header>
+
+
+				<div class="row flex-grow-1">
+				  <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+					
+						<!-- Refactor the HTML structure -->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+<!-- Return -->
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>C Format Specifiers Tutorial</h1>
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+		  Posted
+		  <time
+  data-ts="1636632000"
+  data-df=""
+  data-bs-toggle="tooltip" data-bs-placement="bottom"
+>
+  Nov 11, 2021
+</time>
+
+
+      </span>
+
+      <!-- lastmod date -->
+		
+
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+			By
+          <em>
+			  <a href="/">Ashley Barrell</a>
+          </em>
+        </span>
+
+		<!-- read time -->
+		<!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="1113 words"
+>
+  <em>6 
+	min
+  </em>
+	read
+</span>
+
+      </div>
+      <!-- .d-flex -->
+    </div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+    <p>The C programming language has some nice options when it comes to
+formatting output on the terminal and I’ve noticed that most tutorials
+covering format specifiers don’t show some of the nicer things you can
+do with them. This tutorial will show a list of format specifiers and
+will show examples for each one with what it outputs to the terminal.</p>
+
+<h2 id="list-of-format-specifiers"><span class="me-2">List of format specifiers</span><a href="#list-of-format-specifiers" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Specifier</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>%c</td>
+      <td>Prints character</td>
+    </tr>
+    <tr>
+      <td>%d</td>
+      <td>Prints signed integer</td>
+    </tr>
+    <tr>
+      <td>%e</td>
+      <td>Scientific notation for float</td>
+    </tr>
+    <tr>
+      <td>%E</td>
+      <td>Scientific notation for float</td>
+    </tr>
+    <tr>
+      <td>%f</td>
+      <td>Float</td>
+    </tr>
+    <tr>
+      <td>%g</td>
+      <td>Float to third decimal place</td>
+    </tr>
+    <tr>
+      <td>%G</td>
+      <td>Float to third decimal place</td>
+    </tr>
+    <tr>
+      <td>%hi</td>
+      <td>Signed short</td>
+    </tr>
+    <tr>
+      <td>%hu</td>
+      <td>Unsigned short</td>
+    </tr>
+    <tr>
+      <td>%i</td>
+      <td>Unsigned integer</td>
+    </tr>
+    <tr>
+      <td>%l</td>
+      <td>Long</td>
+    </tr>
+    <tr>
+      <td>%ld</td>
+      <td>Long</td>
+    </tr>
+    <tr>
+      <td>%li</td>
+      <td>Long</td>
+    </tr>
+    <tr>
+      <td>%lf</td>
+      <td>Long double</td>
+    </tr>
+    <tr>
+      <td>%Lf</td>
+      <td>Long double</td>
+    </tr>
+    <tr>
+      <td>%lli</td>
+      <td>Long long</td>
+    </tr>
+    <tr>
+      <td>%lld</td>
+      <td>Long long</td>
+    </tr>
+    <tr>
+      <td>%llu</td>
+      <td>Unsigned long long</td>
+    </tr>
+    <tr>
+      <td>%o</td>
+      <td>Octal representation</td>
+    </tr>
+    <tr>
+      <td>%p</td>
+      <td>Pointer</td>
+    </tr>
+    <tr>
+      <td>%s</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td>%u</td>
+      <td>Unsigned int</td>
+    </tr>
+    <tr>
+      <td>%x</td>
+      <td>Hexadecimal representation</td>
+    </tr>
+    <tr>
+      <td>%X</td>
+      <td>Hexadecimal representation</td>
+    </tr>
+    <tr>
+      <td>%n</td>
+      <td>Prints nothing</td>
+    </tr>
+    <tr>
+      <td>%%</td>
+      <td>Prints percent character</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>From here I’ll show some example code and the output from that code at
+just underneath it. We’ll start with character and signed integer:</p>
+
+<h2 id="character-and-signed-integer"><span class="me-2">Character and signed integer</span><a href="#character-and-signed-integer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">'c'</span><span class="p">;</span>
+<span class="kt">int</span>  <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>c
+3
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="float"><span class="me-2">Float</span><a href="#float" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">123</span><span class="p">.</span><span class="mi">4567890</span><span class="n">f</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%e</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%E</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%g</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%G</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>1.234568e+02
+1.234568E+02
+123.456787
+123.457
+123.457
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="signed-and-unsigned-short"><span class="me-2">Signed and unsigned short</span><a href="#signed-and-unsigned-short" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kt">short</span> <span class="n">s</span> <span class="o">=</span> <span class="o">-</span><span class="mi">6</span><span class="p">;</span>
+<span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">us</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%hi</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%hu</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">us</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>-6
+6
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="unsigned-integer"><span class="me-2">Unsigned integer</span><a href="#unsigned-integer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%i</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>3
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="long"><span class="me-2">Long</span><a href="#long" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1234567</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%l</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>  <span class="n">l</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%ld</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">l</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%li</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">l</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>%
+1234567
+1234567
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="double"><span class="me-2">Double</span><a href="#double" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">987</span><span class="p">.</span><span class="mi">654321</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">d</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>987.654321
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="long-double"><span class="me-2">Long double</span><a href="#long-double" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kt">long</span> <span class="kt">double</span> <span class="n">ld</span> <span class="o">=</span> <span class="mi">987</span><span class="p">.</span><span class="mi">654321</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%Lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ld</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>987.654321
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="long-long-and-unsigned-long-long"><span class="me-2">Long long and unsigned long long</span><a href="#long-long-and-unsigned-long-long" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span> <span class="o">=</span> <span class="o">-</span><span class="mi">123456789</span><span class="p">;</span>
+<span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ull</span><span class="o">=</span> <span class="mi">123456789</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%lli</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ll</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%lld</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ll</span><span class="p">);</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%llu</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ull</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">-123456789</span>
+<span class="nt">-123456789</span>
+123456789
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="octal-representation"><span class="me-2">Octal representation</span><a href="#octal-representation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">printf</span><span class="p">(</span><span class="s">"%o</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="mi">69</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>105
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="pointer"><span class="me-2">Pointer</span><a href="#pointer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%p</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>0x7ffd24a1cdcc
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="string"><span class="me-2">String</span><a href="#string" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>Hello, world!
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="unsigned-integer-1"><span class="me-2">Unsigned integer</span><a href="#unsigned-integer-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">ui</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ui</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>3
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="hexadecimal-representation"><span class="me-2">Hexadecimal representation</span><a href="#hexadecimal-representation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%x</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%X</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>fffffffd
+FFFFFFFD
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="other"><span class="me-2">Other</span><a href="#other" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%n</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%%</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre> 
+%
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="formatting-tricks"><span class="me-2">Formatting tricks</span><a href="#formatting-tricks" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>There are a few other flags you can add to a format specifier to format
+output to specific needs. These are ‘*’, ‘.’, and ‘-‘. You can also
+supply a number just after the % character to add spacing to the
+formatted output.</p>
+
+<h2 id="left-alignment"><span class="me-2">Left alignment</span><a href="#left-alignment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>By supplying a numerical value after the % character you will align
+values from the left. All this does is add spacing in front of the
+formatted values so the line up. This only works if the supplied
+values are equal to or less than the supplied numerical value. Below
+is an example with three different strings all set to be left aligned.</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">str_one</span>       <span class="o">=</span> <span class="s">"Hello, World!"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str_two</span>       <span class="o">=</span> <span class="s">"Hello there, World!"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str_three</span>     <span class="o">=</span> <span class="s">"Why hello again, World!"</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%20s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">str_one</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%20s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">str_two</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%20s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">str_three</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>       Hello, World! <span class="o">==</span>
+ Hello there, World! <span class="o">==</span>
+Why hello again, World! <span class="o">==</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>As you can see, the first two strings are aligned properly. The two
+equals signs have been added to the output to show how the alignment.
+The third string however is not correctly aligned because the length
+of the string is greater than 20 characters.</p>
+
+<h2 id="right-alignment"><span class="me-2">Right alignment</span><a href="#right-alignment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>When you supply the minus (-) sign just after the % character this
+will align values to the right. It works exactly like the left alignment
+where it will put spaces after the formatted values.</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">str_one</span>       <span class="o">=</span> <span class="s">"Hello, World!"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str_two</span>       <span class="o">=</span> <span class="s">"Hello there, World!"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str_three</span>     <span class="o">=</span> <span class="s">"Why hello again, World!"</span><span class="p">;</span>
+
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%-20s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">str_one</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%-20s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">str_two</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%-20s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">str_three</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>Hello, World!        <span class="o">==</span>
+Hello there, World!  <span class="o">==</span>
+Why hello again, World! <span class="o">==</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Similarly to the left alignment, the first and second strings have
+been aligned correctly but the third string has not. Again this is due
+to the length of the third string being greater than the supplied length
+for the format specifier.</p>
+
+<h2 id="variable-length-formatting"><span class="me-2">Variable length formatting</span><a href="#variable-length-formatting" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Instead of supplying a number after the % character, you can
+actually use values of variables. You can do this by supplying an
+asterisk (*) after the % character.</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">str</span> <span class="o">=</span> <span class="s">"Hello, World!"</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">len_one</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">len_two</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%*s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">len_one</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%*s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">len_two</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>     Hello, World! <span class="o">==</span>
+Hello, World! <span class="o">==</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>When using the asterisk, the first argument you’ll have to pass after
+the format string will have to be the variable length. As you can see
+from the output the left alignment for each printf call as been aligned
+differently. You can also combine the asterisk with the right alignment
+minus as well. It would look more like this:</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">str</span> <span class="o">=</span> <span class="s">"Hello, World!"</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%-*s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%-*s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>Hello, World!        <span class="o">==</span>
+Hello, World!   <span class="o">==</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="truncate-length"><span class="me-2">Truncate length</span><a href="#truncate-length" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>You also have the option to truncate or shorten the formatted value.
+By using the period (.) after the % character and then supplying a number the formatting will remove any trailing characters. This also works with the asterisk variable formatting.</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">str_one</span>       <span class="o">=</span> <span class="s">"Hello, World!"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str_two</span>       <span class="o">=</span> <span class="s">"Hello there, World!"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str_three</span>     <span class="o">=</span> <span class="s">"Why hello again, World!"</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%.10s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">str_one</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%.10s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">str_two</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%.10s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">str_three</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>Hello, Wor <span class="o">==</span>
+Hello ther <span class="o">==</span>
+Why hello  <span class="o">==</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>In this example output as all of the supplied strings are longer than
+the length of the truncation length so none of them are printed in full.
+Here’s an example of the variable length with the truncation:</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">str_one</span>       <span class="o">=</span> <span class="s">"Hello, World!"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str_two</span>       <span class="o">=</span> <span class="s">"Hello there, World!"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str_three</span>     <span class="o">=</span> <span class="s">"Why hello again, World!"</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%.*s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">str_one</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%.*s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">str_two</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%.*s ==</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">str_three</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>Hello, World ==
+Hello there, ==
+Why hello ag ==
+</pre></td></tr></tbody></table></code></div></div>
+
+  </div>
+</article>
+
+
+					
+				  </main>
+
+				  <!-- panel -->
+				  <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+					<div class="access">
+              			<!-- Get the last 5 posts from lastmod list. -->
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="access-lastmod">
+  <h2 class="panel-heading">Recently Added</h2>
+  <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/doom-emacs-python-not-found/">Doom Emacs Python Not Found Fix For Windows</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/ncurses-and-gnu-readline/">Ncurses And GNU Readline</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/windows-games-not-unlocking-achievements/">Windows Games Not Unlocking Achievements Fix</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/doom-emacs-irony-server-fix/">Doom Emacs Irony Server Fix</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/ycm-autocomplete-fix/">YCM Autocomplete Fix</a>
+      </li>
+    
+  </ul>
+</section>
+<!-- #access-lastmod -->
+
+					</div>
+					
+						
+
+
+
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+					
+				  </aside>
+				</div>
+
+				<div class="row">
+	<div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+		
+			<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <div class="btn btn-outline-primary disabled" aria-label="Older">
+      <p>-</p>
+    </div>
+  
+
+  
+    <a
+      href="/posts/doom-emacs-icons-fix/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Doom Emacs Icons Fix</p>
+    </a>
+  
+</nav>
+
+		
+		<footer aria-label="Site Info" class=" d-flex flex-column justify-content-center text-muted flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3 ">
+			<p>
+			Using a <a href="https://github.com/barrolskii/barrolskii.github.io" target="_blank" rel="noopener">
+			Modified</a>
+			version of the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">
+			Chirpy</a>
+			theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">
+			Jekyll</a>
+			.</p>
+		</footer>
+	</div>
+</div>
+
+			</div>
+			<aside aria-label="Scroll to Top">
+				<button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow" style="display: none;">
+					<i class="fas fa-angle-up"></i>
+				</button>
+			</aside>
+		</div>
+	</body>
+</html>

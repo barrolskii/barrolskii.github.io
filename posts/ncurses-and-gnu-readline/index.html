@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+	<title>Ncurses And GNU Readline</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+	<link rel="stylesheet" href="/assets/css/fontstyle.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/fontawesome/css/all.min.css">
+
+	
+	<link rel="stylesheet" href="/assets/css/magnificPopup/magnificPopup.css">
+	
+
+	
+	<link rel="stylesheet" href="/assets/css/tocbot/tocbot.min.css">
+	
+	<link rel="stylesheet" href="/assets/css/jekyll/jekyll-theme-chirpy.css">
+
+
+	<script src="/assets/js/bootstrap/bootstrap.bundle.js"></script>
+
+	
+	<script src="/assets/js/jquery/jquery371.js"></script>
+	<script src="/assets/js/magnificPopup/magnificPopupMin.js"></script>
+	<script src="/assets/js/clipboard/clipboard.min.js"></script>
+	
+
+	
+	<script src="/assets/js/tocbot/tocbot.min.js"></script>
+	
+	<script type="text/javascript" defer src="/assets/js/common.js"></script>
+
+	
+	<script type="text/javascript" defer src="/assets/js/imgInit.js"></script>
+	<script type="text/javascript" defer src="/assets/js/clipboardInit.js"></script>
+	
+
+	
+	<script type="text/javascript" defer src="/assets/js/tocInit.js"></script>
+	
+</head>
+
+
+	<body>
+		<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+			<header class="profile-wrapper">
+				<a href="/" id="avatar" class="rounded-circle">
+					<img src="/assets/img/ghostie.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+				</a>
+				<h1 class="site-title">
+					<a href="/">Ashley Barrell</a>
+				</h1>
+				<p class="site-subtitle fst-italic mb-0">Build Engineer</p>
+			</header>
+			<nav class="flex-column flex-grow-1 w-100 ps-0">
+				<ul class="nav">
+					<li class="nav-item ">
+						<a href="/" class="nav-link">
+							<i class="fa-fw fas fa-home"></i>
+							<span>HOME</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/blog/" class="nav-link">
+							<i class="fa-fw fas fa-stream"></i>
+							<span>BLOG</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/sandbox/" class="nav-link">
+							<i class="fa-fw fas fa-tags"></i>
+							<span>SANDBOX</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/projects/" class="nav-link">
+							<i class="fa-fw fas fa-archive"></i>
+							<span>PROJECTS</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/about/" class="nav-link">
+							<i class="fa-fw fas fa-info-circle"></i>
+							<span>ABOUT</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+				<button type="button" class="mode-toggle btn" aria-label="Switch Mode" onclick="toggleTheme()">
+					<i class="fas fa-adjust">
+
+					</i>
+				</button>
+				<span class="icon-border">
+
+				</span>
+                <a href="https://github.com/barrolskii" aria-label="github" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/ashley-barrell-0a8804176" aria-label="linkedin" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+			</div>
+		</aside>
+
+
+		<div id="main-wrapper" class="d-flex justify-content-center">
+			<div class="container d-flex flex-column px-xxl-5">
+				<header id="topbar-wrapper" aria-label="Top Bar">
+	<div id="topbar" class="d-flex align-items-center justify-content-between px-lg-3 h-100">
+		<nav id="breadcrumb" aria-label="Breadcrumb">
+		  
+
+		  
+			
+			  
+				<span>
+				  <a href="/">
+					Home
+				  </a>
+				</span>
+
+			  
+			
+			  
+			
+			  
+				
+				  <span>Ncurses And GNU Readline</span>
+				
+
+			  
+			
+		  
+		</nav>
+
+		<button type="button" id="sidebar-trigger" class="btn btn-link" onclick="myOnClick()">
+			<i class="fas fa-bars fa-fw"></i>
+		</button>
+		<div id="topbar-title">Ashley Barrell</div>
+	</div>
+</header>
+
+
+				<div class="row flex-grow-1">
+				  <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+					
+						<!-- Refactor the HTML structure -->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+<!-- Return -->
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>Ncurses And GNU Readline</h1>
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+		  Posted
+		  <time
+  data-ts="1690804800"
+  data-df=""
+  data-bs-toggle="tooltip" data-bs-placement="bottom"
+>
+  Jul 31, 2023
+</time>
+
+
+      </span>
+
+      <!-- lastmod date -->
+		
+
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+			By
+          <em>
+			  <a href="/">Ashley Barrell</a>
+          </em>
+        </span>
+
+		<!-- read time -->
+		<!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="2202 words"
+>
+  <em>12 
+	min
+  </em>
+	read
+</span>
+
+      </div>
+      <!-- .d-flex -->
+    </div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+    <p>Getting Ncurses and GNU Readline to work together might seem like a bit of a pain
+when trying to make a Ncurses application that uses Readline for autocompletion.
+This tutorial will walk you through how to set up both libraries so you can easily
+have autocompletion in your Ncurses applications.</p>
+
+<h2 id="ncurses-setup"><span class="me-2">Ncurses Setup</span><a href="#ncurses-setup" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>To start we’ll set up a basic ncurses program:</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;ncurses.h&gt;</span><span class="cp">
+</span>
+<span class="n">WINDOW</span> <span class="o">*</span><span class="n">input_window</span><span class="p">,</span> <span class="o">*</span><span class="n">output_window</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">lines</span><span class="p">,</span> <span class="n">cols</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">init_ncurses</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">initscr</span><span class="p">();</span>
+    <span class="n">cbreak</span><span class="p">();</span>
+    <span class="n">noecho</span><span class="p">();</span>
+    <span class="n">keypad</span><span class="p">(</span><span class="n">stdscr</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+
+    <span class="n">getmaxyx</span><span class="p">(</span><span class="n">stdscr</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">cols</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">start_x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">start_y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">input_window</span>  <span class="o">=</span> <span class="n">newwin</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">lines</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">start_x</span><span class="p">);</span>
+    <span class="n">output_window</span> <span class="o">=</span> <span class="n">newwin</span><span class="p">(</span><span class="n">lines</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">start_y</span><span class="p">,</span> <span class="n">start_x</span><span class="p">);</span>
+
+    <span class="n">keypad</span><span class="p">(</span><span class="n">input_window</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+    <span class="n">keypad</span><span class="p">(</span><span class="n">output_window</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+
+    <span class="n">box</span><span class="p">(</span><span class="n">input_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">box</span><span class="p">(</span><span class="n">output_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="n">refresh</span><span class="p">();</span>
+    <span class="n">wrefresh</span><span class="p">(</span><span class="n">input_window</span><span class="p">);</span>
+    <span class="n">wrefresh</span><span class="p">(</span><span class="n">output_window</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">cleanup_ncurses</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">delwin</span><span class="p">(</span><span class="n">input_window</span><span class="p">);</span>
+    <span class="n">delwin</span><span class="p">(</span><span class="n">output_window</span><span class="p">);</span>
+    <span class="n">endwin</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">main_loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ch</span> <span class="o">=</span> <span class="n">getch</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">init_ncurses</span><span class="p">();</span>
+    <span class="n">main_loop</span><span class="p">();</span>
+    <span class="n">cleanup_ncurses</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>This program simply draws 2 boxes, one for displaying output and one for accepting
+input. We have a main loop function set up too that just waits for us to enter some
+input. This will do a bit more later on in the tutorial but for now it just gets a
+single character from the user.</p>
+
+<h2 id="readline-setup"><span class="me-2">Readline Setup</span><a href="#readline-setup" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Next we need to setup readline and change some readline variables to make sure that
+it plays nicely with ncurses:</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdbool.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;ncurses.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;readline/readline.h&gt;</span><span class="cp">
+</span>
+<span class="cp">#define UNUSED(x) (void)x
+</span>
+<span class="n">WINDOW</span> <span class="o">*</span><span class="n">input_window</span><span class="p">,</span> <span class="o">*</span><span class="n">output_window</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">lines</span><span class="p">,</span> <span class="n">cols</span><span class="p">;</span>
+
+<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">input</span><span class="p">;</span>
+<span class="n">bool</span> <span class="n">input_available</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">init_ncurses</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">initscr</span><span class="p">();</span>
+    <span class="n">cbreak</span><span class="p">();</span>
+    <span class="n">noecho</span><span class="p">();</span>
+    <span class="n">keypad</span><span class="p">(</span><span class="n">stdscr</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+
+    <span class="n">getmaxyx</span><span class="p">(</span><span class="n">stdscr</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">cols</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">start_x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">start_y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">input_window</span>  <span class="o">=</span> <span class="n">newwin</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">lines</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">start_x</span><span class="p">);</span>
+    <span class="n">output_window</span> <span class="o">=</span> <span class="n">newwin</span><span class="p">(</span><span class="n">lines</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">start_y</span><span class="p">,</span> <span class="n">start_x</span><span class="p">);</span>
+
+    <span class="n">keypad</span><span class="p">(</span><span class="n">input_window</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+    <span class="n">keypad</span><span class="p">(</span><span class="n">output_window</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+
+    <span class="n">box</span><span class="p">(</span><span class="n">input_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">box</span><span class="p">(</span><span class="n">output_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="n">refresh</span><span class="p">();</span>
+    <span class="n">wrefresh</span><span class="p">(</span><span class="n">input_window</span><span class="p">);</span>
+    <span class="n">wrefresh</span><span class="p">(</span><span class="n">output_window</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">cleanup_ncurses</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">delwin</span><span class="p">(</span><span class="n">input_window</span><span class="p">);</span>
+    <span class="n">delwin</span><span class="p">(</span><span class="n">output_window</span><span class="p">);</span>
+    <span class="n">endwin</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">forward_to_readline</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">input</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">input_available</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">rl_callback_read_char</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">readline_getc</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">UNUSED</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
+
+    <span class="n">input_available</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">input</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">readline_is_input_available</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">input_available</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">redisplay</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">werase</span><span class="p">(</span><span class="n">input_window</span><span class="p">);</span>
+    <span class="n">box</span><span class="p">(</span><span class="n">input_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">mvwprintw</span><span class="p">(</span><span class="n">input_window</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"%s%s"</span><span class="p">,</span> <span class="n">rl_display_prompt</span><span class="p">,</span> <span class="n">rl_line_buffer</span><span class="p">);</span>
+
+    <span class="n">wrefresh</span><span class="p">(</span><span class="n">input_window</span><span class="p">);</span>
+    <span class="n">wrefresh</span><span class="p">(</span><span class="n">output_window</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">callback_handler</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">line</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n">prev_line</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">line</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">free</span><span class="p">(</span><span class="n">prev_line</span><span class="p">);</span>
+    <span class="n">prev_line</span> <span class="o">=</span> <span class="n">line</span><span class="p">;</span>
+
+    <span class="n">redisplay</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">init_readline</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/* Allow ncurses to deal with signal handling and term prep */</span>
+    <span class="n">rl_catch_signals</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">rl_catch_sigwinch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">rl_prep_term_function</span>   <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">rl_deprep_term_function</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="cm">/* Stop readline from changing the lines and cols environment variables */</span>
+    <span class="n">rl_change_environment</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">rl_getc_function</span> <span class="o">=</span> <span class="n">readline_getc</span><span class="p">;</span>
+    <span class="n">rl_input_available_hook</span> <span class="o">=</span> <span class="n">readline_is_input_available</span><span class="p">;</span>
+    <span class="n">rl_redisplay_function</span> <span class="o">=</span> <span class="n">redisplay</span><span class="p">;</span>
+
+    <span class="n">rl_callback_handler_install</span><span class="p">(</span><span class="s">"&gt; "</span><span class="p">,</span> <span class="n">callback_handler</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">cleanup_readline</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">rl_callback_handler_remove</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">main_loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ch</span> <span class="o">=</span> <span class="n">getch</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">init_ncurses</span><span class="p">();</span>
+    <span class="n">init_readline</span><span class="p">();</span>
+
+    <span class="n">main_loop</span><span class="p">();</span>
+
+    <span class="n">cleanup_readline</span><span class="p">();</span>
+    <span class="n">cleanup_ncurses</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>In the init readline function we set the catch signals variables to 0, the term
+prep function pointers to NULL, and the change environment variable to 0. This
+is so ncurses can handle terminal setup and cleanup along with signal handling.
+The next thing we change are the 3 following function pointers:</p>
+
+<ul>
+  <li>rl_getc_function</li>
+  <li>rl_input_available_hook</li>
+  <li>rl_redisplay_function</li>
+</ul>
+
+<p>These functions are very simple, rl_getc_function is the input handler for
+readline to get a single character. rl_input_available_hook is the function that
+is used to check if input is available and rl_redisplay_function is used to redraw
+the current frame on screen. We will also need to call the function rl_callback_handler_install
+as readline does not allow us to use rl_getc_function without having a callback handler.</p>
+
+<p>We’ve added a few new functions to the program and I’ll explain what each of them do.
+The forward_to_readline function simply updates the global input character to the
+entered character and sets the input_available variable to true. We then call the
+rl_callback_read_char function to allow readline to consume the character.</p>
+
+<p>The readline_getc function simply sets the input_available variable to false and
+returns the global input character. This is the function that is called when we
+call the rl_callback_read_char function. The next two functions are pretty self
+explanatory. readline_is_input_available just returns the input_available variable.
+We need to wrap this in a function so readline can check if input is actually available.
+The redisplay function simply calls wrefresh on both the input and output windows.</p>
+
+<p>The callback_handler function is the function that readline will use when we press the
+enter key. The line of text that has been entered will be passed to this function and
+it is up to us to do something with it. This function contains a single static variable
+called prev_line. This is because we need to keep track of the line as it will be replaced
+the next time this function is called. Readline heap allocates the line argument so if we
+don’t keep track of the line and free the memory when it is going to be replaced we will
+leak memory. That’s why just after the NULL check in the function we’re freeing the prev_line
+variable and then setting prev_line to the current line. We only need to free the memory in this
+function when we’re replacing the current line. Readline will free the memory that
+line was pointing to but won’t free any replacements.</p>
+
+<h2 id="updating-the-main-loop"><span class="me-2">Updating The Main Loop</span><a href="#updating-the-main-loop" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Now that we’ve setup both ncurses and readline we can now update the main loop
+function to make use of the readline library.</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">main_loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ch</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="n">wgetch</span><span class="p">(</span><span class="n">input_window</span><span class="p">)))</span>
+    <span class="p">{</span>
+        <span class="k">switch</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">case</span> <span class="n">KEY_BACKSPACE</span><span class="p">:</span>
+                <span class="n">forward_to_readline</span><span class="p">(</span><span class="mi">127</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="nl">default:</span>
+                <span class="n">forward_to_readline</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>We are specifically passing the ascii backspace code for delete to readline as
+realine expects character codes to be in ascii format.</p>
+
+<p>If you run the program now you’ll be able to use readline but it still won’t be
+great to use… If you try pressing tab now readline will just display whatever
+files are in the current directory and it will draw over our windows. Let’s fix that!</p>
+
+<h2 id="updating-readline-display-options"><span class="me-2">Updating Readline Display Options</span><a href="#updating-readline-display-options" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>There is a very easy way to stop readline from printing the possible matches it
+finds by passing a callback to the rl_completion_display_matches_hook function
+pointer. We simply add this line to the init_readline function:</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">rl_completion_display_matches_hook</span> <span class="o">=</span> <span class="n">matches_suggestion_display</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>And the function to display the completion options looks like this:</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">matches_suggestion_display</span><span class="p">(</span><span class="kt">char</span> <span class="o">**</span><span class="n">matches</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">UNUSED</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+    <span class="n">UNUSED</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+
+    <span class="n">werase</span><span class="p">(</span><span class="n">output_window</span><span class="p">);</span>
+    <span class="n">box</span><span class="p">(</span><span class="n">output_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">matches</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">mvwprintw</span><span class="p">(</span><span class="n">output_window</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"%s"</span><span class="p">,</span> <span class="n">matches</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+    <span class="n">wrefresh</span><span class="p">(</span><span class="n">output_window</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="adding-custom-completion-options"><span class="me-2">Adding Custom Completion Options</span><a href="#adding-custom-completion-options" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Now when we hit tab to autocomplete Readline will show a list of what is in the
+current directory. This is the default behaviour of Readline and for this tutorial
+is not really that useful for us so let’s change that! First let’s add a list of
+names that we want:</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">my_match_list</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"Darth Vader"</span><span class="p">,</span>
+    <span class="s">"Darth Sidious"</span><span class="p">,</span>
+    <span class="s">"Han Solo"</span><span class="p">,</span>
+    <span class="s">"Luke Skywalker"</span><span class="p">,</span>
+    <span class="s">"Obi Wan Kenobi"</span><span class="p">,</span>
+    <span class="s">"Princess Leia"</span><span class="p">,</span>
+    <span class="nb">NULL</span> <span class="cm">/* Last item has to be NULL for Readline */</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Next we want to add 2 new functions. These will handle checking our list of names
+and return any and all matches when the user hits tab:</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="nf">matches_completion_generator</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">text</span><span class="p">,</span> <span class="kt">int</span> <span class="n">state</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">len</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">name</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">state</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">len</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span><span class="p">((</span><span class="n">name</span> <span class="o">=</span> <span class="n">my_match_list</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">len</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">strdup</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">char</span> <span class="o">**</span><span class="nf">match_completion</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">text</span><span class="p">,</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">rl_attempted_completion_over</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">rl_completion_matches</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">matches_completion_generator</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Finally we need to update the init_readline function to tell Readline that we
+have our own function for dealing with matches. We also modify the
+rl_basic_word_break_characters variable so that when we try and tab complete
+multiple matches Readline will still attempt to complete the match. If we leave
+this as default Realine won’t be able to complete a match that has a space in it
+when it has multiple potential matches:</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">init_readline</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/* Allow ncurses to deal with signal handling and term prep */</span>
+    <span class="n">rl_catch_signals</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">rl_catch_sigwinch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">rl_prep_term_function</span>   <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">rl_deprep_term_function</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="cm">/* Stop readline from changing the lines and cols environment variables */</span>
+    <span class="n">rl_change_environment</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">rl_getc_function</span> <span class="o">=</span> <span class="n">readline_getc</span><span class="p">;</span>
+    <span class="n">rl_input_available_hook</span> <span class="o">=</span> <span class="n">readline_is_input_available</span><span class="p">;</span>
+    <span class="n">rl_redisplay_function</span> <span class="o">=</span> <span class="n">redisplay</span><span class="p">;</span>
+
+    <span class="n">rl_completion_display_matches_hook</span> <span class="o">=</span> <span class="n">matches_suggestion_display</span><span class="p">;</span>
+
+    <span class="n">rl_attempted_completion_function</span> <span class="o">=</span> <span class="n">match_completion</span><span class="p">;</span>
+    <span class="n">rl_basic_word_break_characters</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+
+    <span class="n">rl_callback_handler_install</span><span class="p">(</span><span class="s">"&gt; "</span><span class="p">,</span> <span class="n">callback_handler</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>That’s it! Now if you hit tab you will get a list of names from our list!</p>
+
+<h2 id="the-final-program"><span class="me-2">The Final Program</span><a href="#the-final-program" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Here is the full program if you want to simply copy paste this into your code
+editor/IDE of choice to dig about in the code and see it actually run:</p>
+
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdbool.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;ncurses.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;readline/readline.h&gt;</span><span class="cp">
+</span>
+<span class="cp">#define UNUSED(x) (void)x
+</span>
+<span class="n">WINDOW</span> <span class="o">*</span><span class="n">input_window</span><span class="p">,</span> <span class="o">*</span><span class="n">output_window</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">lines</span><span class="p">,</span> <span class="n">cols</span><span class="p">;</span>
+
+<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">input</span><span class="p">;</span>
+<span class="n">bool</span> <span class="n">input_available</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+<span class="kt">char</span> <span class="o">*</span><span class="n">my_match_list</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"Darth Vader"</span><span class="p">,</span>
+    <span class="s">"Darth Sidious"</span><span class="p">,</span>
+    <span class="s">"Han Solo"</span><span class="p">,</span>
+    <span class="s">"Luke Skywalker"</span><span class="p">,</span>
+    <span class="s">"Obi Wan Kenobi"</span><span class="p">,</span>
+    <span class="s">"Princess Leia"</span><span class="p">,</span>
+    <span class="nb">NULL</span> <span class="cm">/* Last item has to be NULL for Readline */</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">init_ncurses</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">initscr</span><span class="p">();</span>
+    <span class="n">cbreak</span><span class="p">();</span>
+    <span class="n">noecho</span><span class="p">();</span>
+    <span class="n">keypad</span><span class="p">(</span><span class="n">stdscr</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+
+    <span class="n">getmaxyx</span><span class="p">(</span><span class="n">stdscr</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">cols</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">start_x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">start_y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">input_window</span>  <span class="o">=</span> <span class="n">newwin</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">lines</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">start_x</span><span class="p">);</span>
+    <span class="n">output_window</span> <span class="o">=</span> <span class="n">newwin</span><span class="p">(</span><span class="n">lines</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">start_y</span><span class="p">,</span> <span class="n">start_x</span><span class="p">);</span>
+
+    <span class="n">keypad</span><span class="p">(</span><span class="n">input_window</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+    <span class="n">keypad</span><span class="p">(</span><span class="n">output_window</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+
+    <span class="n">box</span><span class="p">(</span><span class="n">input_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">box</span><span class="p">(</span><span class="n">output_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">cleanup_ncurses</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">delwin</span><span class="p">(</span><span class="n">input_window</span><span class="p">);</span>
+    <span class="n">delwin</span><span class="p">(</span><span class="n">output_window</span><span class="p">);</span>
+    <span class="n">endwin</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">forward_to_readline</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">input</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">input_available</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">rl_callback_read_char</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">readline_getc</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">UNUSED</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
+
+    <span class="n">input_available</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">input</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">readline_is_input_available</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">input_available</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">redisplay</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">werase</span><span class="p">(</span><span class="n">input_window</span><span class="p">);</span>
+    <span class="n">box</span><span class="p">(</span><span class="n">input_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">mvwprintw</span><span class="p">(</span><span class="n">input_window</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"%s%s"</span><span class="p">,</span> <span class="n">rl_display_prompt</span><span class="p">,</span> <span class="n">rl_line_buffer</span><span class="p">);</span>
+
+    <span class="n">wrefresh</span><span class="p">(</span><span class="n">output_window</span><span class="p">);</span>
+    <span class="n">wrefresh</span><span class="p">(</span><span class="n">input_window</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">matches_suggestion_display</span><span class="p">(</span><span class="kt">char</span> <span class="o">**</span><span class="n">matches</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">UNUSED</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+    <span class="n">UNUSED</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+
+    <span class="n">werase</span><span class="p">(</span><span class="n">output_window</span><span class="p">);</span>
+    <span class="n">box</span><span class="p">(</span><span class="n">output_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">matches</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">mvwprintw</span><span class="p">(</span><span class="n">output_window</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"%s"</span><span class="p">,</span> <span class="n">matches</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+    <span class="n">wrefresh</span><span class="p">(</span><span class="n">output_window</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">callback_handler</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">line</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n">prev_line</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">line</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">free</span><span class="p">(</span><span class="n">prev_line</span><span class="p">);</span>
+    <span class="n">prev_line</span> <span class="o">=</span> <span class="n">line</span><span class="p">;</span>
+
+    <span class="n">redisplay</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">char</span> <span class="o">*</span><span class="nf">matches_completion_generator</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">text</span><span class="p">,</span> <span class="kt">int</span> <span class="n">state</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">len</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">name</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">state</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">len</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span><span class="p">((</span><span class="n">name</span> <span class="o">=</span> <span class="n">my_match_list</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">len</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">strdup</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">char</span> <span class="o">**</span><span class="nf">match_completion</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">text</span><span class="p">,</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">UNUSED</span><span class="p">(</span><span class="n">start</span><span class="p">);</span>
+    <span class="n">UNUSED</span><span class="p">(</span><span class="n">end</span><span class="p">);</span>
+
+    <span class="n">rl_attempted_completion_over</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">rl_completion_matches</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">matches_completion_generator</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">init_readline</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/* Allow ncurses to deal with signal handling and term prep */</span>
+    <span class="n">rl_catch_signals</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">rl_catch_sigwinch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">rl_prep_term_function</span>   <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">rl_deprep_term_function</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="cm">/* Stop readline from changing the lines and cols environment variables */</span>
+    <span class="n">rl_change_environment</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">rl_getc_function</span> <span class="o">=</span> <span class="n">readline_getc</span><span class="p">;</span>
+    <span class="n">rl_input_available_hook</span> <span class="o">=</span> <span class="n">readline_is_input_available</span><span class="p">;</span>
+    <span class="n">rl_redisplay_function</span> <span class="o">=</span> <span class="n">redisplay</span><span class="p">;</span>
+
+    <span class="n">rl_completion_display_matches_hook</span> <span class="o">=</span> <span class="n">matches_suggestion_display</span><span class="p">;</span>
+
+    <span class="n">rl_attempted_completion_function</span> <span class="o">=</span> <span class="n">match_completion</span><span class="p">;</span>
+    <span class="n">rl_basic_word_break_characters</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+
+    <span class="n">rl_callback_handler_install</span><span class="p">(</span><span class="s">"&gt; "</span><span class="p">,</span> <span class="n">callback_handler</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">cleanup_readline</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">rl_callback_handler_remove</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">main_loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ch</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="n">wgetch</span><span class="p">(</span><span class="n">input_window</span><span class="p">)))</span>
+    <span class="p">{</span>
+        <span class="k">switch</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">case</span> <span class="n">KEY_BACKSPACE</span><span class="p">:</span>
+                <span class="n">forward_to_readline</span><span class="p">(</span><span class="mi">127</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="nl">default:</span>
+                <span class="n">forward_to_readline</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">init_ncurses</span><span class="p">();</span>
+    <span class="n">init_readline</span><span class="p">();</span>
+
+    <span class="n">main_loop</span><span class="p">();</span>
+
+    <span class="n">cleanup_readline</span><span class="p">();</span>
+    <span class="n">cleanup_ncurses</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+  </div>
+</article>
+
+
+					
+				  </main>
+
+				  <!-- panel -->
+				  <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+					<div class="access">
+              			<!-- Get the last 5 posts from lastmod list. -->
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="access-lastmod">
+  <h2 class="panel-heading">Recently Added</h2>
+  <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/doom-emacs-python-not-found/">Doom Emacs Python Not Found Fix For Windows</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/ncurses-and-gnu-readline/">Ncurses And GNU Readline</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/windows-games-not-unlocking-achievements/">Windows Games Not Unlocking Achievements Fix</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/doom-emacs-irony-server-fix/">Doom Emacs Irony Server Fix</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/ycm-autocomplete-fix/">YCM Autocomplete Fix</a>
+      </li>
+    
+  </ul>
+</section>
+<!-- #access-lastmod -->
+
+					</div>
+					
+						
+
+
+
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+					
+				  </aside>
+				</div>
+
+				<div class="row">
+	<div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+		
+			<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/windows-games-not-unlocking-achievements/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Windows Games Not Unlocking Achievements Fix</p>
+    </a>
+  
+
+  
+    <a
+      href="/posts/doom-emacs-python-not-found/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Doom Emacs Python Not Found Fix For Windows</p>
+    </a>
+  
+</nav>
+
+		
+		<footer aria-label="Site Info" class=" d-flex flex-column justify-content-center text-muted flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3 ">
+			<p>
+			Using a <a href="https://github.com/barrolskii/barrolskii.github.io" target="_blank" rel="noopener">
+			Modified</a>
+			version of the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">
+			Chirpy</a>
+			theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">
+			Jekyll</a>
+			.</p>
+		</footer>
+	</div>
+</div>
+
+			</div>
+			<aside aria-label="Scroll to Top">
+				<button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow" style="display: none;">
+					<i class="fas fa-angle-up"></i>
+				</button>
+			</aside>
+		</div>
+	</body>
+</html>

@@ -2,7 +2,7 @@
 
 <html lang="en">
 	<head>
-	<title>Projects</title>
+	<title>Doom Emacs Irony Server Fix</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 
 	<link rel="stylesheet" href="/assets/css/fontstyle.css">
@@ -10,7 +10,11 @@
 	<link rel="stylesheet" href="/assets/css/fontawesome/css/all.min.css">
 
 	
+	<link rel="stylesheet" href="/assets/css/magnificPopup/magnificPopup.css">
+	
 
+	
+	<link rel="stylesheet" href="/assets/css/tocbot/tocbot.min.css">
 	
 	<link rel="stylesheet" href="/assets/css/jekyll/jekyll-theme-chirpy.css">
 
@@ -18,12 +22,23 @@
 	<script src="/assets/js/bootstrap/bootstrap.bundle.js"></script>
 
 	
+	<script src="/assets/js/jquery/jquery371.js"></script>
+	<script src="/assets/js/magnificPopup/magnificPopupMin.js"></script>
+	<script src="/assets/js/clipboard/clipboard.min.js"></script>
+	
 
+	
+	<script src="/assets/js/tocbot/tocbot.min.js"></script>
 	
 	<script type="text/javascript" defer src="/assets/js/common.js"></script>
 
 	
+	<script type="text/javascript" defer src="/assets/js/imgInit.js"></script>
+	<script type="text/javascript" defer src="/assets/js/clipboardInit.js"></script>
+	
 
+	
+	<script type="text/javascript" defer src="/assets/js/tocInit.js"></script>
 	
 </head>
 
@@ -59,7 +74,7 @@
 							<span>SANDBOX</span>
 						</a>
 					</li>
-					<li class="nav-item active">
+					<li class="nav-item ">
 						<a href="/projects/" class="nav-link">
 							<i class="fa-fw fas fa-archive"></i>
 							<span>PROJECTS</span>
@@ -112,8 +127,10 @@
 			  
 			
 			  
+			
+			  
 				
-				  <span>Projects</span>
+				  <span>Doom Emacs Irony Server Fix</span>
 				
 
 			  
@@ -132,102 +149,129 @@
 				<div class="row flex-grow-1">
 				  <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
 					
-						<article class="px-1">
-    <h1 class="dynamic-title">
-      Projects
-    </h1>
-    <div class="content">
-      <div id="post-list" class="flex-grow-1 px-xl-1">
-	
+						<!-- Refactor the HTML structure -->
 
-    <article class="card-wrapper card">
-      <a href="/projects/single-header-libs" class="post-preview row g-0 flex-md-row-reverse">
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
         
-
-		
-
-		<div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Single Header Libs</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-                Single header libs is a repository containing a variety of projects that follow the
-STB single header file library style. I made this project so I could tinker with a
-variety of different topics wh...
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
-
-
-
-    <article class="card-wrapper card">
-      <a href="/projects/book-organiser" class="post-preview row g-0 flex-md-row-reverse">
         
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+<!-- Return -->
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>Doom Emacs Irony Server Fix</h1>
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+		  Posted
+		  <time
+  data-ts="1648296000"
+  data-df=""
+  data-bs-toggle="tooltip" data-bs-placement="bottom"
+>
+  Mar 26, 2022
+</time>
+
+
+      </span>
+
+      <!-- lastmod date -->
 		
 
-		<div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Book Organiser</h1>
 
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+			By
+          <em>
+			  <a href="/">Ashley Barrell</a>
+          </em>
+        </span>
 
-
-
-                This is a small project I made to help me organise and track my digital library of
-books (I have well over 2GB worth of books and which keeps going up with each Humble
-Book Bundle released). This p...
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
+		<!-- read time -->
+		<!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
-    <article class="card-wrapper card">
-      <a href="/projects/hyperion-asiimov" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-		
-		  
-
-          
-
-          <div class="col-md-5">
-            <img src="/assets/img/projects/hyperionAsiimov/HAWPImgThree.webp">
-          </div>
-
-          
-		
-
-		<div class="col-md-7">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Hyperion Asiimov Texture Pack</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-                The Hyperion Asiimov texture pack is the second skin pack I made for Borderlands 2
-adding the Asiimov skin from CS:GO to the Hyperion legendary weapons in the game.
+<!-- words per minute -->
 
 
 
@@ -235,61 +279,55 @@ adding the Asiimov skin from CS:GO to the Hyperion legendary weapons in the game
 
 
 
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
 
 
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="200 words"
+>
+  <em>1 
+	min
+  </em>
+	read
+</span>
 
-    <article class="card-wrapper card">
-      <a href="/projects/hyperion-obsidian" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-		
-		  
-
-          
-
-          <div class="col-md-5">
-            <img src="/assets/img/projects/hyperionObsidian/HOWPImgOne.webp">
-          </div>
-
-          
-		
-
-		<div class="col-md-7">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Hyperion Obisidan Texture Pack</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-                The Hyperion Obsidian texture pack is first weapon texture pack I made for Borderlands
-2 which applies to the Hyperion unique weapons in the game. Each weapon skin has
-two variants, a factory defau...
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
-
-
-
-</div>
-
+      </div>
+      <!-- .d-flex -->
     </div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+    <p>If you want code completion for C/C++ when using Doom Emacs you are going to need
+a language server. The default for this is irony and if you run the setup function
+in Doom Emacs it’ll compile the server and set it up for you. In Windows you might
+not be able to compile the server from inside Emacs if you don’t have the required
+dependencies installed. This tutorial will cover what irony needs to be able to compile
+on Windows through Emacs.</p>
+
+<h2 id="the-fix"><span class="me-2">The Fix</span><a href="#the-fix" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>You’ll need to install 2 things:</p>
+
+<ul>
+  <li><a href="https://releases.llvm.org/download.html">Clang</a></li>
+  <li><a href="https://cmake.org/download/">CMake</a></li>
+</ul>
+
+<p>All you’ll need to do is download the latest installer for both clang and cmake
+and run through the installer. MAKE SURE THAT YOU ADD THEM TO YOUR PATH ENVIRONMENT
+VARIABLE! The installers will ask you if you want to add them to the path of all
+users or just the current one. It doesn’t matter which one you choose just as long
+as they get added to PATH. If you don’t do this then the underlying terminal emulator
+that emacs uses won’t be able to run those programs. One they have been installed
+you can run irony-install-server and have code completion working for C/C++ on Windows!</p>
+
+  </div>
 </article>
+
 
 					
 				  </main>
@@ -355,11 +393,48 @@ two variants, a factory defau...
 
 					</div>
 					
+						
+
+
+
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+					
 				  </aside>
 				</div>
 
 				<div class="row">
 	<div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+		
+			<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/ycm-autocomplete-fix/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>YCM Autocomplete Fix</p>
+    </a>
+  
+
+  
+    <a
+      href="/posts/windows-games-not-unlocking-achievements/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Windows Games Not Unlocking Achievements Fix</p>
+    </a>
+  
+</nav>
+
 		
 		<footer aria-label="Site Info" class=" d-flex flex-column justify-content-center text-muted flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3 ">
 			<p>

@@ -2,7 +2,7 @@
 
 <html lang="en">
 	<head>
-	<title>Projects</title>
+	<title>Book Organiser</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 
 	<link rel="stylesheet" href="/assets/css/fontstyle.css">
@@ -10,7 +10,11 @@
 	<link rel="stylesheet" href="/assets/css/fontawesome/css/all.min.css">
 
 	
+	<link rel="stylesheet" href="/assets/css/magnificPopup/magnificPopup.css">
+	
 
+	
+	<link rel="stylesheet" href="/assets/css/tocbot/tocbot.min.css">
 	
 	<link rel="stylesheet" href="/assets/css/jekyll/jekyll-theme-chirpy.css">
 
@@ -18,12 +22,23 @@
 	<script src="/assets/js/bootstrap/bootstrap.bundle.js"></script>
 
 	
+	<script src="/assets/js/jquery/jquery371.js"></script>
+	<script src="/assets/js/magnificPopup/magnificPopupMin.js"></script>
+	<script src="/assets/js/clipboard/clipboard.min.js"></script>
+	
 
+	
+	<script src="/assets/js/tocbot/tocbot.min.js"></script>
 	
 	<script type="text/javascript" defer src="/assets/js/common.js"></script>
 
 	
+	<script type="text/javascript" defer src="/assets/js/imgInit.js"></script>
+	<script type="text/javascript" defer src="/assets/js/clipboardInit.js"></script>
+	
 
+	
+	<script type="text/javascript" defer src="/assets/js/tocInit.js"></script>
 	
 </head>
 
@@ -59,7 +74,7 @@
 							<span>SANDBOX</span>
 						</a>
 					</li>
-					<li class="nav-item active">
+					<li class="nav-item ">
 						<a href="/projects/" class="nav-link">
 							<i class="fa-fw fas fa-archive"></i>
 							<span>PROJECTS</span>
@@ -112,8 +127,10 @@
 			  
 			
 			  
+			
+			  
 				
-				  <span>Projects</span>
+				  <span>Book Organiser</span>
 				
 
 			  
@@ -132,164 +149,161 @@
 				<div class="row flex-grow-1">
 				  <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
 					
-						<article class="px-1">
-    <h1 class="dynamic-title">
-      Projects
-    </h1>
-    <div class="content">
-      <div id="post-list" class="flex-grow-1 px-xl-1">
-	
-
-    <article class="card-wrapper card">
-      <a href="/projects/single-header-libs" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-		
-
-		<div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Single Header Libs</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
+						<!-- Refactor the HTML structure -->
 
 
 
-                Single header libs is a repository containing a variety of projects that follow the
-STB single header file library style. I made this project so I could tinker with a
-variety of different topics wh...
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
 
 
 
-    <article class="card-wrapper card">
-      <a href="/projects/book-organiser" class="post-preview row g-0 flex-md-row-reverse">
-        
 
-		
-
-		<div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Book Organiser</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
 
 
 
-                This is a small project I made to help me organise and track my digital library of
+
+<!-- Handle images -->
+
+
+
+
+  
+  
+
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    <!-- lazy-load images -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    <!-- create the image wrapper -->
+    
+
+      
+      
+
+    <!-- combine -->
+    
+  
+
+  
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+<!-- Return -->
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>Book Organiser</h1>
+
+    <div class="post-meta text-muted"></div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+    <p>This is a small project I made to help me organise and track my digital library of
 books (I have well over 2GB worth of books and which keeps going up with each Humble
-Book Bundle released). This p...
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
+Book Bundle released). This program utilises Ncurses for the TUI (no GUI as I wanted
+to be able to use this via the command line) and GNU Readline for autocompletion.
+I could’ve used a database instead of writing this program but I really wanted an
+excuse to learn Ncurses and GNU Readline.</p>
 
+<p><a href="/assets/img/projects/bookOrganiser/BookOrganiser.png" class="popup img-link "><img src="/assets/img/projects/bookOrganiser/BookOrganiser.png" alt="Book Organiser" loading="lazy"></a></p>
 
-
-    <article class="card-wrapper card">
-      <a href="/projects/hyperion-asiimov" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-		
-		  
-
-          
-
-          <div class="col-md-5">
-            <img src="/assets/img/projects/hyperionAsiimov/HAWPImgThree.webp">
-          </div>
-
-          
-		
-
-		<div class="col-md-7">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Hyperion Asiimov Texture Pack</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-                The Hyperion Asiimov texture pack is the second skin pack I made for Borderlands 2
-adding the Asiimov skin from CS:GO to the Hyperion legendary weapons in the game.
-
-
-
-
-
-
-
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
-
-
-
-    <article class="card-wrapper card">
-      <a href="/projects/hyperion-obsidian" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-		
-		  
-
-          
-
-          <div class="col-md-5">
-            <img src="/assets/img/projects/hyperionObsidian/HOWPImgOne.webp">
-          </div>
-
-          
-		
-
-		<div class="col-md-7">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Hyperion Obisidan Texture Pack</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-                The Hyperion Obsidian texture pack is first weapon texture pack I made for Borderlands
-2 which applies to the Hyperion unique weapons in the game. Each weapon skin has
-two variants, a factory defau...
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
-
-
-
-</div>
-
-    </div>
+  </div>
 </article>
+
 
 					
 				  </main>
@@ -354,6 +368,12 @@ two variants, a factory defau...
 <!-- #access-lastmod -->
 
 					</div>
+					
+						
+
+
+
+
 					
 				  </aside>
 				</div>
