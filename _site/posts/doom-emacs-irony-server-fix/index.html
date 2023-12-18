@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+	<title>Doom Emacs Irony Server Fix</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+	<link rel="stylesheet" href="/assets/css/fontstyle.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/fontawesome/css/all.min.css">
+
+	
+	<link rel="stylesheet" href="/assets/css/magnificPopup/magnificPopup.css">
+	
+
+	
+	<link rel="stylesheet" href="/assets/css/tocbot/tocbot.min.css">
+	
+	<link rel="stylesheet" href="/assets/css/jekyll/jekyll-theme-chirpy.css">
+
+
+	<script src="/assets/js/bootstrap/bootstrap.bundle.js"></script>
+
+	
+	<script src="/assets/js/jquery/jquery371.js"></script>
+	<script src="/assets/js/magnificPopup/magnificPopupMin.js"></script>
+	<script src="/assets/js/clipboard/clipboard.min.js"></script>
+	
+
+	
+	<script src="/assets/js/tocbot/tocbot.min.js"></script>
+	
+	<script type="text/javascript" defer src="/assets/js/common.js"></script>
+
+	
+	<script type="text/javascript" defer src="/assets/js/imgInit.js"></script>
+	<script type="text/javascript" defer src="/assets/js/clipboardInit.js"></script>
+	
+
+	
+	<script type="text/javascript" defer src="/assets/js/tocInit.js"></script>
+	
+</head>
+
+
+	<body>
+		<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+			<header class="profile-wrapper">
+				<a href="/" id="avatar" class="rounded-circle">
+					<img src="/assets/img/ghostie.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+				</a>
+				<h1 class="site-title">
+					<a href="/">Ashley Barrell</a>
+				</h1>
+				<p class="site-subtitle fst-italic mb-0">Build Engineer</p>
+			</header>
+			<nav class="flex-column flex-grow-1 w-100 ps-0">
+				<ul class="nav">
+					<li class="nav-item ">
+						<a href="/" class="nav-link">
+							<i class="fa-fw fas fa-home"></i>
+							<span>HOME</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/blog/" class="nav-link">
+							<i class="fa-fw fas fa-stream"></i>
+							<span>BLOG</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/sandbox/" class="nav-link">
+							<i class="fa-fw fas fa-tags"></i>
+							<span>SANDBOX</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/projects/" class="nav-link">
+							<i class="fa-fw fas fa-archive"></i>
+							<span>PROJECTS</span>
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a href="/about/" class="nav-link">
+							<i class="fa-fw fas fa-info-circle"></i>
+							<span>ABOUT</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+				<button type="button" class="mode-toggle btn" aria-label="Switch Mode" onclick="toggleTheme()">
+					<i class="fas fa-adjust">
+
+					</i>
+				</button>
+				<span class="icon-border">
+
+				</span>
+                <a href="https://github.com/barrolskii" aria-label="github" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/ashley-barrell-0a8804176" aria-label="linkedin" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+			</div>
+		</aside>
+
+
+		<div id="main-wrapper" class="d-flex justify-content-center">
+			<div class="container d-flex flex-column px-xxl-5">
+				<header id="topbar-wrapper" aria-label="Top Bar">
+	<div id="topbar" class="d-flex align-items-center justify-content-between px-lg-3 h-100">
+		<nav id="breadcrumb" aria-label="Breadcrumb">
+		  
+
+		  
+			
+			  
+				<span>
+				  <a href="/">
+					Home
+				  </a>
+				</span>
+
+			  
+			
+			  
+			
+			  
+				
+				  <span>Doom Emacs Irony Server Fix</span>
+				
+
+			  
+			
+		  
+		</nav>
+
+		<button type="button" id="sidebar-trigger" class="btn btn-link" onclick="myOnClick()">
+			<i class="fas fa-bars fa-fw"></i>
+		</button>
+		<div id="topbar-title">Ashley Barrell</div>
+	</div>
+</header>
+
+
+				<div class="row flex-grow-1">
+				  <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+					
+						<!-- Refactor the HTML structure -->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+<!-- Return -->
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>Doom Emacs Irony Server Fix</h1>
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+		  Posted
+		  <time
+  data-ts="1648296000"
+  data-df=""
+  data-bs-toggle="tooltip" data-bs-placement="bottom"
+>
+  Mar 26, 2022
+</time>
+
+
+      </span>
+
+      <!-- lastmod date -->
+		
+
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+			By
+          <em>
+			  <a href="/">Ashley Barrell</a>
+          </em>
+        </span>
+
+		<!-- read time -->
+		<!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="200 words"
+>
+  <em>1 
+	min
+  </em>
+	read
+</span>
+
+      </div>
+      <!-- .d-flex -->
+    </div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+    <p>If you want code completion for C/C++ when using Doom Emacs you are going to need
+a language server. The default for this is irony and if you run the setup function
+in Doom Emacs it’ll compile the server and set it up for you. In Windows you might
+not be able to compile the server from inside Emacs if you don’t have the required
+dependencies installed. This tutorial will cover what irony needs to be able to compile
+on Windows through Emacs.</p>
+
+<h2 id="the-fix"><span class="me-2">The Fix</span><a href="#the-fix" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>You’ll need to install 2 things:</p>
+
+<ul>
+  <li><a href="https://releases.llvm.org/download.html">Clang</a></li>
+  <li><a href="https://cmake.org/download/">CMake</a></li>
+</ul>
+
+<p>All you’ll need to do is download the latest installer for both clang and cmake
+and run through the installer. MAKE SURE THAT YOU ADD THEM TO YOUR PATH ENVIRONMENT
+VARIABLE! The installers will ask you if you want to add them to the path of all
+users or just the current one. It doesn’t matter which one you choose just as long
+as they get added to PATH. If you don’t do this then the underlying terminal emulator
+that emacs uses won’t be able to run those programs. One they have been installed
+you can run irony-install-server and have code completion working for C/C++ on Windows!</p>
+
+  </div>
+</article>
+
+
+					
+				  </main>
+
+				  <!-- panel -->
+				  <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+					<div class="access">
+              			<!-- Get the last 5 posts from lastmod list. -->
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="access-lastmod">
+  <h2 class="panel-heading">Recently Added</h2>
+  <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/doom-emacs-python-not-found/">Doom Emacs Python Not Found Fix For Windows</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/ncurses-and-gnu-readline/">Ncurses And GNU Readline</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/windows-games-not-unlocking-achievements/">Windows Games Not Unlocking Achievements Fix</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/doom-emacs-irony-server-fix/">Doom Emacs Irony Server Fix</a>
+      </li>
+    
+      
+      
+      
+      <li class="text-truncate lh-lg">
+        <a href="/posts/ycm-autocomplete-fix/">YCM Autocomplete Fix</a>
+      </li>
+    
+  </ul>
+</section>
+<!-- #access-lastmod -->
+
+					</div>
+					
+						
+
+
+
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+					
+				  </aside>
+				</div>
+
+				<div class="row">
+	<div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+		
+			<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/ycm-autocomplete-fix/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>YCM Autocomplete Fix</p>
+    </a>
+  
+
+  
+    <a
+      href="/posts/windows-games-not-unlocking-achievements/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Windows Games Not Unlocking Achievements Fix</p>
+    </a>
+  
+</nav>
+
+		
+		<footer aria-label="Site Info" class=" d-flex flex-column justify-content-center text-muted flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3 ">
+			<p>
+			Using a <a href="https://github.com/barrolskii/barrolskii.github.io" target="_blank" rel="noopener">
+			Modified</a>
+			version of the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">
+			Chirpy</a>
+			theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">
+			Jekyll</a>
+			.</p>
+		</footer>
+	</div>
+</div>
+
+			</div>
+			<aside aria-label="Scroll to Top">
+				<button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow" style="display: none;">
+					<i class="fas fa-angle-up"></i>
+				</button>
+			</aside>
+		</div>
+	</body>
+</html>

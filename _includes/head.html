@@ -1,0 +1,40 @@
+<head>
+	<title>{{ page.title }}</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+	<link rel="stylesheet" href="/assets/css/fontstyle.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/fontawesome/css/all.min.css">
+
+	{% if page.layout == 'post' or page.layout == 'project'%}
+	<link rel="stylesheet" href="/assets/css/magnificPopup/magnificPopup.css">
+	{% endif %}
+
+	{% if layout.toc %}
+	<link rel="stylesheet" href="/assets/css/tocbot/tocbot.min.css">
+	{% endif %}
+	<link rel="stylesheet" href="/assets/css/jekyll/jekyll-theme-chirpy.css">
+
+
+	<script src="/assets/js/bootstrap/bootstrap.bundle.js"></script>
+
+	{% if page.layout == 'post' or page.layout == 'project'%}
+	<script src="/assets/js/jquery/jquery371.js"></script>
+	<script src="/assets/js/magnificPopup/magnificPopupMin.js"></script>
+	<script src="/assets/js/clipboard/clipboard.min.js"></script>
+	{% endif %}
+
+	{% if layout.toc %}
+	<script src="/assets/js/tocbot/tocbot.min.js"></script>
+	{% endif %}
+	<script type="text/javascript" defer src="/assets/js/common.js"></script>
+
+	{% if page.layout == 'post' or page.layout == 'project'%}
+	<script type="text/javascript" defer src="/assets/js/imgInit.js"></script>
+	<script type="text/javascript" defer src="/assets/js/clipboardInit.js"></script>
+	{% endif %}
+
+	{% if layout.toc %}
+	<script type="text/javascript" defer src="/assets/js/tocInit.js"></script>
+	{% endif %}
+</head>

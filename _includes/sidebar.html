@@ -1,0 +1,63 @@
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+			<header class="profile-wrapper">
+				<a href="/" id="avatar" class="rounded-circle">
+					<img src="/assets/img/ghostie.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+				</a>
+				<h1 class="site-title">
+					<a href="/">Ashley Barrell</a>
+				</h1>
+				<p class="site-subtitle fst-italic mb-0">Build Engineer</p>
+			</header>
+			<nav class="flex-column flex-grow-1 w-100 ps-0">
+				<ul class="nav">
+					<li class="nav-item {% if page.layout == 'home' %}{{"active"}}{% endif %}">
+						<a href="/" class="nav-link">
+							<i class="fa-fw fas fa-home"></i>
+							<span>HOME</span>
+						</a>
+					</li>
+					<li class="nav-item {% if page.layout == 'blog' %}{{"active"}}{% endif %}">
+						<a href="/blog/" class="nav-link">
+							<i class="fa-fw fas fa-stream"></i>
+							<span>BLOG</span>
+						</a>
+					</li>
+					<li class="nav-item {% if page.layout == 'sandbox' %}{{"active"}}{% endif %}">
+						<a href="/sandbox/" class="nav-link">
+							<i class="fa-fw fas fa-tags"></i>
+							<span>SANDBOX</span>
+						</a>
+					</li>
+					<li class="nav-item {% if page.layout == 'projects' %}{{"active"}}{% endif %}">
+						<a href="/projects/" class="nav-link">
+							<i class="fa-fw fas fa-archive"></i>
+							<span>PROJECTS</span>
+						</a>
+					</li>
+					<li class="nav-item {% if page.title == 'About' %}{{"active"}}{% endif %}">
+						<a href="/about/" class="nav-link">
+							<i class="fa-fw fas fa-info-circle"></i>
+							<span>ABOUT</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+				<button type="button" class="mode-toggle btn" aria-label="Switch Mode" onclick="toggleTheme()">
+					<i class="fas fa-adjust">
+
+					</i>
+				</button>
+				<span class="icon-border">
+
+				</span>
+                <a href="https://github.com/barrolskii" aria-label="github" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/ashley-barrell-0a8804176" aria-label="linkedin" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+			</div>
+		</aside>
+

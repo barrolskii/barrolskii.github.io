@@ -1,0 +1,46 @@
+---
+layout: page
+---
+
+
+<div id="post-list" class="flex-grow-1 px-xl-1">
+	{% for proj in site.projects %}
+
+    <article class="card-wrapper card">
+      <a href="{{ proj.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+        {% assign card_body_col = '12' %}
+
+		{% if proj.image %}
+		  {% assign src = proj.image.path | default: proj.image %}
+
+          {% unless src contains '//' %}
+            {% assign src = proj.img_path | append: '/' | append: src | replace: '//', '/' %}
+          {% endunless %}
+
+          <div class="col-md-5">
+            <img src="{{ src }}">
+          </div>
+
+          {% assign card_body_col = '7' %}
+		{% endif %}
+
+		<div class="col-md-{{ card_body_col }}">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">{{ proj.title }}</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                {% include no-linenos.html content=proj.content %}
+                {{ content | markdownify | strip_html | truncate: 200 | escape }}
+              </p>
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+	  </a>
+	</article>
+
+{% endfor %}
+
+</div>

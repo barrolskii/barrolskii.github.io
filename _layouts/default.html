@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	{% include head.html %}
+
+	<body>
+		{% include sidebar.html %}
+		<div id="main-wrapper" class="d-flex justify-content-center">
+			<div class="container d-flex flex-column px-xxl-5">
+				{% include topbar.html %}
+
+				<div class="row flex-grow-1">
+				  <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+					{% if layout.refactor %}
+						{% include refactor-content.html content=content %}
+					{% else %}
+						{{ content }}
+					{% endif %}
+				  </main>
+
+				  <!-- panel -->
+				  <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+					<div class="access">
+              			{% include update-list.html lang=lang %}
+					</div>
+					{% if layout.toc and layout.toc != false %}
+						{% include toc.html %}
+					{% endif %}
+				  </aside>
+				</div>
+
+				{% include footer.html %}
+			</div>
+			<aside aria-label="Scroll to Top">
+				<button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow" style="display: none;">
+					<i class="fas fa-angle-up"></i>
+				</button>
+			</aside>
+		</div>
+	</body>
+</html>
