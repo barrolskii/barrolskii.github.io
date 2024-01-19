@@ -24,22 +24,23 @@ function getRandomInt(max) {
 }
 
 function setDescription() {
-	var descriptionTag = document.getElementsByClassName('site-subtitle')[0];
+    var descriptionTag = document.getElementsByClassName('site-subtitle')[0];
 
-	if (descriptionTag === null) {
-		console.error('Could not find description tag');
-		return;
-	}
+    if (descriptionTag === null) {
+        console.error('Could not find description tag');
+        return;
+    }
 
-	const descriptions = [
-		'Build Engineer',
-		'I\'m not actually a ghost',
-		'200k+ gamerscore and counting',
-	];
+    const descriptions = [
+        'Build Engineer',
+        'I\'m not actually a ghost',
+        '200k+ gamerscore and counting',
+        'Learning more languages than I need to'
+    ];
 
-	var value = getRandomInt(descriptions.length);
+    var value = getRandomInt(descriptions.length);
 
-	descriptionTag.innerText = descriptions[value];
+    descriptionTag.innerText = descriptions[value];
 }
 
 document.addEventListener('scroll', (event) => {

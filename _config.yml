@@ -39,6 +39,8 @@ collections:
       - book-organiser.md
       - hyperion-asiimov.md
       - hyperion-obsidian.md
+  demos:
+    output: true
 
 
 defaults:
@@ -58,6 +60,11 @@ defaults:
       type: projects
     values:
       permalink: /projects/:title
+  - scope:
+      path: ""
+      type: demos
+    values:
+      permalink: /demos/:title/
 
 exclude:
   - "*.gem"

@@ -2,7 +2,7 @@
 
 <html lang="en">
 	<head>
-	<title>Sandbox</title>
+	<title>Sorting Algorithm Zoo</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 
 	<link rel="stylesheet" href="/assets/css/fontstyle.css">
@@ -26,6 +26,8 @@
 
 	
 
+	
+	<script defer src="/assets/js/canvas.js"></script>
 	
 </head>
 
@@ -55,7 +57,7 @@
 							<span>BLOG</span>
 						</a>
 					</li>
-					<li class="nav-item active">
+					<li class="nav-item ">
 						<a href="/sandbox" class="nav-link">
 							<i class="fa-fw fas fa-tags"></i>
 							<span>SANDBOX</span>
@@ -114,8 +116,10 @@
 			  
 			
 			  
+			
+			  
 				
-				  <span>Sandbox</span>
+				  <span>Sorting Algorithm Zoo</span>
 				
 
 			  
@@ -134,45 +138,121 @@
 				<div class="row flex-grow-1">
 				  <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
 					
-						<article class="px-1">
-    <h1 class="dynamic-title">
-      Sandbox
-    </h1>
-    <div class="content">
-      <div id="post-list" class="flex-grow-1 px-xl-1">
-	
-
-    <article class="card-wrapper card">
-      <a href="/demos/sorting-algorithm-zoo/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-		
-
-		<div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Sorting Algorithm Zoo</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
+						<!-- Refactor the HTML structure -->
 
 
 
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
 
 
 
-</div>
 
-    </div>
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+<!-- Return -->
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>Sorting Algorithm Zoo</h1>
+
+    <div class="post-meta text-muted"></div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+	<canvas id="canvas"></canvas>
+    <form>
+  <div>
+  <select id="algorithm-selector">
+    <option value="BubbleSort">Bubble Sort</option>
+    <option value="CocktailShakerSort">CocktailShaker Sort</option>
+    <option value="CombSort">Comb Sort</option>
+    <option value="CycleSort">Cycle Sort</option>
+    <option value="ExchangeSort">Exchange Sort</option>
+    <option value="GnomeSort">Gnome Sort</option>
+    <option value="HeapSort">Heap Sort</option>
+    <option value="InsertionSort">Insertion Sort</option>
+    <option value="OddEvenSort">OddEven Sort</option>
+    <option value="PatienceSort">Patience Sort</option>
+    <option value="QuickSort">Quick Sort</option>
+    <option value="SelectionSort">Selection Sort</option>
+    <option value="ShellSort">Shell Sort</option>
+  </select>
+
+  <button type="button" onclick="sortValues()">Sort</button>
+  <button type="button" onclick="newValues()">Regenerate</button>
+  </div>
+
+  <div>
+  <label>Time Step:</label>
+  <label id="timestep-slider-value">1.00</label>
+  <input class="w-50" id="timestep-slider" type="range" min="0" max="3.00" value="1.00" step="0.01">
+  </div>
+
+  <div>
+  <label>Total Values:</label>
+  <label id="total-values-value"></label>
+  <input class="w-50" id="total-values-slider" type="range" min="10" max="50" value="10" step="1">
+  </div>
+</form>
+
+<script defer src="/assets/js/demos/sortingAlgorithmZoo/sortingAlgorithms.js"></script>
+<script defer src="/assets/js/demos/sortingAlgorithmZoo/main.js"></script>
+
+  </div>
 </article>
+
 
 					
 				  </main>
