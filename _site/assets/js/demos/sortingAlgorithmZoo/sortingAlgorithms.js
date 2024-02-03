@@ -2,13 +2,13 @@ function swap(arr, a, b) {
     [values[a], values[b]] = [values[b], values[a]];
 }
 
-function select(x, y, width, height, color) {
+function select(arr, index, color) {
     ctx.fillStyle = color;
-    ctx.fillRect(x, y, width, height);
+    ctx.fillRect(index * (itemWidth+itemGap*2)+itemGap, canvas.height, itemWidth, -arr[index]);
 }
 
-function clearSection(x, y, width, height) {
-    ctx.clearRect(x, y, width, height);
+function clearElement(arr, index) {
+    ctx.clearRect(index * (itemWidth+itemGap*2)+itemGap, 0, itemWidth, canvas.height);
 }
 
 function getColorString(value) {
@@ -63,56 +63,55 @@ async function partition(arr, low, high) {
     let pivot = arr[high];
     let index = low - 1;
 
-
-    select(high*itemWidth, canvas.height, itemWidth, -arr[high], "red");
+    select(arr, high, "red");
     await sleepStep();
 
     for (let i = low; i <= high; i++) {
-        select(i*itemWidth, canvas.height, itemWidth, -arr[i], "green");
+        select(arr, i, "green");
         await sleepStep();
 
         if (arr[i] < pivot) {
             index++;
 
             if (i === index) {
-                deselect(i*itemWidth, canvas.height, itemWidth, -arr[i], getColorString(arr[i]));
+                deselect(arr, i, getColorString(arr[i]));
                 continue;
             }
 
-            select(index*itemWidth, canvas.height, itemWidth, -arr[index], "green");
+            select(arr, index, "green");
             await sleepStep();
 
-            clearSection(index*itemWidth, 0, itemWidth, canvas.height);
-            clearSection(i*itemWidth, 0, itemWidth, canvas.height);
+            clearElement(arr, index);
+            clearElement(arr, i);
 
             swap(arr, index, i);
 
-            select(index*itemWidth, canvas.height, itemWidth, -arr[index], "green");
-            select(i*itemWidth, canvas.height, itemWidth, -arr[i], "green");
+            select(arr, index, "green");
+            select(arr, i, "green");
         }
 
-        deselect(index*itemWidth, canvas.height, itemWidth, -arr[index], getColorString(arr[index]));
+        deselect(arr, index, getColorString(arr[index]));
         await sleepStep();
 
-        deselect(i*itemWidth, canvas.height, itemWidth, -arr[i], getColorString(arr[i]));
+        deselect(arr, i, getColorString(arr[i]));
         await sleepStep();
     }
 
-    select(high*itemWidth, canvas.height, itemWidth, -arr[high], "red");
+    select(arr, high, "red");
     await sleepStep();
 
-    select((index+1)*itemWidth, canvas.height, itemWidth, -arr[index+1], "green");
+    select(arr, index+1, "green");
     await sleepStep();
 
-    clearSection((index+1)*itemWidth, 0, itemWidth, canvas.height);
-    clearSection(high*itemWidth, 0, itemWidth, canvas.height);
+    clearElement(arr, index+1);
+    clearElement(arr, high);
 
     swap(arr, index+1, high);
 
-    deselect(high*itemWidth, canvas.height, itemWidth, -arr[high], getColorString(arr[high]));
+    deselect(arr, high, getColorString(arr[high]));
     await sleepStep();
 
-    deselect((index+1)*itemWidth, canvas.height, itemWidth, -arr[index+1], getColorString(arr[index+1]));
+    deselect(arr, index+1, getColorString(arr[index+1]));
     await sleepStep();
 
     return index+1;
@@ -129,11 +128,11 @@ async function bubbleSort(arr) {
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr.length - i - 1; j++) {
             // Step 1
-            select(j*itemWidth, canvas.height, itemWidth, -arr[j], "red");
+            select(arr, j, "red");
             await sleepStep();
 
             // Step 2
-            select((j+1)*itemWidth, canvas.height, itemWidth, -arr[j+1], "green");
+            select(arr, j+1, "green");
             await sleepStep();
 
             // Step 3
@@ -141,16 +140,17 @@ async function bubbleSort(arr) {
                 swap(arr, j, j+1);
 
                 // After swapping clear and reselect the items
-                clearSection(j*itemWidth, 0, itemWidth*2, canvas.height);
+                clearElement(arr, j);
+                clearElement(arr, j+1);
 
-                select(j*itemWidth, canvas.height, itemWidth, -arr[j], "red");
-                select((j+1)*itemWidth, canvas.height, itemWidth, -arr[j+1], "green");
+                select(arr, j, "red");
+                select(arr, j+1, "green");
             }
 
-            deselect((j+1)*itemWidth, canvas.height, itemWidth, -arr[j+1], getColorString(arr[j+1]));
+            deselect(arr, j+1, getColorString(arr[j+1]));
             await sleepStep();
 
-            deselect(j*itemWidth, canvas.height, itemWidth, -arr[j], getColorString(arr[j]));
+            deselect(arr, j, getColorString(arr[j]));
             await sleepStep();
         }
     }
@@ -163,24 +163,25 @@ async function cocktailShakerSort(arr) {
         var swapped = false;
 
         for (let i = 0; i < arr.length - 1; i++) {
-            select(i*itemWidth, canvas.height, itemWidth, -arr[i], "red");
+            select(arr, i, "red");
             await sleepStep();
 
-            select((i+1)*itemWidth, canvas.height, itemWidth, -arr[i+1], "green");
+            select(arr, i+1, "green");
             await sleepStep();
 
             if (arr[i] > arr[i+1]) {
                 swap(arr, i, i+1);
                 swapped = true;
 
-                clearSection(i*itemWidth, 0, itemWidth*2, canvas.height);
-                select(i*itemWidth, canvas.height, itemWidth, -arr[i], "red");
-                select((i+1)*itemWidth, canvas.height, itemWidth, -arr[i+1], "green");
+                clearElement(arr, i);
+
+                select(arr, i, "red");
+                select(arr, i+1, "green");
             }
 
             await sleepStep();
-            deselect(i*itemWidth, canvas.height, itemWidth, -arr[i], getColorString(arr[i]));
-            deselect((i+1)*itemWidth, canvas.height, itemWidth, -arr[i+1], getColorString(arr[i+1]));
+            deselect(arr, i, getColorString(arr[i]));
+            deselect(arr, i+1, getColorString(arr[i+1]));
         }
 
         if (!swapped) {
@@ -188,24 +189,25 @@ async function cocktailShakerSort(arr) {
         }
 
         for (let i = arr.length - 1; i > 0; i--) {
-            select(i*itemWidth, canvas.height, itemWidth, -arr[i], "red");
+            select(arr, i, "red");
             await sleepStep();
 
-            select((i-1)*itemWidth, canvas.height, itemWidth, -arr[i-1], "green");
+            select(arr, i-1, "green");
             await sleepStep();
 
             if (arr[i - 1] > arr[i]) {
                 swap(arr, i, i-1);
                 swapped = true;
 
-                clearSection((i-1)*itemWidth, 0, itemWidth*2, canvas.height);
+                clearElement(arr, i-1);
                 select(i*itemWidth, canvas.height, itemWidth, -arr[i], "green");
                 select((i-1)*itemWidth, canvas.height, itemWidth, -arr[i-1], "red");
             }
 
             await sleepStep();
-            deselect(i*itemWidth, canvas.height, itemWidth, -arr[i], getColorString(arr[i]));
-            deselect((i-1)*itemWidth, canvas.height, itemWidth, -arr[i-1], getColorString(arr[i-1]));
+
+            deselect(arr, i, getColorString(arr[i]));
+            deselect(arr, i-1, getColorString(arr[i-1]));
         }
     } while(swapped);
 }
@@ -225,26 +227,26 @@ async function combSort(arr) {
         }
 
         for (let i = 0; i < (arr.length - gap); i++) {
-            select(i*itemWidth, canvas.height, itemWidth, -arr[i], "red");
+            select(arr, i, "red");
             await sleepStep();
 
-            select((i+gap)*itemWidth, canvas.height, itemWidth, -arr[i+gap], "green");
+            select(arr, i+gap, "green")
             await sleepStep();
 
             if (arr[i] > arr[i+gap]) {
                 swap(arr, i, i+gap);
                 sorted = false;
 
-                clearSection(i*itemWidth, 0, itemWidth, canvas.height);
-                clearSection((i+gap)*itemWidth, 0, itemWidth, canvas.height);
+                clearElement(arr, i);
+                clearElement(arr, i+gap);
 
-                select(i*itemWidth, canvas.height, itemWidth, -arr[i], "red");
-                select((i+gap)*itemWidth, canvas.height, itemWidth, -arr[i+gap], "green");
+                select(arr, i, "red");
+                select(arr, i+gap, "green");
                 await sleepStep();
             }
 
-            deselect((i+gap)*itemWidth, canvas.height, itemWidth, -arr[i+gap], getColorString(arr[i+gap]));
-            deselect(i*itemWidth, canvas.height, itemWidth, -arr[i], getColorString(arr[i]));
+            deselect(arr, i+gap, getColorString(arr[i+gap]));
+            deselect(arr, i, getColorString(arr[i]));
         }
     }
 }
@@ -256,7 +258,7 @@ async function cycleSort(arr) {
         let item = arr[cycleStart];
         let pos = cycleStart;
 
-        select(cycleStart*itemWidth, canvas.height, itemWidth, -arr[cycleStart], "red");
+        select(arr, cycleStart, "red");
         await sleepStep();
 
         for (let i = cycleStart + 1; i < arr.length; i++) {
@@ -264,17 +266,17 @@ async function cycleSort(arr) {
                 await sleepStep();
 
                 if (pos !== cycleStart) {
-                    deselect(pos*itemWidth, canvas.height, itemWidth, -arr[pos], getColorString(arr[pos]));
+                    deselect(arr, pos, getColorString(arr[pos]));
                     await sleepStep();
                 }
 
                 pos++;
-                select(pos*itemWidth, canvas.height, itemWidth, -arr[pos], "green");
+                select(arr, pos, "green");
             }
         }
 
         if (pos == cycleStart) {
-            deselect(cycleStart*itemWidth, canvas.height, itemWidth, -arr[cycleStart], getColorString(arr[cycleStart]));
+            deselect(arr, cycleStart, getColorString(arr[cycleStart]));
             await sleepStep();
             continue;
         }
@@ -288,30 +290,30 @@ async function cycleSort(arr) {
             item = arr[pos];
             arr[pos] = temp;
 
-            clearSection(pos*itemWidth, 0, itemWidth, canvas.height);
+            clearElement(arr, pos);
             await sleepStep();
-            select(pos*itemWidth, canvas.height, itemWidth, -arr[pos], "green");
+            select(arr, pos, "green");
             await sleepStep();
         }
 
-        deselect(pos*itemWidth, canvas.height, itemWidth, -arr[pos], getColorString(arr[pos]));
+        deselect(arr, pos, getColorString(arr[pos]));
         await sleepStep();
 
         while (pos != cycleStart) {
             pos = cycleStart;
-            select(pos*itemWidth, canvas.height, itemWidth, -arr[pos], "red");
+            select(arr, pos, "red");
             await sleepStep();
 
             for (let i = cycleStart + 1; i < arr.length; i++) {
                 if (arr[i] < item) {
                     await sleepStep();
                     if (pos !== cycleStart) {
-                        deselect(pos*itemWidth, canvas.height, itemWidth, -arr[pos], getColorString(arr[pos]));
+                        deselect(arr, pos, getColorString(arr[pos]));
                         await sleepStep();
                     }
 
                     pos++;
-                    select(pos*itemWidth, canvas.height, itemWidth, -arr[pos], "green");
+                    select(arr, pos, "green");
                 }
             }
 
@@ -324,15 +326,15 @@ async function cycleSort(arr) {
                 item = arr[pos];
                 arr[pos] = temp;
 
-                clearSection(pos*itemWidth, 0, itemWidth, canvas.height);
+                clearElement(arr, pos);
                 await sleepStep();
-                select(pos*itemWidth, canvas.height, itemWidth, -arr[pos], "green");
+                select(arr, pos, "green");
                 await sleepStep();
             }
 
-            deselect(pos*itemWidth, canvas.height, itemWidth, -arr[pos], getColorString(arr[pos]));
+            deselect(arr, pos, getColorString(arr[pos]));
             await sleepStep();
-            deselect(cycleStart*itemWidth, canvas.height, itemWidth, -arr[cycleStart], getColorString(arr[cycleStart]));
+            deselect(arr, cycleStart, getColorString(arr[cycleStart]));
             await sleepStep();
         }
     }
@@ -342,29 +344,29 @@ async function exchangeSort(arr) {
     totalSleepSteps = 4;
 
     for (let i = 0; i < arr.length - 1; i++) {
-        select(i*itemWidth, canvas.height, itemWidth, -arr[i], "red");
+        select(arr, i, "red");
         await sleepStep();
 
         for (let j = i + 1; j < arr.length; j++) {
 
-            select(j*itemWidth, canvas.height, itemWidth, -arr[j], "green");
+            select(arr, j, "green");
             await sleepStep();
 
             if (arr[i] > arr[j]) {
                 swap(arr, i, j);
 
-                clearSection(i*itemWidth, 0, itemWidth, canvas.height);
-                clearSection(j*itemWidth, 0, itemWidth, canvas.height);
+                clearElement(arr, i);
+                clearElement(arr, j);
 
-                select(i*itemWidth, canvas.height, itemWidth, -arr[i], "red");
-                select(j*itemWidth, canvas.height, itemWidth, -arr[j], "green");
+                select(arr, i, "red");
+                select(arr, j, "green");
             }
 
-            deselect(j*itemWidth, canvas.height, itemWidth, -arr[j], getColorString(arr[j]));
+            deselect(arr, j, getColorString(arr[j]));
             await sleepStep();
         }
 
-        deselect(i*itemWidth, canvas.height, itemWidth, -arr[i], getColorString(arr[i]));
+        deselect(arr, i, getColorString(arr[i]));
         await sleepStep();
     }
 }
@@ -374,26 +376,28 @@ async function gnomeSort(arr) {
 
     let pos = 0;
     while (pos < arr.length) {
-        select(pos*itemWidth, canvas.height, itemWidth, -arr[pos], "red");
+        select(arr, pos, "red");
         await sleepStep();
 
         if (pos === 0 || arr[pos] >= arr[pos-1]) {
-            deselect(pos*itemWidth, canvas.height, itemWidth, -arr[pos], getColorString(arr[pos]));
+            deselect(arr, pos, getColorString(arr[pos]));
             pos++;
         } else {
-            select((pos-1)*itemWidth, canvas.height, itemWidth, -arr[pos-1], "green");
+            select(arr, pos-1, "green");
             await sleepStep();
 
             swap(arr, pos, pos-1);
 
-            clearSection((pos-1)*itemWidth, 0, itemWidth*2, canvas.height);
-            select(pos*itemWidth, canvas.height, itemWidth, -arr[pos], "red");
-            select((pos-1)*itemWidth, canvas.height, itemWidth, -arr[pos-1], "green");
+            clearElement(arr, pos);
+            clearElement(arr, pos-1);
+
+            select(arr, pos, "red");
+            select(arr, pos-1, "green");
+
             await sleepStep();
 
-            deselect(pos*itemWidth, canvas.height, itemWidth, -arr[pos], getColorString(arr[pos]));
-            deselect((pos-1)*itemWidth, canvas.height, itemWidth, -arr[pos-1], getColorString(arr[pos-1]));
-
+            deselect(arr, pos, getColorString(arr[pos]));
+            deselect(arr, pos-1, getColorString(arr[pos-1]));
             pos--;
         }
     }
@@ -404,42 +408,43 @@ async function heapify(arr, length, root) {
     let left = 2 * root + 1;
     let right = 2 * root + 2;
 
-    select(root*itemWidth, canvas.height, itemWidth, -arr[root], "red");
+    select(arr, root, "red");
     await sleepStep();
 
     if (left < length && arr[left] > arr[largest]) {
         largest = left;
-        select(left*itemWidth, canvas.height, itemWidth, -arr[left], "green");
+        select(arr, left, "green");
         await sleepStep();
     }
 
     if (right < length && arr[right] > arr[largest]) {
-        deselect(largest*itemWidth, canvas.height, itemWidth, -arr[largest], getColorString(arr[largest]));
+        deselect(arr, largest, getColorString(arr[largest]));
         largest = right;
-        select(right*itemWidth, canvas.height, itemWidth, -arr[right], "green");
+        select(arr, right, "green");
         await sleepStep();
     }
 
-    select(largest*itemWidth, canvas.height, itemWidth, -arr[largest], "green");
+    select(arr, largest, "green");
     await sleepStep();
 
     if (largest === root) {
-        deselect(largest*itemWidth, canvas.height, itemWidth, -arr[largest], getColorString(arr[largest]));
+        deselect(arr, largest, getColorString(arr[largest]));
         await sleepStep();
         return;
     }
 
     swap(arr, root, largest);
 
-    clearSection(root*itemWidth, 0, itemWidth, canvas.height);
-    clearSection(largest*itemWidth, 0, itemWidth, canvas.height);
-    select(root*itemWidth, canvas.height, itemWidth, -arr[root], "red");
-    select(largest*itemWidth, canvas.height, itemWidth, -arr[largest], "green");
+    clearElement(arr, root);
+    clearElement(arr, largest);
+
+    select(arr, root, "red");
+    select(arr, largest, "green");
 
     await sleepStep();
 
-    deselect(root*itemWidth, canvas.height, itemWidth, -arr[root], getColorString(arr[root]));
-    deselect(largest*itemWidth, canvas.height, itemWidth, -arr[largest], getColorString(arr[largest]));
+    deselect(arr, root, getColorString(arr[root]));
+    deselect(arr, largest, getColorString(arr[largest]));
 
     await heapify(arr, length, largest);
 }
@@ -452,21 +457,22 @@ async function heapSort(arr) {
     }
 
     for (let j = arr.length - 1; j > 0; j--) {
-        select(j*itemWidth, canvas.height, itemWidth, -arr[j], "red");
-        select(0, canvas.height, itemWidth, -arr[0], "green");
+        select(arr, j, "red");
+        select(arr, 0, "green");
 
         await sleepStep();
         swap(arr, 0, j);
 
-        clearSection(j*itemWidth, 0, itemWidth, canvas.height);
-        clearSection(0, 0, itemWidth, canvas.height);
-        select(j*itemWidth, canvas.height, itemWidth, -arr[j], "red");
-        select(0, canvas.height, itemWidth, -arr[0], "green");
+        clearElement(arr, j);
+        clearElement(arr, 0);
+
+        select(arr, j, "red");
+        select(arr, 0, "green");
 
         await sleepStep();
 
-        deselect(j*itemWidth, canvas.height, itemWidth, -arr[j], getColorString(arr[j]));
-        deselect(0, canvas.height, itemWidth, -arr[0], getColorString(arr[0]));
+        deselect(arr, j, getColorString(arr[j]));
+        deselect(arr, 0, getColorString(arr[0]));
 
         await heapify(arr, j, 0);
     }
@@ -477,25 +483,26 @@ async function insertionSort(arr) {
 
     for (let i = 1; i < arr.length; i++) {
         for (let j = i; j > 0; j--) {
-            select(j*itemWidth, canvas.height, itemWidth, -arr[j], "red");
+            select(arr, j, "red");
             await sleepStep();
 
-            select((j-1)*itemWidth, canvas.height, itemWidth, -arr[j-1], "green");
+            select(arr, j-1, "green");
             await sleepStep();
 
             if (arr[j-1] > arr[j]) {
                 swap(arr, j, j-1);
 
-                clearSection((j-1)*itemWidth, 0, itemWidth*2, canvas.height);
-                select(j*itemWidth, canvas.height, itemWidth, -arr[j], "red");
-                select((j-1)*itemWidth, canvas.height, itemWidth, -arr[j-1], "green");
+                clearElement(arr, j-1);
+                clearElement(arr, j);
+
+                select(arr, j, "red");
+                select(arr, j-1, "green");
             }
 
-
-            deselect(j*itemWidth, canvas.height, itemWidth, -arr[j], getColorString(arr[j]))
+            deselect(arr, j, getColorString(arr[j]));
             await sleepStep();
 
-            deselect((j-1)*itemWidth, canvas.height, itemWidth, -arr[j-1], getColorString(arr[j-1]));
+            deselect(arr, j-1, getColorString(arr[j-1]));
             await sleepStep();
         }
     }
@@ -508,50 +515,52 @@ async function oddEvenSort(arr) {
     while (!sorted) {
         sorted = true;
         for (let i = 1; i < arr.length - 1; i += 2) {
-            select(i*itemWidth, canvas.height, itemWidth, -arr[i], "red");
+            select(arr, i, "red");
             await sleepStep();
 
-            select((i+1)*itemWidth, canvas.height, itemWidth, -arr[i+1], "green");
+            select(arr, i+1, "green");
             await sleepStep();
 
             if (arr[i] > arr[i+1]) {
                 swap(arr, i, i+1);
                 sorted = false;
 
-                clearSection(i*itemWidth, 0, itemWidth*2, canvas.height);
+                clearElement(arr, i);
+                clearElement(arr, i+1);
 
-                select(i*itemWidth, canvas.height, itemWidth, -arr[i], "red");
-                select((i+1)*itemWidth, canvas.height, itemWidth, -arr[i+1], "green");
+                select(arr, i, "red");
+                select(arr, i+1, "green");
             }
 
-            deselect(i*itemWidth, canvas.height, itemWidth, -arr[i], getColorString(arr[i]));
+            deselect(arr, i, getColorString(arr[i]));
             await sleepStep();
 
-            deselect((i+1)*itemWidth, canvas.height, itemWidth, -arr[i+1], getColorString(arr[i+1]));
+            deselect(arr, i+1, getColorString(arr[i+1]));
             await sleepStep();
         }
 
         for (let j = 0; j < arr.length - 1; j += 2) {
-            select(j*itemWidth, canvas.height, itemWidth, -arr[j], "red");
+            select(arr, j, "red");
             await sleepStep();
 
-            select((j+1)*itemWidth, canvas.height, itemWidth, -arr[j+1], "green");
+            select(arr, j+1, "green");
             await sleepStep();
 
             if (arr[j] > arr[j+1]) {
                 swap(arr, j, j+1);
                 sorted = false;
 
-                clearSection(j*itemWidth, 0, itemWidth*2, canvas.height);
+                clearElement(arr, j);
+                clearElement(arr, j+1);
 
-                select(j*itemWidth, canvas.height, itemWidth, -arr[j], "red");
-                select((j+1)*itemWidth, canvas.height, itemWidth, -arr[j+1], "green");
+                select(arr, j, "red");
+                select(arr, j+1, "green");
             }
 
-            deselect(j*itemWidth, canvas.height, itemWidth, -arr[j], getColorString(arr[j]));
+            deselect(arr, j, getColorString(arr[j]));
             await sleepStep();
 
-            deselect((j+1)*itemWidth, canvas.height, itemWidth, -arr[j+1], getColorString(arr[j+1]));
+            deselect(arr, j+1, getColorString(arr[j+1]));
             await sleepStep();
         }
     }
@@ -568,11 +577,11 @@ async function patienceSort(arr) {
         let destIndex = piles.findIndex( (pile) => arr[i] >= pile.at(-1) );
 
         if (destIndex === -1) {
-            select(i*itemWidth, canvas.height, itemWidth, -arr[i], colors[piles.length % colors.length]);
+            select(arr, i, colors[piles.length % colors.length]);
             piles.push([arr[i]]);
         } else {
             piles[destIndex].push(arr[i]);
-            select(i*itemWidth, canvas.height, itemWidth, -arr[i], colors[destIndex % colors.length]);
+            select(arr, i, colors[destIndex % colors.length]);
         }
 
         await sleepStep();
@@ -594,12 +603,14 @@ async function patienceSort(arr) {
             }
         });
 
-        currPile.shift();
+        clearElement(arr, k);
+        await sleepStep();
 
-        clearSection(k*itemWidth, 0, itemWidth, canvas.height);
+        ctx.fillStyle = colors[pileIndex % colors.length];
+        ctx.fillRect(k * (itemWidth+itemGap*2)+itemGap, canvas.height, itemWidth, -currPile[0]);
         await sleepStep();
-        select(k*itemWidth, canvas.height, itemWidth, -min, colors[pileIndex % colors.length]);
-        await sleepStep();
+
+        currPile.shift();
     }
 
     for (let j = 0; j < piles.length; j++) {
@@ -630,18 +641,19 @@ async function selectionSort(arr) {
 
     for (let i = 0; i < arr.length - 1; i++) {
         let min = i;
+        select(arr, i, "red");
         select(i*itemWidth, canvas.height, itemWidth, -arr[i], "red");
 
         for (let j = i + 1; j < arr.length; j++) {
             await sleepStep();
-            select(j*itemWidth, canvas.height, itemWidth, -arr[j], "green");
+            select(arr, j, "green")
 
             if (arr[j] < arr[min]) {
                 await sleepStep();
                 if (i !== min) {
-                    deselect(min*itemWidth, canvas.height, itemWidth, -arr[min], getColorString(arr[min]));
+                    deselect(arr, min, getColorString(arr[min]));
                 }
-                select(j*itemWidth, canvas.height, itemWidth, -arr[j], "green");
+                select(arr, j, "green");
 
                 min = j;
 
@@ -649,22 +661,22 @@ async function selectionSort(arr) {
             }
 
             await sleepStep();
-            deselect(j*itemWidth, canvas.height, itemWidth, -arr[j], getColorString(arr[j]));
+            deselect(arr, j, getColorString(arr[j]));
         }
 
         if (min != i) {
             swap(arr, i, min);
 
-            clearSection(i*itemWidth, 0, itemWidth, canvas.height);
-            clearSection(min*itemWidth, 0, itemWidth, canvas.height);
+            clearElement(arr, i);
+            clearElement(arr, min);
 
-            select(i*itemWidth, canvas.height, itemWidth, -arr[i], "red");
-            select(min*itemWidth, canvas.height, itemWidth, -arr[min], "green");
+            select(arr, i, "red");
+            select(arr, min, "green");
         }
 
         await sleepStep();
-        select(i*itemWidth, canvas.height, itemWidth, -arr[i], getColorString(arr[i]));
-        select(min*itemWidth, canvas.height, itemWidth, -arr[min], getColorString(arr[min]));
+        select(arr, i, getColorString(arr[i]));
+        select(arr, min, getColorString(arr[min]));
     }
 }
 
@@ -680,22 +692,22 @@ async function shellSort(arr) {
             let j;
 
             for (j = i; (j >= gap) && (arr[j - gap] > temp); j -= gap) {
-                select(j*itemWidth, canvas.height, itemWidth, -arr[j], "red");
+                select(arr, j, "red");
                 await sleepStep();
 
-                clearSection(j*itemWidth, 0, itemWidth, canvas.height);
+                clearElement(arr, j);
                 arr[j] = arr[j - gap];
 
-                select(j*itemWidth, canvas.height, itemWidth, -arr[j], "green");
+                select(arr, j, "green");
                 await sleepStep();
-                deselect(j*itemWidth, canvas.height, itemWidth, -arr[j], getColorString(arr[j]));
+                deselect(arr, j, getColorString(arr[j]));
             }
 
-            clearSection(j*itemWidth, 0, itemWidth, canvas.height);
+            clearElement(arr, j)
             arr[j] = temp;
-            select(j*itemWidth, canvas.height, itemWidth, -arr[j], "red");
+            select(arr, j, "red");
             await sleepStep();
-            deselect(j*itemWidth, canvas.height, itemWidth, -arr[j], getColorString(arr[j]));
+            deselect(arr, j, getColorString(arr[j]));
         }
     }
 }

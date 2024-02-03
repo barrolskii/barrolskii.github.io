@@ -1,11 +1,38 @@
 async function sortValues() {
+    isSorting = true;
+
+    disableElement(totalValuesSlider);
+    disableElement(sortButton);
+    disableElement(regenerateButton);
+
     await currSortingFunc(values);
     draw();
+
+    enableElement(totalValuesSlider);
+    enableElement(sortButton);
+    enableElement(regenerateButton);
+
+    isSorting = false;
 }
 
 function newValues() {
     generateRandomValues();
     draw();
+}
+
+async function finish() {
+    if (!isSorting) {
+        return;
+    }
+
+    timeStep = 0;
+
+    // Wait until the sorting function has caught up
+    while (isSorting) {
+        await sleep(10);
+    }
+
+    timeStep = timestepSlider.value * 1000;
 }
 
 function getRandomInt(max) {
@@ -29,6 +56,27 @@ function mapValue(x, a, b, c, d) {
     return (x-a) * ((d-c)/(b-a)) + c;
 }
 
+function disableElement(element) {
+    if (element.hasAttribute("disabled")) {
+        return;
+    }
+
+    element.setAttribute("disabled", "");
+}
+
+function enableElement(element) {
+    if (!element.hasAttribute("disabled")) {
+        return;
+    }
+
+    element.removeAttribute("disabled", "");
+}
+
+function setItemWidthAndGap() {
+    itemGap = 100 / totalElements;
+    itemWidth = canvas.width / totalElements - itemGap * 2;
+}
+
 function draw() {
     var darkGrey = "rgb(100, 100, 100)";
     var lightGrey = "rgb(140, 140, 140)";
@@ -37,9 +85,12 @@ function draw() {
     for (let i = 0; i < values.length; i++) {
         var col = Math.round(mapValue(values[i], 0, canvas.height, 100, 140));
         ctx.fillStyle = `rgb(${col}, ${col}, ${col})`;
-        ctx.fillRect(i * itemWidth, canvas.height, itemWidth, -values[i]);
+        ctx.fillRect(i * (itemWidth+itemGap*2)+itemGap, canvas.height, itemWidth, -values[i]);
     }
 }
+
+const sortButton = document.getElementsByName("sortButton")[0];
+const regenerateButton = document.getElementsByName("regenerateButton")[0];
 
 const valueLabel = document.getElementById("timestep-slider-value");
 const timestepSlider = document.getElementById("timestep-slider");
@@ -48,9 +99,11 @@ const valuesLabel = document.getElementById("total-values-value");
 const algorithmSelector = document.getElementById("algorithm-selector");
 
 var itemWidth;
+var itemGap;
 var timeStep = timestepSlider.value * 1000;
 var values = [];
 var totalElements = 10;
+var isSorting = false;
 
 var functionTable = {
     "BubbleSort": bubbleSort,
@@ -78,12 +131,17 @@ timestepSlider.addEventListener("input", (event) => {
 totalValuesSlider.addEventListener("input", (event) => {
     valuesLabel.textContent = event.target.value;
     totalElements = event.target.value;
-    itemWidth = canvas.width / totalElements;
+    setItemWidthAndGap();
+});
+
+totalValuesSlider.addEventListener("click", () => {
+    generateRandomValues();
+    draw();
 });
 
 window.addEventListener("resize", (event) => {
     totalElements = totalValuesSlider.value;
-    itemWidth = canvas.width / totalElements;
+    setItemWidthAndGap();
 });
 
 algorithmSelector.addEventListener("input", (event) => {
@@ -95,10 +153,9 @@ valuesLabel.textContent = totalValuesSlider.value;
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-updateCanvasSize();
 
-totalElements = totalValuesSlider.value;
-itemWidth = canvas.width / totalElements;
+updateCanvasSize();
+setItemWidthAndGap();
 
 generateRandomValues();
 draw();
