@@ -1,3 +1,27 @@
+import { mapValue } from "/assets/js/mathHelpers.js"
+import { initCanvas, updateCanvasSize, setCanvasResizeFunction, setCanvasResizeEvent, canvas, ctx } from "/assets/js/canvas.js";
+import {
+    bubbleSort,
+    cocktailShakerSort,
+    combSort,
+    cycleSort,
+    exchangeSort,
+    gnomeSort,
+    heapSort,
+    insertionSort,
+    oddEvenSort,
+    patienceSort,
+    quickSort,
+    selectionSort,
+    shellSort,
+    setItemWidth,
+    setItemGap,
+    setTimeStep,
+    itemWidth,
+    itemGap,
+    timeStep
+} from "/assets/js/demos/sortingAlgorithmZoo/sortingAlgorithms.js"
+
 async function sortValues() {
     isSorting = true;
 
@@ -25,22 +49,14 @@ async function finish() {
         return;
     }
 
-    timeStep = 0;
+    setTimeStep(0);
 
     // Wait until the sorting function has caught up
     while (isSorting) {
         await sleep(10);
     }
 
-    timeStep = timestepSlider.value * 1000;
-}
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
-
-function ceilInt(x) {
-    return Math.ceil(x / 10) * 10;
+    setTimeStep(timestepSlider.value * 1000);
 }
 
 function generateRandomValues() {
@@ -49,11 +65,6 @@ function generateRandomValues() {
     for (let i = 0; i < totalElements; i++) {
         values[i] = getRandomInt(canvas.height - 1) + 1;
     }
-}
-
-// maps value x from range a -> b to range c -> d
-function mapValue(x, a, b, c, d) {
-    return (x-a) * ((d-c)/(b-a)) + c;
 }
 
 function disableElement(element) {
@@ -73,8 +84,8 @@ function enableElement(element) {
 }
 
 function setItemWidthAndGap() {
-    itemGap = 100 / totalElements;
-    itemWidth = canvas.width / totalElements - itemGap * 2;
+    setItemGap(100 / totalElements);
+    setItemWidth(canvas.width / totalElements - itemGap * 2);
 }
 
 function draw() {
@@ -89,8 +100,27 @@ function draw() {
     }
 }
 
+function resizeCanvas() {
+    let contentContainer = document.getElementsByClassName("content")[0];
+    let mainContainer = document.getElementsByTagName("main")[0];
+
+    if (contentContainer === null) {
+        console.error("Could not find content container when updating canvas size");
+        return;
+    }
+
+    if (mainContainer === null) {
+        console.error("Could not find main container when updating canvas size");
+        return;
+    }
+
+    canvas.width = Math.ceil((contentContainer.offsetWidth / 10)) * 10;
+    canvas.height = mainContainer.offsetHeight / 3;
+}
+
 const sortButton = document.getElementsByName("sortButton")[0];
 const regenerateButton = document.getElementsByName("regenerateButton")[0];
+const finishButton = document.getElementsByName("finishButton")[0];
 
 const valueLabel = document.getElementById("timestep-slider-value");
 const timestepSlider = document.getElementById("timestep-slider");
@@ -98,12 +128,11 @@ const totalValuesSlider = document.getElementById("total-values-slider");
 const valuesLabel = document.getElementById("total-values-value");
 const algorithmSelector = document.getElementById("algorithm-selector");
 
-var itemWidth;
-var itemGap;
-var timeStep = timestepSlider.value * 1000;
 var values = [];
 var totalElements = 10;
 var isSorting = false;
+
+setTimeStep(timestepSlider.value * 1000);
 
 var functionTable = {
     "BubbleSort": bubbleSort,
@@ -125,7 +154,7 @@ var currSortingFunc = functionTable[algorithmSelector.value];
 
 timestepSlider.addEventListener("input", (event) => {
     valueLabel.textContent = parseFloat(event.target.value).toFixed(2);
-    timeStep = event.target.value * 1000;
+    setTimeStep(event.target.value * 1000);
 });
 
 totalValuesSlider.addEventListener("input", (event) => {
@@ -146,16 +175,28 @@ window.addEventListener("resize", (event) => {
 
 algorithmSelector.addEventListener("input", (event) => {
     currSortingFunc = functionTable[algorithmSelector.value];
-})
+});
+
+sortButton.addEventListener("click", () => {
+    sortValues();
+});
+
+regenerateButton.addEventListener("click", () => {
+    newValues();
+});
+
+finishButton.addEventListener("click", () => {
+    finish();
+});
 
 valuesLabel.value = totalValuesSlider.value;
 valuesLabel.textContent = totalValuesSlider.value;
 
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
+initCanvas();
+setCanvasResizeFunction(resizeCanvas);
+setCanvasResizeEvent(draw);
 
 updateCanvasSize();
 setItemWidthAndGap();
-
 generateRandomValues();
 draw();

@@ -1,5 +1,24 @@
+import { ctx } from "/assets/js/canvas.js";
+import { mapValue } from "/assets/js/mathHelpers.js"
+
+export var itemWidth = undefined;
+export var itemGap = undefined;
+export var timeStep = undefined;
+
+function setItemWidth(value) {
+    itemWidth = value;
+}
+
+function setItemGap(value) {
+    itemGap = value;
+}
+
+function setTimeStep(value) {
+    timeStep = value;
+}
+
 function swap(arr, a, b) {
-    [values[a], values[b]] = [values[b], values[a]];
+    [arr[a], arr[b]] = [arr[b], arr[a]];
 }
 
 function select(arr, index, color) {
@@ -710,4 +729,23 @@ async function shellSort(arr) {
             deselect(arr, j, getColorString(arr[j]));
         }
     }
+}
+
+export {
+    bubbleSort,
+    cocktailShakerSort,
+    combSort,
+    cycleSort,
+    exchangeSort,
+    gnomeSort,
+    heapSort,
+    insertionSort,
+    oddEvenSort,
+    patienceSort,
+    quickSort,
+    selectionSort,
+    shellSort,
+    setItemWidth,
+    setItemGap,
+    setTimeStep
 }

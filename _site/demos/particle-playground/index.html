@@ -2,7 +2,7 @@
 
 <html lang="en">
 	<head>
-	<title>Blog</title>
+	<title>Particle Playground</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 
 	<link rel="stylesheet" href="/assets/css/fontstyle.css">
@@ -47,7 +47,7 @@
 							<span>HOME</span>
 						</a>
 					</li>
-					<li class="nav-item active">
+					<li class="nav-item ">
 						<a href="/blog" class="nav-link">
 							<i class="fa-fw fas fa-stream"></i>
 							<span>BLOG</span>
@@ -112,8 +112,10 @@
 			  
 			
 			  
+			
+			  
 				
-				  <span>Blog</span>
+				  <span>Particle Playground</span>
 				
 
 			  
@@ -132,143 +134,113 @@
 				<div class="row flex-grow-1">
 				  <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
 					
-						<article class="px-1">
-    <h1 class="dynamic-title">
-      Blog
-    </h1>
-    <div class="content">
-      <div id="archives" class="pl-xl-3">
+						<!-- Refactor the HTML structure -->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
   
-    
-
-    
-      
-
-      <time class="year lead d-block">2023</time>
-      <ul class="list-unstyled">
-
-      
-    
-
-    <li>
-      
-      <span class="date day">31</span>
-      <span class="date month small text-muted ms-1">
-        Aug
-      </span>
-      <a href="/posts/doom-emacs-python-not-found/">Doom Emacs Python Not Found Fix For Windows</a>
-    </li>
-
-    
   
-    
 
-    
-
-    <li>
-      
-      <span class="date day">31</span>
-      <span class="date month small text-muted ms-1">
-        Jul
-      </span>
-      <a href="/posts/ncurses-and-gnu-readline/">Ncurses And GNU Readline</a>
-    </li>
-
-    
   
-    
 
-    
-
-    <li>
-      
-      <span class="date day">30</span>
-      <span class="date month small text-muted ms-1">
-        May
-      </span>
-      <a href="/posts/windows-games-not-unlocking-achievements/">Windows Games Not Unlocking Achievements Fix</a>
-    </li>
-
-    
   
-    
-
-    
-      </ul>
-
-      <time class="year lead d-block">2022</time>
-      <ul class="list-unstyled">
-
-      
-    
-
-    <li>
-      
-      <span class="date day">26</span>
-      <span class="date month small text-muted ms-1">
-        Mar
-      </span>
-      <a href="/posts/doom-emacs-irony-server-fix/">Doom Emacs Irony Server Fix</a>
-    </li>
-
-    
   
-    
 
-    
-      </ul>
-
-      <time class="year lead d-block">2021</time>
-      <ul class="list-unstyled">
-
-      
-    
-
-    <li>
-      
-      <span class="date day">29</span>
-      <span class="date month small text-muted ms-1">
-        Nov
-      </span>
-      <a href="/posts/ycm-autocomplete-fix/">YCM Autocomplete Fix</a>
-    </li>
-
-    
   
-    
 
-    
-
-    <li>
-      
-      <span class="date day">11</span>
-      <span class="date month small text-muted ms-1">
-        Nov
-      </span>
-      <a href="/posts/doom-emacs-icons-fix/">Doom Emacs Icons Fix</a>
-    </li>
-
-    
   
-    
-
-    
-
-    <li>
-      
-      <span class="date day">11</span>
-      <span class="date month small text-muted ms-1">
-        Nov
-      </span>
-      <a href="/posts/c-format-specifiers-tutorial/">C Format Specifiers Tutorial</a>
-    </li>
-
-    </ul>
   
-</div>
 
+  
+
+  
+  
+
+  
+
+
+
+
+
+<!-- Return -->
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>Particle Playground</h1>
+
+    <div class="post-meta text-muted"></div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+	<canvas id="canvas"></canvas>
+    <form>
+    <select name="modifier-select">
+        <option>None</option>
+        <option>Link</option>
+        <option>Fade</option>
+    </select>
+    <div>
+        <label>Particle Count:</label>
+        <label name="count-label">100</label>
+        <input class="w-50" name="particle-slider" type="range" min="100" max="1000" step="10" value="100">
     </div>
+    <div>
+        <label>Particle Lifetime:</label>
+        <label name="lifetime-label">0.090</label>
+        <input class="w-50" name="lifetime-slider" type="range" min="0.001" max="0.09" step="0.001">
+    </div>
+    <div name="link-controls" style="display: none;">
+        <label>Link range:</label>
+        <label name="link-label">50</label>
+        <input class="w-50" name="link-slider" type="range" min="20" max="80" step="5" value="50">
+    </div>
+    <div name="fade-controls" style="display: none;">
+        <label>Fade amount:</label>
+        <label name="fade-label">0.1</label>
+        <input class="w-50" name="fade-slider" type="range" min="0.1" max="0.9" step="0.1" value="0.1">
+    </div>
+</form>
+
+<script defer src="/assets/js/demos/particlePlayground/main.js" type="module"></script>
+
+  </div>
 </article>
+
 
 					
 				  </main>
