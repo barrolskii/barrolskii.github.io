@@ -7,6 +7,11 @@ function initCanvas() {
 }
 
 function updateCanvasSize() {
+    // Set the canvas width and height to 0 first so the parent elements can
+    // resize correctly if we're moving from a larger resolution to a smaller one
+    canvas.width = 0;
+    canvas.height = 0;
+
     let contentContainer = document.getElementsByClassName("content")[0];
     let mainContainer = document.getElementsByTagName("main")[0];
 

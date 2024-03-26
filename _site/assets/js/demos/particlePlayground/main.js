@@ -161,7 +161,7 @@ const fadeLabel = document.getElementsByName("fade-label")[0];
 const fadeSlider = document.getElementsByName("fade-slider")[0];
 
 initCanvas();
-setCanvasResizeEvent(draw);
+setCanvasResizeEvent(updateCanvasSize);
 updateCanvasSize();
 
 canvas.addEventListener("click", (event) => {
