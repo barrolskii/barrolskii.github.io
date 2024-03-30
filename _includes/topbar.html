@@ -1,37 +1,50 @@
 <header id="topbar-wrapper" aria-label="Top Bar">
 	<div id="topbar" class="d-flex align-items-center justify-content-between px-lg-3 h-100">
 		<nav id="breadcrumb" aria-label="Breadcrumb">
-		  {% assign paths = page.url | split: '/' %}
 
-		  {% if paths.size == 0 or page.layout == 'home' %}
-			<!-- index page -->
-			<span>Home</span>
-
-		  {% else %}
-			{% for item in paths %}
-			  {% if forloop.first %}
+			{% if page.layout == 'home' %}
+				<span>Home</span>
+			{% else %}
 				<span>
-				  <a href="{{ '/' | relative_url }}">
+					<a href="{{ '/' | relative_url }}">
 					Home
-				  </a>
+					</a>
 				</span>
+			{% endif %}
 
-			  {% elsif forloop.last %}
-				{% if page.collection == 'tabs' %}
-				  <span>{{ site.data.locales[include.lang].tabs[item] | default: page.title }}</span>
-				{% else %}
-				  <span>{{ page.title }}</span>
-				{% endif %}
+			{% case page.layout %}
+				{% when 'post' %}
+					<span>
+						<a href="{{ '/blog' | relative_url }}">
+							Blog
+						</a>
+					</span>
+					<span>
+						{{ page.title }}
+					</span>
+				{% when 'demo' %}
+					<span>
+						<a href="{{ '/Sandbox' | relative_url }}">
+							Sandbox
+						</a>
+					</span>
+					<span>
+						{{ page.title }}
+					</span>
+				{% when 'project' %}
+					<span>
+						<a href="{{ '/Projects' | relative_url }}">
+							Projects
+						</a>
+					</span>
+					<span>
+						{{ page.title }}
+					</span>
+			{% endcase %}
 
-			  {% elsif page.layout == 'category' or page.layout == 'tag' %}
-				<span>
-				  <a href="{{ item | relative_url }}">
-					{{ page.title }}
-				  </a>
-				</span>
-			  {% endif %}
-			{% endfor %}
-		  {% endif %}
+			{% if page.collection == 'tabs' %}
+				<span>{{ page.title }}</span>
+			{% endif %}
 		</nav>
 
 		<button type="button" id="sidebar-trigger" class="btn btn-link" onclick="myOnClick()">
