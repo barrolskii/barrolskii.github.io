@@ -2,7 +2,7 @@
 
 <html lang="en">
 	<head>
-	<title>Sorting Algorithm Zoo</title>
+	<title>Game Of Life</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 
 	<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
@@ -120,7 +120,7 @@
 						</a>
 					</span>
 					<span>
-						Sorting Algorithm Zoo
+						Game Of Life
 					</span>
 				
 
@@ -204,7 +204,7 @@
 <!-- Return -->
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Sorting Algorithm Zoo</h1>
+    <h1 data-toc-skip>Game Of Life</h1>
 
     <div class="post-meta text-muted"></div>
     <!-- .post-meta -->
@@ -213,42 +213,19 @@
   <div class="content">
 	<canvas id="canvas"></canvas>
     <form>
-  <div>
-  <select id="algorithm-selector">
-    <option value="BubbleSort">Bubble Sort</option>
-    <option value="CocktailShakerSort">CocktailShaker Sort</option>
-    <option value="CombSort">Comb Sort</option>
-    <option value="CycleSort">Cycle Sort</option>
-    <option value="ExchangeSort">Exchange Sort</option>
-    <option value="GnomeSort">Gnome Sort</option>
-    <option value="HeapSort">Heap Sort</option>
-    <option value="InsertionSort">Insertion Sort</option>
-    <option value="OddEvenSort">OddEven Sort</option>
-    <option value="PatienceSort">Patience Sort</option>
-    <option value="QuickSort">Quick Sort</option>
-    <option value="SelectionSort">Selection Sort</option>
-    <option value="ShellSort">Shell Sort</option>
-  </select>
-
-  <button type="button" name="sortButton">Sort</button>
-  <button type="button" name="regenerateButton">Regenerate</button>
-  <button type="button" name="finishButton">Finish</button>
-  </div>
-
-  <div>
-  <label>Time Step:</label>
-  <label id="timestep-slider-value">1.00</label>
-  <input class="w-50" id="timestep-slider" type="range" min="0" max="3.00" value="1.00" step="0.01">
-  </div>
-
-  <div>
-  <label>Total Values:</label>
-  <label id="total-values-value"></label>
-  <input class="w-50" id="total-values-slider" type="range" min="10" max="50" value="10" step="1">
-  </div>
+    <button type="button" name="nextButton">Next</button>
+    <button type="button" name="playButton">Play</button>
+    <button type="button" name="pauseButton" disabled >Pause</button>
+    <button type="button" name="regenButton">Regenerate</button>
+    <button type="button" name="resetButton">Reset</button>
+    <div>
+        <label>Time Step(ms):</label>
+        <label name="time-step-label">500</label>
+        <input type="range" name="time-step-slider" value="500" min="100" max="1000" step="10" class="w-50"/>
+    </div>
 </form>
 
-<script defer src="/assets/js/demos/sortingAlgorithmZoo/main.js" type="module"></script>
+<script defer src="/assets/js/demos/gameOfLife/main.js" type="module"></script>
 
   </div>
 </article>
