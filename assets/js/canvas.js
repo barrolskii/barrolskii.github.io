@@ -1,9 +1,15 @@
 export var canvas = undefined;
 export var ctx = undefined;
+export var postCanvasResize = new Function();
 
 function initCanvas() {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
+
+    window.addEventListener("resize", (event) => {
+        updateCanvasSize();
+        postCanvasResize();
+    });
 }
 
 function updateCanvasSize() {
@@ -44,10 +50,7 @@ function setCanvasResizeEvent(callback) {
         return;
     }
 
-    window.addEventListener("resize", (event) => {
-        updateCanvasSize();
-        callback();
-    });
+    postCanvasResize = callback;
 }
 
 export { initCanvas, updateCanvasSize, setCanvasResizeFunction, setCanvasResizeEvent }

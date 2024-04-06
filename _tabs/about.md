@@ -13,6 +13,7 @@ I'm Ashley and I'm a build engineer. I'm currently working in the games industry
 - Python
 - Shell Script
 - JavaScript
+- TypeScript
 
 ## Software
 - Perforce

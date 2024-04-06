@@ -39,6 +39,15 @@ async function sortValues() {
     isSorting = false;
 }
 
+// TODO: Common function to export
+function sleep(ms) {
+    if (ms === 0) {
+        return;
+    }
+
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function newValues() {
     generateRandomValues();
     draw();

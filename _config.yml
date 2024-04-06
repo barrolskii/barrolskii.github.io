@@ -70,4 +70,4 @@ exclude:
   - "*.gem"
   - "*.gemspec"
   - ".gitignore"
-
+  - "assets/ts"

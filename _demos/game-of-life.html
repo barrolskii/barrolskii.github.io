@@ -1,0 +1,20 @@
+---
+layout: demo
+title:  "Game Of Life"
+date:   2024-03-30 19:19:00 +0000
+---
+
+<form>
+    <button type="button" name="nextButton">Next</button>
+    <button type="button" name="playButton">Play</button>
+    <button type="button" name="pauseButton" disabled >Pause</button>
+    <button type="button" name="regenButton">Regenerate</button>
+    <button type="button" name="resetButton">Reset</button>
+    <div>
+        <label>Time Step(ms):</label>
+        <label name="time-step-label">500</label>
+        <input type="range" name="time-step-slider" value="500" min="100" max="1000" step="10" class="w-50"/>
+    </div>
+</form>
+
+<script defer src="/assets/js/demos/gameOfLife/main.js" type="module"></script>
