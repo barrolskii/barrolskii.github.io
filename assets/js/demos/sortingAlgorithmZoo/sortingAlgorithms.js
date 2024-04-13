@@ -1,5 +1,6 @@
-import { ctx } from "/assets/js/canvas.js";
-import { mapValue } from "/assets/js/mathHelpers.js"
+import { ctx } from "/assets/js/modules/canvas/canvas.js";
+import { mapValue } from "/assets/js/modules/math/helpers.js"
+import { sleep } from "/assets/js/modules/time/time.js"
 
 export var itemWidth = undefined;
 export var itemGap = undefined;
@@ -38,14 +39,6 @@ function getColorString(value) {
 async function sleepStep() {
     let time = getStepSleepTime(timeStep, totalSleepSteps);
     return sleep(time);
-}
-
-function sleep(ms) {
-    if (ms === 0) {
-        return;
-    }
-
-    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function getStepSleepTime(timeStep, totalSteps) {
