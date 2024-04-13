@@ -1,12 +1,6 @@
-import { initCanvas, updateCanvasSize, setCanvasResizeEvent, canvas, ctx } from "/assets/js/canvas.js";
-// TODO: Vector lib
-var Vector2D = /** @class */ (function () {
-    function Vector2D(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-    return Vector2D;
-}());
+import { initCanvas, updateCanvasSize, setCanvasResizeEvent, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
+import { Vector2D } from "/assets/js/modules/math/vector.js";
+import { enableElement, disableElement } from "/assets/js/modules/dom/helpers.js";
 var interval = 500;
 var playInterval;
 var grid = [];
@@ -23,20 +17,6 @@ var regenButton = document.getElementsByName("regenButton")[0];
 var resetButton = document.getElementsByName("resetButton")[0];
 var timeStepLabel = document.getElementsByName("time-step-label")[0];
 var timeStepSlider = document.getElementsByName("time-step-slider")[0];
-// TODO: common.js or element handlers.js
-function enableElement(element) {
-    if (!element.hasAttribute("disabled")) {
-        return;
-    }
-    element.removeAttribute("disabled", "");
-}
-// TODO: common.js or element handlers.js
-function disableElement(element) {
-    if (element.hasAttribute("disabled")) {
-        return;
-    }
-    element.setAttribute("disabled", "");
-}
 function initGrid() {
     var alive;
     for (var i = 0; i < gridSize; i++) {
@@ -109,7 +89,8 @@ function posToGridPos(xPos, yPos) {
     return new Vector2D(x, y);
 }
 function updateLastTile(x, y) {
-    // TODO: assert
+    console.assert(x >= 0 || x < gridSize, "X was out of bounds when updating last tile. Got: %d", x);
+    console.assert(y >= 0 || y < gridSize, "Y was out of bounds when updating last tile. Got: %d", y);
     lastTile.x = x;
     lastTile.y = y;
 }

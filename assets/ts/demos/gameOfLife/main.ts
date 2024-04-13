@@ -1,15 +1,6 @@
-import { initCanvas, updateCanvasSize, setCanvasResizeEvent, canvas, ctx } from "/assets/js/canvas.js";
-
-// TODO: Vector lib
-class Vector2D {
-    x: number;
-    y: number;
-
-    constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
-    }
-}
+import { initCanvas, updateCanvasSize, setCanvasResizeEvent, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
+import { Vector2D } from "/assets/js/modules/math/vector.js";
+import { enableElement, disableElement } from "/assets/js/modules/dom/helpers.js"
 
 var interval = 500;
 var playInterval: number;
@@ -31,23 +22,6 @@ const resetButton = document.getElementsByName("resetButton")[0];
 const timeStepLabel = document.getElementsByName("time-step-label")[0];
 const timeStepSlider = document.getElementsByName("time-step-slider")[0];
 
-// TODO: common.js or element handlers.js
-function enableElement(element) {
-    if (!element.hasAttribute("disabled")) {
-        return;
-    }
-
-    element.removeAttribute("disabled", "");
-}
-
-// TODO: common.js or element handlers.js
-function disableElement(element) {
-    if (element.hasAttribute("disabled")) {
-        return;
-    }
-
-    element.setAttribute("disabled", "");
-}
 
 function initGrid() {
     let alive: number;
@@ -135,7 +109,9 @@ function posToGridPos(xPos: number, yPos: number) {
 }
 
 function updateLastTile(x: number, y: number) {
-    // TODO: assert
+    console.assert(x >= 0 || x < gridSize, "X was out of bounds when updating last tile. Got: %d", x);
+    console.assert(y >= 0 || y < gridSize, "Y was out of bounds when updating last tile. Got: %d", y);
+
     lastTile.x = x;
     lastTile.y = y;
 }

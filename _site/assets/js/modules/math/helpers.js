@@ -3,8 +3,4 @@ function mapValue(x, a, b, c, d) {
     return (x-a) * ((d-c)/(b-a)) + c;
 }
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
-
-export { mapValue, getRandomInt }
+export { mapValue }

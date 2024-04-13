@@ -1,5 +1,8 @@
-import { mapValue } from "/assets/js/mathHelpers.js"
-import { initCanvas, updateCanvasSize, setCanvasResizeFunction, setCanvasResizeEvent, canvas, ctx } from "/assets/js/canvas.js";
+import { mapValue } from "/assets/js/modules/math/helpers.js"
+import { getRandomInt } from "/assets/js/modules/math/random.js"
+import { sleep } from "/assets/js/modules/time/time.js"
+import { enableElement, disableElement } from "/assets/js/modules/dom/helpers.js"
+import { initCanvas, updateCanvasSize, setCanvasResizeFunction, setCanvasResizeEvent, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
 import {
     bubbleSort,
     cocktailShakerSort,
@@ -39,15 +42,6 @@ async function sortValues() {
     isSorting = false;
 }
 
-// TODO: Common function to export
-function sleep(ms) {
-    if (ms === 0) {
-        return;
-    }
-
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 function newValues() {
     generateRandomValues();
     draw();
@@ -74,22 +68,6 @@ function generateRandomValues() {
     for (let i = 0; i < totalElements; i++) {
         values[i] = getRandomInt(canvas.height - 1) + 1;
     }
-}
-
-function disableElement(element) {
-    if (element.hasAttribute("disabled")) {
-        return;
-    }
-
-    element.setAttribute("disabled", "");
-}
-
-function enableElement(element) {
-    if (!element.hasAttribute("disabled")) {
-        return;
-    }
-
-    element.removeAttribute("disabled", "");
 }
 
 function setItemWidthAndGap() {

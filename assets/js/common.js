@@ -35,7 +35,8 @@ function setDescription() {
         'Build Engineer',
         'I\'m not actually a ghost',
         '200k+ gamerscore and counting',
-        'Learning more languages than I need to'
+        'Learning more languages than I need to',
+        'Fixing bugs. Writing more...'
     ];
 
     var value = getRandomInt(descriptions.length);
