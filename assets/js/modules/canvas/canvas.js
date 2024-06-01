@@ -12,6 +12,16 @@ function initCanvas() {
     });
 }
 
+function initCanvas3D() {
+    canvas = document.getElementById("canvas");
+    ctx = canvas.getContext("webgl2");
+
+    window.addEventListener("resize", (event) => {
+        updateCanvasSize();
+        postCanvasResize();
+    });
+}
+
 function updateCanvasSize() {
     // Set the canvas width and height to 0 first so the parent elements can
     // resize correctly if we're moving from a larger resolution to a smaller one
@@ -53,4 +63,4 @@ function setCanvasResizeEvent(callback) {
     postCanvasResize = callback;
 }
 
-export { initCanvas, updateCanvasSize, setCanvasResizeFunction, setCanvasResizeEvent }
+export { initCanvas, initCanvas3D, updateCanvasSize, setCanvasResizeFunction, setCanvasResizeEvent }

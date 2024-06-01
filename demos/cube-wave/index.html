@@ -2,7 +2,7 @@
 
 <html lang="en">
 	<head>
-	<title>Projects</title>
+	<title>Cube Wave</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 
 	<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
@@ -65,7 +65,7 @@
 							<span>SANDBOX</span>
 						</a>
 					</li>
-					<li class="nav-item active">
+					<li class="nav-item ">
 						<a href="/projects" class="nav-link">
 							<i class="fa-fw fas fa-archive"></i>
 							<span>PROJECTS</span>
@@ -114,9 +114,16 @@
 			
 
 			
+					<span>
+						<a href="/Sandbox">
+							Sandbox
+						</a>
+					</span>
+					<span>
+						Cube Wave
+					</span>
+				
 
-			
-				<span>Projects</span>
 			
 		</nav>
 
@@ -131,164 +138,100 @@
 				<div class="row flex-grow-1">
 				  <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
 					
-						<article class="px-1">
-    <h1 class="dynamic-title">
-      Projects
-    </h1>
-    <div class="content">
-      <div id="post-list" class="flex-grow-1 px-xl-1">
-	
-
-    <article class="card-wrapper card">
-      <a href="/projects/single-header-libs" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-		
-
-		<div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Single Header Libs</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
+						<!-- Refactor the HTML structure -->
 
 
 
-                Single header libs is a repository containing a variety of projects that follow the
-STB single header file library style. I made this project so I could tinker with a
-variety of different topics wh...
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
 
 
 
-    <article class="card-wrapper card">
-      <a href="/projects/book-organiser" class="post-preview row g-0 flex-md-row-reverse">
-        
 
-		
-
-		<div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Book Organiser</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
 
 
 
-                This is a small project I made to help me organise and track my digital library of
-books (I have well over 2GB worth of books and which keeps going up with each Humble
-Book Bundle released). This p...
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
 
-
-
-    <article class="card-wrapper card">
-      <a href="/projects/hyperion-asiimov" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-		
-		  
-
-          
-
-          <div class="col-md-5">
-            <img src="/assets/img/projects/hyperionAsiimov/HAWPImgThree.webp">
-          </div>
-
-          
-		
-
-		<div class="col-md-7">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Hyperion Asiimov Texture Pack</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-                The Hyperion Asiimov texture pack is the second skin pack I made for Borderlands 2
-adding the Asiimov skin from CS:GO to the Hyperion legendary weapons in the game.
+<!-- Handle images -->
 
 
 
 
 
 
-
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
+<!-- Add header for code snippets -->
 
 
 
-    <article class="card-wrapper card">
-      <a href="/projects/hyperion-obsidian" class="post-preview row g-0 flex-md-row-reverse">
-        
 
-		
-		  
-
-          
-
-          <div class="col-md-5">
-            <img src="/assets/img/projects/hyperionObsidian/HOWPImgOne.webp">
-          </div>
-
-          
-		
-
-		<div class="col-md-7">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Hyperion Obisidan Texture Pack</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
+<!-- Create heading anchors -->
 
 
 
-                The Hyperion Obsidian texture pack is first weapon texture pack I made for Borderlands
-2 which applies to the Hyperion unique weapons in the game. Each weapon skin has
-two variants, a factory defau...
-              </p>
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-	  </a>
-	</article>
+
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
 
 
 
-</div>
 
+
+<!-- Return -->
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>Cube Wave</h1>
+
+    <div class="post-meta text-muted"></div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+	<canvas id="canvas"></canvas>
+    <form>
+    <select name="modifier-select">
+        <option>Centre Vertex Wave</option>
+        <option>Centre Wave</option>
+        <option>Corner Vertex Wave</option>
+        <option>Corner Wave</option>
+    </select>
+
+    <div name="speed-controls">
+        <label>Speed:</label>
+        <label name="speed-label">0.1</label>
+        <input class="w-50" name="speed-slider" type="range" min="0.01" max="0.1" step="0.01" value="0.1">
     </div>
+</form>
+
+<script defer src="/assets/js/demos/cubeWave/main.js" type="module"></script>
+
+  </div>
 </article>
+
 
 					
 				  </main>
