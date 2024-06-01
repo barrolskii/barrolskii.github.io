@@ -3,14 +3,14 @@ layout: page
 ---
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-	{% for proj in site.demos%}
+  {% for proj in site.demos %}
 
     <article class="card-wrapper card">
       <a href="{{ proj.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
         {% assign card_body_col = '12' %}
 
-		{% if proj.image %}
-		  {% assign src = proj.image.path | default: proj.image %}
+    {% if proj.image %}
+      {% assign src = proj.image.path | default: proj.image %}
 
           {% unless src contains '//' %}
             {% assign src = proj.img_path | append: '/' | append: src | replace: '//', '/' %}
@@ -21,9 +21,9 @@ layout: page
           </div>
 
           {% assign card_body_col = '7' %}
-		{% endif %}
+    {% endif %}
 
-		<div class="col-md-{{ card_body_col }}">
+    <div class="col-md-{{ card_body_col }}">
           <div class="card-body d-flex flex-column">
             <h1 class="card-title my-2 mt-md-0">{{ proj.title }}</h1>
 
@@ -36,8 +36,8 @@ layout: page
           </div>
           <!-- .card-body -->
         </div>
-	  </a>
-	</article>
+    </a>
+  </article>
 
 {% endfor %}
 

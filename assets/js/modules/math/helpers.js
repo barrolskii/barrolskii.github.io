@@ -3,4 +3,12 @@ function mapValue(x, a, b, c, d) {
     return (x-a) * ((d-c)/(b-a)) + c;
 }
 
-export { mapValue }
+function degToRad(degrees) {
+  return degrees * (Math.PI / 180);
+}
+
+function radToDeg(radians) {
+  return radians / (Math.PI / 180);
+}
+
+export { mapValue, degToRad, radToDeg }
