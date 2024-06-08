@@ -2,7 +2,7 @@ import { mapValue } from "/assets/js/modules/math/helpers.js"
 import { getRandomInt } from "/assets/js/modules/math/random.js"
 import { sleep } from "/assets/js/modules/time/time.js"
 import { enableElement, disableElement } from "/assets/js/modules/dom/helpers.js"
-import { initCanvas, updateCanvasSize, setCanvasResizeFunction, setCanvasResizeEvent, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
+import { initCanvas, updateCanvasSize, setCanvasResizeFunction, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
 import {
     bubbleSort,
     cocktailShakerSort,
@@ -103,6 +103,8 @@ function resizeCanvas() {
 
     canvas.width = Math.ceil((contentContainer.offsetWidth / 10)) * 10;
     canvas.height = mainContainer.offsetHeight / 3;
+
+    draw();
 }
 
 const sortButton = document.getElementsByName("sortButton")[0];
@@ -179,11 +181,9 @@ finishButton.addEventListener("click", () => {
 valuesLabel.value = totalValuesSlider.value;
 valuesLabel.textContent = totalValuesSlider.value;
 
-initCanvas();
 setCanvasResizeFunction(resizeCanvas);
-setCanvasResizeEvent(draw);
+initCanvas();
 
-updateCanvasSize();
 setItemWidthAndGap();
 generateRandomValues();
 draw();

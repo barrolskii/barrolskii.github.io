@@ -1,4 +1,4 @@
-import { initCanvas, updateCanvasSize, setCanvasResizeEvent, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
+import { initCanvas, setCanvasResizeEvent, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
 import { Vector2D } from "/assets/js/modules/math/vector.js";
 import { enableElement, disableElement } from "/assets/js/modules/dom/helpers.js"
 
@@ -36,7 +36,16 @@ function initGrid() {
     }
 }
 
+function postCanvasResize() {
+    width = Math.floor(canvas.width / gridSize);
+    height = Math.floor(canvas.height / gridSize);
+    draw();
+}
+
 function init() {
+    initCanvas();
+    setCanvasResizeEvent(postCanvasResize);
+
     width = Math.floor(canvas.width / gridSize);
     height = Math.floor(canvas.height / gridSize);
 
@@ -139,13 +148,8 @@ function draw() {
     }
 }
 
-initCanvas();
-setCanvasResizeEvent(() => {
-    width = Math.floor(canvas.width / gridSize);
-    height = Math.floor(canvas.height / gridSize);
-    draw();
-});
-updateCanvasSize();
+init();
+draw();
 
 nextButton.addEventListener("click", () => {
     update();
@@ -227,6 +231,3 @@ canvas.addEventListener("mousemove", (event: Event) => {
         draw();
     }
 });
-
-init();
-draw();

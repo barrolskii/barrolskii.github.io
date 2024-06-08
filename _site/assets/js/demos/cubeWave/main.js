@@ -95,8 +95,6 @@ function init() {
     alert("Cannot initialise a WebGL canvas. Please check if your browser supports WebGL");
   }
 
-  updateCanvasSize();
-
   // Init renderer and canvas here as we need to set this up after we've sorted out the canvas
   camera = new THREE.PerspectiveCamera(75, canvas.width / canvas.height, 0.1, 1000);
   renderer = new THREE.WebGLRenderer({canvas: canvas, context: ctx,});
@@ -105,7 +103,6 @@ function init() {
   renderer.setSize(canvas.width, canvas.height);
   camera.position.set(-10, 6, 15);
   camera.rotation.set(0, degToRad(-60), 0);
-  //camera.rotation.set(degToRad(-30), 0, 0);
   light.position.set(-10, 5, 3);
 
   for (let i = 0; i < totalCubes; ++i) {
