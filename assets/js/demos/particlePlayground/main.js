@@ -1,4 +1,4 @@
-import { initCanvas, updateCanvasSize, setCanvasResizeFunction, setCanvasResizeEvent, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
+import { initCanvas, updateCanvasSize, setCanvasResizeFunction, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
 import { Vector2D } from "/assets/js/modules/math/vector.js"
 
 class Particle {
@@ -155,7 +155,6 @@ const fadeLabel = document.getElementsByName("fade-label")[0];
 const fadeSlider = document.getElementsByName("fade-slider")[0];
 
 initCanvas();
-setCanvasResizeEvent(() => {});
 updateCanvasSize();
 
 canvas.addEventListener("click", (event) => {

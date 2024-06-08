@@ -6,6 +6,9 @@ function initCanvas() {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
 
+    // Set canvas to fit current screen
+    updateCanvasSize();
+
     window.addEventListener("resize", (event) => {
         updateCanvasSize();
         postCanvasResize();
@@ -15,6 +18,9 @@ function initCanvas() {
 function initCanvas3D() {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("webgl2");
+
+    // Set canvas to fit current screen
+    updateCanvasSize();
 
     window.addEventListener("resize", (event) => {
         updateCanvasSize();
