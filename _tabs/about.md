@@ -3,7 +3,7 @@ title: About
 layout: page
 ---
 
-I'm Ashley and I'm a build engineer. I'm currently working in the games industry working on CI/CD pipelines to push content updates out for a live service game.
+I'm Ashley and I'm a DevOps engineer. I'm currently working as a senior DevOps engineer specialising in Azure DevOps. 
 
 ## Languages
 - C
@@ -28,4 +28,5 @@ I'm Ashley and I'm a build engineer. I'm currently working in the games industry
 - First class degree with honours in Computer Games Programming
 
 ## Previous Employment
+- Playground Games - Build Engineer
 - Intellectual Property Office - Junior DevOps Engineer
