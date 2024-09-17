@@ -32,7 +32,7 @@ function setDescription() {
     }
 
     const descriptions = [
-        'Build Engineer',
+        'DevOps Engineer',
         'I\'m not actually a ghost',
         '200k+ gamerscore and counting',
         'Learning more languages than I need to',
