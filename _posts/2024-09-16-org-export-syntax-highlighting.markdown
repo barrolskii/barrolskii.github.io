@@ -59,3 +59,14 @@ value into a variable and setting the type of that variable as an array:
 [Array]$MyVar = (My-Function 'foo')
 ```
 
+### Dynamic Arrays
+
+By default arrays in PowerShell are of a fixed size. You can resize them and append elements using the += 
+operator but this is a rather slow operation with arrays. If you need a dynamically resizing array you can
+use the dotnet array list:
+
+```powershell
+[System.Collections.ArrayList]$myArray = @()
+$myArray.Add(1)
+```
+
