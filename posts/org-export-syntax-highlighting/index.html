@@ -2,7 +2,7 @@
 
 <html lang="en">
 	<head>
-	<title>Doom Emacs Icons Fix</title>
+	<title>PowerShell Tidbits</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 
 	<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
@@ -135,7 +135,7 @@
 						</a>
 					</span>
 					<span>
-						Doom Emacs Icons Fix
+						PowerShell Tidbits
 					</span>
 				
 
@@ -178,6 +178,131 @@
 
 
 
+
+  
+  
+
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    <!-- lazy-load images -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    <!-- create the image wrapper -->
+    
+
+      
+      
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    <!-- lazy-load images -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    <!-- create the image wrapper -->
+    
+
+      
+      
+
+    <!-- combine -->
+    
+  
+
+  
 
 
 
@@ -251,6 +376,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -272,18 +419,18 @@
 <!-- Return -->
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Doom Emacs Icons Fix</h1>
+    <h1 data-toc-skip>PowerShell Tidbits</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
       <span>
 		  Posted
 		  <time
-  data-ts="1636635600"
+  data-ts="1726488000"
   data-df=""
   data-bs-toggle="tooltip" data-bs-placement="bottom"
 >
-  Nov 11, 2021
+  Sep 16, 2024
 </time>
 
 
@@ -322,7 +469,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="232 words"
+  title="339 words"
 >
   <em>1 
 	min
@@ -337,54 +484,74 @@
   </header>
 
   <div class="content">
-    <p>After a fresh install of Doom Emacs on Windows you’ll notice when you boot Emacs up that there are
-icons missing on the side of the doom dashboard and at the bottom where the official GitHub repository
-is linked. I’m going to go over how to fix that in this tutorial.</p>
+    <p>I’ve been working with PowerShell for a while now and there are a lot of features and gotchyas that people
+aren’t really aware of ,so I thought it would be a good idea to get some of these things written down and
+out there so people can know about them.</p>
 
-<h2 id="the-fix"><span class="me-2">The Fix</span><a href="#the-fix" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="powershell-features"><span class="me-2">PowerShell Features</span><a href="#powershell-features" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>The issue is simply due to missing font packages in Windows. To download the fonts you have to
-press meta-x (the meta key by default is the alt key) and then type:</p>
+<h3 id="list-suggestions"><span class="me-2">List Suggestions</span><a href="#list-suggestions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-lisp highlighter-rouge"><div class="code-header">
-        <span data-label-text="Lisp"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nv">all-the-icons-install-fonts</span>
-</pre></td></tr></tbody></table></code></div></div>
+<p>If you press Ctrl + Space you can get suggestions in a browsable format. This works for listing files in a
+directory, arguments to a cmdlet or script, and cmdlets themselves. Try pressing Ctrl + Space in different
+places and see what PowerShell can suggest!</p>
 
-<p>You will also need:</p>
+<p><a href="/assets/img/PowerShellTidbits/SuggestionList.png" class="popup img-link "><img src="/assets/img/PowerShellTidbits/SuggestionList.png" alt="Suggestion List" loading="lazy"></a></p>
 
-<div class="language-lisp highlighter-rouge"><div class="code-header">
-        <span data-label-text="Lisp"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nv">nerd-icons-install-fonts</span>
-</pre></td></tr></tbody></table></code></div></div>
+<h3 id="interactive-command-history-search"><span class="me-2">Interactive Command History Search</span><a href="#interactive-command-history-search" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="windows"><span class="me-2">Windows</span><a href="#windows" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>On Windows this will ask you to provide a directory for the font files to be downloaded to.
-Once you’ve provided a directory you’ll then need to open PowerShell and then cd into the
-directory where the font files have been downloaded. Once you’ve navigated there you’ll
-then have to run this snippet of code:</p>
+<p>If you press Ctrl + R you can do a backwards search through your command history. This is especially useful if
+you know you’ve entered a particular command but can’t exactly remember it. You don’t have to limit yourself
+to only a command. If you start typing anything the search will try and match what it can through your history.
+This means you can start typing an argument or a value to an argument and it will show you the entire command
+that you ran. If you keep pressing Ctrl + R when you have a match it’ll scroll through all the matches you have.</p>
+
+<p><a href="/assets/img/PowerShellTidbits/BackwardsSearch.png" class="popup img-link "><img src="/assets/img/PowerShellTidbits/BackwardsSearch.png" alt="Backwards Search" loading="lazy"></a></p>
+
+<h2 id="language-features"><span class="me-2">Language Features</span><a href="#language-features" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="function-return-types"><span class="me-2">Function Return Types</span><a href="#function-return-types" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>The following function does not always return an array:</p>
 
 <div class="language-powershell highlighter-rouge"><div class="code-header">
         <span data-label-text="Powershell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="nv">$dest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">New-Object</span><span class="w"> </span><span class="nt">-ComObject</span><span class="w"> </span><span class="nx">Shell.Application</span><span class="p">)</span><span class="o">.</span><span class="nf">Namespace</span><span class="p">(</span><span class="nx">0x14</span><span class="p">)</span><span class="w">
-</span><span class="nx">ls</span><span class="w"> </span><span class="o">*.</span><span class="nf">ttf</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">$dest</span><span class="o">.</span><span class="nf">CopyHere</span><span class="p">(</span><span class="bp">$_</span><span class="o">.</span><span class="nf">FullName</span><span class="p">,</span><span class="w"> </span><span class="nx">0x10</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kr">function</span><span class="w"> </span><span class="nf">My-Function</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="p">[</span><span class="n">OutputType</span><span class="p">([</span><span class="n">Array</span><span class="p">])]</span><span class="w">
+    </span><span class="kr">param</span><span class="p">(</span><span class="w">
+        </span><span class="p">[</span><span class="n">string</span><span class="p">[]]</span><span class="nv">$MyParam</span><span class="w">
+    </span><span class="p">)</span><span class="w">
+    
+    </span><span class="c"># Do something...</span><span class="w">
+    
+    </span><span class="kr">return</span><span class="w"> </span><span class="nv">$MyParam</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<p>Once you’ve run that a few pop up windows should appear showing the installation of each font.
-When the fonts have been installed all you have to do then is restart Doom Emacs (which can
-be done by pressing space q r) and then the icons will show up without any issue</p>
+<p>If you try and return an array from a function but the array contains 1 element, PowerShell will automatically
+convert the type into a single object rather than an object array. This is rather annoying default behaviour
+of PowerShell and even though we are explicitly specifying that we are returning an array, PowerShell will
+ignore the output type and convert it anyway. To handle cases like these make sure you are capturing the return
+value into a variable and setting the type of that variable as an array:</p>
 
-<h2 id="sources"><span class="me-2">Sources</span><a href="#sources" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<div class="language-powershell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Powershell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="p">[</span><span class="n">Array</span><span class="p">]</span><span class="nv">$MyVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">My-Function</span><span class="w"> </span><span class="s1">'foo'</span><span class="p">)</span><span class="w">
+</span></pre></td></tr></tbody></table></code></div></div>
 
-<ul>
-  <li><a href="https://github.com/doomemacs/doomemacs/issues/2575">Doom Emacs all-the-icons in Windows</a></li>
-  <li><a href="https://richardspowershellblog.wordpress.com/2008/03/20/special-folders">Special folders in Windows 0x14</a></li>
-  <li><a href="https://docs.microsoft.com/en-us/previous-versions/tn-archive/ee176633(v=technet.10)">Special folders in Windows 0x10</a></li>
-</ul>
 
   </div>
 </article>
@@ -454,22 +621,18 @@ be done by pressing space q r) and then the icons will show up without any issue
 
   
     <a
-      href="/posts/c-format-specifiers-tutorial/"
+      href="/posts/doom-emacs-python-not-found/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>C Format Specifiers Tutorial</p>
+      <p>Doom Emacs Python Not Found Fix For Windows</p>
     </a>
   
 
   
-    <a
-      href="/posts/ycm-autocomplete-fix/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>YCM Autocomplete Fix</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
