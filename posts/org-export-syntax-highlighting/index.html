@@ -398,6 +398,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -469,9 +480,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="339 words"
+  title="391 words"
 >
-  <em>1 
+  <em>2 
 	min
   </em>
 	read
@@ -550,6 +561,20 @@ value into a variable and setting the type of that variable as an array:</p>
         <span data-label-text="Powershell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="p">[</span><span class="n">Array</span><span class="p">]</span><span class="nv">$MyVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">My-Function</span><span class="w"> </span><span class="s1">'foo'</span><span class="p">)</span><span class="w">
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="dynamic-arrays"><span class="me-2">Dynamic Arrays</span><a href="#dynamic-arrays" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>By default arrays in PowerShell are of a fixed size. You can resize them and append elements using the += 
+operator but this is a rather slow operation with arrays. If you need a dynamically resizing array you can
+use the dotnet array list:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Powershell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="p">[</span><span class="n">System.Collections.ArrayList</span><span class="p">]</span><span class="nv">$myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">@()</span><span class="w">
+</span><span class="nv">$myArray</span><span class="o">.</span><span class="nf">Add</span><span class="p">(</span><span class="nx">1</span><span class="p">)</span><span class="w">
 </span></pre></td></tr></tbody></table></code></div></div>
 
 
