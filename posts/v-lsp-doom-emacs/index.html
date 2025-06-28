@@ -2,7 +2,7 @@
 
 <html lang="en">
 	<head>
-	<title>Doom Emacs Irony Server Fix</title>
+	<title>Doom Emacs V Language Server Setup</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 
 	<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
@@ -135,7 +135,7 @@
 						</a>
 					</span>
 					<span>
-						Doom Emacs Irony Server Fix
+						Doom Emacs V Language Server Setup
 					</span>
 				
 
@@ -214,6 +214,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -240,18 +251,18 @@
 <!-- Return -->
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Doom Emacs Irony Server Fix</h1>
+    <h1 data-toc-skip>Doom Emacs V Language Server Setup</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
       <span>
 		  Posted
 		  <time
-  data-ts="1648296000"
+  data-ts="1751126400"
   data-df=""
   data-bs-toggle="tooltip" data-bs-placement="bottom"
 >
-  Mar 26, 2022
+  Jun 28, 2025
 </time>
 
 
@@ -290,7 +301,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="200 words"
+  title="243 words"
 >
   <em>1 
 	min
@@ -305,29 +316,60 @@
   </header>
 
   <div class="content">
-    <p>If you want code completion for C/C++ when using Doom Emacs you are going to need
-a language server. The default for this is irony and if you run the setup function
-in Doom Emacs it’ll compile the server and set it up for you. In Windows you might
-not be able to compile the server from inside Emacs if you don’t have the required
-dependencies installed. This tutorial will cover what irony needs to be able to compile
-on Windows through Emacs.</p>
+    <p>If you’re unsure or unfamiliar with how to set up a language server for doom emacs this tutorial will show you
+how to set one up for the V programming language.</p>
 
-<h2 id="the-fix"><span class="me-2">The Fix</span><a href="#the-fix" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="how-to"><span class="me-2">How To</span><a href="#how-to" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>You’ll need to install 2 things:</p>
+<p>First you will need to enable lsp in doom emacs. You can do this by opening you init.el file and search for the 
+tools section. Once you have found that just uncomment the line containing lsp:</p>
 
-<ul>
-  <li><a href="https://releases.llvm.org/download.html">Clang</a></li>
-  <li><a href="https://cmake.org/download/">CMake</a></li>
-</ul>
+<div class="language-lisp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Lisp"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="ss">:tools</span>
+       <span class="nv">lsp</span> <span class="c1">; Uncomment me!</span>
+</pre></td></tr></tbody></table></code></div></div>
 
-<p>All you’ll need to do is download the latest installer for both clang and cmake
-and run through the installer. MAKE SURE THAT YOU ADD THEM TO YOUR PATH ENVIRONMENT
-VARIABLE! The installers will ask you if you want to add them to the path of all
-users or just the current one. It doesn’t matter which one you choose just as long
-as they get added to PATH. If you don’t do this then the underlying terminal emulator
-that emacs uses won’t be able to run those programs. One they have been installed
-you can run irony-install-server and have code completion working for C/C++ on Windows!</p>
+<p>Once that has been uncommented all you need to do then is run doom sync and restart emacs once that command has 
+finished:</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>doom <span class="nb">sync</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Now you’ll need to install the language server for V. I won’t be explaining how to do this in this tutorial but
+here’s the <a href="https://github.com/vlang/v-analyzer">link</a> to the GitHub page which covers the installation steps.</p>
+
+<p>Once the language server has been set up you will need to add the following hook and set the following 
+variable to your config.el file:</p>
+
+<div class="language-lisp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Lisp"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="p">(</span><span class="k">setq</span> <span class="nv">lsp-v-analyzer-path</span> <span class="s">"~/.config/v-analyzer/bin/v-analyzer"</span><span class="p">)</span> <span class="c1">; This path might not be the same on your </span>
+                                                                 <span class="c1">; system so check where the analyzer is </span>
+                                                                 <span class="c1">; installed and set this value to that path</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'v-mode-hook</span> <span class="nf">#'</span><span class="nv">lsp!</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Once that has been added, refresh your config and you should have a working language server for V!</p>
+
+<h2 id="aside"><span class="me-2">Aside</span><a href="#aside" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>If you don’t have the v-mode package for your emacs installation you can add it by simply adding this to your
+packages.el file:</p>
+
+<div class="language-lisp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Lisp"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="p">(</span><span class="nv">package!</span> <span class="nv">v-mode</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
 
   </div>
 </article>
@@ -397,22 +439,18 @@ you can run irony-install-server and have code completion working for C/C++ on W
 
   
     <a
-      href="/posts/ycm-autocomplete-fix/"
+      href="/posts/powershell-tidbits/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>YCM Autocomplete Fix</p>
+      <p>PowerShell Tidbits</p>
     </a>
   
 
   
-    <a
-      href="/posts/windows-games-not-unlocking-achievements/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>Windows Games Not Unlocking Achievements Fix</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
