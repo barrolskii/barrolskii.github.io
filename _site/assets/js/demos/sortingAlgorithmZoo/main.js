@@ -1,8 +1,8 @@
-import { mapValue } from "/assets/js/modules/math/helpers.js"
-import { getRandomInt } from "/assets/js/modules/math/random.js"
-import { sleep } from "/assets/js/modules/time/time.js"
-import { enableElement, disableElement } from "/assets/js/modules/dom/helpers.js"
-import { initCanvas, updateCanvasSize, setCanvasResizeFunction, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
+import { mapValue,  } from "modules/math/helpers.js"
+import { getRandomInt } from "modules/math/random.js"
+import { sleep } from "modules/time/time.js"
+import { enableElement, disableElement } from "modules/dom/helpers.js"
+import { initCanvas, setCanvasResizeFunction, canvas, ctx } from "modules/canvas/canvas.js";
 import {
     bubbleSort,
     cocktailShakerSort,
@@ -22,8 +22,7 @@ import {
     setTimeStep,
     itemWidth,
     itemGap,
-    timeStep
-} from "/assets/js/demos/sortingAlgorithmZoo/sortingAlgorithms.js"
+} from "demos/sortingAlgorithmZoo/sortingAlgorithms.js"
 
 async function sortValues() {
     isSorting = true;

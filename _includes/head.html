@@ -43,4 +43,16 @@
 	{% if layout.toc %}
 	<script type="text/javascript" defer src="/assets/js/tocInit.js"></script>
 	{% endif %}
+
+	{% if page.layout == 'demo' %}
+	<script type="importmap">
+		 {
+			"imports": {
+				"modules/": "/assets/js/modules/",
+				"libs/": "/assets/js/libs/",
+				"demos/": "/assets/js/demos/"
+			}
+		 }
+	</script>
+	{% endif %}
 </head>

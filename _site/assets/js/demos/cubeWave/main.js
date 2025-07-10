@@ -1,6 +1,6 @@
-import { initCanvas3D, updateCanvasSize, setCanvasResizeFunction, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
-import { mapValue, degToRad } from "/assets/js/modules/math/helpers.js"
-import * as THREE from "/assets/js/libs/three/three.module.js"
+import { initCanvas3D, updateCanvasSize, setCanvasResizeFunction, canvas, ctx } from "modules/canvas/canvas.js";
+import { mapValue, degToRad } from "modules/math/helpers.js"
+import * as THREE from "libs/three/three.module.js"
 
 function cornerWave() {
   for (let i = 0; i < totalCubes; ++i) {
