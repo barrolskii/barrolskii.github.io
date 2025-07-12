@@ -1,14 +1,7 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "module": "esnext",
-    "allowJs": true,
-    "checkJs": false,
-    "rootDir": ".",
-    "noResolve": true,
-    "paths": {
-      "/assets/js/*": ["../../../js/*"]
-    },
-    "outDir": "../../../js/demos/gameOfLife/",
+    "outDir": "../../../js/",
   },
   "files": [
     "main.ts"

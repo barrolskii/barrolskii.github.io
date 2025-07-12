@@ -1,4 +1,4 @@
-import { mapValue,  } from "modules/math/helpers.js"
+import { mapValue } from "modules/math/helpers.js"
 import { getRandomInt } from "modules/math/random.js"
 import { sleep } from "modules/time/time.js"
 import { enableElement, disableElement } from "modules/dom/helpers.js"
