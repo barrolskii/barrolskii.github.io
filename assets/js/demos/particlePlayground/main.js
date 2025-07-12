@@ -1,5 +1,5 @@
-import { initCanvas, updateCanvasSize, setCanvasResizeFunction, canvas, ctx } from "/assets/js/modules/canvas/canvas.js";
-import { Vector2D } from "/assets/js/modules/math/vector.js"
+import { initCanvas, updateCanvasSize, canvas, ctx } from "modules/canvas/canvas.js";
+import { Vector2D } from "modules/math/vector.js"
 
 class Particle {
   static hue = 0;
