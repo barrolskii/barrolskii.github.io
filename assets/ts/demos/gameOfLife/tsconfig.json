@@ -1,9 +1,9 @@
+
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../../js/",
+    "outDir": "../../../js/demos/GameOfLife"
   },
-  "files": [
-    "main.ts"
-  ]
+  "files": ["main.ts"],
+
 }

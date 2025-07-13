@@ -1,34 +1,59 @@
-export var canvas = undefined;
-export var ctx = undefined;
+/** @type { function } */
 export var postCanvasResize = new Function();
 
+/**
+ * @returns {{canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D}}
+ */
 function initCanvas() {
-    canvas = document.getElementById("canvas");
-    ctx = canvas.getContext("2d");
+    /* NOTE: Using getElementsByTagName over ID because we lose type information with the LSP if we use getElementById */
+    let canvas = document.getElementsByTagName('canvas')[0];
+
+    if (canvas === null) {
+        console.error("Unable to find canvas element");
+        return;
+    }
+
+    let ctx = canvas.getContext("2d");
 
     // Set canvas to fit current screen
-    updateCanvasSize();
+    updateCanvasSize(canvas);
 
     window.addEventListener("resize", (event) => {
-        updateCanvasSize();
-        postCanvasResize();
+        updateCanvasSize(canvas);
+        postCanvasResize(canvas);
     });
+
+    return { canvas, ctx };
 }
 
+/**
+ * @returns {{canvas: HTMLCanvasElement, ctx: WebGL2RenderingContext}}
+ */
 function initCanvas3D() {
-    canvas = document.getElementById("canvas");
-    ctx = canvas.getContext("webgl2");
+    /* NOTE: Same reason here as the 2D canvas */
+    let canvas = document.getElementsByTagName('canvas')[0];
+    if (canvas === null) {
+        console.error("Unable to find canvas element");
+        return;
+    }
+
+    let ctx = canvas.getContext("webgl2");
 
     // Set canvas to fit current screen
-    updateCanvasSize();
+    updateCanvasSize(canvas);
 
     window.addEventListener("resize", (event) => {
-        updateCanvasSize();
-        postCanvasResize();
+        updateCanvasSize(canvas);
+        postCanvasResize(canvas);
     });
+
+    return { canvas, ctx };
 }
 
-function updateCanvasSize() {
+/**
+ * @returns {void}
+ */
+function updateCanvasSize(canvas) {
     // Set the canvas width and height to 0 first so the parent elements can
     // resize correctly if we're moving from a larger resolution to a smaller one
     canvas.width = 0;
@@ -50,7 +75,9 @@ function updateCanvasSize() {
     canvas.width = Math.ceil((contentContainer.offsetWidth / 10)) * 10;
     canvas.height = mainContainer.offsetHeight;
 }
-
+/**
+ * @returns {void}
+ */
 function setCanvasResizeFunction(callback) {
       if (typeof callback !== 'function') {
         console.error("Expected function as argument");
@@ -60,6 +87,9 @@ function setCanvasResizeFunction(callback) {
     updateCanvasSize = callback;
 }
 
+/**
+ * @returns {void}
+ */
 function setCanvasResizeEvent(callback) {
      if (typeof callback !== 'function') {
         console.error("Expected function as argument");

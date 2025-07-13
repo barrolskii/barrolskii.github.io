@@ -1,5 +1,5 @@
-import { initCanvas, updateCanvasSize, canvas, ctx } from "modules/canvas/canvas.js";
-import { Vector2D } from "modules/math/vector.js"
+import { initCanvas, updateCanvasSize } from "modules/canvas/canvas.js";
+import { Vector2D } from "modules/math/vector.js";
 
 class Particle {
   static hue = 0;
@@ -154,8 +154,8 @@ const linkSlider = document.getElementsByName("link-slider")[0];
 const fadeLabel = document.getElementsByName("fade-label")[0];
 const fadeSlider = document.getElementsByName("fade-slider")[0];
 
-initCanvas();
-updateCanvasSize();
+var { canvas, ctx } = initCanvas();
+updateCanvasSize(canvas);
 
 canvas.addEventListener("click", (event) => {
   updateMousePos(event);

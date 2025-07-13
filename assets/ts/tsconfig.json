@@ -1,10 +1,8 @@
 {
   "compilerOptions": {
     "module": "esnext",
-    "allowJs": true,
-    "checkJs": false,
-    "rootDir": ".",
-    "noResolve": true,
+    "allowJs": false,
+    "noEmitOnError": true,
     "paths": {
       "modules/*": ["../js/modules/*"]
     }

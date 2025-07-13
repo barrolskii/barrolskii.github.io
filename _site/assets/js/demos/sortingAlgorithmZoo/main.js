@@ -1,8 +1,8 @@
-import { mapValue } from "modules/math/helpers.js"
-import { getRandomInt } from "modules/math/random.js"
-import { sleep } from "modules/time/time.js"
-import { enableElement, disableElement } from "modules/dom/helpers.js"
-import { initCanvas, setCanvasResizeFunction, canvas, ctx } from "modules/canvas/canvas.js";
+import { mapValue } from "modules/math/helpers.js";
+import { getRandomInt } from "modules/math/random.js";
+import { sleep } from "modules/time/time.js";
+import { enableElement, disableElement } from "modules/dom/helpers.js";
+import { initCanvas, setCanvasResizeFunction } from "modules/canvas/canvas.js";
 import {
     bubbleSort,
     cocktailShakerSort,
@@ -31,7 +31,7 @@ async function sortValues() {
     disableElement(sortButton);
     disableElement(regenerateButton);
 
-    await currSortingFunc(values);
+    await currSortingFunc(values, ctx);
     draw();
 
     enableElement(totalValuesSlider);
@@ -86,7 +86,7 @@ function draw() {
     }
 }
 
-function resizeCanvas() {
+function resizeCanvas(canvas) {
     let contentContainer = document.getElementsByClassName("content")[0];
     let mainContainer = document.getElementsByTagName("main")[0];
 
@@ -180,8 +180,8 @@ finishButton.addEventListener("click", () => {
 valuesLabel.value = totalValuesSlider.value;
 valuesLabel.textContent = totalValuesSlider.value;
 
-setCanvasResizeFunction(resizeCanvas);
-initCanvas();
+var { canvas, ctx } = initCanvas();
+resizeCanvas(canvas);
 
 setItemWidthAndGap();
 generateRandomValues();

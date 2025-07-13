@@ -1,4 +1,3 @@
-import { ctx } from "/assets/js/modules/canvas/canvas.js";
 import { mapValue } from "/assets/js/modules/math/helpers.js"
 import { sleep } from "/assets/js/modules/time/time.js"
 

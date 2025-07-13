@@ -1,6 +1,6 @@
-import { initCanvas3D, updateCanvasSize, setCanvasResizeFunction, canvas, ctx } from "modules/canvas/canvas.js";
-import { mapValue, degToRad } from "modules/math/helpers.js"
-import * as THREE from "libs/three/three.module.js"
+import { initCanvas3D, updateCanvasSize, setCanvasResizeFunction } from "modules/canvas/canvas.js";
+import { mapValue, degToRad } from "modules/math/helpers.js";
+import * as THREE from "libs/three/three.module.js";
 
 function cornerWave() {
   for (let i = 0; i < totalCubes; ++i) {
@@ -90,7 +90,7 @@ function onCanvasResize() {
 }
 
 function init() {
-  initCanvas3D();
+  var { canvas, ctx } = initCanvas3D();
   if (ctx === null) {
     alert("Cannot initialise a WebGL canvas. Please check if your browser supports WebGL");
   }

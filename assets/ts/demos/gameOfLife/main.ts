@@ -1,6 +1,6 @@
-import { initCanvas, setCanvasResizeEvent, canvas, ctx } from "modules/canvas/canvas.js"
+import { initCanvas, setCanvasResizeEvent } from "modules/canvas/canvas.js";
 import { Vector2D } from "modules/math/vector.js";
-import { enableElement, disableElement } from "modules/dom/helpers.js"
+import { enableElement, disableElement } from "modules/dom/helpers.js";
 
 var interval = 500;
 var playInterval: number;
@@ -43,7 +43,6 @@ function postCanvasResize() {
 }
 
 function init() {
-    initCanvas();
     setCanvasResizeEvent(postCanvasResize);
 
     width = Math.floor(canvas.width / gridSize);
@@ -148,6 +147,7 @@ function draw() {
     }
 }
 
+var { canvas, ctx } = initCanvas();
 init();
 draw();
 
