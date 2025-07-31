@@ -224,39 +224,41 @@
 
   <div class="content">
   <canvas id="canvas"></canvas>
-    <form>
-  <div>
-  <select id="algorithm-selector">
-    <option value="BubbleSort">Bubble Sort</option>
-    <option value="CocktailShakerSort">CocktailShaker Sort</option>
-    <option value="CombSort">Comb Sort</option>
-    <option value="CycleSort">Cycle Sort</option>
-    <option value="ExchangeSort">Exchange Sort</option>
-    <option value="GnomeSort">Gnome Sort</option>
-    <option value="HeapSort">Heap Sort</option>
-    <option value="InsertionSort">Insertion Sort</option>
-    <option value="OddEvenSort">OddEven Sort</option>
-    <option value="PatienceSort">Patience Sort</option>
-    <option value="QuickSort">Quick Sort</option>
-    <option value="SelectionSort">Selection Sort</option>
-    <option value="ShellSort">Shell Sort</option>
-  </select>
+    <div id="bar-container" style="display: flex; align-items: end; justify-content: space-between;">
+</div>
 
-  <button type="button" name="sortButton">Sort</button>
-  <button type="button" name="regenerateButton">Regenerate</button>
-  <button type="button" name="finishButton">Finish</button>
+<form>
+  <div>
+    <select id="algorithm-selector">
+      <option value="BubbleSort">Bubble Sort</option>
+      <option value="CocktailShakerSort">CocktailShaker Sort</option>
+      <option value="CombSort">Comb Sort</option>
+      <option value="CycleSort">Cycle Sort</option>
+      <option value="ExchangeSort">Exchange Sort</option>
+      <option value="GnomeSort">Gnome Sort</option>
+      <option value="HeapSort">Heap Sort</option>
+      <option value="InsertionSort">Insertion Sort</option>
+      <option value="OddEvenSort">OddEven Sort</option>
+      <option value="QuickSort">Quick Sort</option>
+      <option value="SelectionSort">Selection Sort</option>
+      <option value="ShellSort">Shell Sort</option>
+    </select>
+
+    <button type="button" name="sortButton">Sort</button>
+    <button type="button" name="regenerateButton">Regenerate</button>
+    <button type="button" name="finishButton">Finish</button>
   </div>
 
   <div>
-  <label>Time Step:</label>
-  <label id="timestep-slider-value">1.00</label>
-  <input class="w-50" id="timestep-slider" type="range" min="0" max="3.00" value="1.00" step="0.01">
+    <label>Animation Speed(ms):</label>
+    <label id="timestep-slider-value">1000</label>
+    <input class="w-50" id="timestep-slider" type="range" min="0" max="5000" value="1000" step="100">
   </div>
 
   <div>
-  <label>Total Values:</label>
-  <label id="total-values-value"></label>
-  <input class="w-50" id="total-values-slider" type="range" min="10" max="50" value="10" step="1">
+    <label>Total Values:</label>
+    <label id="total-values-value"></label>
+    <input class="w-50" id="total-values-slider" type="range" min="10" max="50" value="10" step="1">
   </div>
 </form>
 
