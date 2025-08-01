@@ -7,26 +7,16 @@
  * @param {number} d
  * @return {number}
  */
-function mapValue(x, a, b, c, d) {
-    return (x-a) * ((d-c)/(b-a)) + c;
-}
-
+export function mapValue(x: number, a: number, b: number, c: number, d: number): number;
 /**
  * Converts degrees to radians
  * @param {number} degrees
  * @return {number}
  */
-function degToRad(degrees) {
-  return degrees * (Math.PI / 180);
-}
-
+export function degToRad(degrees: number): number;
 /**
  * Converts radians to degrees
  * @param {number} radians
  * @return {number}
  */
-function radToDeg(radians) {
-  return radians / (Math.PI / 180);
-}
-
-export { mapValue, degToRad, radToDeg }
+export function radToDeg(radians: number): number;

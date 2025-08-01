@@ -1,8 +1,12 @@
-/** @type { function } */
+/**
+ * Function to run after the canvas has been resized
+ * @type { function }
+ */
 export var postCanvasResize = new Function();
 
 /**
- * @returns {{canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D}}
+ * Initialises a 2D canvas and returns the canvas object and the 2D canvas context
+ * @return {{canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D}}
  */
 function initCanvas() {
     /* NOTE: Using getElementsByTagName over ID because we lose type information with the LSP if we use getElementById */
@@ -27,7 +31,8 @@ function initCanvas() {
 }
 
 /**
- * @returns {{canvas: HTMLCanvasElement, ctx: WebGL2RenderingContext}}
+ * Initialises a 3D web GL 2 canvas and returns the canvas object and the 3D canvas context
+ * @return {{canvas: HTMLCanvasElement, ctx: WebGL2RenderingContext}}
  */
 function initCanvas3D() {
     /* NOTE: Same reason here as the 2D canvas */
@@ -51,7 +56,9 @@ function initCanvas3D() {
 }
 
 /**
- * @returns {void}
+ * Updates the size of a HTML canvas element to fit the containing parent element
+ * @param {HTMLCanvasElement} canvas The canvas element to update
+ * @return {void}
  */
 function updateCanvasSize(canvas) {
     // Set the canvas width and height to 0 first so the parent elements can
@@ -75,8 +82,11 @@ function updateCanvasSize(canvas) {
     canvas.width = Math.ceil((contentContainer.offsetWidth / 10)) * 10;
     canvas.height = mainContainer.offsetHeight;
 }
+
 /**
- * @returns {void}
+ * Sets the canvas resize behaviour to a user specified function
+ * @param {function} callback Function to call when canvas is resized
+ * @return {void}
  */
 function setCanvasResizeFunction(callback) {
       if (typeof callback !== 'function') {
@@ -88,7 +98,9 @@ function setCanvasResizeFunction(callback) {
 }
 
 /**
- * @returns {void}
+ * Sets the canvas post resize function
+ * @param {function} callback Function to call after the canvas has been resized
+ * @return {void}
  */
 function setCanvasResizeEvent(callback) {
      if (typeof callback !== 'function') {
