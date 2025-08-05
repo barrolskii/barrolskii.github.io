@@ -71,5 +71,6 @@ exclude:
   - "*.gemspec"
   - ".gitignore"
   - "assets/ts"
+  - "assets/scripts"
   - "*.d.ts"
   - "**/jsconfig.json"
