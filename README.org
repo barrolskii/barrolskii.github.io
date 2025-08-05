@@ -6,8 +6,13 @@ I've used the hyde-hyde theme from https://github.com/htr3n/hyde-hyde to style t
 ** Dependencies
 - [[https://jekyllrb.com/docs/][Jekyll]]
 - TypeScript
+- JSDoc2Markdown
 
 *** Installation
 #+BEGIN_SRC
 npm install -g typescript
+#+END_SRC
+
+#+BEGIN_SRC
+npm install -g jsdoc-to-markdown
 #+END_SRC
