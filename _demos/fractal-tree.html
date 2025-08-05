@@ -1,0 +1,43 @@
+---
+layout: demo
+title:  "Fractal Tree"
+date:   2025-08-05 22:00:00 +0000
+---
+
+<form>
+    <div>
+        <label>Color:</label>
+        <select name="color-selector">
+            <option>Default</option>
+            <option>Rainbow</option>
+            <option>White</option>
+        </select>
+    </div>
+    <div>
+        <label>Max iterations: </label>
+        <label name="iteration-label">11</label>
+        <input class="w-50" name="iteration-slider" type="range" min="1" max="15" step="1" value="11">
+    </div>
+    <div>
+        <label>Length: </label>
+        <label name="length-label">100</label>
+        <input class="w-50" name="length-slider" type="range" min="50" max="200" step="10" value="100">
+    </div>
+    <div>
+        <label>Left angle: </label>
+        <label name="left-angle-label">15</label>
+        <input class="w-75" name="left-angle-slider" type="range" min="1" max="180" step="1" value="15">
+    </div>
+    <div>
+        <label>Right angle: </label>
+        <label name="right-angle-label">15</label>
+        <input class="w-75" name="right-angle-slider" type="range" min="1" max="180" step="1" value="15">
+    </div>
+    <div>
+        <label>Width: </label>
+        <label name="width-label">5</label>
+        <input class="w-50" name="width-slider" type="range" min="1" max="10" step="1" value="5">
+    </div>
+</form>
+
+<script defer src="/assets/js/demos/fractalTree/main.js" type="module"></script>

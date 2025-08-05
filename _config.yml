@@ -74,3 +74,4 @@ exclude:
   - "assets/scripts"
   - "*.d.ts"
   - "**/jsconfig.json"
+  - "**/docs.md"
