@@ -13,6 +13,7 @@ else
     if [ -f "$1" ]; then
         for module in "$@"
         do
+            echo $module
             tsc --declaration --allowJs --emitDeclarationOnly $module
         done
     else
