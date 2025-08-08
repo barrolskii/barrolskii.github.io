@@ -246,6 +246,51 @@ async function* oddEvenSort(arr) {
     }
 }
 
+async function maxIndex(arr, k) {
+    let index = 0;
+
+    for (let i = 0; i < k; i++) {
+        if (arr[i] > arr[index]) {
+            index = i;
+        }
+    }
+
+    return index;
+}
+
+async function* flip(arr, index) {
+    let left = 0;
+
+    while (left < index) {
+        yield { op: "select", index: left };
+        yield { op: "swap", a: left, b: index };
+        yield { op: "deselect" };
+
+        index--;
+        left++;
+    }
+}
+
+async function* pancakeSort(arr) {
+    let n = arr.length;
+
+    while (n > 1) {
+        let index = await maxIndex(arr, n);
+
+        if (index != n-1) {
+            if (index != 0) {
+                yield* await flip(arr, index);
+            }
+
+            yield* await flip(arr, n-1);
+        }
+
+        n--;
+    }
+
+    return;
+}
+
 async function* partition(arr, low, high) {
     let pivot = arr[low];
 
@@ -305,7 +350,7 @@ async function* selectionSort(arr) {
 }
 
 async function* shellSort(arr) {
-    let gaps = [701, 301, 132, 57, 23, 10, 4, 1] // Ciura gap sequence
+    let gaps = [701, 301, 132, 57, 23, 10, 4, 1]; // Ciura gap sequence
 
     for (let g = 0; g < gaps.length; g++) {
         let gap = gaps[g];
@@ -322,6 +367,29 @@ async function* shellSort(arr) {
     }
 }
 
+async function* slowSortRecursive(arr, startIndex, endIndex) {
+    if (startIndex >= endIndex) {
+        return;
+    }
+
+    let middleIndex = Math.floor((startIndex + endIndex) / 2);
+
+    yield* slowSortRecursive(arr, startIndex, middleIndex);
+    yield* slowSortRecursive(arr, middleIndex + 1, endIndex);
+
+    if (arr[middleIndex] > arr[endIndex]) {
+        yield { op: "select", index: middleIndex };
+        yield { op: "swap", a: middleIndex, b: endIndex };
+        yield { op: "deselect" };
+    }
+
+    yield* slowSortRecursive(arr, startIndex, endIndex-1);
+}
+
+async function* slowSort(arr) {
+    yield* slowSortRecursive(arr, 0, arr.length - 1);
+}
+
 export {
     bubbleSort,
     cocktailShakerSort,
@@ -332,7 +400,9 @@ export {
     heapSort,
     insertionSort,
     oddEvenSort,
+    pancakeSort,
     quickSort,
     selectionSort,
-    shellSort
+    shellSort,
+    slowSort
 }
