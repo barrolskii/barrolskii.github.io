@@ -11,10 +11,12 @@ import {
     heapSort,
     insertionSort,
     oddEvenSort,
+    pancakeSort,
     quickSort,
     selectionSort,
-    shellSort
-} from "demos/sortingAlgorithmZoo/sortingAlgorithms.js"
+    shellSort,
+    slowSort
+} from "demos/sortingAlgorithmZoo/sortingAlgorithms.js";
 
 async function swap(arr, a, b, reverse) {
     [arr[a], arr[b]] = [arr[b], arr[a]];
@@ -285,9 +287,11 @@ var functionTable = {
     "HeapSort": heapSort,
     "InsertionSort": insertionSort,
     "OddEvenSort": oddEvenSort,
+    "PancakeSort": pancakeSort,
     "QuickSort": quickSort,
     "SelectionSort": selectionSort,
     "ShellSort": shellSort,
+    "SlowSort": slowSort
 };
 
 var currSortingFunc = functionTable[algorithmSelector.value];
