@@ -2,7 +2,7 @@
 
 <html lang="en">
 	<head>
-	<title>Cube Wave</title>
+	<title>Flocking Simulation</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 
 	<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
@@ -132,7 +132,7 @@
 						</a>
 					</span>
 					<span>
-						Cube Wave
+						Flocking Simulation
 					</span>
 				
 
@@ -216,7 +216,7 @@
 <!-- Return -->
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Cube Wave</h1>
+    <h1 data-toc-skip>Flocking Simulation</h1>
 
     <div class="post-meta text-muted"></div>
     <!-- .post-meta -->
@@ -225,21 +225,34 @@
   <div class="content">
   <canvas id="canvas"></canvas>
     <form>
-    <select name="modifier-select">
-        <option>Centre Vertex Wave</option>
-        <option>Centre Wave</option>
-        <option>Corner Vertex Wave</option>
-        <option>Corner Wave</option>
-    </select>
-
-    <div name="speed-controls">
-        <label>Speed:</label>
-        <label name="speed-label">0.1</label>
-        <input class="w-50" name="speed-slider" type="range" min="0.01" max="0.1" step="0.01" value="0.1">
+    <div>
+        <label>Range: </label>
+        <label name="range-label">75</label>
+        <input class="w-50" name="range-slider" type="range" min="25" max="100" step="5" value="75">
+    </div>
+    <div>
+        <label>Speed: </label>
+        <label name="speed-label">10</label>
+        <input class="w-50" name="speed-slider" type="range" min="3" max="15" step="1" value="10">
+    </div>
+    <div>
+        <label>Cohesion: </label>
+        <label name="cohesion-label">0.005</label>
+        <input class="w-50" name="cohesion-slider" type="range" min="0.001" max="0.09" step="0.001" value="0.005">
+    </div>
+    <div>
+        <label>Separation: </label>
+        <label name="separation-label">0.05</label>
+        <input class="w-50" name="separation-slider" type="range" min="0.01" max="0.09" step="0.01" value="0.05">
+    </div>
+    <div>
+        <label>Alignment: </label>
+        <label name="alignment-label">0.05</label>
+        <input class="w-50" name="alignment-slider" type="range" min="0.01" max="0.09" step="0.01" value="0.05">
     </div>
 </form>
 
-<script defer src="/assets/js/demos/cubeWave/main.js" type="module"></script>
+<script defer src="/assets/js/demos/flocking/main.js" type="module"></script>
 
   </div>
 </article>
